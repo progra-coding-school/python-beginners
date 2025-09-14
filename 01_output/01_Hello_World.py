@@ -1,11 +1,12 @@
 #My First Program
 
-print('Hello World')
+print("Hello World")
 
 # print:
 #------
 # This is a built-in Python function used to display messages or output text
 # to the console (the screen where your program runs).
+# The print() function is the most basic output statement.
 #
 # ("Hello World"):
 #----------------
