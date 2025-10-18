@@ -1,0 +1,10 @@
+gems={
+    "crown",
+    "gem",
+    "badge",
+    "diamond",
+    "coin"
+}
+print(gems)
+gems.discard("gem1")
+print(gems)

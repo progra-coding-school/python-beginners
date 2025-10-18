@@ -5,6 +5,8 @@ is_active = True
 
 print(age)        # Accessing the value stored in variable age
 print(price)
+
 """ The Value stored in name variable will be printed"""
 print(name)
 print(is_active)
+
