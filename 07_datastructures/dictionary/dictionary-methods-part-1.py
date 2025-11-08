@@ -7,8 +7,7 @@ student = {
     "syllabus": "CBSE",
     "father-name": "Prabhu",
     "mother-name":"Rani",
-    "address":"3,4th Cross Street,Periyar Nager, Chennai ",
-    "name":"Daniel"
+    "address":"3,4th Cross Street,Periyar Nager, Chennai "
 }
 
 print(student.keys())

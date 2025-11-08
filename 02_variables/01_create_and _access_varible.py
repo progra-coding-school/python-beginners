@@ -10,3 +10,5 @@ print(price)
 print(name)
 print(is_active)
 
+print(type(is_active))
+

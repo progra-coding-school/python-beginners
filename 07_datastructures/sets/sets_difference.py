@@ -1,11 +1,12 @@
 '''
 What is Difference:
-Returns elements present in the first set but not in the second.
+Returns elements present in the first set but not in
+the second.
 '''
 
-#Using & operator
+#Using - operator
 
-first={1,2,3,4}
+first={1,2,3,4,5}
 second={4,5,6}
 print(first - second)
 

@@ -1,14 +1,12 @@
 """ Without variables"""
-
-print("My name is ","Ramesh")
-print("My name is ","Ramesh")
-print("My name is ","Ramesh")
-print("My name is ","Ramesh")
-print("My name is ","Ramesh")
+print("My name is ","Daniel")
+print("My name is ","Daniel")
+print("My name is ","Daniel")
+print("My name is ","Daniel")
+print("My name is ","Daniel")
 
 """ Using variables"""
-
-my_name="Alex"
+my_name="Daniel"
 print("My name is",my_name)
 print("My name is",my_name)
 print("My name is",my_name)
