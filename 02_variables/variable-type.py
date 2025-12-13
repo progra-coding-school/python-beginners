@@ -10,3 +10,15 @@ print(type(student_score)) # <class 'float'>
 
 is_primary=True
 print(type(is_primary))  # <class 'bool'>
+
+
+# my_name="DAniel"
+#
+# my_age=10
+#
+# TEMPERATURE=100
+#
+# n="Daniel"
+#
+#
+# my_name="Daniel"
