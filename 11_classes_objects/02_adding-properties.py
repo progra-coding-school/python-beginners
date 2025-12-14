@@ -5,7 +5,12 @@ class Dog:
         self.name=name
         self.colour=colour
 
-my_dog=Dog("Jimmy","Brown")
-print(my_dog.name)
-print(my_dog.colour)
+
+dog1=Dog("Jimmy","Brown")
+print(dog1.name)
+print(dog1.colour)
+
+dog2=Dog("Tommy","Black")
+print(dog2.name)
+print(dog2.colour)
 
