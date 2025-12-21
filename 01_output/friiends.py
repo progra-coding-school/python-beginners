@@ -1,0 +1,5 @@
+print("My name is srivarsha")
+print("My age is 8")
+print ("My grade is 3")
+print("My school name is PSBB MILLENIUM")
+print("My friends names are Bhavathi Swara Ananya Yazini Pirai")

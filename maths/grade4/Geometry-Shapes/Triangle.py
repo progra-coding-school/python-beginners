@@ -1,3 +1,5 @@
+#Find the area of a triangle using base and height.Base is 6 and height is 4
+
 sides = 3
 vertices = 3
 
