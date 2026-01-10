@@ -6,7 +6,7 @@ class Dog:
         self.colour=colour
 
     def barks(self):
-        print("Dog Barks")
+        print("Dog Barks---->")
 
 my_dog=Dog("Jimmy","Brown")
 print(my_dog.name)

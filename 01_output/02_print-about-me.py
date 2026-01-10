@@ -8,10 +8,5 @@ print("My favourite place is school")
 print("My hobby is coding")
 print("My dog name is REMO,He is 1 year 3 months old")
 print("My favourite subject is EVS")
-print('My favourite game is imposter')
-print('My favourite colour is indigo')
-print('My favourite colour is indigo')
-
-
-print('My favourite colour is
-indigo')
+print("My favourite game is imposter")
+print("My favourite colour is indigo")

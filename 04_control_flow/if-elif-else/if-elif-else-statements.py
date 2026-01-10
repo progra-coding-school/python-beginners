@@ -11,7 +11,8 @@ else:
     print("We dont have any classes for today")
 
 
-#Program 2
+#Program 2-Home Work
+
 score = 85
 if score >= 90:
     print("Grade: A - Excellent!")

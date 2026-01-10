@@ -1,4 +1,5 @@
 day = "Sunday"
+
 if day == "Saturday":
     print("We will be having coding class today.")
 else:

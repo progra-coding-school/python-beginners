@@ -4,6 +4,10 @@ name = "Python"
 for char in name:
     print(char)
 
+for char in ['P', 'y', 't', 'h', 'o', 'n']:
+    print(char)
+
+
 # Step-by-Step Explanation:
 # The value "Python" is stored in memory.
 # Internally, Python stores it as a sequence of characters:
