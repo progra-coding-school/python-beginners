@@ -7,6 +7,9 @@ print(a>5 or b < 25)
 if a>5 or b < 25:
     print("Both Conditions are True")
 
+
+
+
 #2. True and False - Ans is True
 a=10
 b=30
@@ -25,4 +28,5 @@ print (a>5 or b < 15)
 a=4
 b=40
 print (a>5 or b < 15)
+
 
