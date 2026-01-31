@@ -8,6 +8,7 @@
 # Remove one fruit from the list.
 
 fruits = ["apple", "banana", "mango", "orange"]
+
 print(fruits)
 
 #Accessing Items:
