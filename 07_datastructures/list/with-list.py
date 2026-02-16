@@ -1,89 +1,60 @@
-# Program Code:07-02
-# Exercise:with-list.py
-# Instructions:
-# Create a list called fruits and add 4 fruits.
-# Print all fruits using a loop.
-# Add a new fruit to the list.
-# Change the second fruit to something else.
-# Remove one fruit from the list.
+# Program Code: 07-02
+# Exercise: with-list.py
 
-fruits = ["apple", "banana", "mango", "orange"]
+# ============================================================
+# SAME PROBLEM — Now solved WITH a list!
+#
+# You are a class teacher. You have 5 students in your class.
+# You need to:
+#   1. Store all student names
+#   2. Print all student names
+#   3. Count how many students you have
+#   4. Add a new student who joined today
+#   5. Find if "Kabir" is in your class
+#   6. Print names in alphabetical order
+#
+# Let's see how EASY it becomes with a list!
+# ============================================================
 
-print(fruits)
+# Task 1: Store 5 student names — just ONE variable!
+students = ["Aarav", "Diya", "Kabir", "Meera", "Rohan"]
 
-#Accessing Items:
-print(fruits[0])  # apple
-print(fruits[2])  # mango
+# Task 2: Print all student names — just 2 lines, works for ANY number!
+print("--- My Students ---")
+for student in students:
+    print(student)
 
-# ------------------ ADDING ITEMS ------------------
+# Task 3: Count how many students — one word: len()
+print("\nTotal students:", len(students))
 
-# append() - Add to the end
-fruits.append("pineapple")
-print("After append:", fruits)
+# Task 4: A new student "Priya" joins — just append!
+students.append("Priya")
+print("\n--- After new student joined ---")
+for student in students:
+    print(student)
+print("Total students:", len(students))
 
-# insert() - Add at specific index
-fruits.insert(1, "kiwi")
-print("After insert at index 1:", fruits)
+# Task 5: Check if "Kabir" is in the class — just use 'in'!
+if "Kabir" in students:
+    print("\nKabir found!")
+else:
+    print("\nKabir not found!")
 
-# extend() - Add multiple items
-fruits.extend(["grape", "melon"])
-print("After extend:", fruits)
+# Task 6: Print in alphabetical order — just sort()!
+students.sort()
+print("\n--- Sorted (A to Z) ---")
+for student in students:
+    print(student)
 
-# ------------------ REMOVING ITEMS ------------------
-
-# remove() - Remove by value
-fruits.remove("banana")
-print("After remove 'banana':", fruits)
-
-# pop() - Remove by index (and return it)
-removed_item = fruits.pop(2)
-print(f"After pop index 2 (removed {removed_item}):", fruits)
-
-# clear() - Remove all items
-temp_list = fruits.copy()  # making a copy to clear separately
-temp_list.clear()
-print("After clear:", temp_list)
-
-# ------------------ LOOPING LIST ------------------
-
-for fruit in fruits:
-    print(fruit)
-
-
-# ------------------ SEARCHING & COUNTING ------------------
-
-# index() - Find index of an item
-print("Index of 'apple':", fruits.index("apple"))
-
-# count() - Count occurrences
-fruits.append("apple")
-print("Count of 'apple':", fruits.count("apple"))
-
-# ------------------ SORTING & REVERSING ------------------
-
-# sort() - Ascending order
-fruits.sort()
-print("After sort (ascending):", fruits)
-
-# sort(reverse=True) - Descending order
-fruits.sort(reverse=True)
-print("After sort (descending):", fruits)
-
-# reverse() - Reverse current order
-fruits.reverse()
-print("After reverse:", fruits)
-
-# ------------------ COPYING ------------------
-
-# copy() - Make a shallow copy
-new_fruits = fruits.copy()
-print("Copy of fruits:", new_fruits)
-
-# ------------------ OTHER USEFUL FUNCTIONS ------------------
-
-# len()
-print("Length of fruits list:", len(fruits))
-
-# min() and max() (alphabetical order for strings)
-print("Minimum (alphabetical):", min(fruits))
-print("Maximum (alphabetical):", max(fruits))
+# ============================================================
+# COMPARE:
+#                    Without List     |    With List
+# ---------------------------------------------------------
+# Store 5 names      5 variables      |    1 variable
+# Print all          5 print()        |    2 lines (loop)
+# Count              count manually   |    len(students)
+# Add a student      new variable     |    append()
+# Search             5 if-elif        |    "in" keyword
+# Sort               impossible!      |    sort()
+# 50 students?       50 variables!    |    still 1 variable
+# ============================================================
