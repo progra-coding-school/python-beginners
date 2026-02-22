@@ -1,137 +1,65 @@
-# Program Code: CS-LR-03
-# Title: The Great Swap Challenge
-# Cognitive Skill: Logical Reasoning (Sequential reasoning about state)
+# Program Code: VAR-LR-03
+# Title: The Swap Challenge
+# Cognitive Skill: Logical Reasoning (Sequential reasoning)
 # Topic: Variables in Python
 
-# ============================================================
-# PROBLEM STATEMENT:
-# Amma made laddoos for Aarav and jalebis for Diya.
-# But they want to SWAP! Aarav wants jalebis and Diya wants laddoos.
-# Sounds simple? But in programming, swapping is a PUZZLE!
-# If you pour Aarav's laddoos into Diya's box, what happens
-# to Diya's jalebis? They get lost!
-# You need a THIRD box (a temporary variable)!
-# ============================================================
-
-print("=== The Great Swap Challenge ===")
-print()
-
-# ===== LEVEL 1: Simple Swap with a Temp Variable =====
-print("--- Level 1: Swap Two Boxes ---")
-print()
-print("Aarav has LADDOOS, Diya has JALEBIS.")
-print("They want to swap. Let us use a temporary box!")
-print()
-
+# Level 1 — swap two values using a temp variable
+print("--- Level 1: Swap the Boxes ---")
 aarav_box = "Laddoos"
 diya_box = "Jalebis"
+print("Before — Aarav:", aarav_box, " Diya:", diya_box)
 
-print(f"BEFORE swap:")
-print(f"  Aarav's box: {aarav_box}")
-print(f"  Diya's box:  {diya_box}")
-print()
+temp_box = aarav_box       # save Aarav's items
+aarav_box = diya_box       # give Aarav what Diya had
+diya_box = temp_box        # give Diya what was saved
 
-# The swap - step by step with reasoning
-# Step 1: Put Aarav's items in a temporary box
-temp_box = aarav_box        # temp_box = "Laddoos"
-print(f"Step 1: Put Aarav's {aarav_box} in temp box")
+print("After  — Aarav:", aarav_box, " Diya:", diya_box)
 
-# Step 2: Now Aarav's box is free, put Diya's items there
-aarav_box = diya_box        # aarav_box = "Jalebis"
-print(f"Step 2: Give Aarav Diya's {diya_box}")
+input("Press Enter for Level 2...")
 
-# Step 3: Put temp box items into Diya's box
-diya_box = temp_box         # diya_box = "Laddoos"
-print(f"Step 3: Give Diya the {temp_box} from temp box")
-
-print()
-print(f"AFTER swap:")
-print(f"  Aarav's box: {aarav_box}")
-print(f"  Diya's box:  {diya_box}")
-
-input("\nPress Enter to continue to Level 2...")
-print()
-
-# ===== LEVEL 2: Swap Numbers =====
+# Level 2 — swap numbers
 print("--- Level 2: Swap Two Numbers ---")
-print()
-
 a = int(input("Enter value for a: "))
 b = int(input("Enter value for b: "))
+print("Before: a =", a, "  b =", b)
 
-print(f"\nBEFORE swap: a = {a}, b = {b}")
-
-# Swap using temp
 temp = a
 a = b
 b = temp
 
-print(f"AFTER swap:  a = {a}, b = {b}")
+print("After:  a =", a, "  b =", b)
 
-input("\nPress Enter to continue to Level 3...")
-print()
+input("Press Enter for Level 3...")
 
-# ===== LEVEL 3: The THREE-WAY Circular Swap! =====
-print("--- Level 3: Three-Way Circular Swap! ---")
-print()
-print("Aarav has Laddoos, Diya has Jalebis, Priya has Mysore Pak")
-print("They want to rotate: Aarav gets Diya's, Diya gets Priya's,")
-print("Priya gets Aarav's!")
-print()
-
+# Level 3 — three-way swap
+print("--- Level 3: Three-Way Swap ---")
 aarav = "Laddoos"
 diya = "Jalebis"
 priya = "Mysore Pak"
+print("Before:", aarav, diya, priya)
 
-print(f"BEFORE: Aarav={aarav}, Diya={diya}, Priya={priya}")
+temp = aarav
+aarav = diya
+diya = priya
+priya = temp
 
-# Think step by step!
-# Save Aarav's before it gets overwritten
-temp = aarav          # temp = "Laddoos"
-aarav = diya          # aarav = "Jalebis"
-diya = priya          # diya = "Mysore Pak"
-priya = temp          # priya = "Laddoos"
+print("After: ", aarav, diya, priya)
 
-print(f"AFTER:  Aarav={aarav}, Diya={diya}, Priya={priya}")
+input("Press Enter for Bonus...")
 
-input("\nPress Enter to continue to the BONUS Level...")
-print()
-
-# ===== BONUS: Swap WITHOUT a temp variable! =====
-print("--- BONUS: Swap Numbers Without a Temp Variable! ---")
-print("(This is a MAGIC trick using math!)")
-print()
-
+# Bonus — swap without temp using maths
+print("--- Bonus: Swap Without Temp ---")
 a = 15
 b = 27
+print("Before: a =", a, "  b =", b)
 
-print(f"BEFORE: a = {a}, b = {b}")
-print()
+a = a + b
+b = a - b
+a = a - b
 
-# The math trick:
-print(f"Step 1: a = a + b = {a} + {b} = {a + b}")
-a = a + b       # a = 42
-print(f"         Now a = {a}, b = {b}")
+print("After:  a =", a, "  b =", b)
+print("Works without a temp variable!")
 
-print(f"Step 2: b = a - b = {a} - {b} = {a - b}")
-b = a - b       # b = 15 (the original a!)
-print(f"         Now a = {a}, b = {b}")
-
-print(f"Step 3: a = a - b = {a} - {b} = {a - b}")
-a = a - b       # a = 27 (the original b!)
-print(f"         Now a = {a}, b = {b}")
-
-print()
-print(f"AFTER:  a = {a}, b = {b}")
-print("The swap worked without any temp variable!")
-
-# ============================================================
-# REFLECTION PROMPTS:
-# 1. In Level 1, what would happen if we did NOT use a temp box?
-#    What would get LOST? Try removing Step 1 and see!
-# 2. In the Three-Way Swap, why did we save Aarav's value FIRST?
-#    What if we started by saving Diya's instead?
-# 3. The BONUS trick uses math (addition and subtraction).
-#    Can you trace through it with a = 10, b = 7 on paper?
-#    Does the order of steps matter?
-# ============================================================
+# Think:
+# 1. What would happen in Level 1 if we did NOT use temp_box?
+# 2. Try the bonus trick with a=10, b=7 on paper. Does it work?

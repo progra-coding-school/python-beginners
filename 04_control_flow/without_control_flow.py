@@ -1,8 +1,0 @@
-print("Hello")
-print("My Name")
-
-print("Is")
-print("Daniel")
-print("Jeganathan")
-
-print("I am the teacher for this class")
