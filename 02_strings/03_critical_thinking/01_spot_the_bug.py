@@ -40,13 +40,12 @@ print("""
    a string and an integer directly.
 
 ✅ FIX: Convert age to a string first using str(age)
-   OR use an f-string (cleaner!)
 """)
 name = "Aarav"
 age  = 14
 # Fixed version:
 message = "My name is " + name + " and I am " + str(age) + " years old."
-print(f"  Fixed output: {message}")
+print("  Fixed output:", message)
 
 # -------------------------------------------------------
 # BUG 2: Case-sensitive comparison
@@ -98,8 +97,8 @@ print("""
    or city[6] for the 7th character.
 """)
 city = "Chennai"
-print(f"  city[-1] = '{city[-1]}'   (last character)")
-print(f"  city[6]  = '{city[6]}'   (7th character)")
+print("  city[-1] = '" + city[-1] + "'   (last character)")
+print("  city[6]  = '" + city[6] + "'   (7th character)")
 
 # -------------------------------------------------------
 # BUG 4: Forgetting strip() on input

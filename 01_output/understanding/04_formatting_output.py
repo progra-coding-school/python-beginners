@@ -6,27 +6,27 @@
 # Good output isn't just correct — it's READABLE and PRESENTABLE.
 # Let's explore ways to format output beautifully.
 
-print("=== 1. Alignment with f-strings ===")
-# :10  → left-align in a field of 10 characters
-# :>10 → right-align
-# :^10 → centre-align
-print(f"{'Name':<12} {'Marks':>6} {'Grade':^8}")
+print("=== 1. Alignment with string methods ===")
+# .ljust(n)  → left-align  in a field of n characters
+# .rjust(n)  → right-align in a field of n characters
+# .center(n) → centre-align in a field of n characters
+print("Name".ljust(12)    + "Marks".rjust(6) + "Grade".center(8))
 print("-" * 28)
-print(f"{'Aarav':<12} {85:>6} {'A':^8}")
-print(f"{'Diya':<12} {72:>6} {'B':^8}")
-print(f"{'Karthik':<12} {91:>6} {'A+':^8}")
+print("Aarav".ljust(12)   + str(85).rjust(6) + "A".center(8))
+print("Diya".ljust(12)    + str(72).rjust(6) + "B".center(8))
+print("Karthik".ljust(12) + str(91).rjust(6) + "A+".center(8))
 
 print()
 
-print("=== 2. Decimal precision ===")
+print("=== 2. Decimal precision with round() ===")
 pi = 3.14159265
-print(f"Pi (full):      {pi}")
-print(f"Pi (2 decimal): {pi:.2f}")
-print(f"Pi (4 decimal): {pi:.4f}")
+print("Pi (full):     ", pi)
+print("Pi (2 decimal):", round(pi, 2))
+print("Pi (4 decimal):", round(pi, 4))
 
 average = 253 / 3
-print(f"Average (raw):  {average}")
-print(f"Average (1dp):  {average:.1f}")
+print("Average (raw): ", average)
+print("Average (1dp): ", round(average, 1))
 
 print()
 
@@ -34,18 +34,18 @@ print("=== 3. Separators and borders ===")
 def print_header(title):
     width = 35
     print("=" * width)
-    print(f"{title:^{width}}")
+    print(title.center(width))
     print("=" * width)
 
 def print_row(label, value):
-    print(f"  {label:<15} : {value}")
+    print("  " + label.ljust(15) + " : " + str(value))
 
 print_header("Progra School Report")
-print_row("Student", "Aarav")
-print_row("Class", "Grade 7")
+print_row("Student",     "Aarav")
+print_row("Class",       "Grade 7")
 print_row("Total Marks", "253 / 300")
-print_row("Average", "84.3")
-print_row("Grade", "A")
+print_row("Average",     "84.3")
+print_row("Grade",       "A")
 print("=" * 35)
 
 print()
@@ -73,6 +73,6 @@ print("  Total: 253")
 print("  Grade: A")
 
 # Think:
-# 1. How would you print a rupee amount always showing 2 decimal places?
-#    e.g., Rs.50 should show as Rs.50.00
-# 2. What does {:^20} do? Try it with your name.
+# 1. How would you right-align a number in a field of 8 characters?
+#    Try: print(str(42).rjust(8))
+# 2. What does .center(20) do? Try it: print("Aarav".center(20))

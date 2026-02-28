@@ -68,7 +68,6 @@ print("=" * 50)
 # ============================================================
 # REFLECTION:
 # 1. What does .split()[0] do on "Aarav Sharma"?
-# 2. How is concatenation (+) different from using f-strings?
-# 3. Can you add the student's ID number to the message?
+# 2. Can you add the student's ID number to the message?
 # 4. What would happen if someone entered only one name (no last name)?
 # ============================================================

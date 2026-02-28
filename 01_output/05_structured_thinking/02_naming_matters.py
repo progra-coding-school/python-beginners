@@ -20,7 +20,7 @@ student_name  = "Aarav"
 student_age   = 13
 student_marks = 87
 
-print(f"Name: {student_name}, Age: {student_age}, Marks: {student_marks}")
+print("Name: " + student_name + ", Age: " + str(student_age) + ", Marks: " + str(student_marks))
 
 print()
 
@@ -33,7 +33,7 @@ print(87, 72, 91)          # What are these numbers?
 maths_marks   = 87
 science_marks = 72
 english_marks = 91
-print(f"Maths: {maths_marks}  Science: {science_marks}  English: {english_marks}")
+print("Maths:", maths_marks, " Science:", science_marks, " English:", english_marks)
 
 print()
 
@@ -80,7 +80,7 @@ print("=== Output Naming Rules ===")
 print("1. Variable names describe WHAT the data represents")
 print("   student_name, total_marks, is_passed")
 print("2. Output labels tell the READER what they're seeing")
-print("   print(f'Total: {total}')")
+print("   print(\"Total:\", total)")
 print("3. Use named constants for repeated values (width, symbol)")
 print("   BORDER = '=' * 40")
 print("4. Wrap repeated formats in a function")

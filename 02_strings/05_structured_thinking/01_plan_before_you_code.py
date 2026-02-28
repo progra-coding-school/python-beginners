@@ -22,7 +22,7 @@
 #
 # HOW will we use strings?
 #   → strip() and title() to format names
-#   → f-strings to build the report lines
+#   → Concatenation to build the report lines
 #   → Repetition (*) for borders and separators
 #   → ljust() / rjust() for column alignment
 #
@@ -87,21 +87,21 @@ print("+" + "=" * 47 + "+")
 print("|" + "     PROGRA KIDS CODING SCHOOL".center(47) + "|")
 print("|" + "          STUDENT REPORT CARD".center(47) + "|")
 print("|" + "-" * 47 + "|")
-print("|" + f"  Student : {student_name}".ljust(47) + "|")
-print("|" + f"  Year    : 2025 - 2026".ljust(47) + "|")
+print("|" + ("  Student : " + student_name).ljust(47) + "|")
+print("|" + "  Year    : 2025 - 2026".ljust(47) + "|")
 print("|" + "-" * 47 + "|")
-print("|" + f"  {'SUBJECT':<18} {'MARKS':>8} {'OUT OF':>8}".ljust(47) + "|")
+print("|" + ("  " + "SUBJECT".ljust(18) + "MARKS".rjust(8) + "OUT OF".rjust(8)).ljust(47) + "|")
 print("|" + "  " + "-" * 30 + " " * 15 + "|")
 
 for subject, marks in subjects.items():
-    print("|" + f"  {subject:<18} {marks:>8} {'/ 100':>8}".ljust(47) + "|")
+    print("|" + ("  " + subject.ljust(18) + str(marks).rjust(8) + "/ 100".rjust(8)).ljust(47) + "|")
 
 print("|" + "  " + "-" * 30 + " " * 15 + "|")
-print("|" + f"  {'TOTAL':<18} {total:>8} {'/ 500':>8}".ljust(47) + "|")
-print("|" + f"  {'AVERAGE':<18} {average:>8.1f} {'/ 100':>8}".ljust(47) + "|")
+print("|" + ("  " + "TOTAL".ljust(18) + str(total).rjust(8) + "/ 500".rjust(8)).ljust(47) + "|")
+print("|" + ("  " + "AVERAGE".ljust(18) + str(round(average, 1)).rjust(8) + "/ 100".rjust(8)).ljust(47) + "|")
 print("|" + "-" * 47 + "|")
-print("|" + f"  Grade   : {grade}".ljust(47) + "|")
-print("|" + f"  Remark  : {remark}".ljust(47) + "|")
+print("|" + ("  Grade   : " + grade).ljust(47) + "|")
+print("|" + ("  Remark  : " + remark).ljust(47) + "|")
 print("|" + " " * 47 + "|")
 print("+" + "=" * 47 + "+")
 

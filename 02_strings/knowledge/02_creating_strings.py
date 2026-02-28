@@ -22,13 +22,13 @@ print("=" * 55)
 # -------------------------------------------------------
 print("\n--- WAY 1: Single Quotes ---")
 
-city       = 'Chennai'
-fruit      = 'Mango'
-greeting   = 'Vanakkam!'
+city      = 'Chennai'
+fruit     = 'Mango'
+greeting  = 'Vanakkam!'
 
-print(f"City     : {city}")
-print(f"Fruit    : {fruit}")
-print(f"Greeting : {greeting}")
+print("City     : " + city)
+print("Fruit    : " + fruit)
+print("Greeting : " + greeting)
 
 # -------------------------------------------------------
 # WAY 2: Double Quotes  "..."
@@ -40,9 +40,9 @@ sentence    = "I don't want to stop coding!"
 player_bio  = "Virat's batting is amazing."
 school_rule = "Today's homework is due tomorrow."
 
-print(f"Sentence    : {sentence}")
-print(f"Player bio  : {player_bio}")
-print(f"School rule : {school_rule}")
+print("Sentence    : " + sentence)
+print("Player bio  : " + player_bio)
+print("School rule : " + school_rule)
 
 # -------------------------------------------------------
 # WHY DOUBLE QUOTES? — The Apostrophe Problem

@@ -44,7 +44,7 @@ print("Round 4:")
 print('  Code A: print(10 / 4)')
 print('  Code B: print(10 // 4)')
 answer = input("What does each print? ")
-print(f"Answer: A prints {10/4} (float division). B prints {10//4} (floor division).")
+print("Answer: A prints", 10/4, "(float division). B prints", 10//4, "(floor division).")
 score += 1
 print()
 
@@ -57,16 +57,5 @@ print("Answer: No! Both produce 2 lines: Line1 / Line2. \\n means newline in bot
 score += 1
 print()
 
-# --- Round 6 ---
-print("Round 6:")
-print('  Code A: print(f"Score: {85}")')
-print('  Code B: print("Score:", 85)')
-answer = input("Any difference in output? (yes/no) ")
-print("Answer: Almost none — but A prints 'Score: 85' (no extra space after colon).")
-print("         B prints 'Score: 85' (comma adds a space automatically).")
-print("         A: 'Score: 85'  B: 'Score: 85'  — look identical here but can differ with variables.")
-score += 1
-print()
-
-print(f"Score: {score} / 6")
+print("Score:", score, "/ 5")
 print("Remember: quotes type, + vs comma, * for repetition, / vs // — all matter!")

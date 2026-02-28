@@ -24,13 +24,13 @@ def double_border():
     print("#" * w)
 
 def blank():
-    print(f"*{' ' * (w-2)}*")
+    print("*" + " " * (w-2) + "*")
 
 def centre(text):
-    print(f"*{text:^{w-2}}*")
+    print("*" + text.center(w-2) + "*")
 
 def left(text):
-    print(f"*  {text:<{w-5}}*")
+    print("*  " + text.ljust(w-5) + "*")
 
 # --- Print the certificate ---
 print()
@@ -53,8 +53,8 @@ centre(achievement)
 blank()
 border()
 blank()
-left(f"Awarded by: {given_by}")
-left(f"School    : {school}")
+left("Awarded by: " + given_by)
+left("School    : " + school)
 blank()
 centre("Keep Learning. Keep Growing. Keep Coding!")
 blank()
@@ -69,7 +69,7 @@ print("              *       *")
 print("                *   *")
 print("                  *")
 print()
-print(f"{'Congratulations, ' + name + '!':^{w}}")
+print(("Congratulations, " + name + "!").center(w))
 
 # Think:
 # 1. How would you add the current date to the certificate?

@@ -1,5 +1,5 @@
 # Program Code: STR-ST-02
-# Title: Naming Matters — Good vs Bad String Variable Names!
+# Title: Naming Matters — Good vs Bad Names for Your Data!
 # Cognitive Skill: Structured Thinking (Naming conventions)
 # Topic: Strings in Python
 
@@ -27,14 +27,14 @@ g  = "grade 6"
 
 fn = n.strip().title()
 sn = s.strip().title()
-print(f"  {fn} | {sn} | {b.title()} | {c.title()} | {g.title()}")
+print("  " + fn + " | " + sn + " | " + b.title() + " | " + c.title() + " | " + g.title())
 
 print("""
   ❌ Problems with Mani's code:
      - What is 'n'? 's'? 'b'? 'c'? 'g'?
-     - What does 'fn' and 'sn' mean?
-     - You have to GUESS what each variable holds
-     - Hard to maintain and debug later
+     - What do 'fn' and 'sn' mean?
+     - You have to GUESS what each name holds
+     - Hard to read and fix later
 """)
 
 # -------------------------------------------------------
@@ -51,21 +51,21 @@ student_grade = "grade 6"
 formatted_name   = student_name.strip().title()
 formatted_course = course_name.strip().title()
 
-print(f"  {formatted_name} | {formatted_course} | {batch_time.title()} | {student_city.title()} | {student_grade.title()}")
+print("  " + formatted_name + " | " + formatted_course + " | " + batch_time.title() + " | " + student_city.title() + " | " + student_grade.title())
 
 print("""
   ✅ Benefits of Aarav's code:
-     - Each variable NAME tells you exactly what it stores
+     - Each name tells you exactly what it stores
      - Anyone can read it — even someone new to the project
      - Easy to find and fix bugs
      - Professional code style
 """)
 
 # -------------------------------------------------------
-# NAMING RULES FOR STRING VARIABLES
+# NAMING RULES FOR STRING DATA
 # -------------------------------------------------------
 print("=" * 55)
-print("  STRING VARIABLE NAMING RULES:")
+print("  STRING NAMING RULES:")
 print("=" * 55)
 print()
 
@@ -80,10 +80,10 @@ examples = [
     ("str1",        "school_name",     "Name of the school"),
 ]
 
-print(f"  {'BAD NAME':<15} {'GOOD NAME':<22} {'PURPOSE'}")
+print("  " + "BAD NAME".ljust(15) + "GOOD NAME".ljust(22) + "PURPOSE")
 print("  " + "-" * 55)
 for bad, good, purpose in examples:
-    print(f"  {bad:<15} {good:<22} {purpose}")
+    print("  " + bad.ljust(15) + good.ljust(22) + purpose)
 
 print()
 print("  RULES:")
@@ -95,9 +95,9 @@ print("  4. No single letters → except i, j in loops (convention)")
 # -------------------------------------------------------
 # INTERACTIVE: How good is YOUR naming?
 # -------------------------------------------------------
-print("\n--- YOUR TURN: Name These Variables! ---")
+print("\n--- YOUR TURN: Name These! ---")
 print()
-print("What would YOU name a variable that stores:")
+print("What would YOU name the data that stores:")
 print()
 
 prompts = [
@@ -107,8 +107,8 @@ prompts = [
 ]
 
 for prompt in prompts:
-    user_var = input(f"  → {prompt}: ").strip()
-    print(f"     You said: '{user_var}'  ✅\n")
+    user_var = input("  → " + prompt + ": ").strip()
+    print("     You said: '" + user_var + "'  ✅\n")
 
 print("=" * 55)
 print("  Good naming = self-documenting code!")
@@ -119,5 +119,5 @@ print("=" * 55)
 # REFLECTION:
 # 1. Why does naming matter if the program runs either way?
 # 2. What naming convention does Python recommend? (snake_case)
-# 3. Can you rename all of Mani's variables in your notebook?
+# 3. Can you rename all of Mani's names in your notebook?
 # ============================================================

@@ -39,7 +39,7 @@ input()
 strings_r1 = ["Chennai", "Cricket", "Python"]
 print()
 for s in strings_r1:
-    print(f"  >>> {s}")
+    print("  >>> " + s)
 print()
 print("MEMORISE THEM! (5 seconds...)")
 time.sleep(5)
@@ -51,12 +51,12 @@ print("  NOW — TYPE WHAT YOU SAW!")
 print("=" * 40)
 
 for i, correct in enumerate(strings_r1, 1):
-    answer = input(f"  String {i}: ")
+    answer = input("  String " + str(i) + ": ")
     if answer.strip() == correct:
-        print(f"    ✅ Correct!")
+        print("    ✅ Correct!")
         score += 1
     else:
-        print(f"    ❌ It was: '{correct}'")
+        print("    ❌ It was: '" + correct + "'")
 
 # -------------------------------------------------------
 # ROUND 2: Longer strings (medium)
@@ -70,7 +70,7 @@ input()
 strings_r2 = ["Aarav Sharma", "Science Fair", "Grade 6", "Morning Batch"]
 print()
 for s in strings_r2:
-    print(f"  >>> {s}")
+    print("  >>> " + s)
 print()
 print("MEMORISE THEM! (6 seconds...)")
 time.sleep(6)
@@ -81,12 +81,12 @@ print("  NOW — TYPE WHAT YOU SAW!")
 print("=" * 40)
 
 for i, correct in enumerate(strings_r2, 1):
-    answer = input(f"  String {i}: ")
+    answer = input("  String " + str(i) + ": ")
     if answer.strip() == correct:
-        print(f"    ✅ Correct!")
+        print("    ✅ Correct!")
         score += 1
     else:
-        print(f"    ❌ It was: '{correct}'")
+        print("    ❌ It was: '" + correct + "'")
 
 # -------------------------------------------------------
 # ROUND 3: Codes and numbers in strings (hard)
@@ -100,7 +100,7 @@ input()
 strings_r3 = ["STU-AAR-2026", "Progra Thinkers Lab", "Chennai-TN-600001"]
 print()
 for s in strings_r3:
-    print(f"  >>> {s}")
+    print("  >>> " + s)
 print()
 print("MEMORISE THEM! (7 seconds...)")
 time.sleep(7)
@@ -111,19 +111,19 @@ print("  NOW — TYPE WHAT YOU SAW!")
 print("=" * 40)
 
 for i, correct in enumerate(strings_r3, 1):
-    answer = input(f"  String {i}: ")
+    answer = input("  String " + str(i) + ": ")
     if answer.strip() == correct:
-        print(f"    ✅ Correct!")
+        print("    ✅ Correct!")
         score += 1
     else:
-        print(f"    ❌ It was: '{correct}'")
+        print("    ❌ It was: '" + correct + "'")
 
 # -------------------------------------------------------
 # FINAL SCORE
 # -------------------------------------------------------
 total = len(strings_r1) + len(strings_r2) + len(strings_r3)
 print("\n" + "=" * 55)
-print(f"  MEMORY RECALL SCORE : {score} / {total}")
+print("  MEMORY RECALL SCORE :", score, "/", total)
 
 if score == total:
     print("  🏆 Perfect Memory! You remembered everything!")

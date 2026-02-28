@@ -20,7 +20,7 @@ print()
 # --- Assumption 2 ---
 print("Assumption 2: '\"5\" + \"5\" = 10'")
 result = "5" + "5"
-print(f'  "5" + "5" = {result}')
+print('  "5" + "5" =', result)
 print("WRONG! Both are strings — + joins them. Result is '55', not 10.")
 print("       For math: use 5 + 5 (no quotes) → 10")
 print()
@@ -28,7 +28,7 @@ print()
 # --- Assumption 3 ---
 print("Assumption 3: 'print() returns the value it prints'")
 x = print("Watch this!")
-print(f"  print() returned: {x}")
+print("  print() returned:", x)
 print("WRONG! print() always returns None.")
 print("       It shows output on screen, but gives nothing back.")
 print()
@@ -37,15 +37,15 @@ print()
 print("Assumption 4: 'Single and double quotes are different types'")
 a = 'Hello'
 b = "Hello"
-print(f"  'Hello' == \"Hello\" → {a == b}")
-print(f"  type('Hello') → {type(a)}")
-print(f"  type(\"Hello\") → {type(b)}")
+print("  'Hello' == \"Hello\" →", a == b)
+print("  type('Hello') →", type(a))
+print("  type(\"Hello\") →", type(b))
 print("WRONG! Both are exactly the same type (str). Quotes are just style.")
 print()
 
 # --- Assumption 5 ---
 print("Assumption 5: 'print(5/2) shows 2'")
-print(f"  print(5/2) → {5/2}")
+print("  print(5/2) →", 5/2)
 print("WRONG! / always gives a float. 5/2 = 2.5, not 2.")
 print("       Use 5//2 for integer division → 2")
 print()
@@ -55,7 +55,7 @@ print("Assumption 6: 'You can print a variable without defining it first'")
 try:
     print(unknown_variable)
 except NameError as e:
-    print(f"  Error: {e}")
+    print("  Error:", e)
 print("WRONG! You must define a variable before using it in print().")
 print("       Python reads top to bottom — it must see the assignment first.")
 print()

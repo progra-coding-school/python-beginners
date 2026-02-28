@@ -83,18 +83,18 @@ else:
     print("Answer: None — print() shows output but returns nothing.")
 print()
 
-print("Q8: What symbol is used in f-strings to embed a variable?")
-ans = input("> ").strip()
-if "{" in ans and "}" in ans:
-    print("Correct! Curly braces {} hold variables in f-strings.")
+print("Q8: How do you join a number with text using + ?")
+ans = input("> ").strip().lower()
+if "str(" in ans or "str()" in ans or "str" in ans:
+    print("Correct! Use str() to convert the number: 'Hello ' + str(13)")
     score += 1
 else:
-    print("Answer: { } curly braces — e.g., f'Hello, {name}!'")
+    print("Answer: Use str() — e.g., 'Hello ' + str(13) gives 'Hello 13'")
 print()
 
 # --- Summary ---
 print("═" * 40)
-print(f"Memory Recall Score: {score} / 8")
+print("Memory Recall Score:", score, "/ 8")
 print()
 print("Quick Reference:")
 print("  print()          → display output")
@@ -102,7 +102,6 @@ print("  ' or \"          → string quotes")
 print("  ''' or \"\"\"      → multiline strings")
 print("  sep=','          → change item separator")
 print("  end=''           → change line ending")
-print("  f'text {var}'    → embed variable in string")
 print("  print() returns  → None")
 print("  '5' + '5'        → '55'  (text join)")
 print("  5 + 5            → 10   (arithmetic)")

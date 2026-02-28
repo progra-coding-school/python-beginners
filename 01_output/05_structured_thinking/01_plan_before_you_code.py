@@ -23,35 +23,35 @@
 # │         [DIVIDER]                    │
 # │  Details paragraph                   │
 # │         [BORDER — bottom]            │
-# │  Contact info (right-aligned)        │
+# │  Contact info                        │
 # └──────────────────────────────────────┘
 
 # ---- CODE FOLLOWS THE PLAN ----
 
-event_name  = "Annual Science Fair 2026"
-school      = "Progra Kids Coding School"
-date        = "Saturday, 15th March 2026"
-time        = "9:00 AM – 4:00 PM"
-venue       = "School Main Hall, Chennai"
-details     = ("Join us for an exciting day of student innovations, "
-               "science experiments, and coding demos. Open to all "
-               "students from Grade 1 to Grade 10.")
-contact     = "Contact: Mrs. Priya  |  9876543210"
+event_name = "Annual Science Fair 2026"
+school     = "Progra Kids Coding School"
+date       = "Saturday, 15th March 2026"
+time       = "9:00 AM – 4:00 PM"
+venue      = "School Main Hall, Chennai"
+details    = ("Join us for an exciting day of student innovations, "
+              "science experiments, and coding demos. Open to all "
+              "students from Grade 1 to Grade 10.")
+contact    = "Contact: Mrs. Priya  |  9876543210"
 
 w = 48
 
 print()
 print("*" * w)
-print(f"*{event_name:^{w-2}}*")
-print(f"*{school:^{w-2}}*")
+print("*" + event_name.center(w-2) + "*")
+print("*" + school.center(w-2) + "*")
 print("*" * w)
-print(f"*{'':^{w-2}}*")
-print(f"*  {'Date  :':9} {date:<{w-14}}*")
-print(f"*  {'Time  :':9} {time:<{w-14}}*")
-print(f"*  {'Venue :':9} {venue:<{w-14}}*")
-print(f"*{'':^{w-2}}*")
+print("*" + " " * (w-2) + "*")
+print("*  " + "Date  :".ljust(9) + " " + date.ljust(w-14) + "*")
+print("*  " + "Time  :".ljust(9) + " " + time.ljust(w-14) + "*")
+print("*  " + "Venue :".ljust(9) + " " + venue.ljust(w-14) + "*")
+print("*" + " " * (w-2) + "*")
 print("*" + "-" * (w-2) + "*")
-print(f"*{'':^{w-2}}*")
+print("*" + " " * (w-2) + "*")
 
 # Wrap the details text across multiple lines
 words = details.split()
@@ -60,14 +60,14 @@ for word in words:
     if len(line) + len(word) + 1 <= w - 6:
         line += word + " "
     else:
-        print(f"*  {line:<{w-5}}*")
+        print("*  " + line.ljust(w-5) + "*")
         line = word + " "
 if line:
-    print(f"*  {line:<{w-5}}*")
+    print("*  " + line.ljust(w-5) + "*")
 
-print(f"*{'':^{w-2}}*")
+print("*" + " " * (w-2) + "*")
 print("*" * w)
-print(f"*  {contact:<{w-4}}*")
+print("*  " + contact.ljust(w-4) + "*")
 print("*" * w)
 print()
 

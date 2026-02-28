@@ -20,15 +20,15 @@ print("=" * 55)
 # -------------------------------------------------------
 print("\n--- Part 1: Equal (==) and Not Equal (!=) ---")
 
-correct_answer = "Python"
+correct_answer  = "Python"
 student_answer1 = "Python"
 student_answer2 = "python"
 student_answer3 = "PYTHON"
 
-print(f"Correct answer   : '{correct_answer}'")
-print(f"Student answer 1 : '{student_answer1}'  → Match? {student_answer1 == correct_answer}")
-print(f"Student answer 2 : '{student_answer2}'  → Match? {student_answer2 == correct_answer}")
-print(f"Student answer 3 : '{student_answer3}'  → Match? {student_answer3 == correct_answer}")
+print("Correct answer   : '" + correct_answer + "'")
+print("Student answer 1 : '" + student_answer1 + "'  → Match?", student_answer1 == correct_answer)
+print("Student answer 2 : '" + student_answer2 + "'  → Match?", student_answer2 == correct_answer)
+print("Student answer 3 : '" + student_answer3 + "'  → Match?", student_answer3 == correct_answer)
 
 print("\n⚠️  Python is CASE-SENSITIVE! 'Python' ≠ 'python' ≠ 'PYTHON'")
 
@@ -42,25 +42,24 @@ typed   = "PYTHON"
 
 # Compare after converting both to lowercase
 if typed.lower() == correct.lower():
-    print(f"'{typed}' matches '{correct}' (ignoring case) ✅")
+    print("'" + typed + "' matches '" + correct + "' (ignoring case) ✅")
 else:
-    print(f"'{typed}' does NOT match '{correct}' ❌")
+    print("'" + typed + "' does NOT match '" + correct + "' ❌")
 
 # -------------------------------------------------------
 # PART 2: Membership Check (in / not in)
 # -------------------------------------------------------
 print("\n--- Part 2: Membership Check (in / not in) ---")
 
-team = "Aarav, Diya, Mani, Priya"
-print(f"Team list : {team}")
-print()
-
+team    = "Aarav, Diya, Mani, Priya"
 search1 = "Diya"
 search2 = "Kavya"
 
-print(f"Is '{search1}' in the team?  → {search1 in team}")
-print(f"Is '{search2}' in the team?  → {search2 in team}")
-print(f"Is '{search2}' NOT in team?  → {search2 not in team}")
+print("Team list : " + team)
+print()
+print("Is '" + search1 + "' in the team?  →", search1 in team)
+print("Is '" + search2 + "' in the team?  →", search2 in team)
+print("Is '" + search2 + "' NOT in team?  →", search2 not in team)
 
 # -------------------------------------------------------
 # PART 3: Alphabetical Comparison (< > <= >=)
@@ -72,15 +71,15 @@ name1 = "Aarav"
 name2 = "Diya"
 name3 = "Mani"
 
-print(f"'{name1}' < '{name2}'  → {name1 < name2}   (A comes before D)")
-print(f"'{name2}' < '{name3}'  → {name2 < name3}   (D comes before M)")
-print(f"'{name3}' > '{name1}'  → {name3 > name1}   (M comes after A)")
+print("'" + name1 + "' < '" + name2 + "'  →", name1 < name2, "  (A comes before D)")
+print("'" + name2 + "' < '" + name3 + "'  →", name2 < name3, "  (D comes before M)")
+print("'" + name3 + "' > '" + name1 + "'  →", name3 > name1, "  (M comes after A)")
 
 # Sort names alphabetically
 names = ["Mani", "Aarav", "Priya", "Diya"]
-print(f"\nOriginal order : {names}")
+print("\nOriginal order :", names)
 names.sort()
-print(f"Sorted order   : {names}")
+print("Sorted order   :", names)
 
 # -------------------------------------------------------
 # REAL USE: Quiz Answer Checker
@@ -95,16 +94,16 @@ questions = [
 
 score = 0
 for question, correct in questions:
-    print(f"\nQ: {question}")
+    print("\nQ:", question)
     user_answer = input("Your answer: ")
 
     if user_answer.strip().lower() == correct.lower():
         print("✅ Correct!")
         score += 1
     else:
-        print(f"❌ Wrong! Correct answer: {correct}")
+        print("❌ Wrong! Correct answer:", correct)
 
-print(f"\nYour Score: {score}/{len(questions)}")
+print("\nYour Score:", score, "/", len(questions))
 
 print("\n" + "=" * 55)
 print("  KEY IDEAS:")

@@ -20,22 +20,22 @@ questions = [
     ('print(10 // 3, 10 % 3)',                 "3 1"),
     ('print("A", "B", sep="")',                "AB"),
     ('print("Hi", end="! ")\nprint("Bye")',    "Hi! Bye"),
-    ('print(f"{2**10}")',                      "1024"),
+    ('print(2 ** 10)',                          "1024"),
     ('print("=" * 3 + " OK " + "=" * 3)',      "=== OK ==="),
     ('print(len("Aarav"))',                    "5"),
 ]
 
 for i, (code, answer) in enumerate(questions, 1):
-    print(f"Q{i}: {code}")
+    print("Q" + str(i) + ": " + code)
     user_ans = input("Answer: ").strip()
     if user_ans == str(answer):
-        print(f"  Correct! → {answer}")
+        print("  Correct! →", answer)
         score += 1
     else:
-        print(f"  Answer: {answer}")
+        print("  Answer:", answer)
     print()
 
-print(f"Mental Output Score: {score} / {total}")
+print("Mental Output Score:", score, "/", total)
 if score == total:
     print("Perfect eye for output! You see every detail.")
 elif score >= 7:

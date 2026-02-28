@@ -31,17 +31,13 @@ print("Score: " + str(85))      # "Score: 85"
 # Fix option 2: use comma (automatic space added)
 print("Score:", 85)              # Score: 85
 
-# Fix option 3: use f-string (best!)
-score = 85
-print(f"Score: {score}")         # Score: 85
-
 print()
 
 print("=== Arithmetic inside print ===")
 print(100 + 200)        # 300  (math)
 print("100" + "200")    # 100200  (text join)
 print("100 + 200")      # 100 + 200 (just text, no calculation)
-print(f"100 + 200 = {100 + 200}")   # 100 + 200 = 300
+print("100 + 200 =", 100 + 200)      # 100 + 200 = 300
 
 print()
 
@@ -55,7 +51,6 @@ quantity = 3
 # GOOD approaches:
 print("Total: Rs." + str(price * quantity))       # str() converts number
 print("Total: Rs.", price * quantity)             # comma handles it
-print(f"Total: Rs.{price * quantity}")            # f-string (cleanest)
 
 # Think:
 # 1. What does print("3" * 4) display? What about print(3 * 4)?

@@ -32,36 +32,36 @@ result  = "PASS" if all(m >= 35 for m in [maths, science, english]) else "FAIL"
 W = 40
 def section_header(title):
     print()
-    print(f"  --- {title} ---")
+    print("  --- " + title + " ---")
 
 def field(label, value):
-    print(f"  {label:<15}: {value}")
+    print("  " + label.ljust(15) + ": " + str(value))
 
 def separator():
     print("  " + "-" * (W - 2))
 
 # --- Section 1: Personal Info ---
 print("=" * W)
-print(f"{'STUDENT REPORT':^{W}}")
+print("STUDENT REPORT".center(W))
 print("=" * W)
 
 section_header("Personal Information")
 field("Name",   name)
-field("Age",    f"{age} years old")
+field("Age",    str(age) + " years old")
 field("City",   city)
 field("School", school)
 
 # --- Section 2: Academic Marks ---
 section_header("Academic Performance")
 separator()
-print(f"  {'Subject':<15}  {'Marks':>6}  {'Out of':>7}")
+print("  " + "Subject".ljust(15) + "Marks".rjust(7) + "Out of".rjust(8))
 separator()
-field("Maths",   f"{maths:>4} / 100")
-field("Science", f"{science:>4} / 100")
-field("English", f"{english:>4} / 100")
+field("Maths",   str(maths).rjust(4)   + " / 100")
+field("Science", str(science).rjust(4) + " / 100")
+field("English", str(english).rjust(4) + " / 100")
 separator()
-field("Total",   f"{total:>4} / 300")
-field("Average", f"{average:.1f}")
+field("Total",   str(total).rjust(4)           + " / 300")
+field("Average", str(round(average, 1)))
 
 # --- Section 3: Result ---
 section_header("Result Summary")
@@ -70,7 +70,7 @@ field("Result", result)
 
 print()
 print("=" * W)
-print(f"{'Keep learning and keep growing!':^{W}}")
+print("Keep learning and keep growing!".center(W))
 print("=" * W)
 
 # Think:

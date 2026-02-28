@@ -5,15 +5,15 @@
 
 # ============================================================
 # PROBLEM STATEMENT:
-# Aarav wants to write a program that stores his name,
+# Aarav wants to write a program that prints his name,
 # his school name, and his favourite cricket player.
-# He tried storing numbers before — but how do we store TEXT?
+# How do we work with TEXT in Python?
 # That's where STRINGS come in!
 # ============================================================
 
 # ============================================================
 # WHAT IS A STRING?
-# A string is a piece of TEXT stored inside quotes.
+# A string is a piece of TEXT written inside quotes.
 # It can be a name, a word, a sentence, or even a single letter.
 # In Python, anything inside quotes (" " or ' ') is a STRING.
 # ============================================================
@@ -23,34 +23,29 @@ print("       WELCOME TO STRINGS IN PYTHON!")
 print("=" * 50)
 
 # -------------------------------------------------------
-# Example 1: Storing a name
+# Example 1: A name is a string
 # -------------------------------------------------------
-student_name = "Aarav"
-print(f"\nStudent name  : {student_name}")
+print("\nStudent name     : Aarav")
 
 # -------------------------------------------------------
-# Example 2: Storing a school name
+# Example 2: A school name is a string
 # -------------------------------------------------------
-school_name = "Progra Kids Coding School"
-print(f"School name   : {school_name}")
+print("School name      : Progra Kids Coding School")
 
 # -------------------------------------------------------
-# Example 3: Storing a cricket player name
+# Example 3: A cricket player name is a string
 # -------------------------------------------------------
-favourite_player = "Virat Kohli"
-print(f"Favourite player : {favourite_player}")
+print("Favourite player : Virat Kohli")
 
 # -------------------------------------------------------
-# Example 4: Storing a single letter
+# Example 4: A single letter is also a string
 # -------------------------------------------------------
-grade = "A"
-print(f"Grade         : {grade}")
+print("Grade            : A")
 
 # -------------------------------------------------------
-# Example 5: Storing a full sentence
+# Example 5: A full sentence is a string
 # -------------------------------------------------------
-message = "Keep coding and keep smiling!"
-print(f"Message       : {message}")
+print("Message          : Keep coding and keep smiling!")
 
 print("\n" + "=" * 50)
 print("  KEY IDEA: Anything in quotes is a STRING!")
@@ -65,18 +60,17 @@ print("=" * 50)
 # ✅ The type of a string is: str
 # ============================================================
 
-print(f"\nType of student_name : {type(student_name)}")
-print(f"Type of grade        : {type(grade)}")
+print("\nType of 'Aarav'  :", type("Aarav"))
+print("Type of 'A'      :", type("A"))
 
 print("\n" + "-" * 50)
 print("  EMPTY STRING example:")
-empty = ""
-print(f"  empty = '' → Type: {type(empty)}, Length: {len(empty)}")
+print("  Type:", type(""), "   Length:", len(""))
 print("-" * 50)
 
 # ============================================================
 # REFLECTION:
 # 1. What is the difference between 42 and "42"?
-# 2. Can a string contain numbers? Try: address = "12B, MG Road"
-# 3. What happens if you forget the quotes? Try: name = Aarav
+# 2. Can a string contain numbers? Try: print("12B, MG Road")
+# 3. What does type("Hello") return?
 # ============================================================

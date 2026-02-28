@@ -33,21 +33,18 @@ print("-" * 40)
 print("OUTPUT was:")
 print()
 
-# The actual output:
-output_text = "AARAV"
-print(f'  "{output_text}"')
+result = "aarav sharma".split()[0].upper()
+print('  "' + result + '"')
 print()
-print("The original variable was: name = 'aarav sharma'")
+print('The original string was: "aarav sharma"')
 print()
 input("What code produced this? Press ENTER to see: ")
 
-name   = "aarav sharma"
-result = name.split()[0].upper()
-print(f"""
-  CODE: name.split()[0].upper()
-  Step 1: name.split()    → ['aarav', 'sharma']
-  Step 2: [0]             → 'aarav'
-  Step 3: .upper()        → '{result}'
+print("""
+  CODE: "aarav sharma".split()[0].upper()
+  Step 1: "aarav sharma".split()  → ['aarav', 'sharma']
+  Step 2: [0]                     → 'aarav'
+  Step 3: .upper()                → '""" + result + """'
 """)
 guess = input("Did you figure it out? (y/n): ")
 if guess.lower() == "y":
@@ -61,15 +58,14 @@ print("CHALLENGE 2:")
 print("-" * 40)
 print("OUTPUT was:")
 print()
-text = "I love Python and Python is great!"
-result2 = text.replace("Python", "Cricket")
-print(f'  "{result2}"')
+result2 = "I love Python and Python is great!".replace("Python", "Cricket")
+print('  "' + result2 + '"')
 print()
 print('The original sentence was: "I love Python and Python is great!"')
 print()
 input("What code produced this? Press ENTER to see: ")
-print(f"""
-  CODE: text.replace("Python", "Cricket")
+print("""
+  CODE: "I love Python and Python is great!".replace("Python", "Cricket")
   replace() swaps EVERY occurrence of "Python" with "Cricket"
   Both "Python"s were replaced!
 """)
@@ -87,15 +83,15 @@ print("OUTPUT was:")
 print()
 original = "NOHTYP"
 result3  = original[::-1]
-print(f'  "{result3}"')
+print('  "' + result3 + '"')
 print()
-print(f'The original string was: "{original}"')
+print('The original string was: "' + original + '"')
 print()
 input("What code produced this? Press ENTER to see: ")
-print(f"""
-  CODE: original[::-1]
+print("""
+  CODE: "NOHTYP"[::-1]
   [::-1] reverses the string completely!
-  "{original}" reversed → "{result3}"
+  "NOHTYP" reversed → '""" + result3 + """'
 """)
 guess = input("Did you figure it out? (y/n): ")
 if guess.lower() == "y":
@@ -109,18 +105,18 @@ print("CHALLENGE 4 (HARD!):")
 print("-" * 40)
 print("OUTPUT was:")
 print()
-raw    = "  hello world  "
+raw     = "  hello world  "
 result4 = raw.strip().title().replace("World", "India")
-print(f'  "{result4}"')
+print('  "' + result4 + '"')
 print()
-print(f'The original string was: "{raw}"')
+print('The original string was: "' + raw + '"')
 print()
 input("What code produced this? Press ENTER to see: ")
-print(f"""
-  CODE: raw.strip().title().replace("World", "India")
+print("""
+  CODE: "  hello world  ".strip().title().replace("World", "India")
   Step 1: .strip()                  → 'hello world'
   Step 2: .title()                  → 'Hello World'
-  Step 3: .replace("World","India") → '{result4}'
+  Step 3: .replace("World","India") → '""" + result4 + """'
 
   This is called METHOD CHAINING — applying multiple
   methods one after another!
@@ -133,7 +129,7 @@ if guess.lower() == "y":
 # FINAL SCORE
 # -------------------------------------------------------
 print("\n" + "=" * 55)
-print(f"  REVERSE ENGINEER SCORE : {score} / {total}")
+print("  REVERSE ENGINEER SCORE :", score, "/", total)
 if score == total:
     print("  🏆 Master Reverse Engineer — Brilliant!")
 elif score >= 2:

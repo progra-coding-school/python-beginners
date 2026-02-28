@@ -1,5 +1,5 @@
 # Program Code: OUT-KN-04
-# Title: print() Options — sep, end, and f-strings
+# Title: print() Options — sep and end
 # Cognitive Skill: Knowledge
 # Topic: Output in Python
 
@@ -30,34 +30,28 @@ print(3)                           # 1, 2, 3
 
 print()
 
-# --- f-strings: embed variables directly in output ---
+# --- Mixing strings and numbers using comma ---
+print("Name:", "Aarav", "  Age:", 13, "  Grade:", 7)
+
+print()
+
+# --- Using str() to join numbers in text ---
 name  = "Aarav"
 age   = 13
 grade = 7
-
-# Without f-string (harder to read)
-print("My name is", name, "and I am", age, "years old.")
-
-# With f-string (clean and readable)
-print(f"My name is {name} and I am {age} years old.")
-print(f"I am in Grade {grade} at Progra School.")
+print("My name is " + name + " and I am " + str(age) + " years old.")
+print("I am in Grade " + str(grade) + " at Progra School.")
 
 print()
 
-# --- f-strings can include calculations ---
-price = 120
+# --- str() lets you join numbers with text ---
+price    = 120
 quantity = 3
-print(f"Total cost: Rs.{price * quantity}")
-print(f"Pi rounded: {3.14159:.2f}")      # .2f → 2 decimal places
+print("Total cost: Rs." + str(price * quantity))
+print("Pi rounded: " + str(round(3.14159, 2)))
 
-print()
-
-# --- Combining sep, end, and f-strings ---
-students = ["Aarav", "Diya", "Karthik"]
-for i, student in enumerate(students, 1):
-    print(f"{i}. {student}", end="   ")
 print()
 
 # Think:
 # 1. How would you print a date in this format: 22/02/2026 ?
-# 2. What does print(f"5 + 3 = {5 + 3}") display?
+# 2. What does print(5 + 3) display? What about print("5" + "3")?

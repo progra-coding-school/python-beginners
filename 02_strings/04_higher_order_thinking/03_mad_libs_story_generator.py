@@ -39,29 +39,25 @@ adjective    = input("Enter a describing word       : ").strip().lower()
 teacher_name = input("Enter a funny teacher name    : ").strip().title()
 
 # -------------------------------------------------------
-# STEP 2: Build the story using string concatenation + f-strings
+# STEP 2: Build the story using string concatenation
 # -------------------------------------------------------
 print("\n" + "=" * 55)
 print("         HERE IS YOUR MAD LIBS STORY!")
 print("=" * 55)
 
-story = f"""
-One day, {name1} was quietly sitting in {subject} class
-when suddenly a {adjective} {animal} walked through the door!
-
-Everyone in the class started {verb_ing} loudly.
-Teacher {teacher_name} looked up from the board and said,
-"Why is there a {animal} in my class?!"
-
-{name1} calmly walked up, gave the {animal} some {food},
-and said, "Don't worry sir, it followed me from {place}."
-
-The whole class burst into laughter. The {animal} sat down
-and attended {subject} for the next {number} minutes —
-and got full marks!
-
-THE END 😄
-"""
+story = (
+    "\nOne day, " + name1 + " was quietly sitting in " + subject + " class\n"
+    + "when suddenly a " + adjective + " " + animal + " walked through the door!\n"
+    + "\nEveryone in the class started " + verb_ing + " loudly.\n"
+    + "Teacher " + teacher_name + " looked up from the board and said,\n"
+    + '"Why is there a ' + animal + ' in my class?!"\n'
+    + "\n" + name1 + " calmly walked up, gave the " + animal + " some " + food + ",\n"
+    + 'and said, "Don\'t worry sir, it followed me from ' + place + '."\n'
+    + "\nThe whole class burst into laughter. The " + animal + " sat down\n"
+    + "and attended " + subject + " for the next " + number + " minutes —\n"
+    + "and got full marks!\n"
+    + "\nTHE END 😄\n"
+)
 
 print(story)
 
@@ -70,9 +66,9 @@ print(story)
 # -------------------------------------------------------
 print("-" * 55)
 print("STORY STATS:")
-print(f"  Characters in story : {len(story)}")
-print(f"  Your name appeared  : {story.count(name1)} times")
-print(f"  Animal appeared     : {story.count(animal)} times")
+print("  Characters in story :", len(story))
+print("  Your name appeared  :", story.count(name1), "times")
+print("  Animal appeared     :", story.count(animal), "times")
 print("-" * 55)
 
 # -------------------------------------------------------
@@ -83,7 +79,7 @@ print("Try different words for a completely different story!")
 
 # ============================================================
 # REFLECTION:
-# 1. How does f-string help in building the story?
+# 1. How does concatenation (+) help in building the story?
 # 2. How did count() help you find how many times a word appeared?
 # 3. Can you write your OWN story template with 5+ blanks?
 # 4. What would happen if name1 = "aarav" without .title()?

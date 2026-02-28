@@ -56,35 +56,32 @@ if answer.strip() == "5":
     print("Correct!")
 print()
 
-# --- Q4: Calculation order ---
-print("Q4: What is printed?")
+# --- Q4: Multiple end="" in sequence ---
+print("Q4: What is the FULL output (one line or many)?")
 print("""
-  x = 10
-  print(x)
-  x = 20
-  print(x)
+  print("Morning", end=" | ")
+  print("Afternoon", end=" | ")
+  print("Evening")
 """)
-answer = input("Output (2 values, comma separated): ")
-print("Answer: 10, 20  (x is 10 when first printed, then updated to 20)")
-if "10" in answer and "20" in answer:
+answer = input("Output: ")
+print("Answer: Morning | Afternoon | Evening  (all on one line — end= changes the newline)")
+if "Morning" in answer and "Evening" in answer:
     score += 1
     print("Correct!")
 print()
 
-# --- Q5: Tracing reassignment ---
-print("Q5: What is printed?")
+# --- Q5: sep changes the separator ---
+print("Q5: What are the 2 lines of output?")
 print("""
-  name = "Aarav"
-  print("Hello,", name)
-  name = "Diya"
-  print("Hello,", name)
+  print("10", "20", "30", sep=" + ")
+  print("10", "20", "30", sep=" → ")
 """)
 answer = input("Output (2 lines): ")
-print("Answer: Hello, Aarav  then  Hello, Diya")
-if "Aarav" in answer and "Diya" in answer:
+print("Answer: Line 1: 10 + 20 + 30   Line 2: 10 → 20 → 30")
+if "+" in answer and "→" in answer:
     score += 1
     print("Correct!")
 print()
 
-print(f"Score: {score} / 5")
+print("Score:", score, "/ 5")
 print("Key insight: Python reads TOP to BOTTOM. Order of print() = order of output.")

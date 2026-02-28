@@ -32,7 +32,7 @@ print('  "5" + "3" = 8')
 print()
 input("True or False? Press ENTER: ")
 result = "5" + "3"
-print(f'  ❌ FALSE! "5" + "3" = "{result}"')
+print('  ❌ FALSE! "5" + "3" = "' + result + '"')
 print('  These are STRINGS, not numbers. + means JOIN, not add.')
 print('  To add: int("5") + int("3") = 8')
 guess = input("Did you say FALSE? (y/n): ")
@@ -49,7 +49,7 @@ print()
 input("True or False? Press ENTER: ")
 text   = "Hello World"
 length = len(text)
-print(f'  ❌ FALSE! len("Hello World") = {length}')
+print('  ❌ FALSE! len("Hello World") =', length)
 print("  The SPACE between Hello and World is also a character!")
 guess = input("Did you say FALSE? (y/n): ")
 if guess.lower() == "y":
@@ -64,7 +64,7 @@ print('  "aarav" == "Aarav" is True')
 print()
 input("True or False? Press ENTER: ")
 result = "aarav" == "Aarav"
-print(f'  ❌ FALSE! "aarav" == "Aarav" → {result}')
+print('  ❌ FALSE! "aarav" == "Aarav" →', result)
 print("  Python is case-sensitive. 'a' ≠ 'A'.")
 guess = input("Did you say FALSE? (y/n): ")
 if guess.lower() == "y":
@@ -75,18 +75,16 @@ if guess.lower() == "y":
 # -------------------------------------------------------
 print("\n" + "=" * 40)
 print("STATEMENT 4:")
-print('  name = "Aarav"')
-print('  name[0] = "D"   → changes name to "Darav"')
+print('  "Aarav"[0] = "D"   → changes the string to "Darav"')
 print()
 input("True or False? Press ENTER: ")
 print('  ❌ FALSE! Strings are IMMUTABLE.')
 print("  You cannot change individual characters of a string.")
-print("  name[0] = 'D' will cause a TypeError!")
-name = "Aarav"
+print('  "Aarav"[0] = \'D\' will cause a TypeError!')
 try:
-    name[0] = "D"
+    "Aarav"[0] = "D"
 except TypeError as e:
-    print(f"  Error proof: {e}")
+    print("  Error proof:", e)
 guess = input("Did you say FALSE? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -100,7 +98,7 @@ print('  "ha" * 3 = "hahaha"')
 print()
 input("True or False? Press ENTER: ")
 result = "ha" * 3
-print(f'  ✅ TRUE! "ha" * 3 = "{result}"')
+print('  ✅ TRUE! "ha" * 3 = "' + result + '"')
 print("  String repetition works exactly like this!")
 guess = input("Did you say TRUE? (y/n): ")
 if guess.lower() == "y":
@@ -114,9 +112,8 @@ print("STATEMENT 6:")
 print('  "Python"[-1] = "P"   (last character is P)')
 print()
 input("True or False? Press ENTER: ")
-word   = "Python"
-result = word[-1]
-print(f'  ❌ FALSE! "Python"[-1] = "{result}"')
+result = "Python"[-1]
+print('  ❌ FALSE! "Python"[-1] = "' + result + '"')
 print("  -1 means the LAST character, which is 'n', not 'P'.")
 print("  'P' is at index 0. 'n' is at index 5 (or -1).")
 guess = input("Did you say FALSE? (y/n): ")
@@ -127,7 +124,7 @@ if guess.lower() == "y":
 # FINAL SCORE
 # -------------------------------------------------------
 print("\n" + "=" * 55)
-print(f"  ASSUMPTION BREAKER SCORE : {score} / {total}")
+print("  ASSUMPTION BREAKER SCORE :", score, "/", total)
 if score == total:
     print("  🏆 You broke all assumptions — Critical Thinker!")
 elif score >= 4:

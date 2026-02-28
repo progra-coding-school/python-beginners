@@ -35,9 +35,9 @@ formatted = cleaned.title()
 print()
 print("*" * 40)
 print("*" + " " * 38 + "*")
-print(f"*   PROGRA SCIENCE FAIR 2026           *")
-print(f"*                                      *")
-print(f"*   Name  : {formatted:<27} *")
+print("*   PROGRA SCIENCE FAIR 2026           *")
+print("*                                      *")
+print("*   Name  : " + formatted.ljust(27) + " *")
 print("*" + " " * 38 + "*")
 print("*" * 40)
 
@@ -58,7 +58,7 @@ print("\n  #  | Name on Tag")
 print("  ---+------------------------")
 for i, raw in enumerate(student_names, start=1):
     tag_name = raw.strip().title()
-    print(f"  {i}  | {tag_name}")
+    print("  " + str(i) + "  | " + tag_name)
 
 print("\n✅ All name tags formatted and ready to print!")
 

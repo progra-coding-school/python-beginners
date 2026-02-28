@@ -31,9 +31,9 @@ match_date  = "21-02-2026"
 team_display     = team_name.title()
 opponent_display = opponent.title()
 
-print(f"\n  Match : {team_display}  vs  {opponent_display}")
-print(f"  Venue : {match_venue}")
-print(f"  Date  : {match_date}")
+print("\n  Match : " + team_display + "  vs  " + opponent_display)
+print("  Venue : " + match_venue)
+print("  Date  : " + match_date)
 print()
 
 # STEP 3: Player batting scorecard
@@ -47,18 +47,18 @@ players = [
 ]
 
 print("-" * 60)
-print(f"  {'BATSMAN':<22} {'RUNS':>5} {'BALLS':>6} {'4s':>4} {'6s':>4}")
+print("  " + "BATSMAN".ljust(22) + "RUNS".rjust(5) + "BALLS".rjust(6) + "4s".rjust(4) + "6s".rjust(4))
 print("-" * 60)
 
 total_runs = 0
 
 for raw_name, runs, balls, fours, sixes in players:
     name = raw_name.title()                  # Proper case
-    print(f"  {name:<22} {runs:>5} {balls:>6} {fours:>4} {sixes:>4}")
+    print("  " + name.ljust(22) + str(runs).rjust(5) + str(balls).rjust(6) + str(fours).rjust(4) + str(sixes).rjust(4))
     total_runs += runs
 
 print("-" * 60)
-print(f"  {'TOTAL':<22} {total_runs:>5}")
+print("  " + "TOTAL".ljust(22) + str(total_runs).rjust(5))
 print("-" * 60)
 
 # STEP 4: Result
@@ -67,16 +67,16 @@ opponent_score = 108
 print()
 if total_runs > opponent_score:
     margin = total_runs - opponent_score
-    result = f"{team_display} WON by {margin} runs! 🏆"
+    result = team_display + " WON by " + str(margin) + " runs! 🏆"
 elif total_runs < opponent_score:
     margin = opponent_score - total_runs
-    result = f"{opponent_display} won by {margin} runs."
+    result = opponent_display + " won by " + str(margin) + " runs."
 else:
     result = "MATCH TIED!"
 
-print(f"  Opponent Score : {opponent_score}")
-print(f"  Our Score      : {total_runs}")
-print(f"\n  RESULT : {result}")
+print("  Opponent Score :", opponent_score)
+print("  Our Score      :", total_runs)
+print("\n  RESULT :", result)
 print("\n" + "=" * 50)
 
 # ============================================================

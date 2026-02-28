@@ -36,7 +36,7 @@ Python strings work the same way.
 print("--- What happens if we try to change a character? ---")
 
 word = "Pythen"
-print(f"Word with typo : '{word}'")
+print("Word with typo : '" + word + "'")
 print()
 print("Trying: word[4] = 'o'")
 print()
@@ -44,7 +44,7 @@ print()
 try:
     word[4] = "o"           # This will cause a TypeError!
 except TypeError as e:
-    print(f"❌ ERROR: {e}")
+    print("❌ ERROR:", e)
     print("   Python does NOT allow changing individual characters!")
 
 # -------------------------------------------------------
@@ -54,28 +54,28 @@ print("\n--- The Right Way: Build a New String ---")
 
 # Method 1: Concatenation (join parts)
 correct_word = word[:4] + "o" + word[5:]
-print(f"Method 1 (slicing + concat) : '{correct_word}'")
+print("Method 1 (slicing + concat) : '" + correct_word + "'")
 
 # Method 2: replace() method
 correct_word2 = word.replace("e", "o")
-print(f"Method 2 (replace)          : '{correct_word2}'")
+print("Method 2 (replace)          : '" + correct_word2 + "'")
 
 # -------------------------------------------------------
-# KEY CONCEPT: Reassigning a variable
+# KEY CONCEPT: Pointing to a new string
 # -------------------------------------------------------
-print("\n--- Reassigning is Fine! ---")
+print("\n--- Strings Can Be Replaced! ---")
 
 greeting = "Hello"
-print(f"Before : greeting = '{greeting}'")
+print("Before : greeting = '" + greeting + "'")
 
-# You CAN point the variable to a new string
+# You CAN point to a new string
 greeting = greeting.upper()
-print(f"After  : greeting = '{greeting}'")
+print("After  : greeting = '" + greeting + "'")
 
 print("""
 This is NOT changing the string 'Hello'.
 Python created a NEW string 'HELLO' and
-pointed the variable 'greeting' to the new one!
+pointed to the new one!
 
 Old string 'Hello' → still exists in memory (Python handles it)
 New string 'HELLO' → greeting now points here
@@ -87,29 +87,29 @@ New string 'HELLO' → greeting now points here
 print("--- Real Use: Fixing a Typed Name ---")
 
 typed_name = "aARAV"          # Badly formatted input
-print(f"Typed name   : '{typed_name}'")
+print("Typed name   : '" + typed_name + "'")
 
 fixed_name = typed_name.title()     # Creates a NEW corrected string
-print(f"Fixed name   : '{fixed_name}'")
+print("Fixed name   : '" + fixed_name + "'")
 
 print("""
 Note: .title() didn't CHANGE 'aARAV'.
 It created a NEW string 'Aarav'.
-We stored that new string back into fixed_name.
+We stored that new string in fixed_name.
 """)
 
 print("=" * 55)
 print("  KEY IDEAS:")
 print("  • Strings CANNOT be changed character by character")
 print("  • Any method (upper, replace, etc.) returns a NEW string")
-print("  • You can reassign a variable to point to the new string")
+print("  • You can point to the new string")
 print("  • This behaviour is called IMMUTABILITY")
 print("=" * 55)
 
 # ============================================================
 # REFLECTION:
 # 1. What is "immutable"? Give a real-life example.
-# 2. If name = "Aarav" and you do name.upper(), what is name now?
+# 2. If you do "Aarav".upper(), what does the original look like?
 # 3. How would you fix "Pythn" to "Python" using slicing?
 # 4. Does replace() change the original string or return a new one?
 # ============================================================

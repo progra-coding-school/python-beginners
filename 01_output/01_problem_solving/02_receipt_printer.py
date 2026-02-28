@@ -6,10 +6,21 @@
 # Big question: How do we display a clean, real-looking shop receipt?
 # Break it into output sections — one section at a time.
 
+# Helper to format money with 2 decimal places
+def money(n):
+    n = round(n, 2)
+    s = str(n)
+    if "." not in s:
+        return s + ".00"
+    decimals = s.split(".")[1]
+    if len(decimals) == 1:
+        return s + "0"
+    return s
+
 # Step 1: Shop and customer info
-shop_name    = "Amma's Kirana Store"
-customer     = input("Customer name: ")
-phone        = input("Phone number: ")
+shop_name = "Amma's Kirana Store"
+customer  = input("Customer name: ")
+phone     = input("Phone number: ")
 
 # Step 2: Items purchased
 print("\nEnter items (press Enter with no name to finish):")
@@ -18,8 +29,8 @@ while True:
     item_name = input("  Item name (or Enter to stop): ")
     if item_name == "":
         break
-    item_price = float(input(f"  Price of {item_name} (Rs): "))
-    item_qty   = int(input(f"  Quantity: "))
+    item_price = float(input("  Price of " + item_name + " (Rs): "))
+    item_qty   = int(input("  Quantity: "))
     items.append((item_name, item_price, item_qty))
 
 # Step 3: Calculate totals
@@ -32,28 +43,28 @@ total    = subtotal - discount + gst
 width = 36
 print()
 print("=" * width)
-print(f"{shop_name:^{width}}")
-print(f"{'Serving you with love!':^{width}}")
+print(shop_name.center(width))
+print("Serving you with love!".center(width))
 print("-" * width)
-print(f"  Customer : {customer}")
-print(f"  Phone    : {phone}")
+print("  Customer : " + customer)
+print("  Phone    : " + phone)
 print("-" * width)
-print(f"  {'Item':<14} {'Qty':>3} {'Price':>7} {'Total':>7}")
+print("  " + "Item".ljust(14) + " " + "Qty".rjust(3) + " " + "Price".rjust(7) + " " + "Total".rjust(7))
 print("-" * width)
 
 for name, price, qty in items:
     line_total = price * qty
-    print(f"  {name:<14} {qty:>3} {price:>7.2f} {line_total:>7.2f}")
+    print("  " + name.ljust(14) + " " + str(qty).rjust(3) + " " + money(price).rjust(7) + " " + money(line_total).rjust(7))
 
 print("-" * width)
-print(f"  {'Subtotal':<22} {subtotal:>7.2f}")
+print("  " + "Subtotal".ljust(22) + " " + money(subtotal).rjust(7))
 if discount > 0:
-    print(f"  {'Discount (5%)':<22} -{discount:>6.2f}")
-print(f"  {'GST (5%)':<22} {gst:>7.2f}")
+    print("  " + "Discount (5%)".ljust(22) + " -" + money(discount).rjust(6))
+print("  " + "GST (5%)".ljust(22) + " " + money(gst).rjust(7))
 print("=" * width)
-print(f"  {'TOTAL':<22} Rs.{total:>6.2f}")
+print("  " + "TOTAL".ljust(22) + " Rs." + money(total).rjust(6))
 print("=" * width)
-print(f"{'Thank you! Visit again!':^{width}}")
+print("Thank you! Visit again!".center(width))
 print("=" * width)
 
 # Think:

@@ -21,7 +21,7 @@ city = "CHENNAI"
 # -------------------------------------------------------
 # VISUALISING POSITIVE AND NEGATIVE INDEXING
 # -------------------------------------------------------
-print(f"\nString: '{city}'")
+print("\nString: '" + city + "'")
 print()
 print("  +---+---+---+---+---+---+---+")
 print("  | C | H | E | N | N | A | I |")
@@ -34,18 +34,18 @@ print()
 # PART 1: POSITIVE INDEXING (count from front)
 # -------------------------------------------------------
 print("--- Positive Indexing (0, 1, 2...) ---")
-print(f"city[0]  = '{city[0]}'  → First character")
-print(f"city[3]  = '{city[3]}'  → Fourth character")
-print(f"city[6]  = '{city[6]}'  → Last character")
+print("city[0]  = '" + city[0] + "'  → First character")
+print("city[3]  = '" + city[3] + "'  → Fourth character")
+print("city[6]  = '" + city[6] + "'  → Last character")
 
 # -------------------------------------------------------
 # PART 2: NEGATIVE INDEXING (count from back)
 # Tip: -1 is always the LAST character!
 # -------------------------------------------------------
 print("\n--- Negative Indexing (-1, -2, -3...) ---")
-print(f"city[-1] = '{city[-1]}'  → Last character")
-print(f"city[-2] = '{city[-2]}'  → Second from last")
-print(f"city[-7] = '{city[-7]}'  → First character")
+print("city[-1] = '" + city[-1] + "'  → Last character")
+print("city[-2] = '" + city[-2] + "'  → Second from last")
+print("city[-7] = '" + city[-7] + "'  → First character")
 
 # -------------------------------------------------------
 # PART 3: SLICING — string[start : end]
@@ -54,7 +54,7 @@ print(f"city[-7] = '{city[-7]}'  → First character")
 print("\n--- Slicing: string[start:end] ---")
 word = "CRICKET"
 
-print(f"\nString: '{word}'")
+print("\nString: '" + word + "'")
 print()
 print("  +---+---+---+---+---+---+---+")
 print("  | C | R | I | C | K | E | T |")
@@ -62,20 +62,20 @@ print("  +---+---+---+---+---+---+---+")
 print("    0   1   2   3   4   5   6")
 print()
 
-print(f"word[0:3]  = '{word[0:3]}'   → Index 0, 1, 2")
-print(f"word[3:7]  = '{word[3:7]}'  → Index 3, 4, 5, 6")
-print(f"word[1:5]  = '{word[1:5]}'  → Index 1, 2, 3, 4")
+print("word[0:3]  = '" + word[0:3] + "'   → Index 0, 1, 2")
+print("word[3:7]  = '" + word[3:7] + "'  → Index 3, 4, 5, 6")
+print("word[1:5]  = '" + word[1:5] + "'  → Index 1, 2, 3, 4")
 
 # -------------------------------------------------------
 # PART 4: SLICING SHORTCUTS
 # -------------------------------------------------------
 print("\n--- Slicing Shortcuts ---")
-print(f"word[:3]   = '{word[:3]}'    → From start to index 2 (first 3)")
-print(f"word[4:]   = '{word[4:]}'    → From index 4 to end")
-print(f"word[:]    = '{word[:]}'  → Entire string (copy)")
-print(f"word[-3:]  = '{word[-3:]}'    → Last 3 characters")
-print(f"word[::2]  = '{word[::2]}'   → Every 2nd character (step=2)")
-print(f"word[::-1] = '{word[::-1]}' → Reverse the string!")
+print("word[:3]   = '" + word[:3] + "'    → From start to index 2 (first 3)")
+print("word[4:]   = '" + word[4:] + "'    → From index 4 to end")
+print("word[:]    = '" + word[:] + "'  → Entire string (copy)")
+print("word[-3:]  = '" + word[-3:] + "'    → Last 3 characters")
+print("word[::2]  = '" + word[::2] + "'   → Every 2nd character (step=2)")
+print("word[::-1] = '" + word[::-1] + "' → Reverse the string!")
 
 # -------------------------------------------------------
 # REAL USE: Extract parts of data
@@ -83,17 +83,17 @@ print(f"word[::-1] = '{word[::-1]}' → Reverse the string!")
 print("\n--- Real Use: Extracting Information ---")
 
 student_code = "STU-2025-AARAV"
-print(f"Student Code : {student_code}")
-print(f"Prefix       : {student_code[:3]}")     # STU
-print(f"Year         : {student_code[4:8]}")     # 2025
-print(f"Name         : {student_code[9:]}")      # AARAV
+print("Student Code : " + student_code)
+print("Prefix       : " + student_code[:3])     # STU
+print("Year         : " + student_code[4:8])     # 2025
+print("Name         : " + student_code[9:])      # AARAV
 
 print()
 date = "21-02-2026"
-print(f"Date   : {date}")
-print(f"Day    : {date[:2]}")
-print(f"Month  : {date[3:5]}")
-print(f"Year   : {date[6:]}")
+print("Date   : " + date)
+print("Day    : " + date[:2])
+print("Month  : " + date[3:5])
+print("Year   : " + date[6:])
 
 print("\n" + "=" * 55)
 print("  KEY IDEAS:")

@@ -3,7 +3,7 @@
 # Cognitive Skill: Critical Thinking (Approach Evaluation)
 # Topic: Output in Python
 
-# Same output — three different ways. Analyze which is clearest.
+# Same output — different ways. Analyze which is clearest.
 
 name  = "Aarav"
 age   = 13
@@ -17,10 +17,8 @@ print("Approach A: " + "Name: " + name + ", Age: " + str(age) + ", Score: " + st
 # Approach B: Comma-separated
 print("Approach B:", "Name:", name, "| Age:", age, "| Score:", score)
 
-# Approach C: f-string
-print(f"Approach C: Name: {name}, Age: {age}, Score: {score}")
-
-print("Best: C — f-string is readable, no type conversion needed, cleanest.")
+print("Both work! A gives you full control over spacing.")
+print("Comma (,) is quicker but always adds a space after each item.")
 print()
 
 # === Scenario 2: Formatted table ===
@@ -29,19 +27,18 @@ print("=== Scenario 2: Displaying a table row ===")
 subject = "Maths"
 marks   = 85
 
-# Approach A: Manual spaces
-print("  Maths                  85     A")    # messy, hard to maintain
+# Approach A: Manual spaces (messy, hard to maintain)
+print("  Maths                  85     A")
 
-# Approach B: f-string with alignment
-print(f"  {subject:<15} {marks:>5}     {('A' if marks >= 80 else 'B'):>5}")
+# Approach B: String methods for alignment
+grade = "A" if marks >= 80 else "B"
+print("  " + subject.ljust(15) + str(marks).rjust(5) + "     " + grade.rjust(5))
 
-print("Best: B — columns align automatically regardless of content length.")
+print("Best: B — .ljust() and .rjust() align columns neatly for any content length.")
 print()
 
 # === Scenario 3: Multiline output ===
 print("=== Scenario 3: Printing a poem ===")
-
-poem = "Roses are red,\nViolets are blue,\nPython is awesome,\nAnd so are you!"
 
 # Approach A: Multiple print()
 print("Approach A:")
@@ -68,7 +65,8 @@ print()
 
 # === Decision Guide ===
 print("=== When to use which? ===")
-print("Comma (,)  → quick mixing of values, adds space automatically")
-print("Plus (+)   → joining strings, needs str() for numbers")
-print("f-string   → BEST for combining variables with text")
+print("Comma (,)    → quick mixing of values, adds space automatically")
+print("Plus (+)     → joining strings, needs str() for numbers")
 print("Triple \"\"\" → multiline text blocks")
+print(".ljust(n)    → left-align text in a column of n characters")
+print(".rjust(n)    → right-align text in a column of n characters")

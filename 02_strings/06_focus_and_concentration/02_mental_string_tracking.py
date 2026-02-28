@@ -30,33 +30,33 @@ print("CHALLENGE 1: Follow the string through 4 steps")
 print("-" * 40)
 
 text = "  hello world  "
-print(f'  Start: text = "{text}"')
+print('  Start: "' + text + '"')
 print()
 
-print("  Step 1: text = text.strip()")
-input("  What is text now? Press ENTER to reveal: ")
+print('  Step 1: Apply .strip()')
+input("  What is the string now? Press ENTER to reveal: ")
 text = text.strip()
-print(f'  → "{text}"')
+print('  → "' + text + '"')
 time.sleep(0.5)
 
-print("\n  Step 2: text = text.upper()")
-input("  What is text now? Press ENTER to reveal: ")
+print('\n  Step 2: Apply .upper()')
+input("  What is the string now? Press ENTER to reveal: ")
 text = text.upper()
-print(f'  → "{text}"')
+print('  → "' + text + '"')
 time.sleep(0.5)
 
-print("\n  Step 3: text = text.replace('WORLD', 'INDIA')")
-input("  What is text now? Press ENTER to reveal: ")
+print("\n  Step 3: Apply .replace('WORLD', 'INDIA')")
+input("  What is the string now? Press ENTER to reveal: ")
 text = text.replace("WORLD", "INDIA")
-print(f'  → "{text}"')
+print('  → "' + text + '"')
 time.sleep(0.5)
 
-print("\n  Step 4: text = text + '!'")
-input("  What is text now? Press ENTER to reveal: ")
+print('  Step 4: Add "!" to the end')
+input("  What is the string now? Press ENTER to reveal: ")
 text = text + "!"
-print(f'  → "{text}"')
+print('  → "' + text + '"')
 
-print(f"\n  FINAL VALUE: '{text}'")
+print('\n  FINAL VALUE: "' + text + '"')
 print()
 guess = input("Did you track all 4 steps correctly? (y/n): ")
 step1_score = 1 if guess.lower() == "y" else 0
@@ -69,7 +69,7 @@ print("CHALLENGE 2: Slicing operations")
 print("-" * 40)
 
 word = "CRICKET"
-print(f'  word = "{word}"')
+print('  word = "' + word + '"')
 print()
 
 operations = [
@@ -82,9 +82,9 @@ operations = [
 
 score2 = 0
 for op, result, hint in operations:
-    print(f"  Operation: {op}   ← ({hint})")
+    print("  Operation: " + op + "   ← (" + hint + ")")
     input("  Your prediction? Press ENTER to reveal: ")
-    print(f'  → "{result}"')
+    print('  → "' + result + '"')
     correct = input("  Correct? (y/n): ")
     if correct.lower() == "y":
         score2 += 1
@@ -98,13 +98,13 @@ print("=" * 40)
 print("CHALLENGE 3: FULL METHOD CHAIN (hardest!)")
 print("-" * 40)
 raw = "  progra kids  "
-print(f'  raw = "{raw}"')
+print('  Start: "' + raw + '"')
 print()
-print('  result = raw.strip().title().replace("Kids", "Coders") + " School"')
+print('  Apply: .strip() → then .title() → then .replace("Kids", "Coders") → then + " School"')
 print()
 input("  What is result? Predict mentally then press ENTER: ")
 result = raw.strip().title().replace("Kids", "Coders") + " School"
-print(f'  → "{result}"')
+print('  → "' + result + '"')
 correct = input("  Correct? (y/n): ")
 step3_score = 1 if correct.lower() == "y" else 0
 
@@ -113,8 +113,8 @@ step3_score = 1 if correct.lower() == "y" else 0
 # -------------------------------------------------------
 total_score = step1_score + (1 if score2 >= 4 else 0) + step3_score
 print("\n" + "=" * 55)
-print(f"  MENTAL TRACKING SCORE : {total_score} / 3")
-print(f"  (Slicing sub-score    : {score2} / {len(operations)})")
+print("  MENTAL TRACKING SCORE :", total_score, "/ 3")
+print("  (Slicing sub-score    :", score2, "/", len(operations), ")")
 if total_score == 3:
     print("  🏆 Mental tracking master — incredible focus!")
 elif total_score >= 2:

@@ -41,10 +41,9 @@ What could the original string have been?
 """)
 
 answer = input("Your answer: ")
-print(f"\nPossible answers: 'chennai', 'Chennai', 'CHENNAI', 'cHENNAI' ...")
+print("\nPossible answers: 'chennai', 'Chennai', 'CHENNAI', 'cHENNAI' ...")
 print("The key: upper() converts ALL letters to capitals.")
-word = "CHENNAI"
-print(f"Verify: 'chennai'.upper() = '{('chennai').upper()}'")
+print("Verify: 'chennai'.upper() = '" + "chennai".upper() + "'")
 guess = input("Did you reason it correctly? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -100,8 +99,7 @@ print("\n" + "=" * 40)
 print("ROUND 4 (TRICKY!):")
 print("-" * 40)
 print("""
-word = original
-result = word[2:5]
+result = original[2:5]
 result = 'YTH'
 
 The original string has at least 5 characters.
@@ -111,16 +109,12 @@ What is a possible original string?
 """)
 
 answer = input("Your answer: ")
-print("\nAnswer: 'PYTHON' works! word[2:5] = 'THO'... wait let's verify:")
+print("\nAnswer: 'PYTHON' works! Let's verify:")
 check = "PYTHON"
-print(f"  'PYTHON'[2:5] = '{check[2:5]}'")
-print(f"  Hmm! That's 'THO', not 'YTH'.")
-print(f"  Let's try: 'XYTHON'[2:5] = '{('XYTHON')[2:5]}'... ")
-print(f"  'MYTH1S'[0:3] = '{('MYTH1S')[0:3]}'...")
-print(f"  Answer: any string where positions 2,3,4 are Y,T,H")
-print(f"  Example: '??YTH????' — like 'XXYTH' → [2:5] = 'YTH'")
-example = "XXYTH"
-print(f"  Verify: 'XXYTH'[2:5] = '{example[2:5]}'  ✅")
+print("  'PYTHON'[2:5] = '" + check[2:5] + "'")
+print("  Hmm! That's 'THO', not 'YTH'.")
+print("  Let's try: 'XXYTH'[2:5] = '" + "XXYTH"[2:5] + "'  ✅")
+print("  Answer: any string where positions 2, 3, 4 are Y, T, H")
 guess = input("Did you reason it correctly? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -129,7 +123,7 @@ if guess.lower() == "y":
 # FINAL SCORE
 # -------------------------------------------------------
 print("\n" + "=" * 55)
-print(f"  REVERSE CHALLENGE SCORE : {score} / {total}")
+print("  REVERSE CHALLENGE SCORE :", score, "/", total)
 if score == total:
     print("  🏆 Excellent reverse thinking skills!")
 elif score >= 2:

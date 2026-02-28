@@ -42,7 +42,7 @@ print("""
 """)
 a = "Aarav Sharma"
 b = "Aarav sharma"
-print(f"  'Aarav Sharma' == 'Aarav sharma' → {a == b}")
+print("  'Aarav Sharma' == 'Aarav sharma' →", a == b)
 guess = input("Did you spot it? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -66,9 +66,9 @@ print("""
 """)
 x = "Python"
 y = "Python "
-print(f"  len('Python')   = {len(x)}")
-print(f"  len('Python ')  = {len(y)}")
-print(f"  'Python' == 'Python ' → {x == y}")
+print("  len('Python')   =", len(x))
+print("  len('Python ')  =", len(y))
+print("  'Python' == 'Python ' →", x == y)
 guess = input("Did you spot it? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -102,8 +102,8 @@ time.sleep(1)
 print("\n" + "=" * 40)
 print("ROUND 4: What is different?")
 print("-" * 40)
-print("  String A: name = 'Aarav'")
-print('  String B: name = "Aarav"')
+print("  String A: 'Aarav'")
+print('  String B: "Aarav"')
 print()
 input("Found it? Press ENTER: ")
 print("""
@@ -113,9 +113,7 @@ print("""
   💡 Key difference: use double quotes when string has apostrophe
      e.g., "I don't know" (can't use single quotes here)
 """)
-a = 'Aarav'
-b = "Aarav"
-print(f"  'Aarav' == \"Aarav\" → {a == b}")
+print("  'Aarav' == \"Aarav\" →", 'Aarav' == "Aarav")
 guess = input("Did you spot it? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -127,18 +125,15 @@ time.sleep(1)
 print("\n" + "=" * 40)
 print("ROUND 5 (TRICKY!): What is different?")
 print("-" * 40)
-print('  Code A: word = "Python"')
-print('           print(word[0:3])')
+print('  Code A: print("Python"[0:3])')
 print()
-print('  Code B: word = "Python"')
-print('           print(word[1:3])')
+print('  Code B: print("Python"[1:3])')
 print()
 input("Found it? Press ENTER: ")
-word = "Python"
-print(f"""
+print("""
   🔍 DIFFERENCE: Starting index — 0 vs 1
-     word[0:3] = '{word[0:3]}'   (includes index 0: 'P')
-     word[1:3] = '{word[1:3]}'   (starts from index 1: 'y')
+     "Python"[0:3] = '""" + "Python"[0:3] + """'   (includes index 0: 'P')
+     "Python"[1:3] = '""" + "Python"[1:3] + """'   (starts from index 1: 'y')
   💡 Off-by-one errors are the most common bugs in slicing!
 """)
 guess = input("Did you spot it? (y/n): ")
@@ -149,7 +144,7 @@ if guess.lower() == "y":
 # FINAL SCORE
 # -------------------------------------------------------
 print("\n" + "=" * 55)
-print(f"  SPOT THE DIFFERENCE SCORE : {score} / {total}")
+print("  SPOT THE DIFFERENCE SCORE :", score, "/", total)
 if score == total:
     print("  🏆 Eagle Eye! Nothing escapes your attention!")
 elif score >= 3:

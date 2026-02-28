@@ -25,25 +25,25 @@ print("=" * 55)
 # -------------------------------------------------------
 print("\nEnter your details to generate your ID card:\n")
 
-raw_name   = input("Full Name   : ")
-grade      = input("Grade/Class : ")
-batch      = input("Batch (Morning/Evening) : ")
-city       = input("City        : ")
+raw_name = input("Full Name   : ")
+grade    = input("Grade/Class : ")
+batch    = input("Batch (Morning/Evening) : ")
+city     = input("City        : ")
 
 # -------------------------------------------------------
 # STEP 2: Format the data using string methods
 # -------------------------------------------------------
-name        = raw_name.strip().title()
-grade       = grade.strip().upper()
-batch       = batch.strip().title()
-city        = city.strip().title()
+name  = raw_name.strip().title()
+grade = grade.strip().upper()
+batch = batch.strip().title()
+city  = city.strip().title()
 
 # Generate a student code: first 3 letters of name + year
-name_code   = name.replace(" ", "")[:3].upper()
-student_id  = f"STU-{name_code}-2026"
+name_code  = name.replace(" ", "")[:3].upper()
+student_id = "STU-" + name_code + "-2026"
 
 # Extract initials
-parts       = name.split()
+parts = name.split()
 if len(parts) >= 2:
     initials = parts[0][0] + "." + parts[1][0] + "."
 else:
@@ -60,30 +60,30 @@ print("|" + "      Train the Brain. Build the Future.".center(43) + "|")
 print("|" + " " * 43 + "|")
 print("|" + "-" * 43 + "|")
 print("|" + " " * 43 + "|")
-print("|" + f"   Name     :  {name}".ljust(43) + "|")
-print("|" + f"   Initials :  {initials}".ljust(43) + "|")
-print("|" + f"   ID       :  {student_id}".ljust(43) + "|")
-print("|" + f"   Grade    :  {grade}".ljust(43) + "|")
-print("|" + f"   Batch    :  {batch}".ljust(43) + "|")
-print("|" + f"   City     :  {city}".ljust(43) + "|")
+print("|" + ("   Name     :  " + name).ljust(43) + "|")
+print("|" + ("   Initials :  " + initials).ljust(43) + "|")
+print("|" + ("   ID       :  " + student_id).ljust(43) + "|")
+print("|" + ("   Grade    :  " + grade).ljust(43) + "|")
+print("|" + ("   Batch    :  " + batch).ljust(43) + "|")
+print("|" + ("   City     :  " + city).ljust(43) + "|")
 print("|" + " " * 43 + "|")
 print("|" + "-" * 43 + "|")
 print("|" + "   Valid: 2026 — 2027".ljust(43) + "|")
 print("|" + " " * 43 + "|")
 print("+" + "=" * 43 + "+")
 
-print(f"\n✅ ID Card for {name} generated successfully!")
+print("\n✅ ID Card for " + name + " generated successfully!")
 
 # -------------------------------------------------------
 # BONUS: Show what each string operation did
 # -------------------------------------------------------
 print("\n--- String Operations Used ---")
-print(f"  .strip()        → Removed extra spaces")
-print(f"  .title()        → '{raw_name.strip()}' → '{name}'")
-print(f"  .upper()        → '{grade}'")
-print(f"  .replace()      → Removed spaces from name for ID")
-print(f"  [:3].upper()    → First 3 letters: '{name_code}'")
-print(f"  .split()        → Split name into parts for initials")
+print("  .strip()        → Removed extra spaces")
+print("  .title()        → '" + raw_name.strip() + "' → '" + name + "'")
+print("  .upper()        → '" + grade + "'")
+print("  .replace()      → Removed spaces from name for ID")
+print("  [:3].upper()    → First 3 letters: '" + name_code + "'")
+print("  .split()        → Split name into parts for initials")
 
 # ============================================================
 # REFLECTION:

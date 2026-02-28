@@ -12,7 +12,7 @@
 # ============================================================
 
 print("=" * 55)
-print("  ORGANISE THE DATA — STRUCTURED STRING VARIABLES!")
+print("  ORGANISE THE DATA — STRUCTURED STRING DATA!")
 print("=" * 55)
 
 # -------------------------------------------------------
@@ -30,8 +30,8 @@ city     = "Chennai"
 date1    = "21-02-2026"
 date2    = "15-03-2026"
 
-print(f"  {name1}, {name2}, {name3}")
-print(f"  {subject1}, {subject2}, {city}, {date1}, {date2}")
+print("  " + name1 + ", " + name2 + ", " + name3)
+print("  " + subject1 + ", " + subject2 + ", " + city + ", " + date1 + ", " + date2)
 print("  ← Hard to tell: which name is a student? Which is an event?")
 
 # -------------------------------------------------------
@@ -63,28 +63,28 @@ event_theme     = "Technology and Innovation"
 print("=" * 50)
 print("  STUDENT PROFILE")
 print("-" * 50)
-print(f"  Name    : {student_name}")
-print(f"  Grade   : {student_grade}")
-print(f"  Batch   : {student_batch}")
-print(f"  City    : {student_city}")
-print(f"  ID      : {student_id}")
+print("  Name    : " + student_name)
+print("  Grade   : " + student_grade)
+print("  Batch   : " + student_batch)
+print("  City    : " + student_city)
+print("  ID      : " + student_id)
 
 print()
 print("=" * 50)
 print("  TEACHER PROFILE")
 print("-" * 50)
-print(f"  Name    : {teacher_name}")
-print(f"  Subject : {teacher_subject}")
-print(f"  Room    : {teacher_room}")
+print("  Name    : " + teacher_name)
+print("  Subject : " + teacher_subject)
+print("  Room    : " + teacher_room)
 
 print()
 print("=" * 50)
 print("  UPCOMING EVENT")
 print("-" * 50)
-print(f"  Event   : {event_name}")
-print(f"  Date    : {event_date}")
-print(f"  Venue   : {event_venue}")
-print(f"  Theme   : {event_theme}")
+print("  Event   : " + event_name)
+print("  Date    : " + event_date)
+print("  Venue   : " + event_venue)
+print("  Theme   : " + event_theme)
 print("=" * 50)
 
 # -------------------------------------------------------
@@ -93,21 +93,21 @@ print("=" * 50)
 print("\n--- Auto-Generated Information ---")
 
 # Derive initials from student name
-parts           = student_name.split()
+parts            = student_name.split()
 student_initials = parts[0][0] + "." + parts[1][0] + "."
-print(f"  Student Initials  : {student_initials}")
+print("  Student Initials  : " + student_initials)
 
 # Derive event year from event_date
 event_year = event_date[-4:]
-print(f"  Event Year        : {event_year}")
+print("  Event Year        : " + event_year)
 
 # Build a formatted announcement
 announcement = (
-    f"📢 {event_name} on {event_date} at {event_venue}. "
-    f"Theme: {event_theme}. "
-    f"Hosted by Progra Kids Coding School."
+    "📢 " + event_name + " on " + event_date + " at " + event_venue + ". "
+    + "Theme: " + event_theme + ". "
+    + "Hosted by Progra Kids Coding School."
 )
-print(f"\n  ANNOUNCEMENT:\n  {announcement}")
+print("\n  ANNOUNCEMENT:\n  " + announcement)
 
 print("\n" + "=" * 55)
 print("  KEY IDEA: Group related data with consistent prefixes.")
@@ -116,7 +116,7 @@ print("=" * 55)
 
 # ============================================================
 # REFLECTION:
-# 1. How do prefixes help organise string variables?
-# 2. What would you name variables for an attendance system?
+# 1. How do prefixes help organise string data?
+# 2. What would you name data for an attendance system?
 # 3. How did we derive student_initials from student_name?
 # ============================================================

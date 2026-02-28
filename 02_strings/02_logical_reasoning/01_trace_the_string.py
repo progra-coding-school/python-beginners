@@ -34,16 +34,13 @@ print("\n" + "=" * 40)
 print("ROUND 1:")
 print("-" * 40)
 print("""
-word = "cricket"
-result = word.upper()
-print(result)
+print("cricket".upper())
 
-What will result be?
+What will the output be?
 """)
 input("Your prediction → press ENTER to see answer: ")
-word   = "cricket"
-result = word.upper()
-print(f"\n✅ Answer: '{result}'")
+result = "cricket".upper()
+print("\n✅ Answer: '" + result + "'")
 guess = input("Did you get it right? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -56,16 +53,13 @@ print("\n" + "=" * 40)
 print("ROUND 2:")
 print("-" * 40)
 print("""
-name = "Aarav Sharma"
-result = name[0] + name[6]
-print(result)
+print("Aarav Sharma"[0] + "Aarav Sharma"[6])
 
-What will result be?
+What will the output be?
 """)
 input("Your prediction → press ENTER to see answer: ")
-name   = "Aarav Sharma"
-result = name[0] + name[6]
-print(f"\n✅ Answer: '{result}'")
+result = "Aarav Sharma"[0] + "Aarav Sharma"[6]
+print("\n✅ Answer: '" + result + "'")
 guess = input("Did you get it right? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -78,16 +72,13 @@ print("\n" + "=" * 40)
 print("ROUND 3:")
 print("-" * 40)
 print("""
-city = "Chennai"
-result = city[2:5]
-print(result)
+print("Chennai"[2:5])
 
-What will result be?
+What will the output be?
 """)
 input("Your prediction → press ENTER to see answer: ")
-city   = "Chennai"
-result = city[2:5]
-print(f"\n✅ Answer: '{result}'")
+result = "Chennai"[2:5]
+print("\n✅ Answer: '" + result + "'")
 guess = input("Did you get it right? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -100,16 +91,13 @@ print("\n" + "=" * 40)
 print("ROUND 4:")
 print("-" * 40)
 print("""
-text = "I love Python!"
-result = text.replace("Python", "Cricket")
-print(result)
+print("I love Python!".replace("Python", "Cricket"))
 
-What will result be?
+What will the output be?
 """)
 input("Your prediction → press ENTER to see answer: ")
-text   = "I love Python!"
-result = text.replace("Python", "Cricket")
-print(f"\n✅ Answer: '{result}'")
+result = "I love Python!".replace("Python", "Cricket")
+print("\n✅ Answer: '" + result + "'")
 guess = input("Did you get it right? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -122,16 +110,13 @@ print("\n" + "=" * 40)
 print("ROUND 5 (TRICKY!):")
 print("-" * 40)
 print("""
-word = "PYTHON"
-result = word[::-1]
-print(result)
+print("PYTHON"[::-1])
 
-What will result be?
+What will the output be?
 """)
 input("Your prediction → press ENTER to see answer: ")
-word   = "PYTHON"
-result = word[::-1]
-print(f"\n✅ Answer: '{result}'")
+result = "PYTHON"[::-1]
+print("\n✅ Answer: '" + result + "'")
 guess = input("Did you get it right? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -140,7 +125,7 @@ if guess.lower() == "y":
 # FINAL SCORE
 # -------------------------------------------------------
 print("\n" + "=" * 55)
-print(f"  YOUR SCORE : {score} / {total}")
+print("  YOUR SCORE :", score, "/", total)
 if score == total:
     print("  🏆 PERFECT! You are a String Detective!")
 elif score >= 3:
@@ -151,7 +136,7 @@ print("=" * 55)
 
 # ============================================================
 # REFLECTION:
-# 1. What did word[::-1] do? Can you explain it?
+# 1. What did "PYTHON"[::-1] do? Can you explain it?
 # 2. Which round was hardest? Why?
 # 3. Write your own "trace this" challenge for a friend!
 # ============================================================

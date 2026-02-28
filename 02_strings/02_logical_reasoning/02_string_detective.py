@@ -26,14 +26,12 @@ print("\n" + "=" * 40)
 print("🔍 CLUE 1: What is the output?")
 print("-" * 40)
 print("""
-word = "PROGRA"
-print(len(word))
-print(word[-1])
+print(len("PROGRA"))
+print("PROGRA"[-1])
 """)
 input("Your answers (length, last char) → press ENTER: ")
-word = "PROGRA"
-print(f"  len = {len(word)}")
-print(f"  word[-1] = '{word[-1]}'")
+print("  len =", len("PROGRA"))
+print("  'PROGRA'[-1] = '" + "PROGRA"[-1] + "'")
 guess = input("Correct? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -46,14 +44,11 @@ print("\n" + "=" * 40)
 print("🔍 CLUE 2: What is the final output?")
 print("-" * 40)
 print("""
-text = "  hello world  "
-result = text.strip().title()
-print(result)
+print("  hello world  ".strip().title())
 """)
 input("Your answer → press ENTER: ")
-text   = "  hello world  "
-result = text.strip().title()
-print(f"  Answer: '{result}'")
+result = "  hello world  ".strip().title()
+print("  Answer: '" + result + "'")
 guess = input("Correct? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -66,15 +61,12 @@ print("\n" + "=" * 40)
 print("🔍 CLUE 3: How many 'a's in the sentence?")
 print("-" * 40)
 print("""
-sentence = "Aarav and Amma ate amazing aloo."
-count = sentence.count("a")
-print(count)
+print("Aarav and Amma ate amazing aloo.".count("a"))
 """)
 input("Your answer → press ENTER: ")
-sentence = "Aarav and Amma ate amazing aloo."
-count    = sentence.count("a")
-print(f"  Answer: {count}")
-print(f"  (Note: 'A' and 'a' are different — case-sensitive!)")
+count = "Aarav and Amma ate amazing aloo.".count("a")
+print("  Answer:", count)
+print("  (Note: 'A' and 'a' are different — case-sensitive!)")
 guess = input("Correct? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -87,14 +79,13 @@ print("\n" + "=" * 40)
 print("🔍 CLUE 4: True or False?")
 print("-" * 40)
 print("""
-team = "Aarav, Diya, Mani, Priya"
-print("diya" in team)
-print("Mani" in team)
+print("diya" in "Aarav, Diya, Mani, Priya")
+print("Mani" in "Aarav, Diya, Mani, Priya")
 """)
 input("Your answers (True/False, True/False) → press ENTER: ")
 team = "Aarav, Diya, Mani, Priya"
-print(f"  'diya' in team  → {('diya' in team)}")
-print(f"  'Mani' in team  → {('Mani' in team)}")
+print("  'diya' in team  →", "diya" in team)
+print("  'Mani' in team  →", "Mani" in team)
 guess = input("Both correct? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -107,14 +98,13 @@ print("\n" + "=" * 40)
 print("🔍 CLUE 5 (CHALLENGE): Decode the slice!")
 print("-" * 40)
 print("""
-code = "STR-2026-AARAV"
-print(code[4:8])
-print(code[-5:])
+print("STR-2026-AARAV"[4:8])
+print("STR-2026-AARAV"[-5:])
 """)
 input("Your answers → press ENTER: ")
 code = "STR-2026-AARAV"
-print(f"  code[4:8]  = '{code[4:8]}'")
-print(f"  code[-5:]  = '{code[-5:]}'")
+print("  code[4:8]  = '" + code[4:8] + "'")
+print("  code[-5:]  = '" + code[-5:] + "'")
 guess = input("Both correct? (y/n): ")
 if guess.lower() == "y":
     score += 1
@@ -123,7 +113,7 @@ if guess.lower() == "y":
 # FINAL SCORE
 # -------------------------------------------------------
 print("\n" + "=" * 55)
-print(f"  DETECTIVE SCORE : {score} / {total}")
+print("  DETECTIVE SCORE :", score, "/", total)
 if score == total:
     print("  🏆 MASTER DETECTIVE — Outstanding!")
 elif score >= 3:

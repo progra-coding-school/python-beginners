@@ -24,15 +24,15 @@ thin_line  = "+" + "-" * (card_width - 2) + "+"
 
 # Step 4: Helper to print a centred title line
 def title_line(text):
-    print(f"+{text:^{card_width - 2}}+")
+    print("+" + text.center(card_width - 2) + "+")
 
 # Helper to print a labelled field
 def field_line(label, value):
-    content = f"  {label}: {value}"
-    print(f"|{content:<{card_width - 2}}|")
+    content = "  " + label + ": " + str(value)
+    print("|" + content.ljust(card_width - 2) + "|")
 
 def blank_line():
-    print(f"|{' ' * (card_width - 2)}|")
+    print("|" + " " * (card_width - 2) + "|")
 
 # Step 5: Print the ID card
 print()
@@ -52,7 +52,7 @@ field_line("Hobby     ", hobby)
 field_line("Fav Sport ", fav_sport)
 blank_line()
 print(border)
-print(f"+{'Progra - Think. Code. Lead.':^{card_width - 2}}+")
+print("+" + "Progra - Think. Code. Lead.".center(card_width - 2) + "+")
 print(border)
 
 # Think:

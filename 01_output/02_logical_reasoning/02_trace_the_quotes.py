@@ -53,7 +53,7 @@ print("Answer: B and C.  A causes SyntaxError — apostrophe breaks single quote
 if "B" in a and "C" in a: score += 1
 print()
 
-print(f"Score: {score} / 5")
+print("Score:", score, "/ 5")
 print()
 print("Quick guide:")
 print("  Single '  → use when text has double quotes inside")

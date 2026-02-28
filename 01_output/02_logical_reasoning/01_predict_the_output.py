@@ -25,13 +25,13 @@ questions = [
 ]
 
 for i, (code, answer) in enumerate(questions, 1):
-    print(f"Q{i}: {code}")
+    print("Q" + str(i) + ": " + code)
     user_ans = input("Your answer: ").strip()
     if user_ans == answer:
-        print(f"  Correct! Output: {answer}")
+        print("  Correct! Output:", answer)
         score += 1
     else:
-        print(f"  Answer: {answer}")
+        print("  Answer:", answer)
     print()
 
-print(f"Score: {score} / {len(questions)}")
+print("Score:", score, "/", len(questions))

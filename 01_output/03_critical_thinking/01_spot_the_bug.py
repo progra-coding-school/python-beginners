@@ -38,14 +38,12 @@ print()
 
 print("=== Bug 4 ===")
 print("""
-  name = "Diya"
-  print("Hello, " + name + " you are " + 13 + " years old.")
+  print("Hello, Diya you are " + 13 + " years old.")
 """)
 answer = input("What is the bug? ")
 print("Bug: Cannot concatenate str and int with +.")
 print("     13 is an integer, not a string → TypeError!")
-print('Fix: print("Hello, " + name + " you are " + str(13) + " years old.")')
-print('  OR: print(f"Hello, {name} you are 13 years old.")')
+print('Fix: print("Hello, Diya you are " + str(13) + " years old.")')
 print()
 
 print("=== Bug 5 ===")

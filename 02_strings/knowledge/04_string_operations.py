@@ -26,23 +26,21 @@ print("\n--- OPERATION 1: Concatenation (+) ---")
 
 first_name = "Aarav"
 last_name  = "Sharma"
-full_name  = first_name + " " + last_name  # Space in between!
+full_name  = first_name + " " + last_name   # Space in between!
 
-print(f"First name  : {first_name}")
-print(f"Last name   : {last_name}")
-print(f"Full name   : {full_name}")
+print("First name  : " + first_name)
+print("Last name   : " + last_name)
+print("Full name   : " + full_name)
 
 # Real use: Building a greeting message
 city     = "Chennai"
 greeting = "Vanakkam from " + city + "!"
-print(f"Greeting    : {greeting}")
+print("Greeting    : " + greeting)
 
 # ⚠️ IMPORTANT: You can only add string + string
-# ❌ WRONG:  "Age: " + 14     → Error!
-# ✅ RIGHT:  "Age: " + str(14) → Works!
-age     = 14
-message = "Age: " + str(age)
-print(f"Age message : {message}")
+# ❌ WRONG:  "Age: " + 14       → Error! (14 is a number, not a string)
+# ✅ RIGHT:  "Age: " + str(14)  → Works! str() converts it to "14"
+print("Age message : " + "Age: " + str(14))
 
 # -------------------------------------------------------
 # OPERATION 2: Repetition (*) — Repeat a string
@@ -50,9 +48,9 @@ print(f"Age message : {message}")
 # -------------------------------------------------------
 print("\n--- OPERATION 2: Repetition (*) ---")
 
-line       = "-" * 30
-star_row   = "* " * 10
-cheer      = "Go Chennai! " * 3
+line     = "-" * 30
+star_row = "* " * 10
+cheer    = "Go Chennai! " * 3
 
 print(line)
 print(star_row)
@@ -62,9 +60,9 @@ print(cheer)
 print("\n" + "=" * 40)
 print("       CRICKET SCOREBOARD")
 print("=" * 40)
-print(f"  Team       : Chennai Super Kings")
-print(f"  Score      : 186 / 4")
-print(f"  Overs      : 20.0")
+print("  Team       : Chennai Super Kings")
+print("  Score      : 186 / 4")
+print("  Overs      : 20.0")
 print("=" * 40)
 
 # -------------------------------------------------------
@@ -75,11 +73,11 @@ print("\n--- OPERATION 3: Membership (in / not in) ---")
 
 team_list = "Aarav, Diya, Mani, Priya, Ravi"
 
-print(f"Team list : {team_list}")
-print(f"Is 'Diya' in the team?   → {'Diya' in team_list}")
-print(f"Is 'Ravi' in the team?   → {'Ravi' in team_list}")
-print(f"Is 'Kavya' in the team?  → {'Kavya' in team_list}")
-print(f"Is 'Kavya' NOT in team?  → {'Kavya' not in team_list}")
+print("Team list : " + team_list)
+print("Is 'Diya' in the team?   →", "Diya" in team_list)
+print("Is 'Ravi' in the team?   →", "Ravi" in team_list)
+print("Is 'Kavya' in the team?  →", "Kavya" in team_list)
+print("Is 'Kavya' NOT in team?  →", "Kavya" not in team_list)
 
 # -------------------------------------------------------
 # OPERATION 4: len() — Find the length of a string
@@ -87,17 +85,13 @@ print(f"Is 'Kavya' NOT in team?  → {'Kavya' not in team_list}")
 # -------------------------------------------------------
 print("\n--- OPERATION 4: len() — String Length ---")
 
-word      = "Python"
-name      = "Aarav Sharma"
-sentence  = "I love coding!"
-
-print(f"len('{word}')           = {len(word)}")
-print(f"len('{name}')    = {len(name)}")
-print(f"len('{sentence}') = {len(sentence)}")
+print("len('Python')           =", len("Python"))
+print("len('Aarav Sharma')    =", len("Aarav Sharma"))
+print("len('I love coding!')  =", len("I love coding!"))
 
 # Real use: Password length check
 password = input("\nEnter a password to check its length: ")
-print(f"Your password has {len(password)} characters.")
+print("Your password has", len(password), "characters.")
 if len(password) >= 8:
     print("✅ Strong password (8 or more characters)")
 else:

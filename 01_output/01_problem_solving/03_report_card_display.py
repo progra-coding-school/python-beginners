@@ -12,10 +12,10 @@ roll_no    = input("Roll number: ")
 class_name = input("Class: ")
 
 print("Enter marks (out of 100):")
-maths   = int(input("  Maths: "))
-science = int(input("  Science: "))
-english = int(input("  English: "))
-hindi   = int(input("  Hindi: "))
+maths    = int(input("  Maths: "))
+science  = int(input("  Science: "))
+english  = int(input("  English: "))
+hindi    = int(input("  Hindi: "))
 computer = int(input("  Computer: "))
 
 # Step 2: Calculations
@@ -45,31 +45,31 @@ result = "PASS" if all(m >= 35 for m in subjects.values()) else "FAIL"
 w = 44
 print()
 print("*" * w)
-print(f"{'PROGRA KIDS CODING SCHOOL':^{w}}")
-print(f"{'Annual Progress Report Card':^{w}}")
+print("PROGRA KIDS CODING SCHOOL".center(w))
+print("Annual Progress Report Card".center(w))
 print("*" * w)
-print(f"  Name     : {name:<20} Roll No : {roll_no}")
-print(f"  Class    : {class_name}")
+print("  Name     : " + name.ljust(20) + " Roll No : " + roll_no)
+print("  Class    : " + class_name)
 print("-" * w)
 
 # Step 4: Print — Subject table
-print(f"  {'Subject':<12} {'Marks':>6} {'Out of':>7} {'Grade':>7}")
+print("  " + "Subject".ljust(12) + "Marks".rjust(6) + "Out of".rjust(8) + "Grade".rjust(8))
 print("-" * w)
 for subject, mark in subjects.items():
     grade = get_grade(mark)
-    print(f"  {subject:<12} {mark:>6} {'100':>7} {grade:>7}")
+    print("  " + subject.ljust(12) + str(mark).rjust(6) + "100".rjust(8) + grade.rjust(8))
 
 print("-" * w)
 
 # Step 5: Print — Summary
-print(f"  {'Total':<12} {total:>6} {'500':>7}")
-print(f"  {'Average':<12} {average:>6.1f} {'100':>7}")
+print("  " + "Total".ljust(12)   + str(total).rjust(6)              + "500".rjust(8))
+print("  " + "Average".ljust(12) + str(round(average, 1)).rjust(6)  + "100".rjust(8))
 print("-" * w)
-print(f"  Overall Grade : {overall_grade}")
-print(f"  Result        : {result}")
-print(f"  Best subject  : {highest} ({subjects[highest]}/100)")
+print("  Overall Grade : " + overall_grade)
+print("  Result        : " + result)
+print("  Best subject  : " + highest + " (" + str(subjects[highest]) + "/100)")
 print("*" * w)
-print(f"{'Keep learning and keep growing!':^{w}}")
+print("Keep learning and keep growing!".center(w))
 print("*" * w)
 
 # Think:

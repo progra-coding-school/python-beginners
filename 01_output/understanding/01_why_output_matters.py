@@ -9,10 +9,8 @@
 print("=== WITHOUT output — silent program ===")
 
 # This code runs but shows NOTHING:
-name = "Aarav"
-age = 13
-total = 85 + 90 + 78
-average = total / 3
+# 85 + 90 + 78 = 253
+# 253 / 3 = 84.3
 # ... calculations happen inside, but the user sees nothing!
 
 print("(The program ran, but you saw nothing. Was it useful? No!)")
@@ -20,20 +18,14 @@ print()
 
 print("=== WITH output — program talks to the user ===")
 
-name = "Aarav"
-age = 13
-marks = [85, 90, 78]
-total = sum(marks)
-average = total / len(marks)
-
-print(f"Student:  {name}")
-print(f"Age:      {age}")
-print(f"Total:    {total}/300")
-print(f"Average:  {average:.1f}")
-if average >= 80:
-    print("Result:   Distinction!")
+print("  Student:  Aarav")
+print("  Age:      13")
+print("  Total:    253/300")
+print("  Average:  84.3")
+if 84.3 >= 80:
+    print("  Result:   Distinction!")
 else:
-    print("Result:   Pass")
+    print("  Result:   Pass")
 print()
 
 print("=== Output serves 3 purposes ===")
@@ -60,12 +52,12 @@ print("bad:", "Aarav", 85, 90, 78, 253, 84.3)
 
 # Good — clear and structured
 print("good:")
-print(f"  Name:    Aarav")
-print(f"  Maths:   85")
-print(f"  Science: 90")
-print(f"  English: 78")
-print(f"  Total:   253 / 300")
-print(f"  Average: 84.3")
+print("  Name:    Aarav")
+print("  Maths:   85")
+print("  Science: 90")
+print("  English: 78")
+print("  Total:   253 / 300")
+print("  Average: 84.3")
 
 # Think:
 # 1. Think of an app on your phone. What 3 types of output does it show you?

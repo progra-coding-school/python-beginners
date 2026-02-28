@@ -25,29 +25,29 @@ name = "  aarav sharma  "   # Note: extra spaces on both sides
 # -------------------------------------------------------
 print("\n--- strip() — Remove Extra Spaces ---")
 clean_name = name.strip()
-print(f"Before strip : '{name}'")
-print(f"After strip  : '{clean_name}'")
+print("Before strip : '" + name + "'")
+print("After strip  : '" + clean_name + "'")
 
 # -------------------------------------------------------
 # METHOD 2: upper() — Convert to UPPERCASE
 # -------------------------------------------------------
 print("\n--- upper() — ALL CAPITAL LETTERS ---")
 shout = clean_name.upper()
-print(f"upper() → '{shout}'")
+print("upper() → '" + shout + "'")
 
 # -------------------------------------------------------
 # METHOD 3: lower() — Convert to lowercase
 # -------------------------------------------------------
 print("\n--- lower() — all small letters ---")
 whisper = clean_name.lower()
-print(f"lower() → '{whisper}'")
+print("lower() → '" + whisper + "'")
 
 # -------------------------------------------------------
 # METHOD 4: title() — Proper Case (First Letter Capital)
 # -------------------------------------------------------
 print("\n--- title() — Proper Name Format ---")
 proper = clean_name.title()
-print(f"title() → '{proper}'")
+print("title() → '" + proper + "'")
 
 # -------------------------------------------------------
 # METHOD 5: replace() — Swap one word for another
@@ -55,38 +55,38 @@ print(f"title() → '{proper}'")
 print("\n--- replace() — Find and Replace ---")
 sentence = "I love cricket and cricket is my passion"
 new_sentence = sentence.replace("cricket", "coding")
-print(f"Original : {sentence}")
-print(f"Replaced : {new_sentence}")
+print("Original : " + sentence)
+print("Replaced : " + new_sentence)
 
 # -------------------------------------------------------
 # METHOD 6: find() — Find position of a word
 # -------------------------------------------------------
 print("\n--- find() — Find Position of a Word ---")
-team = "Chennai Super Kings"
+team     = "Chennai Super Kings"
 position = team.find("Super")
-print(f"Team     : {team}")
-print(f"'Super' found at position : {position}")
+print("Team     : " + team)
+print("'Super' found at position :", position)
 print("(Returns -1 if not found)")
 
 not_found = team.find("Mumbai")
-print(f"'Mumbai' found at position : {not_found}")
+print("'Mumbai' found at position :", not_found)
 
 # -------------------------------------------------------
 # METHOD 7: count() — Count how many times something appears
 # -------------------------------------------------------
 print("\n--- count() — Count Occurrences ---")
-sentence2 = "Amma makes amazing and awesome aloo!"
+sentence2  = "Amma makes amazing and awesome aloo!"
 vowel_count = sentence2.count("a")
-print(f"Sentence : {sentence2}")
-print(f"Count of 'a' : {vowel_count}")
+print("Sentence     : " + sentence2)
+print("Count of 'a' :", vowel_count)
 
 # -------------------------------------------------------
 # METHOD 8: startswith() / endswith()
 # -------------------------------------------------------
 print("\n--- startswith() and endswith() ---")
 school = "Progra Kids Coding School"
-print(f"Starts with 'Progra'  : {school.startswith('Progra')}")
-print(f"Ends with 'School'    : {school.endswith('School')}")
+print("Starts with 'Progra'  :", school.startswith("Progra"))
+print("Ends with 'School'    :", school.endswith("School"))
 
 # -------------------------------------------------------
 # METHOD 9: split() — Break sentence into words
@@ -94,8 +94,8 @@ print(f"Ends with 'School'    : {school.endswith('School')}")
 print("\n--- split() — Break into a List of Words ---")
 player_names = "Aarav, Diya, Priya, Mani"
 players_list = player_names.split(", ")
-print(f"Original   : {player_names}")
-print(f"Split list : {players_list}")
+print("Original   : " + player_names)
+print("Split list :", players_list)
 
 # -------------------------------------------------------
 # SUMMARY TABLE

@@ -15,7 +15,7 @@ print()
 print("Challenge 1 — Output:")
 print("  Hello, Aarav!")
 answer = input("What print() produced this? ")
-print('Answer: print("Hello, Aarav!")  OR  print(f"Hello, {name}!") where name="Aarav"')
+print('Answer: print("Hello, Aarav!")')
 if "Hello" in answer and "Aarav" in answer:
     score += 1
 print()
@@ -42,8 +42,7 @@ print()
 print("Challenge 4 — Output:")
 print("  Name: Diya   Age: 12   Grade: 6")
 answer = input("What print() produced this (one line)? ")
-print('Answer: print(f"Name: {name}   Age: {age}   Grade: {grade}")')
-print("  OR:   print(\"Name:\", name, \"  Age:\", age, \"  Grade:\", grade)")
+print('Answer: print("Name:", "Diya", "  Age:", 12, "  Grade:", 6)')
 if "Name" in answer and "Age" in answer:
     score += 1
 print()
@@ -64,13 +63,11 @@ print()
 
 # --- Challenge 6 ---
 print("Challenge 6 — Output:")
-print("  Total: Rs.450.00")
-price = 150
-qty   = 3
+print("  Total: Rs.450")
 answer = input("What print() produced this (use price=150, qty=3)? ")
-print(f'Answer: print(f"Total: Rs.{{price * qty:.2f}}")')
-if "f\"" in answer or "f'" in answer:
+print('Answer: print("Total: Rs." + str(150 * 3))')
+if "str(" in answer and "150" in answer:
     score += 1
 print()
 
-print(f"Score: {score} / 6")
+print("Score:", score, "/ 6")
