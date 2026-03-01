@@ -30,5 +30,5 @@ print(fruits)
 # fruits.extend(["grape", "melon"])
 # print(fruits)
 # removed_item = fruits.pop(2)
-# print(f"After pop index 2 (removed {removed_item}):", fruits)
+# print("After pop index 2 (removed", removed_item, "):", fruits)
 
