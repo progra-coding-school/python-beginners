@@ -1,7 +1,4 @@
-# Program Code: LIST-KN-04
-# Title: Searching, Sorting, and Slicing
-# Cognitive Skill: Knowledge (Syntax and usage)
-# Topic: Lists in Python
+# Searching, Sorting, and Slicing
 
 players = ["Aarav", "Diya", "Kabir", "Meera", "Rohan"]
 scores  = [88, 45, 92, 67, 78]

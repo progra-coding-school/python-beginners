@@ -1,7 +1,4 @@
-# Program Code: LIST-UN-03
-# Title: Lists Are Mutable
-# Cognitive Skill: Understanding (Mutability)
-# Topic: Lists in Python
+# Lists Are Mutable
 
 # --- Strings are IMMUTABLE (cannot change individual characters) ---
 print("Strings are immutable:")

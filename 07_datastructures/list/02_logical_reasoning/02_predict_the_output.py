@@ -1,14 +1,9 @@
-# Program Code: LIST-LR-02
-# Title: Predict the Output
-# Cognitive Skill: Logical Reasoning (Predicting list output)
-# Topic: Lists in Python
+# Predict the Output
+# Predict the EXACT output of each code snippet.
 
 score = 0
 total = 5
 
-print("=== Predict the List Output ===")
-print("Predict the EXACT output of each code snippet.")
-print()
 
 # --- Q1 ---
 print("Q1:")

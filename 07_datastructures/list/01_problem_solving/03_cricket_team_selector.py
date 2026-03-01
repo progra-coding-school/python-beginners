@@ -1,9 +1,5 @@
-# Program Code: LIST-PS-03
-# Title: Cricket Team Selector
-# Cognitive Skill: Problem Solving (Sorting, slicing, list manipulation)
-# Topic: Lists in Python
-
-# 15 available players, pick the top 11 based on scores
+# Cricket Team Selector
+# 15 available players — sort by score, pick top 11
 player_names  = ["Aarav", "Diya", "Kabir", "Meera", "Rohan",
                  "Riya",  "Dev",  "Kiran", "Priya", "Arjun",
                  "Sam",   "Arun", "Nisha", "Raj",   "Tara"]
@@ -12,8 +8,6 @@ player_scores = [85, 70, 90, 75, 88,
                  60, 92, 78, 82, 65,
                  95, 55, 80, 72, 68]
 
-print("=== Cricket Team Selector ===")
-print()
 
 # Pair names with scores, sort highest first
 paired = list(zip(player_scores, player_names))

@@ -1,10 +1,5 @@
-# Program Code: LIST-ST-02
-# Title: Naming Your Lists
-# Cognitive Skill: Structured Thinking (Naming conventions)
-# Topic: Lists in Python
+# Naming Your Lists
 
-print("=== Naming Your Lists ===")
-print()
 
 # Mani's code — confusing names
 print("Mani's code (hard to read):")
@@ -43,7 +38,7 @@ print("  5. No single letters → only i, j, k are ok — inside loops only")
 print()
 
 # Your Turn — suggest better names
-print("=== Your Turn — Suggest Better Names ===")
+print("Your Turn — Suggest Better Names")
 print()
 
 print("Scenario 1: m = ['Aarav', 'Rohan', 'Kabir'] — cricket team players")

@@ -1,13 +1,8 @@
-# Program Code: LIST-CT-03
-# Title: Assumption Breaker — True or False About Lists?
-# Cognitive Skill: Critical Thinking (Challenge assumptions)
-# Topic: Lists in Python
+# Assumption Breaker – True or False About Lists?
+# Answer True or False — test what you think you know.
 
 score = 0
 
-print("=== List Assumption Breaker ===")
-print("True or False? Test what you think you know.")
-print()
 
 def ask(statement, correct, explanation):
     global score

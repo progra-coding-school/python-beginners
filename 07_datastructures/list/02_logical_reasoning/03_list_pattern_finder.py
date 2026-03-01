@@ -1,14 +1,9 @@
-# Program Code: LIST-LR-03
-# Title: List Pattern Finder
-# Cognitive Skill: Logical Reasoning (Pattern recognition)
-# Topic: Lists in Python
+# List Pattern Finder
+# Spot the pattern and answer each question.
 
 score = 0
 total = 5
 
-print("=== List Pattern Finder ===")
-print("Spot the pattern and answer each question.")
-print()
 
 # --- Q1 ---
 print("Q1: What comes next?")

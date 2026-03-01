@@ -1,7 +1,4 @@
-# Program Code: LIST-ST-03
-# Title: Organise Data with Lists
-# Cognitive Skill: Structured Thinking (Data organisation)
-# Topic: Lists in Python
+# Organise Data with Lists
 
 # Problem: mixing data types in one list is confusing
 # bad_list = ["Riya", "Red", "Arun", "Blue", "Sam", "Red"]
@@ -9,8 +6,6 @@
 
 # Fix: use SEPARATE, clearly named parallel lists
 
-print("=== Sports Day — Team Organiser ===")
-print()
 
 students = ["Riya", "Arun", "Sam", "Priya", "Kiran", "Meena"]
 teams    = ["Red",  "Blue", "Red", "Green", "Blue",  "Green"]

@@ -1,8 +1,4 @@
-# Program Code: LIST-FC-03
-# Title: Memory Recall Challenge — Remember the List!
-# Cognitive Skill: Focus and Concentration (Memory + recall under pressure)
-# Topic: Lists in Python
-
+# Memory Recall Challenge – Remember the List!
 # How it works:
 #   1. A list flashes on screen for a few seconds
 #   2. Screen clears
@@ -55,7 +51,6 @@ rounds = [
     },
 ]
 
-print("=== Memory Recall Challenge ===")
 print("A list will flash on screen. Read it carefully.")
 print("Then type each item you remember, one per line.")
 print("Type DONE when you have finished recalling.")
@@ -96,7 +91,6 @@ for rd in rounds:
     input("  Press Enter for the next round...")
     clear()
 
-print("=== Challenge Complete ===")
 print("Total Score:", total_score, "/", total_possible)
 percentage = round((total_score / total_possible) * 100)
 print("Accuracy   :", str(percentage) + "%")

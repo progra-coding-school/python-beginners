@@ -1,13 +1,8 @@
-# Program Code: LIST-FC-01
-# Title: Spot the Difference — Which List Changed?
-# Cognitive Skill: Focus & Concentration (Attention to detail)
-# Topic: Lists in Python
+# Spot the Difference – Which List Changed?
+# Two lists appear. Spot exactly what changed between List A and List B.
 
 score = 0
 
-print("=== Spot the Difference ===")
-print("Two lists appear. Spot exactly what changed between List A and List B.")
-print()
 
 # Round 1 — capitalisation
 print("Round 1 of 5: Aarav's Fruit Basket")
@@ -74,7 +69,6 @@ if ans == "y":
     score += 1
 print()
 
-print("=== Complete ===")
 print("Score:", score, "/ 5")
 if score == 5:
     print("Sharp eyes! You are a List Detective!")

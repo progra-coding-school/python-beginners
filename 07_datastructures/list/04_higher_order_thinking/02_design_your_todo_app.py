@@ -1,11 +1,5 @@
-# Program Code: LIST-HOT-02
-# Title: Design Your Todo App
-# Cognitive Skill: Higher Order Thinking (Design from scratch)
-# Topic: Lists in Python
-
-# A working Todo app powered by a single Python list
-# Design:
-#   tasks = []  — one list holds all tasks
+# Todo App – Powered by a List
+# One list (tasks = []) drives the whole app:
 #   Add:    tasks.append(text)
 #   View:   enumerate(tasks, start=1)
 #   Done:   tasks[index] = "DONE: " + task
@@ -76,8 +70,7 @@ def remove_task():
     removed = tasks.pop(idx)
     print("Removed:", removed)
 
-print("=== Todo App ===")
-print("Powered by: tasks = []")
+print("Todo App")
 
 while True:
     show_menu()

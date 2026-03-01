@@ -1,13 +1,8 @@
-# Program Code: LIST-CT-02
-# Title: Which Approach Is Better?
-# Cognitive Skill: Critical Thinking (Evaluating solutions)
-# Topic: Lists in Python
+# Which Approach Is Better?
+# Compare two solutions and pick the better one.
 
 score = 0
 
-print("=== Which Approach Is Better? ===")
-print("Compare two solutions and pick the better one.")
-print()
 
 # --- Problem 1: Remove a player by name ---
 print("Problem 1: Remove 'Kabir' from a team list.")

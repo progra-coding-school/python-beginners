@@ -1,7 +1,4 @@
-# Program Code: LIST-KN-03
-# Title: Removing and Updating Items
-# Cognitive Skill: Knowledge (Syntax and usage)
-# Topic: Lists in Python
+# Removing and Updating Items
 
 fruits = ["apple", "banana", "mango", "orange", "banana"]
 print("Start:", fruits)

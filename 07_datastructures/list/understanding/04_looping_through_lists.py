@@ -1,7 +1,4 @@
-# Program Code: LIST-UN-04
-# Title: Looping Through Lists
-# Cognitive Skill: Understanding (Loop patterns)
-# Topic: Lists in Python
+# Looping Through Lists
 
 team = ["Aarav", "Diya", "Kabir", "Meera", "Rohan"]
 

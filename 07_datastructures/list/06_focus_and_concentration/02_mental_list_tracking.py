@@ -1,7 +1,5 @@
-# Program Code: LIST-FC-02
-# Title: Mental List Tracking — Follow the List in Your Head
-# Cognitive Skill: Focus & Concentration (Mental tracking)
-# Topic: Lists in Python
+# Mental List Tracking – Follow the List in Your Head
+# Watch each operation and predict what the list looks like at every step.
 
 score = 0
 total = 0
@@ -24,8 +22,6 @@ def check(user_input, actual, explanation):
         print("  List is now:", actual)
     print()
 
-print("=== Mental List Tracking ===")
-print("Watch each operation. Predict what the list looks like after each step.")
 print("Type your answer as a list, e.g. [1, 2, 3]")
 print()
 
@@ -119,7 +115,6 @@ u = input("  What does the list look like now? ").strip()
 lst.reverse()
 check(u, lst, "reverse() flips the entire list — last becomes first, first becomes last.")
 
-print("=== Complete ===")
 print("Score:", score, "/", total, "steps correct")
 if score == total:
     print("Perfect! You tracked every step correctly.")

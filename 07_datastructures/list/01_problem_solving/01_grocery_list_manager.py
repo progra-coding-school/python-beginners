@@ -1,13 +1,8 @@
-# Program Code: LIST-PS-01
-# Title: Grocery List Manager
-# Cognitive Skill: Problem Solving (Applying list operations)
-# Topic: Lists in Python
-
+# Grocery List Manager
 # A simple grocery list manager using a Python list
+
 grocery = []
 
-print("=== Grocery List Manager ===")
-print()
 
 # Step 1: Add items
 print("ADD ITEMS")

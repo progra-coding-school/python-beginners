@@ -1,13 +1,8 @@
-# Program Code: LIST-HOT-01
-# Title: Reverse Engineer the List
-# Cognitive Skill: Higher Order Thinking (Reverse engineering)
-# Topic: Lists in Python
+# Reverse Engineer the List
+# Given BEFORE and AFTER — figure out what code ran.
 
 score = 0
 
-print("=== Reverse Engineer the List ===")
-print("Given BEFORE and AFTER — figure out what code ran.")
-print()
 
 # --- Challenge 1: append ---
 print("Challenge 1:")

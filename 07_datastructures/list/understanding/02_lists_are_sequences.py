@@ -1,7 +1,4 @@
-# Program Code: LIST-UN-02
-# Title: Lists Are Sequences
-# Cognitive Skill: Understanding (Index and order)
-# Topic: Lists in Python
+# Lists Are Sequences
 
 team = ["Aarav", "Diya", "Kabir", "Meera", "Rohan"]
 #        index 0    1       2        3        4

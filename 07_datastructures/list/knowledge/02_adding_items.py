@@ -1,7 +1,4 @@
-# Program Code: LIST-KN-02
-# Title: Adding Items to a List
-# Cognitive Skill: Knowledge (Syntax and usage)
-# Topic: Lists in Python
+# Adding Items to a List
 
 # Start with a team list
 cricket_team = ["Aarav", "Kabir", "Rohan"]

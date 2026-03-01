@@ -1,8 +1,4 @@
-# Program Code: LIST-HOT-03
-# Title: Quiz Game — Powered by Lists
-# Cognitive Skill: Higher Order Thinking (Build a system)
-# Topic: Lists in Python
-
+# Quiz Game – Powered by Lists
 # Two parallel lists: questions[i] pairs with answers[i]
 questions = [
     "What is the index of the first item in a list?",
@@ -23,7 +19,6 @@ answers = [
 score = 0
 total = len(questions)
 
-print("=== Progra Python Quiz ===")
 print("You will be asked", total, "questions.")
 print()
 
@@ -37,7 +32,6 @@ for i in range(total):
         print("Answer:", answers[i])
     print()
 
-print("=== Quiz Complete ===")
 print("Score:", score, "/", total)
 if score == total:
     print("Perfect score! Python List Master!")

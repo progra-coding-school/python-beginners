@@ -1,14 +1,9 @@
-# Program Code: LIST-PS-02
-# Title: Class Topper Finder
-# Cognitive Skill: Problem Solving (Parallel lists, max, index)
-# Topic: Lists in Python
+# Class Topper Finder
+# Parallel lists — names[i] and marks[i] always belong together
 
-# Parallel lists — names and marks share the same index
 student_names = ["Aarav", "Diya", "Kabir", "Meera", "Rohan"]
 student_marks = [88, 95, 76, 91, 83]
 
-print("=== Class Marks Report ===")
-print()
 
 # Display marks
 print("Student           Marks")

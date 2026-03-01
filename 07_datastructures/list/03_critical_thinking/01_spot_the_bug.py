@@ -1,14 +1,9 @@
-# Program Code: LIST-CT-01
-# Title: Spot the Bug
-# Cognitive Skill: Critical Thinking (Bug identification)
-# Topic: Lists in Python
+# Spot the Bug
+# Find what is wrong with each code snippet.
 
 score = 0
 total = 5
 
-print("=== Spot the Bug ===")
-print("Find what is wrong with each code snippet.")
-print()
 
 # --- Bug 1: IndexError ---
 print("Bug 1:")

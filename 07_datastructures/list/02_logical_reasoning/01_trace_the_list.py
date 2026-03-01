@@ -1,14 +1,9 @@
-# Program Code: LIST-LR-01
-# Title: Trace the List
-# Cognitive Skill: Logical Reasoning (Tracing step-by-step)
-# Topic: Lists in Python
+# Trace the List
+# After each series of operations, type what the list looks like.
 
 score = 0
 total = 5
 
-print("=== Trace the List ===")
-print("After each series of operations, type what the list looks like.")
-print()
 
 def check(user_input, actual):
     try:

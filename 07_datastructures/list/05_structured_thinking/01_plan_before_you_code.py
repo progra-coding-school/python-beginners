@@ -1,7 +1,4 @@
-# Program Code: LIST-ST-01
-# Title: Plan Before You Code
-# Cognitive Skill: Structured Thinking (Planning)
-# Topic: Lists in Python
+# Plan Before You Code
 
 # PLANNING BLOCK (write this BEFORE coding):
 #   WHAT to store?   → student_names, student_marks (parallel lists)
@@ -9,8 +6,6 @@
 #   WHAT output?     → ranked table: Rank | Name | Marks
 #   HOW to break it? → Step 1: data  Step 2: topper  Step 3: sort  Step 4: table
 
-print("=== Plan Before You Code ===")
-print()
 
 # Step 1: Set up the data
 student_names = ["Aarav", "Diya", "Kabir", "Meera", "Rohan"]

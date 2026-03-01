@@ -1,7 +1,4 @@
-# Program Code: LIST-UN-01
-# Title: Why Lists Exist
-# Cognitive Skill: Understanding (Conceptual reasoning)
-# Topic: Lists in Python
+# Why Lists Exist
 
 # --- Without a list: separate variables ---
 print("Without a list:")
