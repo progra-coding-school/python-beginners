@@ -1,7 +1,9 @@
-# Program Code: DC-UN-04
-# Title: Looping Through Dictionaries
-# Cognitive Skill: Understanding
-# Topic: Dictionaries in Python
+# Looping Through Dictionaries
+# Three ways to loop — each gives you different data:
+#   for key in dict:                → gives only the keys (default loop)
+#   for value in dict.values():     → gives only the values
+#   for key, value in dict.items(): → gives BOTH key and value (most useful!)
+# Always use .items() when you need to print or process both the key and value.
 
 marks = {
     "Maths":   85,
@@ -10,29 +12,34 @@ marks = {
     "History": 88,
 }
 
-# --- Loop 1: over KEYS (default behaviour) ---
-print("=== Looping over keys ===")
-for subject in marks:           # same as: for subject in marks.keys()
-    print(f"  Subject: {subject}")
+# Loop Style 1: over keys only — looping a dict directly gives you the keys
+# Same as: for subject in marks.keys()
+# Use when you only need to know the keys, not the values
+print("Looping over keys:")
+for subject in marks:
+    print("  Subject:", subject)
 
 print()
 
-# --- Loop 2: over VALUES ---
-print("=== Looping over values ===")
+# Loop Style 2: over values only
+# Use when you only need the numbers/data, not the labels
+print("Looping over values:")
 for score in marks.values():
-    print(f"  Score: {score}")
+    print("  Score:", score)
 
 print()
 
-# --- Loop 3: over KEY-VALUE PAIRS (most useful!) ---
-print("=== Looping over key-value pairs ===")
+# Loop Style 3: over key-value pairs with .items() — the most useful loop
+# Use when you need BOTH the key and value at the same time
+print("Looping over key-value pairs:")
 for subject, score in marks.items():
-    print(f"  {subject}: {score}")
+    print("  " + subject + ":", score)
 
 print()
 
-# --- Practical: find the topper ---
-print("=== Finding highest scorer ===")
+# Practical: find the highest scorer
+# Start with "no winner" and update whenever we find a higher score
+print("Finding highest scorer:")
 students = {"Aarav": 85, "Diya": 92, "Karthik": 78, "Riya": 88}
 
 best_name  = None
@@ -43,12 +50,13 @@ for name, score in students.items():
         best_score = score
         best_name  = name
 
-print(f"Topper: {best_name} with {best_score} marks")
+print("Topper:", best_name, "with", best_score, "marks")
 
 print()
 
-# --- Practical: build a new dict while looping ---
-print("=== Grade labels from marks ===")
+# Practical: build a new dict while looping through an existing one
+# Loop through marks → convert each score to a grade letter → store in new dict
+print("Grade labels from marks:")
 
 def grade_label(score):
     if score >= 90:
@@ -62,22 +70,18 @@ def grade_label(score):
 
 grades = {}
 for subject, score in marks.items():
-    grades[subject] = grade_label(score)
+    grades[subject] = grade_label(score)   # build a new dict: subject → grade letter
 
 for subject, grade in grades.items():
-    print(f"  {subject}: {grade}")
+    print("  " + subject + ":", grade)
 
 print()
 
-# --- Practical: filter a dictionary ---
-print("=== Subjects with score above 85 ===")
+# Practical: filter a dictionary — keep only entries that match a condition
+print("Subjects with score above 85:")
 high_scores = {}
 for subject, score in marks.items():
     if score > 85:
-        high_scores[subject] = score
+        high_scores[subject] = score   # only add to new dict if condition is met
 
 print("High scorers:", high_scores)
-
-# Think:
-# 1. What is the difference between looping with .keys() vs .items()?
-# 2. How would you count how many subjects have a score above 80?

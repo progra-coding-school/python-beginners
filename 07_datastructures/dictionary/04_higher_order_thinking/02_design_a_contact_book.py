@@ -1,84 +1,78 @@
-# Program Code: DC-HOT-02
-# Title: Design a Contact Book App
-# Cognitive Skill: Higher Order Thinking
-# Topic: Dictionaries in Python
+# Design a Contact Book App
+# One dictionary (contacts) stores all contact information.
+# Each contact is a NESTED DICTIONARY: name → {phone, city}
+# KEY DESIGN DECISIONS:
+#   Use .get() for search — returns None if not found (no crash)
+#   Use .pop() for delete — removes AND returns, so we know what was deleted
+#   Use [name] = {...} for add — simple assignment adds or overwrites
+# Each function does ONE job — add, view, search, or delete.
 
-# Design challenge:
-# Build a simple contact book with a menu.
-# Each contact stores: name, phone, city.
-# The user can: Add / View / Search / Delete a contact / Quit.
-
-# --- Data store ---
+# The data store: contact name → their details (nested dict)
 contacts = {
     "Amma":  {"phone": "9988776655", "city": "Chennai"},
     "Aarav": {"phone": "9876543210", "city": "Madurai"},
 }
 
-# --- Helper functions ---
-
 def add_contact(name, phone, city):
-    contacts[name] = {"phone": phone, "city": city}
-    print(f"  ✓ Contact '{name}' added.")
+    contacts[name] = {"phone": phone, "city": city}   # assignment adds new key or overwrites
+    print("  Contact '" + name + "' added.")
 
 def view_all():
-    if not contacts:
+    if not contacts:       # empty dict is falsy — same as len(contacts) == 0
         print("  Contact book is empty.")
         return
-    print(f"  {'Name':<12} {'Phone':<15} {'City'}")
-    print(f"  {'─'*12} {'─'*15} {'─'*10}")
+    print("  " + "Name".ljust(12) + "Phone".ljust(15) + "City")
+    print("  " + "-" * 37)
     for name, info in contacts.items():
-        print(f"  {name:<12} {info['phone']:<15} {info['city']}")
+        print("  " + name.ljust(12) + info["phone"].ljust(15) + info["city"])
 
 def search_contact(name):
+    # .get() returns None if name not in contacts — no KeyError
     info = contacts.get(name)
     if info:
-        print(f"  Found: {name} | {info['phone']} | {info['city']}")
+        print("  Found:", name, "|", info["phone"], "|", info["city"])
     else:
-        print(f"  '{name}' not found in contact book.")
+        print("  '" + name + "' not found in contact book.")
 
 def delete_contact(name):
+    # .pop(name, None) removes if found, returns None if not found (no crash)
     removed = contacts.pop(name, None)
     if removed:
-        print(f"  ✓ '{name}' deleted.")
+        print("  '" + name + "' deleted.")
     else:
-        print(f"  '{name}' not found.")
+        print("  '" + name + "' not found.")
 
-# --- Demo: simulating menu choices (no input() so it runs without user) ---
-
-print("=== Contact Book Demo ===")
+# Demo: run through typical contact book operations
+print("Contact Book Demo")
 print()
 
-print("--- View all contacts ---")
+print("View all contacts:")
 view_all()
 print()
 
-print("--- Add a new contact ---")
+print("Add a new contact:")
 add_contact("Diya", "9123456780", "Coimbatore")
 view_all()
 print()
 
-print("--- Search for Aarav ---")
+print("Search for Aarav:")
 search_contact("Aarav")
 print()
 
-print("--- Search for someone not in the book ---")
+print("Search for someone not in the book:")
 search_contact("Riya")
 print()
 
-print("--- Delete Aarav ---")
+print("Delete Aarav:")
 delete_contact("Aarav")
 view_all()
 print()
 
-print("--- Try deleting Aarav again ---")
+print("Try deleting Aarav again:")
 delete_contact("Aarav")
 
-# --- Extension idea ---
+# Extension: add a new field to an existing contact — dicts are mutable, easy to extend!
 print()
-print("=== Extension: How would you add a 'favourite' flag? ===")
-contacts["Amma"]["favourite"] = True
+print("Extension — adding a favourite flag:")
+contacts["Amma"]["favourite"] = True   # add a new key to a nested dict at any time
 print("Amma's data:", contacts["Amma"])
-
-# Think:
-# 1. How would you save these contacts to a file so they survive after the program ends?
-# 2. What happens if two people share the same name? How would you fix this design?

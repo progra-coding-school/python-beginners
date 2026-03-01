@@ -1,69 +1,61 @@
-# Program Code: DC-UN-01
-# Title: Why Dictionaries Exist
-# Cognitive Skill: Understanding
-# Topic: Dictionaries in Python
+# Why Dictionaries Exist
+# Before dictionaries, we stored related data in separate parallel lists.
+# Lists work, but they are fragile — if the lists ever go out of sync, you get wrong data.
+# A dictionary keeps all related data TOGETHER under a single meaningful key.
+# KEY IDEA: label your data with names, not just store it by position.
 
-# WITHOUT a dictionary: you need parallel lists — messy and fragile.
-# WITH a dictionary: one structure, keys make retrieval natural.
-
-print("=== WITHOUT a dictionary — parallel lists ===")
-
+# Without a dictionary — parallel lists approach
+# To find Diya's grade, you must first find her index in the names list
 names   = ["Aarav", "Diya", "Karthik"]
 ages    = [13,       12,      14      ]
 grades  = [7,        6,       8       ]
 
-# To find Diya's grade, you must know her INDEX
 diya_index = names.index("Diya")
-print(f"Diya's grade: {grades[diya_index]}")
+print("Diya's grade:", grades[diya_index])
 
-# What if lists get out of sync? Disaster!
-# What if someone inserts into names but forgets ages? Wrong data!
+# What goes wrong with parallel lists?
+# → If someone inserts into names but forgets ages, all data shifts and breaks!
 print("Problem: 3 separate lists must always stay in sync. Easy to break!")
 
 print()
 
-print("=== WITH a dictionary — one clean structure ===")
-
+# With a dictionary — one clean structure
+# Each student's data lives TOGETHER under their name as the key
+# No index needed — just look up by name directly
 students = {
     "Aarav":   {"age": 13, "grade": 7},
     "Diya":    {"age": 12, "grade": 6},
     "Karthik": {"age": 14, "grade": 8},
 }
 
-# To find Diya's grade — readable and direct
-print(f"Diya's grade: {students['Diya']['grade']}")
+print("Diya's grade:", students["Diya"]["grade"])
 
-# Add a new student — everything stays together
+# Adding a new student is easy — all their data stays in one place
 students["Riya"] = {"age": 11, "grade": 5}
 print("Added Riya:", students["Riya"])
 
 print()
 
-# --- Real-life: phone contacts ---
-print("=== Real-life: Contact Book ===")
-
-# Without dict: search through two lists
+# Real-life example: contact book
+# Without dict: find the index first, then look up the phone — two steps, two lists
 contact_names   = ["Aarav", "Diya", "Amma"]
 contact_phones  = ["9876543210", "9123456780", "9988776655"]
 search = "Diya"
 idx = contact_names.index(search)
-print(f"Without dict — {search}'s phone: {contact_phones[idx]}")
+print("Without dict —", search + "'s phone:", contact_phones[idx])
 
-# With dict: instant lookup by name
+# With dict: one step, direct lookup by name — fast and readable
 contacts = {
     "Aarav": "9876543210",
     "Diya":  "9123456780",
     "Amma":  "9988776655",
 }
-print(f"With dict    — {search}'s phone: {contacts[search]}")
+print("With dict    —", search + "'s phone:", contacts[search])
 
 print()
 
-print("=== 3 Reasons Dictionaries Exist ===")
-print("1. LABEL data meaningfully — 'name', 'age' instead of index 0, 1")
-print("2. FAST lookup — find by key directly, no looping needed")
-print("3. GROUPED — all data about one thing stays together")
-
-# Think:
-# 1. How would you store a cricket team's player stats WITHOUT a dictionary?
-# 2. Name 3 real apps that use key-value storage (hint: login, settings, maps).
+# Three reasons dictionaries exist
+print("3 Reasons Dictionaries Exist:")
+print("  1. LABEL data meaningfully — 'name', 'age' instead of index 0, 1")
+print("  2. FAST lookup — find by key directly, no looping needed")
+print("  3. GROUPED — all data about one thing stays together")

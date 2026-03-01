@@ -1,61 +1,49 @@
-# Program Code: DC-ST-01
-# Title: Plan Before You Code
-# Cognitive Skill: Structured Thinking
-# Topic: Dictionaries in Python
+# Plan Before You Code — Cricket Score Tracker
+# A dictionary is the perfect fit here: player name → runs.
+# PLANNING TEMPLATE (answer these BEFORE writing a single line of code):
+#   Problem  : Track runs scored by each batsman in a cricket match.
+#   Inputs   : Player name, runs scored
+#   Outputs  : Individual scores, team total, highest scorer
+#   Structure: dictionary — player name (key) → runs (value)
+#   Steps    : 1. Define scores  2. Update  3. Total  4. Topper  5. Display
+#   Edge cases: Player out for 0? (valid — store 0 as value) Name typo? (check carefully)
 
-# Task: Build a Cricket Score Tracker for a match.
-# Before writing a single line of code, answer the planning questions below.
+print("Cricket Score Tracker")
 
-# ─── PLANNING TEMPLATE ───────────────────────────────────────────
-# Problem  : Track runs scored by each batsman in a cricket match.
-# Inputs   : Player name, runs scored per ball/over
-# Outputs  : Individual scores, total team score, highest scorer
-# Structure: dictionary — player name (key) → runs (value)
-# Steps    :
-#   1. Define the score dictionary
-#   2. Add/update scores as the match progresses
-#   3. Calculate team total
-#   4. Find highest scorer
-#   5. Display the scorecard
-# Edge cases: What if a player is out for 0? What if name is wrong?
-# ─────────────────────────────────────────────────────────────────
-
-print("=== Cricket Score Tracker ===")
-
-# --- Step 1: Define scores (after planning, NOW write code) ---
+# Step 1: Define the scores — initial data after the match
 scores = {
     "Aarav":   45,
     "Karthik": 62,
     "Riya":    18,
-    "Diya":     0,   # out for a duck
+    "Diya":     0,   # out for a duck — value is 0, still a valid entry
     "Ananya":  33,
 }
 
-# --- Step 2: Update a score (e.g., a correction) ---
-scores["Riya"] += 5     # 5 extra runs were miscounted
-print("After correction:", scores["Riya"], "runs for Riya")
+# Step 2: Update a score (correction — 5 extra runs were miscounted for Riya)
+scores["Riya"] += 5     # += modifies the existing value in place
+print("After correction: Riya has", scores["Riya"], "runs")
 print()
 
-# --- Step 3: Team total ---
+# Step 3: Team total — sum all values in one line
+# sum(scores.values()) loops through all run values and adds them
 total = sum(scores.values())
-print(f"Team Total: {total} runs")
+print("Team Total:", total, "runs")
 print()
 
-# --- Step 4: Highest scorer ---
+# Step 4: Highest scorer
+# max(scores, key=scores.get) → finds the key (player name) whose value (runs) is maximum
+# This is the standard pattern for "find the key of the max value in a dict"
 top_player = max(scores, key=scores.get)
-print(f"Highest Scorer: {top_player} with {scores[top_player]} runs")
+print("Highest Scorer:", top_player, "with", scores[top_player], "runs")
 print()
 
-# --- Step 5: Scorecard display ---
-print("=== Scorecard ===")
-print(f"  {'Player':<12} {'Runs':>5}")
-print(f"  {'─'*12} {'─'*5}")
+# Step 5: Scorecard display
+print("Scorecard:")
+print("  " + "Player".ljust(12) + "Runs".rjust(5))
+print("  " + "-" * 17)
 for player, runs in scores.items():
-    status = " (not out)" if runs == max(scores.values()) else ""
-    print(f"  {player:<12} {runs:>5}{status}")
-print(f"  {'─'*12} {'─'*5}")
-print(f"  {'Total':<12} {total:>5}")
-
-# Think:
-# 1. What new key would you add if you also wanted to track wickets taken?
-# 2. Write out the 5-step plan for a "vote counter" before coding it.
+    # Mark the top scorer with a label — show the note only for the max value
+    status = " (top scorer)" if runs == max(scores.values()) else ""
+    print("  " + player.ljust(12) + str(runs).rjust(5) + status)
+print("  " + "-" * 17)
+print("  " + "Total".ljust(12) + str(total).rjust(5))

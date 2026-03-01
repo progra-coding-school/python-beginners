@@ -1,55 +1,50 @@
-# Program Code: DC-FC-01
-# Title: Spot the Difference
-# Cognitive Skill: Focus and Concentration
-# Topic: Dictionaries in Python
+# Spot the Difference — Two Versions of Similar Code
+# Find every difference between Version A and Version B in each pair.
+# Some differences cause BUGS. Some are just style choices.
+# This trains the precise reading skills needed for code review and debugging.
 
-# Two versions of similar code are shown side by side (as separate blocks).
-# Find every difference — some are bugs, some are just style choices.
-
-# ─── Pair 1 ─────────────────────────────────────────────────────
-print("=== Pair 1 ===")
-
-# Version A
+# Pair 1: capitalisation in keys
+# "name" and "Name" are DIFFERENT keys — dictionaries are case-sensitive!
+# .get("name") on a dict with key "Name" (capital N) returns None
+print("Pair 1:")
 a = {"name": "Aarav", "age": 13}
-print(a.get("name"))        # Aarav
+print(a.get("name"))        # "Aarav" — key "name" matches exactly
 
-# Version B
-b = {"Name": "Aarav", "age": 13}
-print(b.get("name"))        # None  ← different!
+b = {"Name": "Aarav", "age": 13}   # capital N in "Name"!
+print(b.get("name"))        # None   — "name" (lowercase) is not the same as "Name"
 # Difference: key is "Name" (capital N) in B. .get("name") returns None.
 
 print()
 
-# ─── Pair 2 ─────────────────────────────────────────────────────
-print("=== Pair 2 ===")
-
-# Version A
+# Pair 2: adding a new key vs updating an existing key
+# A adds "Karthik" (new key) → length increases from 2 to 3
+# B updates "Diya" (existing key) → same 2 keys, length stays 2
+print("Pair 2:")
 scores_a = {"Aarav": 85, "Diya": 90}
-scores_a["Karthik"] = 78
-print(len(scores_a))        # 3
+scores_a["Karthik"] = 78            # new key added → dict grows
+print(len(scores_a))                # 3
 
-# Version B
 scores_b = {"Aarav": 85, "Diya": 90}
-scores_b.update({"Diya": 78})
-print(len(scores_b))        # 2  ← different!
+scores_b.update({"Diya": 78})       # existing key updated → dict size unchanged
+print(len(scores_b))                # 2
 # Difference: A adds a new key (Karthik), B updates an existing key (Diya). Length differs.
 
 print()
 
-# ─── Pair 3 ─────────────────────────────────────────────────────
-print("=== Pair 3 ===")
+# Pair 3: safe loop vs dangerous loop when deleting keys
+# A: list(data_a.keys()) creates a SNAPSHOT — safe to delete while iterating
+# B: looping over live keys while deleting → RuntimeError in some Python versions
+print("Pair 3:")
 
-# Version A — safe loop
 data_a = {"x": 1, "y": 2, "z": 3}
-for k in list(data_a.keys()):
+for k in list(data_a.keys()):   # list() creates a safe copy of the keys
     if data_a[k] < 2:
         del data_a[k]
 print("A:", data_a)    # {'y': 2, 'z': 3}
 
-# Version B — may raise RuntimeError
 data_b = {"x": 1, "y": 2, "z": 3}
 try:
-    for k in data_b.keys():   # looping directly — dangerous
+    for k in data_b.keys():     # looping live dict while deleting — dangerous!
         if data_b[k] < 2:
             del data_b[k]
     print("B:", data_b)
@@ -59,16 +54,13 @@ except RuntimeError as e:
 
 print()
 
-# ─── Pair 4 ─────────────────────────────────────────────────────
-print("=== Pair 4 ===")
+# Pair 4: two ways to return a default for a missing key
+# Both produce "Not available" — but B is shorter and more Pythonic
+print("Pair 4:")
 
 menu_a = {"idli": 15, "dosa": 30}
-print(menu_a["chai"] if "chai" in menu_a else "Not available")   # Not available
+print(menu_a["chai"] if "chai" in menu_a else "Not available")   # check first, then access
 
 menu_b = {"idli": 15, "dosa": 30}
-print(menu_b.get("chai", "Not available"))                        # Not available
+print(menu_b.get("chai", "Not available"))   # .get() with default — one clean line
 # Difference: Different syntax, same result. B is shorter and more Pythonic.
-
-# Think:
-# 1. In Pair 1, how would you fix Version B so it behaves like Version A?
-# 2. In Pair 3, which version would you always use? Why?

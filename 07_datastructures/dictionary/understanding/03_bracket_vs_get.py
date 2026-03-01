@@ -1,58 +1,56 @@
-# Program Code: DC-UN-03
-# Title: Bracket vs .get() — Safe vs Risky Access
-# Cognitive Skill: Understanding
-# Topic: Dictionaries in Python
+# Bracket vs .get() — Safe vs Risky Access
+# dict["key"] — direct access. Crashes with KeyError if the key doesn't exist.
+# dict.get("key") — safe access. Returns None (or a custom default) if key is missing.
+# RULE: use .get() whenever the key MIGHT not be there — e.g., user input, optional fields.
 
-# --- The RISKY way: square brackets [ ] ---
-print("=== Using [ ] — direct access ===")
-
+# The risky way: square brackets []
+# Works perfectly when the key exists, but crashes hard when it doesn't
+print("Using [ ] — direct access:")
 menu = {"idli": 15, "dosa": 30, "chai": 10}
+print(menu["idli"])     # 15 — key exists, works fine
+print(menu["dosa"])     # 30 — key exists, works fine
 
-print(menu["idli"])     # 15 — works fine
-print(menu["dosa"])     # 30 — works fine
-
-# What if the key doesn't exist?
+# If the key doesn't exist → KeyError crash!
 try:
-    print(menu["pizza"])    # KeyError — CRASH!
+    print(menu["pizza"])    # KeyError — pizza is not in the menu!
 except KeyError as e:
-    print(f"KeyError: {e} — item not in menu!")
+    print("KeyError:", e, "— item not in menu!")
 
 print()
 
-# --- The SAFE way: .get() ---
-print("=== Using .get() — safe access ===")
-
-print(menu.get("chai"))         # 10 — found it
+# The safe way: .get()
+# Returns None when key is missing — no crash, program keeps running
+print("Using .get() — safe access:")
+print(menu.get("chai"))         # 10   — found it
 print(menu.get("pizza"))        # None — key missing, no crash
-print(menu.get("pizza", 0))     # 0   — custom default, no crash
+print(menu.get("pizza", 0))     # 0    — custom default returned instead of None
 
 print()
 
-# --- When to use which ---
-print("=== When to use [ ] vs .get() ===")
-
+# When to use which:
+print("When to use [ ] vs .get():")
 student = {"name": "Aarav", "grade": 7, "city": "Chennai"}
 
-# Use [ ] when you are CERTAIN the key exists
+# Use [ ] when you are CERTAIN the key exists (e.g., required fields in your own data)
 name = student["name"]
 print("Name (certain it exists):", name)
 
-# Use .get() when the key MIGHT be missing
+# Use .get() when the key MIGHT be missing (e.g., optional fields, external data)
 email = student.get("email", "No email on file")
 print("Email (may be missing):", email)
 
 print()
 
-# --- Real-world example: shop price lookup ---
-print("=== Shop price lookup ===")
-
+# Real-world example: shop price lookup
+# .get() lets us handle "item not found" gracefully without crashing
+print("Shop price lookup:")
 prices = {"mango": 120, "banana": 40, "apple": 80}
 
 def get_price(item):
-    price = prices.get(item)
+    price = prices.get(item)          # returns None if not found
     if price is None:
-        return f"Sorry, '{item}' is not available."
-    return f"{item}: Rs.{price}"
+        return "Sorry, '" + item + "' is not available."
+    return item + ": Rs." + str(price)
 
 print(get_price("mango"))       # mango: Rs.120
 print(get_price("papaya"))      # Sorry, 'papaya' is not available.
@@ -60,22 +58,16 @@ print(get_price("banana"))      # banana: Rs.40
 
 print()
 
-# --- Chaining .get() for nested dicts safely ---
-print("=== Safe nested access ===")
-
+# Chaining .get() for nested dictionaries — safe at every level
+# profile.get("address", {}) → if "address" missing, use {} so the next .get() doesn't crash
+print("Safe nested access:")
 profile = {
-    "name": "Diya",
+    "name":    "Diya",
     "address": {"city": "Chennai", "pin": 600001}
 }
 
-# Safe: use .get() at each level
-city = profile.get("address", {}).get("city", "Unknown")
+city  = profile.get("address", {}).get("city", "Unknown")     # safe two-level access
+phone = profile.get("contact", {}).get("phone", "Not provided")  # "contact" doesn't exist
+
 print("City:", city)    # Chennai
-
-# Key doesn't exist — returns default at each step
-phone = profile.get("contact", {}).get("phone", "Not provided")
 print("Phone:", phone)  # Not provided
-
-# Think:
-# 1. When would you prefer [ ] over .get()? Give one real example.
-# 2. What does .get("key", default) return when the key IS found?

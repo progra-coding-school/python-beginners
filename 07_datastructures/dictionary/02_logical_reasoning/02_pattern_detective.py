@@ -1,26 +1,27 @@
-# Program Code: DC-LR-02
-# Title: Pattern Detective
-# Cognitive Skill: Logical Reasoning
-# Topic: Dictionaries in Python
+# Pattern Detective
+# Every dictionary program uses one of a small set of patterns.
+# Learn to recognise these patterns — then you can build any program.
+# Four patterns: COUNTING, GROUPING, INVERTING, MERGING.
 
-# Spot the pattern in each code block.
-# Name it, then complete the missing piece.
-
-# --- Pattern 1: Counting with a dictionary ---
-print("=== Pattern 1: Counting ===")
+# Pattern 1: Counting — build a frequency dict
+# For each item, either start a count at 1 or add 1 to an existing count.
+# .get(sport, 0) safely returns 0 for new sports (instead of crashing on missing key)
+print("Pattern 1: Counting")
 votes = ["cricket", "football", "cricket", "hockey", "cricket", "football"]
 
 tally = {}
 for sport in votes:
-    tally[sport] = tally.get(sport, 0) + 1   # <- what does this line do?
+    tally[sport] = tally.get(sport, 0) + 1   # get current count (0 if new) + 1
 
 print("Votes tally:", tally)
-# Pattern: builds a frequency/count dictionary
+# Result: {'cricket': 3, 'football': 2, 'hockey': 1}
 
 print()
 
-# --- Pattern 2: Grouping with a dictionary ---
-print("=== Pattern 2: Grouping ===")
+# Pattern 2: Grouping — collect items that share a common property into lists
+# For each (name, section) pair, add the name to the correct section's list.
+# "if section not in classes" creates a new empty list for each new section seen first.
+print("Pattern 2: Grouping")
 students = [
     ("Aarav",   "A"),
     ("Diya",    "B"),
@@ -32,41 +33,39 @@ students = [
 classes = {}
 for name, section in students:
     if section not in classes:
-        classes[section] = []       # start a new list for that section
-    classes[section].append(name)  # add student to their section
+        classes[section] = []           # first student in this section → create empty list
+    classes[section].append(name)       # add student to their section's list
 
 for section, names in classes.items():
-    print(f"  Section {section}: {names}")
-# Pattern: groups items into lists inside a dictionary
+    print("  Section " + section + ":", names)
 
 print()
 
-# --- Pattern 3: Inverting a dictionary ---
-print("=== Pattern 3: Inverting keys and values ===")
+# Pattern 3: Inverting — swap keys and values
+# Useful when you need to look up by value instead of by key.
+# Original: name → hex code.  Inverted: hex code → name.
+print("Pattern 3: Inverting keys and values")
 colour_codes = {"red": "#FF0000", "green": "#00FF00", "blue": "#0000FF"}
 
 inverted = {}
 for name, code in colour_codes.items():
-    inverted[code] = name           # swap key and value
+    inverted[code] = name           # the old VALUE becomes the new KEY
 
 print("Original:", colour_codes)
 print("Inverted:", inverted)
-# Pattern: look up by code instead of by name
 
 print()
 
-# --- Pattern 4: Merging two dictionaries ---
-print("=== Pattern 4: Merging ===")
+# Pattern 4: Merging — combine two dictionaries into one
+# .update() adds all pairs from one dict into another.
+# If the same key exists in both dicts, the LAST .update() wins.
+print("Pattern 4: Merging")
 term1 = {"Maths": 85, "Science": 90}
-term2 = {"English": 78, "Maths": 88}   # Maths appears in both!
+term2 = {"English": 78, "Maths": 88}   # Maths appears in BOTH!
 
 merged = {}
-merged.update(term1)
-merged.update(term2)    # Maths will be overwritten by term2 value
+merged.update(term1)    # Maths = 85
+merged.update(term2)    # Maths = 88 (overwrites 85 — later update wins)
 
 print("Merged:", merged)
-# Pattern: later .update() wins for duplicate keys
-
-# Think:
-# 1. In Pattern 2, what would happen if you used a dictionary of sets instead of lists?
-# 2. In Pattern 4, how would you keep the HIGHER Maths score instead of the later one?
+# Result: {'Maths': 88, 'Science': 90, 'English': 78}

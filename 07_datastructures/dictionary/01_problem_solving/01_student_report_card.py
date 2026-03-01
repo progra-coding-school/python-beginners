@@ -1,17 +1,10 @@
-# Program Code: DC-PS-01
-# Title: Student Report Card Builder
-# Cognitive Skill: Problem Solving
-# Topic: Dictionaries in Python
+# Student Report Card Builder
+# A real-world use of dictionaries: one dict stores all subject marks.
+# KEY IDEA: subject name is the KEY, mark is the VALUE.
+# This lets you look up any subject's mark by name, loop through all at once,
+# and use built-in functions (sum, max, min) directly on the values.
 
-# Problem:
-# Aarav's school needs a digital report card.
-# Store a student's marks in 5 subjects and then:
-# 1. Display all subject marks
-# 2. Calculate total and average
-# 3. Find the highest and lowest scoring subject
-# 4. Print a grade (A+ / A / B / C) for each subject
-
-# --- Step 1: Store the report card ---
+# Step 1: Store the report card — subject → mark
 report = {
     "Maths":   88,
     "Science": 92,
@@ -22,34 +15,39 @@ report = {
 
 student_name = "Aarav"
 
-print(f"=== {student_name}'s Report Card ===")
+print(student_name + "'s Report Card")
 print()
 
-# --- Step 2: Display all subjects ---
+# Step 2: Display all subjects using .items() — key and value together
 print("Subject-wise Marks:")
 for subject, marks in report.items():
-    print(f"  {subject:10} : {marks}")
+    print("  " + subject.ljust(10) + " : " + str(marks))
 
 print()
 
-# --- Step 3: Total and average ---
+# Step 3: Total and average
+# sum(dict.values()) adds all marks in one line
+# len(dict) counts how many subjects — no need to hardcode 5
 total   = sum(report.values())
 average = total / len(report)
-print(f"Total   : {total}")
-print(f"Average : {average:.1f}")
+print("Total   :", total)
+print("Average :", str(round(average, 1)))
 
 print()
 
-# --- Step 4: Highest and lowest subject ---
+# Step 4: Best and worst subject
+# max(dict, key=dict.get) → finds the KEY whose VALUE is the highest
+# This is the standard pattern for finding the key of the max/min value in a dict
 best_subject  = max(report, key=report.get)
 worst_subject = min(report, key=report.get)
 
-print(f"Best subject  : {best_subject} ({report[best_subject]})")
-print(f"Needs work on : {worst_subject} ({report[worst_subject]})")
+print("Best subject  :", best_subject, "(" + str(report[best_subject]) + ")")
+print("Needs work on :", worst_subject, "(" + str(report[worst_subject]) + ")")
 
 print()
 
-# --- Step 5: Grade for each subject ---
+# Step 5: Grade for each subject using a helper function
+# The function converts a number to a grade letter — called once per subject
 def get_grade(score):
     if score >= 90:
         return "A+"
@@ -63,8 +61,4 @@ def get_grade(score):
 print("Grades:")
 for subject, marks in report.items():
     grade = get_grade(marks)
-    print(f"  {subject:10} : {grade}")
-
-# Think:
-# 1. How would you add a new subject to the report card?
-# 2. What would change if a student had 8 subjects instead of 5?
+    print("  " + subject.ljust(10) + " : " + grade)

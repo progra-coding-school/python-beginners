@@ -1,59 +1,46 @@
-# Program Code: DC-HOT-01
-# Title: Reverse Engineer the Dictionary
-# Cognitive Skill: Higher Order Thinking
-# Topic: Dictionaries in Python
+# Reverse Engineer the Dictionary
+# You see the TARGET OUTPUT — your job is to write the code that produces it.
+# This is harder than reading examples because you must think backwards:
+#   What structure do I need? → What operation creates that? → What input data?
 
-# Study the OUTPUT below. Write the code that produced it.
-# Then compare your solution with the reference at the bottom.
-
-# --- Challenge 1 ---
-# Output:
-#   {'a': 1, 'b': 4, 'c': 9}
-#
-# The values are squares of 1, 2, 3.
-# The keys are 'a', 'b', 'c'.
-
-print("=== Challenge 1 — Write code to get this output ===")
+# Challenge 1: Values are squares of 1, 2, 3
+# Target: {'a': 1, 'b': 4, 'c': 9}
+# Observation: 'a'→1 (1²), 'b'→4 (2²), 'c'→9 (3²) — square each position value
+print("Challenge 1 — Write code to get this output:")
 print("{'a': 1, 'b': 4, 'c': 9}")
 print()
 
-# Your solution here:
 keys   = ['a', 'b', 'c']
 values = [1, 2, 3]
 result = {}
 for i in range(len(keys)):
-    result[keys[i]] = values[i] ** 2
-print("Your result:", result)
+    result[keys[i]] = values[i] ** 2   # key → value squared
+print("Result:", result)
 
 print()
 
-# --- Challenge 2 ---
-# Output:
-#   {1: 'odd', 2: 'even', 3: 'odd', 4: 'even', 5: 'odd'}
-
-print("=== Challenge 2 — Odd/even labels ===")
+# Challenge 2: Number → "odd" or "even" label
+# Target: {1: 'odd', 2: 'even', 3: 'odd', 4: 'even', 5: 'odd'}
+# Observation: n % 2 == 0 → even, otherwise → odd
+print("Challenge 2 — Odd/even labels:")
 print("{1: 'odd', 2: 'even', 3: 'odd', 4: 'even', 5: 'odd'}")
 print()
 
-# Your solution here:
 labels = {}
 for n in range(1, 6):
-    labels[n] = "even" if n % 2 == 0 else "odd"
-print("Your result:", labels)
+    labels[n] = "even" if n % 2 == 0 else "odd"   # ternary picks the right label
+print("Result:", labels)
 
 print()
 
-# --- Challenge 3 ---
-# Output:
-#   Cricket team  : ['Aarav', 'Karthik']
-#   Football team : ['Diya', 'Riya']
-
-print("=== Challenge 3 — Group by sport ===")
+# Challenge 3: Group players by sport — the GROUPING pattern
+# Target: Cricket: ['Aarav', 'Karthik'], Football: ['Diya', 'Riya']
+# Observation: sport is the key, list of players is the value
+print("Challenge 3 — Group by sport:")
 print("Cricket team  : ['Aarav', 'Karthik']")
 print("Football team : ['Diya', 'Riya']")
 print()
 
-# Input data
 players = [
     ("Aarav",   "Cricket"),
     ("Diya",    "Football"),
@@ -61,33 +48,26 @@ players = [
     ("Riya",    "Football"),
 ]
 
-# Your solution here:
 teams = {}
 for name, sport in players:
     if sport not in teams:
-        teams[sport] = []
+        teams[sport] = []           # create list for this sport on first occurrence
     teams[sport].append(name)
 
 for sport, names in teams.items():
-    print(f"  {sport:15}: {names}")
+    print("  " + sport.ljust(15) + ": " + str(names))
 
 print()
 
-# --- Challenge 4 — Reverse a dictionary ---
-# Input : {"apple": "red", "banana": "yellow", "grape": "purple"}
-# Output: {"red": "apple", "yellow": "banana", "purple": "grape"}
-
-print("=== Challenge 4 — Reverse keys and values ===")
+# Challenge 4: Reverse keys and values — the INVERSION pattern
+# Input: fruit → colour.  Output: colour → fruit
+# Observation: old value becomes new key, old key becomes new value
+print("Challenge 4 — Reverse keys and values:")
 original = {"apple": "red", "banana": "yellow", "grape": "purple"}
 flipped  = {}
 
-# Your solution here:
 for fruit, colour in original.items():
-    flipped[colour] = fruit
+    flipped[colour] = fruit   # colour becomes key, fruit becomes value
 
 print("Original:", original)
 print("Flipped :", flipped)
-
-# Think:
-# 1. In Challenge 4, what would go wrong if two fruits had the same colour?
-# 2. Can you rewrite Challenge 2 in one line using a dict comprehension?

@@ -1,75 +1,68 @@
-# Program Code: DC-PS-02
-# Title: Canteen Menu and Bill Calculator
-# Cognitive Skill: Problem Solving
-# Topic: Dictionaries in Python
+# Canteen Menu and Bill Calculator
+# Two dictionaries work together: menu (item → price) and order (item → quantity).
+# Step-by-step problem:
+#   1. Display the menu
+#   2. Validate the order — check each item exists in the menu
+#   3. Generate a receipt — price × quantity for each item
+#   4. Check if the student's budget is enough
 
-# Problem:
-# The school canteen has a menu with prices.
-# A student orders multiple items.
-# Calculate the total bill and show an itemised receipt.
-
-# --- Step 1: Define the menu ---
+# Step 1: The menu dictionary — item name → price in rupees
 menu = {
-    "idli":       15,
-    "dosa":       30,
-    "vada":       20,
-    "chai":       10,
+    "idli":        15,
+    "dosa":        30,
+    "vada":        20,
+    "chai":        10,
     "sambar rice": 40,
-    "juice":      25,
+    "juice":       25,
 }
 
-print("=== School Canteen Menu ===")
+print("School Canteen Menu:")
 for item, price in menu.items():
-    print(f"  {item:15} Rs.{price}")
+    print("  " + item.ljust(15) + " Rs." + str(price))
 
 print()
 
-# --- Step 2: Student's order ---
-# Dictionary: item → quantity ordered
+# Step 2: The student's order — item → quantity ordered
 order = {
     "idli":  2,
     "chai":  1,
     "juice": 2,
 }
 
-# --- Step 3: Check for items not in menu ---
-print("=== Checking order ===")
+# Validate: split into valid items (in the menu) and invalid items (not on menu)
+print("Checking order:")
 valid_order   = {}
 invalid_items = []
 
 for item, qty in order.items():
-    if item in menu:
+    if item in menu:          # 'in' checks if the key exists in the dict
         valid_order[item] = qty
     else:
         invalid_items.append(item)
 
 if invalid_items:
-    print(f"Sorry, these items are not available: {invalid_items}")
+    print("Sorry, these items are not available:", invalid_items)
 
 print()
 
-# --- Step 4: Generate receipt ---
-print("=== Receipt ===")
+# Step 3: Generate the receipt — price × quantity per item
+print("Receipt:")
 total = 0
 
 for item, qty in valid_order.items():
-    price    = menu[item]
+    price    = menu[item]         # look up price from the menu dict
     subtotal = price * qty
     total   += subtotal
-    print(f"  {item:15} x{qty}  =  Rs.{subtotal}")
+    print("  " + item.ljust(15) + " x" + str(qty) + "  =  Rs." + str(subtotal))
 
-print(f"{'─' * 35}")
-print(f"  {'TOTAL':20}     Rs.{total}")
+print("  " + "-" * 35)
+print("  " + "TOTAL".ljust(20) + "     Rs." + str(total))
 
-# --- Step 5: Can Diya afford it? ---
+# Step 4: Check if Diya can afford her order
 diya_budget = 60
 print()
 if total <= diya_budget:
-    print(f"Diya has Rs.{diya_budget}. She can afford the order!")
-    print(f"Change returned: Rs.{diya_budget - total}")
+    print("Diya has Rs." + str(diya_budget) + ". She can afford the order!")
+    print("Change returned: Rs." + str(diya_budget - total))
 else:
-    print(f"Diya has Rs.{diya_budget}. She needs Rs.{total - diya_budget} more.")
-
-# Think:
-# 1. How would you add a 5% discount for orders above Rs.50?
-# 2. How would you update the menu price of 'chai' from 10 to 12?
+    print("Diya has Rs." + str(diya_budget) + ". She needs Rs." + str(total - diya_budget) + " more.")
