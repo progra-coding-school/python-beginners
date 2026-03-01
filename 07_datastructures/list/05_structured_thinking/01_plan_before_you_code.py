@@ -1,4 +1,10 @@
 # Plan Before You Code
+# Great programmers PLAN before they type — they answer 4 questions first:
+#   WHAT to store?   → which lists do I need?
+#   WHAT to do?      → what operations will I run?
+#   WHAT output?     → what should the result look like?
+#   HOW to break it? → what are the steps in order?
+# Planning for 5 minutes prevents 20 minutes of confusion and rewriting.
 
 # PLANNING BLOCK (write this BEFORE coding):
 #   WHAT to store?   → student_names, student_marks (parallel lists)
@@ -17,6 +23,8 @@ print("  student_marks =", student_marks)
 print()
 
 # Step 2: Find the topper
+# max() finds the highest mark, then index() locates which position it is at
+# The SAME position in student_names gives the name — parallel lists!
 highest_marks = max(student_marks)
 topper_index  = student_marks.index(highest_marks)
 topper_name   = student_names[topper_index]
@@ -29,10 +37,11 @@ print()
 
 # Step 3: Sort both lists together by marks (highest first)
 # zip() pairs names+marks so they stay linked during sort
+# Without zip(), sorting marks alone would break the name-mark connection!
 paired = list(zip(student_marks, student_names))
-paired.sort(reverse=True)
-sorted_marks = [m for m, n in paired]
-sorted_names = [n for m, n in paired]
+paired.sort(reverse=True)                      # highest marks moves to front
+sorted_marks = [m for m, n in paired]          # unpack marks back into a list
+sorted_names = [n for m, n in paired]          # unpack names back into a list
 
 print("Step 3 — Sorted (highest first):", sorted_names)
 print()
@@ -47,11 +56,13 @@ for rank in range(len(sorted_names)):
 print()
 
 # WITHOUT A PLAN — Mani's messy version
-print("=== Without a Plan — Mani's Version ===")
+# Mani sorted the marks without keeping the names linked → names are now wrong!
+# This is what happens when you code before you think.
+print("Without a Plan — Mani's Version:")
 x = ["Aarav", "Diya", "Kabir", "Meera", "Rohan"]
 y = [88, 95, 76, 91, 83]
 
-y_sorted = sorted(y, reverse=True)   # sorted marks only
+y_sorted = sorted(y, reverse=True)   # sorted marks only — names stayed behind!
 # Problem: which name goes with which mark? Nobody knows!
 print("  y_sorted =", y_sorted)
 print("  Problem: the names are not sorted. Mani lost track and had to start over!")

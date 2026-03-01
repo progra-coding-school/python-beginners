@@ -1,10 +1,15 @@
 # Which Approach Is Better?
-# Compare two solutions and pick the better one.
+# Good programmers don't just find ONE solution — they compare solutions.
+# For each problem below, two approaches are shown. Pick the cleaner one and say WHY.
+# KEY RULE: simpler code is better — fewer steps, fewer bugs, easier to read.
 
 score = 0
 
 
 # --- Problem 1: Remove a player by name ---
+# Approach A: first find the index with index(), THEN remove with pop() — two steps
+# Approach B: remove() searches by VALUE and deletes in one step
+# remove() was designed exactly for this — use the right tool!
 print("Problem 1: Remove 'Kabir' from a team list.")
 print()
 print("  Approach A:")
@@ -23,6 +28,9 @@ else:
 print()
 
 # --- Problem 2: Add multiple items ---
+# Approach A: a loop calling append() once per item — works but is 3 lines instead of 1
+# Approach B: extend() adds ALL items from a list at once — built exactly for this job
+# Rule: when Python has a built-in method for the job, use it!
 print("Problem 2: Add ['oil', 'sugar', 'ghee'] to a shopping cart.")
 print()
 print("  Approach A:")
@@ -41,6 +49,9 @@ else:
 print()
 
 # --- Problem 3: Check if player exists ---
+# Approach A: manually checks every index — breaks the moment the list grows beyond 3!
+# Approach B: 'in' keyword scans the entire list automatically, no matter how long it is
+# Never hard-code index checks — always use 'in' for existence checks.
 print("Problem 3: Check if 'Meera' is in the team.")
 print()
 print("  Approach A:")
@@ -61,6 +72,7 @@ print()
 
 print("Score:", score, "/ 3")
 print()
+# Quick reference: when to use which method
 print("Key rules:")
 print("  Remove by VALUE  → remove(value)")
 print("  Remove by INDEX  → pop(index)")

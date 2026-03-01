@@ -1,9 +1,13 @@
 # Mental List Tracking – Follow the List in Your Head
 # Watch each operation and predict what the list looks like at every step.
+# This trains your mental model — the ability to "run code in your head."
+# The stronger your mental model, the faster you debug and write correct code.
 
 score = 0
 total = 0
 
+# check() runs the actual operation and compares it to your prediction
+# It accepts both eval-able strings like "[1, 2, 3]" and plain text as fallback
 def check(user_input, actual, explanation):
     global score, total
     total += 1
@@ -26,6 +30,8 @@ print("Type your answer as a list, e.g. [1, 2, 3]")
 print()
 
 # Challenge 1 — append then pop
+# append(4) adds to the end → [1, 2, 3, 4]
+# pop() removes the last item → back to [1, 2, 3]
 print("Challenge 1:")
 lst = [1, 2, 3]
 print("  numbers =", lst)
@@ -42,6 +48,8 @@ lst.pop()
 check(u, lst, "pop() removes the last item → [1, 2, 3]")
 
 # Challenge 2 — insert then remove
+# insert(1, "x") pushes "b", "c" one step right → ["a", "x", "b", "c"]
+# remove("b") finds and deletes the first "b" → ["a", "x", "c"]
 print("Challenge 2:")
 lst = ["a", "b", "c"]
 print("  letters =", lst)
@@ -58,6 +66,8 @@ lst.remove("b")
 check(u, lst, 'remove("b") finds and deletes the first "b".')
 
 # Challenge 3 — sort then pop(0)
+# sort() rearranges [5,3,8,1] → [1,3,5,8] (ascending)
+# pop(0) removes index 0 (the FIRST item, which is now 1) → [3,5,8]
 print("Challenge 3:")
 lst = [5, 3, 8, 1]
 print("  scores =", lst)
@@ -74,6 +84,9 @@ lst.pop(0)
 check(u, lst, "pop(0) removes the item at index 0 — the FIRST item (not the last!).")
 
 # Challenge 4 — append, sort, pop(-1)
+# append("Meera") → ["Aarav","Diya","Kabir","Meera"]
+# sort() → alphabetical: ["Aarav","Diya","Kabir","Meera"]
+# pop(-1) removes index -1 = LAST item ("Meera") → ["Aarav","Diya","Kabir"]
 print("Challenge 4:")
 lst = ["Aarav", "Diya", "Kabir"]
 print("  team =", lst)
@@ -95,6 +108,9 @@ lst.pop(-1)
 check(u, lst, "pop(-1) removes the LAST item — index -1 always means last.")
 
 # Challenge 5 — extend, pop(2), reverse (Boss)
+# extend([60,70]) → [10,20,30,40,50,60,70]
+# pop(2) removes index 2 (= 30) → [10,20,40,50,60,70]
+# reverse() flips the whole list → [70,60,50,40,20,10]
 print("Challenge 5 (Boss):")
 lst = [10, 20, 30, 40, 50]
 print("  scores =", lst)

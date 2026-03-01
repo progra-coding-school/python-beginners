@@ -1,10 +1,14 @@
 # Spot the Difference – Which List Changed?
 # Two lists appear. Spot exactly what changed between List A and List B.
+# This trains your eye to read lists carefully — a critical debugging skill.
+# In real code, a single wrong character (capital B vs b, 50 vs 500) causes bugs.
 
 score = 0
 
 
 # Round 1 — capitalisation
+# "banana" and "Banana" look almost identical — but Python treats them as different!
+# Case sensitivity is one of the most common beginner bugs.
 print("Round 1 of 5: Aarav's Fruit Basket")
 print("  List A:", ["apple", "banana", "mango"])
 print("  List B:", ["apple", "Banana", "mango"])
@@ -18,6 +22,8 @@ if ans == "y":
 print()
 
 # Round 2 — extra zero
+# 50 and 500 differ by one digit — easy to miss when scanning quickly.
+# Always check if numbers are in a reasonable range for the context.
 print("Round 2 of 5: Diya's Cricket Score Sheet")
 print("  List A:", [10, 20, 30, 40, 50])
 print("  List B:", [10, 20, 30, 40, 500])
@@ -31,6 +37,8 @@ if ans == "y":
 print()
 
 # Round 3 — extra item added
+# The lengths differ — List A has 3 items, List B has 4.
+# len() is your first check when you suspect something was added or removed.
 print("Round 3 of 5: Kabir's Class Register")
 print("  List A:", ["Aarav", "Diya", "Kabir"])
 print("  List B:", ["Aarav", "Diya", "Kabir", "Meera"])
@@ -44,6 +52,8 @@ if ans == "y":
 print()
 
 # Round 4 — two items swapped
+# All items exist in both lists — but their ORDER is different.
+# Order matters! If code depends on index position, a swap gives wrong results.
 print("Round 4 of 5: Riya's Colour Palette")
 print("  List A:", ["red", "green", "blue"])
 print("  List B:", ["red", "blue", "green"])
@@ -57,6 +67,8 @@ if ans == "y":
 print()
 
 # Round 5 — subtle swap (Boss Round)
+# The swap is at the END of the list — the beginning looks identical.
+# Tip: always compare lists item by item from LEFT to RIGHT, like proofreading a sentence.
 print("Round 5 of 5 (Boss Round): Aarav's Number Sequence")
 print("  List A:", [1, 2, 3, 4, 5])
 print("  List B:", [1, 2, 3, 5, 4])

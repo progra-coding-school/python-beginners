@@ -1,4 +1,7 @@
 # Memory Recall Challenge – Remember the List!
+# A list appears on screen for a few seconds, then disappears.
+# Your job: type back as many items as you can remember.
+# This trains both memory AND attention — essential skills for every programmer.
 # How it works:
 #   1. A list flashes on screen for a few seconds
 #   2. Screen clears
@@ -8,9 +11,11 @@
 import time
 import os
 
+# clear() wipes the terminal so the list disappears after the timer
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
 
+# show_and_hide() displays the list, waits, then clears the screen
 def show_and_hide(items, seconds):
     print()
     print("  MEMORISE THIS LIST:")
@@ -20,9 +25,11 @@ def show_and_hide(items, seconds):
     print("  " + "-" * 30)
     print("  You have", seconds, "seconds...")
     print()
-    time.sleep(seconds)
-    clear()
+    time.sleep(seconds)   # pause so the student has time to read
+    clear()               # hide the list — now they must recall from memory!
 
+# check_recall() compares what the student typed against the original list
+# Case-insensitive: "mango" and "Mango" both count as correct
 def check_recall(original, recalled):
     score  = 0
     missed = []
@@ -33,6 +40,7 @@ def check_recall(original, recalled):
             missed.append(item)
     return score, missed
 
+# Three rounds: each harder than the last (more items + longer list + less time per item)
 rounds = [
     {
         "title":   "Round 1 — Fruits",
@@ -60,17 +68,19 @@ input("Press Enter to start the first round...")
 total_score    = 0
 total_possible = 0
 
+# Loop through each round — same logic runs for all three rounds
 for rd in rounds:
     clear()
     print()
     print("  " + rd["title"])
     print()
-    show_and_hide(rd["items"], rd["seconds"])
+    show_and_hide(rd["items"], rd["seconds"])   # flash list, then hide
 
     print("  " + rd["title"])
     print("  What items do you remember? (type DONE when finished)")
     print()
 
+    # Collect everything the student types until they type DONE
     recalled = []
     while True:
         entry = input("  > ").strip()

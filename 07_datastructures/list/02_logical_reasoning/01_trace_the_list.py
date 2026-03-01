@@ -1,20 +1,26 @@
 # Trace the List
-# After each series of operations, type what the list looks like.
+# A list changes every time an operation runs.
+# This exercise trains you to TRACE — follow each step in your head
+# and predict exactly what the list looks like after each operation.
+# Type your answer as a Python list, e.g. ['a', 'b'] or [1, 2, 3]
 
 score = 0
 total = 5
 
-
+# check() compares the student's answer to the actual list result
+# It uses eval() to parse typed text like "[1, 2, 3]" into a real Python list
 def check(user_input, actual):
     try:
         parsed = eval(user_input)
         return parsed == actual
     except Exception:
+        # fallback: compare as strings with spaces removed
         user_clean = user_input.replace(" ", "").lower()
         actual_clean = str(actual).replace(" ", "").lower()
         return user_clean == actual_clean
 
-# --- Round 1 ---
+# --- Round 1: append + remove ---
+# append adds to the end; remove deletes the first matching value
 print("Round 1:")
 print("  snacks = ['chips', 'mango', 'biscuit']")
 print("  snacks.append('chocolate')")
@@ -30,7 +36,8 @@ else:
     print("  Answer:", snacks)
 print()
 
-# --- Round 2 ---
+# --- Round 2: insert + pop ---
+# insert(1, x) pushes everything from index 1 rightward; pop() removes the last item
 print("Round 2:")
 print("  team = ['Aarav', 'Kabir', 'Diya']")
 print("  team.insert(1, 'Riya')")
@@ -46,7 +53,8 @@ else:
     print("  Answer:", team)
 print()
 
-# --- Round 3 ---
+# --- Round 3: sort + append ---
+# sort() rearranges in place first, THEN append adds to the end of the sorted list
 print("Round 3:")
 print("  marks = [78, 45, 92, 60]")
 print("  marks.sort()")
@@ -62,7 +70,8 @@ else:
     print("  Answer:", marks)
 print()
 
-# --- Round 4 ---
+# --- Round 4: append + insert + remove + append (four steps!) ---
+# Trace each step carefully — the list changes after every line
 print("Round 4:")
 print("  cart = ['rice', 'dal', 'oil']")
 print("  cart.append('sugar')")
@@ -82,7 +91,8 @@ else:
     print("  Answer:", cart)
 print()
 
-# --- Round 5 (Boss) ---
+# --- Round 5 (Boss): extend + reverse + pop(2) ---
+# extend adds multiple items; reverse flips the whole list; pop(2) removes index 2
 print("Round 5 (Boss Round):")
 print("  scores = [34, 12, 56]")
 print("  scores.extend([20, 45])")
