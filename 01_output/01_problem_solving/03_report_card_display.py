@@ -1,10 +1,6 @@
-# Program Code: OUT-PS-03
-# Title: Report Card Display
-# Cognitive Skill: Problem Solving (Decomposition)
-# Topic: Output in Python
-
-# Big question: How do we display a beautiful, formatted school report card?
-# Break it into output decisions — header, table, summary, footer.
+# Report Card Display
+# Problem: display a formatted school report card using print() and string alignment.
+# Break it into output decisions — header, subject table, summary, footer.
 
 # Step 1: Inputs
 name       = input("Student name: ")
@@ -18,7 +14,7 @@ english  = int(input("  English: "))
 hindi    = int(input("  Hindi: "))
 computer = int(input("  Computer: "))
 
-# Step 2: Calculations
+# Step 2: Calculations — store subjects in a dict for easy iteration
 subjects = {
     "Maths":    maths,
     "Science":  science,
@@ -28,8 +24,9 @@ subjects = {
 }
 total   = sum(subjects.values())
 average = total / len(subjects)
-highest = max(subjects, key=subjects.get)
+highest = max(subjects, key=subjects.get)   # subject with the highest mark
 
+# Grade lookup — converts a mark to a letter grade
 def get_grade(mark):
     if mark >= 90: return "A+"
     elif mark >= 80: return "A"
@@ -53,6 +50,7 @@ print("  Class    : " + class_name)
 print("-" * w)
 
 # Step 4: Print — Subject table
+# Consistent column widths make rows line up correctly
 print("  " + "Subject".ljust(12) + "Marks".rjust(6) + "Out of".rjust(8) + "Grade".rjust(8))
 print("-" * w)
 for subject, mark in subjects.items():

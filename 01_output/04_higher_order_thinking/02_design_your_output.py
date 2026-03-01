@@ -1,9 +1,5 @@
-# Program Code: OUT-HOT-02
-# Title: Design Your Output — Certificate Generator
-# Cognitive Skill: Higher Order Thinking (Design from Scratch)
-# Topic: Output in Python
-
-# Design challenge: Build a certificate of achievement using only print().
+# Design Your Output — Certificate Generator
+# Design challenge: build a certificate of achievement using only print().
 # Make it look professional — borders, alignment, formatting.
 
 print()
@@ -15,6 +11,7 @@ school      = input("School/Organisation: ")
 given_by    = input("Given by (teacher/principal name): ")
 
 # --- Design the certificate ---
+# All helper functions share the same width — consistent margins and borders
 w = 50
 
 def border():
@@ -26,9 +23,11 @@ def double_border():
 def blank():
     print("*" + " " * (w-2) + "*")
 
+# centre() pads the text to fill the inner width exactly
 def centre(text):
     print("*" + text.center(w-2) + "*")
 
+# left() left-aligns text with a small margin
 def left(text):
     print("*  " + text.ljust(w-5) + "*")
 
@@ -45,7 +44,7 @@ border()
 blank()
 centre("This is to certify that")
 blank()
-centre(name.upper())
+centre(name.upper())    # recipient's name in capitals — most prominent element
 blank()
 centre("has successfully achieved excellence in")
 blank()

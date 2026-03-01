@@ -1,11 +1,8 @@
-# Program Code: OUT-CT-01
-# Title: Spot the Bug — Output
-# Cognitive Skill: Critical Thinking (Bug Spotting)
-# Topic: Output in Python
-
+# Spot the Bug — Output
 # Each snippet has a bug. Find it, explain why it's wrong, and fix it.
+# Spotting output bugs builds the habit of reading every character carefully.
 
-print("=== Bug 1 ===")
+print("Bug 1:")
 print("""
   PRINT("Hello World")
 """)
@@ -15,7 +12,7 @@ print("     print() must be lowercase.")
 print("Fix: print('Hello World')")
 print()
 
-print("=== Bug 2 ===")
+print("Bug 2:")
 print("""
   print("It's a sunny day!)
 """)
@@ -25,18 +22,18 @@ print('Fix: print("It\'s a sunny day!")')
 print("  OR: print(\"It's a sunny day!\")")
 print()
 
-print("=== Bug 3 ===")
+print("Bug 3:")
 print("""
   print("My name is" + Aarav)
 """)
 answer = input("What is the bug? ")
 print("Bug: Aarav has no quotes — Python thinks it's a variable name.")
-print('     If Aarav is not defined, NameError! If it should be text, it needs quotes.')
+print("     If Aarav is not defined, NameError! If it should be text, it needs quotes.")
 print('Fix: print("My name is" + "Aarav")')
 print('  OR: print("My name is Aarav")')
 print()
 
-print("=== Bug 4 ===")
+print("Bug 4:")
 print("""
   print("Hello, Diya you are " + 13 + " years old.")
 """)
@@ -46,7 +43,7 @@ print("     13 is an integer, not a string → TypeError!")
 print('Fix: print("Hello, Diya you are " + str(13) + " years old.")')
 print()
 
-print("=== Bug 5 ===")
+print("Bug 5:")
 print("""
   print1("Hello World")
 """)
@@ -56,7 +53,7 @@ print("     The function is called print, not print1.")
 print("Fix: print('Hello World')")
 print()
 
-print("=== Bug 6 ===")
+print("Bug 6:")
 print("""
   print "Hello World"
 """)

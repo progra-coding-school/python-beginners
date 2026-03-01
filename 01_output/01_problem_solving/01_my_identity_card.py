@@ -1,9 +1,5 @@
-# Program Code: OUT-PS-01
-# Title: My Identity Card
-# Cognitive Skill: Problem Solving (Decomposition)
-# Topic: Output in Python
-
-# Big question: How do we design and display a personal ID card?
+# My Identity Card
+# Problem: design and display a personal ID card using only print() and string formatting.
 # Break it into smaller output decisions — one field at a time.
 
 # Step 1: Gather the information
@@ -15,26 +11,28 @@ city      = input("Your city: ")
 hobby     = input("Your favourite hobby: ")
 fav_sport = input("Your favourite sport: ")
 
-# Step 2: Decide card width
+# Step 2: Decide card width — all rows must fit inside this
 card_width = 38
 
-# Step 3: Build the border
+# Step 3: Build the border strings once and reuse them
 border     = "+" + "=" * (card_width - 2) + "+"
 thin_line  = "+" + "-" * (card_width - 2) + "+"
 
-# Step 4: Helper to print a centred title line
+# Step 4: Helper functions — each handles one output pattern
+# title_line centres text between + markers
 def title_line(text):
     print("+" + text.center(card_width - 2) + "+")
 
-# Helper to print a labelled field
+# field_line left-aligns a labelled value inside | markers
 def field_line(label, value):
     content = "  " + label + ": " + str(value)
     print("|" + content.ljust(card_width - 2) + "|")
 
+# blank_line prints an empty row inside the card border
 def blank_line():
     print("|" + " " * (card_width - 2) + "|")
 
-# Step 5: Print the ID card
+# Step 5: Print the ID card — structure follows the plan above
 print()
 print(border)
 title_line("PROGRA KIDS CODING SCHOOL")

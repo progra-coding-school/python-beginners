@@ -1,13 +1,6 @@
-# Program Code: OUT-ST-01
-# Title: Plan Before You Code — Event Announcement
-# Cognitive Skill: Structured Thinking (Planning)
-# Topic: Output in Python
-
+# Plan Before You Code — Event Announcement
 # Before writing print() statements, plan your OUTPUT layout:
-# - What SECTIONS are needed?
-# - What is the ORDER?
-# - What FORMATTING makes it readable?
-# - What WIDTH looks good?
+# What sections? What order? What formatting? What width?
 
 # PROBLEM: Display a school event announcement.
 #
@@ -53,7 +46,7 @@ print("*" + " " * (w-2) + "*")
 print("*" + "-" * (w-2) + "*")
 print("*" + " " * (w-2) + "*")
 
-# Wrap the details text across multiple lines
+# Wrap the details text across multiple lines so it fits inside the border
 words = details.split()
 line  = ""
 for word in words:

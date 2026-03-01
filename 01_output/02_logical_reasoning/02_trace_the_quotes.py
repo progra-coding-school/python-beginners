@@ -1,14 +1,11 @@
-# Program Code: OUT-LR-02
-# Title: Trace the Quotes
-# Cognitive Skill: Logical Reasoning (Pattern Finding)
-# Topic: Output in Python
-
+# Trace the Quotes
 # Look at each print() carefully.
 # Identify which quote style is used and what the output will be.
+# This builds precision — quote type and content together determine the output.
 
 score = 0
 
-print("=== Trace the Quotes ===")
+print("Trace the Quotes")
 print("Identify: single / double / triple  AND  predict output.")
 print()
 
@@ -21,6 +18,7 @@ if "single" in q and a == "Namaste, World!": score += 1
 print()
 
 # --- Q2 ---
+# Note the escaped apostrophe in the print below — it's showing the CODE, not running it
 print('Q2: print("It\'s a great day!")')
 q = input("Quote style (single/double/triple): ").strip().lower()
 a = input("Output: ").strip()
@@ -44,6 +42,7 @@ if '"Hello!"' in a or '"Hello!"' in a: score += 1
 print()
 
 # --- Q5 ---
+# A has an apostrophe inside single quotes — this breaks the string
 print("Q5: Which is the correct way to print: I can't stop!")
 print("  A: print('I can't stop!')")
 print("  B: print(\"I can't stop!\")")

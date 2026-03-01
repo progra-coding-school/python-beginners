@@ -1,16 +1,15 @@
-# Program Code: OUT-LR-01
-# Title: Predict the Output
-# Cognitive Skill: Logical Reasoning (Tracing)
-# Topic: Output in Python
-
+# Predict the Output
 # Read each print() statement. Predict what it shows BEFORE running.
+# This trains you to trace Python's evaluation in your head — the core debugging skill.
 
 score = 0
 
-print("=== Predict the Output ===")
+print("Predict the Output")
 print("Type exactly what you think will be printed.")
 print()
 
+# Each question is (code_as_text, correct_answer)
+# Try to predict each one before you type your answer
 questions = [
     ('print("Hello" + " " + "World")',          "Hello World"),
     ('print(5 + 3)',                             "8"),

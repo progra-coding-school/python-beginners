@@ -1,18 +1,15 @@
-# Program Code: OUT-LR-03
-# Title: Order Matters
-# Cognitive Skill: Logical Reasoning (Sequential Reasoning)
-# Topic: Output in Python
-
+# Order Matters
 # Python runs print() statements TOP to BOTTOM, in order.
 # The sequence of your prints is the sequence of your output.
 
 score = 0
 
-print("=== Order Matters ===")
+print("Order Matters")
 print("Predict the EXACT output, in order.")
 print()
 
 # --- Q1: Simple order ---
+# Three separate print() calls produce three separate lines in the order written
 print("Q1: What is the output of these 3 lines in order?")
 print("""
   print("Maths")
@@ -27,6 +24,7 @@ if all(s in answer for s in ["Maths", "Science", "English"]):
 print()
 
 # --- Q2: end="" changes order on screen ---
+# end="" removes the newline, so the NEXT print continues on the same line
 print("Q2: What is the full output?")
 print("""
   print("A", end="")
@@ -41,6 +39,7 @@ if answer.strip() == "ABC":
 print()
 
 # --- Q3: Blank lines affect spacing ---
+# print() with no arguments outputs one blank line — counts as a line in the output
 print("Q3: How many lines does this produce (including blank lines)?")
 print("""
   print("Start")
@@ -57,6 +56,7 @@ if answer.strip() == "5":
 print()
 
 # --- Q4: Multiple end="" in sequence ---
+# Each print with end=" | " keeps the cursor on the same line
 print("Q4: What is the FULL output (one line or many)?")
 print("""
   print("Morning", end=" | ")
@@ -71,6 +71,7 @@ if "Morning" in answer and "Evening" in answer:
 print()
 
 # --- Q5: sep changes the separator ---
+# sep replaces the default space between items with whatever you specify
 print("Q5: What are the 2 lines of output?")
 print("""
   print("10", "20", "30", sep=" + ")

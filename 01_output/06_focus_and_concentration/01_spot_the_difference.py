@@ -1,17 +1,14 @@
-# Program Code: OUT-FC-01
-# Title: Spot the Difference — Output
-# Cognitive Skill: Focus and Concentration (Attention to Detail)
-# Topic: Output in Python
-
+# Spot the Difference — Output
 # Each pair looks almost identical — but produces DIFFERENT output.
-# Look at every character!
+# Look at every character: quotes, operators, and keywords all matter!
 
 score = 0
 
-print("=== Spot the Difference — Output ===")
+print("Spot the Difference — Output")
 print()
 
 # --- Round 1 ---
+# "5" is a string; 5 is a number — same character, completely different behaviour with +
 print("Round 1:")
 print('  Code A: print("5" + "3")')
 print('  Code B: print(5 + 3)')
@@ -21,6 +18,7 @@ score += 1
 print()
 
 # --- Round 2 ---
+# Comma adds a space automatically; + joins with NO space
 print("Round 2:")
 print('  Code A: print("Hello", "World")')
 print('  Code B: print("Hello" + "World")')
@@ -31,6 +29,7 @@ score += 1
 print()
 
 # --- Round 3 ---
+# "*" * 5 repeats the character; "*5" is just the two-character string literal
 print("Round 3:")
 print('  Code A: print("*" * 5)')
 print('  Code B: print("*5")')
@@ -40,6 +39,7 @@ score += 1
 print()
 
 # --- Round 4 ---
+# / always returns float; // floor-divides and returns int
 print("Round 4:")
 print('  Code A: print(10 / 4)')
 print('  Code B: print(10 // 4)')
@@ -49,6 +49,7 @@ score += 1
 print()
 
 # --- Round 5 ---
+# \n works the same whether it is inside the string or added with + — same result
 print("Round 5:")
 print('  Code A: print("Line1\\nLine2")')
 print('  Code B: print("Line1" + "\\n" + "Line2")')

@@ -1,10 +1,6 @@
-# Program Code: OUT-HOT-03
-# Title: Output Mini App — Personal Profile Builder
-# Cognitive Skill: Higher Order Thinking (Creative Synthesis)
-# Topic: Output in Python
-
-# Build a complete profile builder — collects info and displays
-# it in multiple stylish formats using everything learned about output.
+# Output Mini App — Personal Profile Builder
+# Build a complete profile builder: collects info and displays it in multiple styles.
+# Uses everything learned about output — alignment, str(), formatting, borders.
 
 print("╔══════════════════════════════════╗")
 print("║   Progra Profile Builder        ║")
@@ -33,6 +29,7 @@ print("3. Fun Banner")
 style = input("Style (1/2/3): ").strip()
 
 # --- Style 1: Simple Card ---
+# Box-style card with = border and field rows inside | markers
 if style == "1":
     w = 36
     print()
@@ -54,6 +51,7 @@ if style == "1":
     print("+" + "=" * (w-2) + "+")
 
 # --- Style 2: Formal Report ---
+# Report style with section dividers and consistent label alignment
 elif style == "2":
     print()
     print("=" * 45)
@@ -74,6 +72,7 @@ elif style == "2":
     print("=" * 45)
 
 # --- Style 3: Fun Banner ---
+# Energetic style with initials, stars, and an upbeat closing line
 elif style == "3":
     initials  = "".join(word[0].upper() for word in name.split())
     star_line = "*" * (len(name) + 8)

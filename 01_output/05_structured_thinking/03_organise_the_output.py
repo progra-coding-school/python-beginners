@@ -1,12 +1,9 @@
-# Program Code: OUT-ST-03
-# Title: Organise the Output
-# Cognitive Skill: Structured Thinking (Data Organisation)
-# Topic: Output in Python
-
+# Organise the Output
 # Complex output must be ORGANISED into sections.
 # Use headers, dividers, blank lines, and alignment to group related info.
 
 # --- BAD: Dumping everything without structure ---
+# All data in one line — impossible to scan or find any specific value
 print("BAD output — unorganised dump:")
 print("Aarav 13 Chennai Progra School 85 72 90 PASS A")
 print()
@@ -28,7 +25,7 @@ average = total / 3
 grade   = "A" if average >= 80 else "B"
 result  = "PASS" if all(m >= 35 for m in [maths, science, english]) else "FAIL"
 
-# Helper functions for consistent formatting
+# Helper functions — define the formatting ONCE, use it EVERYWHERE
 W = 40
 def section_header(title):
     print()
@@ -41,6 +38,7 @@ def separator():
     print("  " + "-" * (W - 2))
 
 # --- Section 1: Personal Info ---
+# Top border and title make the document scannable at a glance
 print("=" * W)
 print("STUDENT REPORT".center(W))
 print("=" * W)
@@ -52,6 +50,7 @@ field("City",   city)
 field("School", school)
 
 # --- Section 2: Academic Marks ---
+# Table with headers + separator makes rows easy to compare
 section_header("Academic Performance")
 separator()
 print("  " + "Subject".ljust(15) + "Marks".rjust(7) + "Out of".rjust(8))

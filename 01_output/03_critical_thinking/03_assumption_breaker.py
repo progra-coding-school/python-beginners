@@ -1,14 +1,12 @@
-# Program Code: OUT-CT-03
-# Title: Assumption Breaker — Output
-# Cognitive Skill: Critical Thinking (Assumption Breaking)
-# Topic: Output in Python
-
+# Assumption Breaker — Output
 # Common wrong assumptions about print() — let's break them!
+# Running each block proves or disproves the belief with real code.
 
-print("=== Assumption Breaker — Output ===")
+print("Assumption Breaker — Output")
 print()
 
 # --- Assumption 1 ---
+# Many beginners think each print() always starts a new line — but end= changes that
 print("Assumption 1: 'print() always puts items on separate lines'")
 print("A", end=" ")
 print("B", end=" ")
@@ -18,6 +16,7 @@ print("       A B C all appeared on ONE line above!")
 print()
 
 # --- Assumption 2 ---
+# String + String joins text; it does NOT add the numbers together
 print("Assumption 2: '\"5\" + \"5\" = 10'")
 result = "5" + "5"
 print('  "5" + "5" =', result)
@@ -26,6 +25,7 @@ print("       For math: use 5 + 5 (no quotes) → 10")
 print()
 
 # --- Assumption 3 ---
+# print() is a procedure — it does work but gives NOTHING back (returns None)
 print("Assumption 3: 'print() returns the value it prints'")
 x = print("Watch this!")
 print("  print() returned:", x)
@@ -34,6 +34,7 @@ print("       It shows output on screen, but gives nothing back.")
 print()
 
 # --- Assumption 4 ---
+# Single and double quotes both create the same type (str) — they're just style
 print("Assumption 4: 'Single and double quotes are different types'")
 a = 'Hello'
 b = "Hello"
@@ -44,6 +45,7 @@ print("WRONG! Both are exactly the same type (str). Quotes are just style.")
 print()
 
 # --- Assumption 5 ---
+# / (true division) always returns a float — even when the result is a whole number
 print("Assumption 5: 'print(5/2) shows 2'")
 print("  print(5/2) →", 5/2)
 print("WRONG! / always gives a float. 5/2 = 2.5, not 2.")
@@ -51,6 +53,7 @@ print("       Use 5//2 for integer division → 2")
 print()
 
 # --- Assumption 6 ---
+# Python reads top to bottom — a variable must be defined BEFORE it is used
 print("Assumption 6: 'You can print a variable without defining it first'")
 try:
     print(unknown_variable)

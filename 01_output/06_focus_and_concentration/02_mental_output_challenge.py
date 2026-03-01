@@ -1,28 +1,27 @@
-# Program Code: OUT-FC-02
-# Title: Mental Output Challenge
-# Cognitive Skill: Focus and Concentration (Mental Tracking)
-# Topic: Output in Python
-
+# Mental Output Challenge
 # Predict what each print() shows — in your head, without running it!
+# Mental calculation builds the habit of tracing code before executing it.
 
 score = 0
 total = 10
 
-print("=== Mental Output Challenge ===")
+print("Mental Output Challenge")
 print("Predict the EXACT output. Focus on every character!")
 print()
 
+# Each question is (code_as_text, exact_expected_answer)
+# Think through each one carefully — operator type and data type both matter
 questions = [
     ('print("Progra" * 2)',                    "PrograProgra"),
-    ('print(3 + 4 * 2)',                       "11"),
-    ('print("3" + "4" * 2)',                   "344"),
-    ('print(10 / 5)',                          "2.0"),
-    ('print(10 // 3, 10 % 3)',                 "3 1"),
-    ('print("A", "B", sep="")',                "AB"),
-    ('print("Hi", end="! ")\nprint("Bye")',    "Hi! Bye"),
-    ('print(2 ** 10)',                          "1024"),
-    ('print("=" * 3 + " OK " + "=" * 3)',      "=== OK ==="),
-    ('print(len("Aarav"))',                    "5"),
+    ('print(3 + 4 * 2)',                       "11"),          # * before + (BODMAS!)
+    ('print("3" + "4" * 2)',                   "344"),         # "4"*2="44", then "3"+"44"
+    ('print(10 / 5)',                          "2.0"),          # / always gives float
+    ('print(10 // 3, 10 % 3)',                 "3 1"),          # quotient and remainder
+    ('print("A", "B", sep="")',                "AB"),           # sep="" removes space
+    ('print("Hi", end="! ")\nprint("Bye")',    "Hi! Bye"),      # end keeps on same line
+    ('print(2 ** 10)',                          "1024"),         # 2 to the power of 10
+    ('print("=" * 3 + " OK " + "=" * 3)',      "=== OK ==="),   # repetition + joining
+    ('print(len("Aarav"))',                    "5"),             # len counts characters
 ]
 
 for i, (code, answer) in enumerate(questions, 1):

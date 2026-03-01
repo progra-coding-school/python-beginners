@@ -1,15 +1,12 @@
-# Program Code: OUT-UN-04
-# Title: Formatting Output — Making It Readable
-# Cognitive Skill: Understanding
-# Topic: Output in Python
-
+# Formatting Output — Making It Readable
 # Good output isn't just correct — it's READABLE and PRESENTABLE.
-# Let's explore ways to format output beautifully.
+# Use alignment, rounding, borders, and spacing to make data easy to scan.
 
-print("=== 1. Alignment with string methods ===")
-# .ljust(n)  → left-align  in a field of n characters
-# .rjust(n)  → right-align in a field of n characters
+# --- 1. Alignment with string methods ---
+# .ljust(n) → left-align in a field of n characters (pad with spaces on the right)
+# .rjust(n) → right-align in a field of n characters (pad with spaces on the left)
 # .center(n) → centre-align in a field of n characters
+print("Alignment with string methods:")
 print("Name".ljust(12)    + "Marks".rjust(6) + "Grade".center(8))
 print("-" * 28)
 print("Aarav".ljust(12)   + str(85).rjust(6) + "A".center(8))
@@ -18,7 +15,9 @@ print("Karthik".ljust(12) + str(91).rjust(6) + "A+".center(8))
 
 print()
 
-print("=== 2. Decimal precision with round() ===")
+# --- 2. Decimal precision with round() ---
+# round(number, decimal_places) limits the number of digits shown after the dot
+print("Decimal precision with round():")
 pi = 3.14159265
 print("Pi (full):     ", pi)
 print("Pi (2 decimal):", round(pi, 2))
@@ -30,7 +29,9 @@ print("Average (1dp): ", round(average, 1))
 
 print()
 
-print("=== 3. Separators and borders ===")
+# --- 3. Separators and borders using helper functions ---
+# Define helper functions to keep formatting DRY (Don't Repeat Yourself)
+print("Separators and borders:")
 def print_header(title):
     width = 35
     print("=" * width)
@@ -50,11 +51,13 @@ print("=" * 35)
 
 print()
 
-print("=== 4. Multiline output for readability ===")
+# --- 4. Multiline output for readability ---
+# One long line is hard to scan; multiple labelled lines are easy to read
+print("Multiline output for readability:")
 # Bad — all on one line
 print("Name: Aarav Age: 13 School: Progra Marks: 85 90 78")
 
-# Good — structured
+# Good — structured with consistent labels and spacing
 print()
 print("Name   : Aarav")
 print("Age    : 13")
@@ -63,11 +66,13 @@ print("Marks  : Maths=85, Science=90, English=78")
 
 print()
 
-print("=== 5. Using blank lines to group output ===")
+# --- 5. Using blank lines to group output ---
+# print() with no arguments outputs a blank line — use it to separate sections
+print("Using blank lines to group output:")
 print("Section 1: Personal Info")
 print("  Name: Aarav")
 print("  Age: 13")
-print()    # blank line separates sections
+print()    # blank line separates sections visually
 print("Section 2: Academic Info")
 print("  Total: 253")
 print("  Grade: A")

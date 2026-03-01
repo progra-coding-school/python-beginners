@@ -1,8 +1,4 @@
-# Program Code: OUT-KN-01
-# Title: What Is print()?
-# Cognitive Skill: Knowledge
-# Topic: Output in Python
-
+# What Is print()?
 # print() is a built-in Python function that displays information on the screen.
 # Without print(), your program runs silently — no one sees what it did!
 
@@ -18,11 +14,12 @@ print(100)
 print(3.14)
 
 # --- print() can show the result of a calculation ---
+# Python evaluates the expression first, then displays the result
 print(10 + 5)     # shows 15
 print(20 * 3)     # shows 60
 
 # --- print() with nothing inside → prints a blank line ---
-print()           # empty line — useful for spacing
+print()           # empty line — useful for spacing between sections
 
 # --- print() structure ---
 # print ( "message" )
@@ -36,6 +33,7 @@ print()           # empty line — useful for spacing
 # output    → anything shown on the screen
 
 # --- Multiple prints appear on separate lines ---
+# Each print() starts on a NEW line by default
 print("Line 1")
 print("Line 2")
 print("Line 3")

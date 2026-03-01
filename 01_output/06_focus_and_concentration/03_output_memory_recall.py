@@ -1,14 +1,10 @@
-# Program Code: OUT-FC-03
-# Title: Output Memory Recall
-# Cognitive Skill: Focus and Concentration (Memory Recall)
-# Topic: Output in Python
-
-# How well do you remember output rules?
-# Answer from memory — no notes!
+# Output Memory Recall
+# How well do you remember output rules? Answer from memory — no notes!
+# Memory recall strengthens what you've learned better than re-reading.
 
 score = 0
 
-print("=== Output Memory Recall ===")
+print("Output Memory Recall")
 print("No looking back. Answer from memory!")
 print()
 
@@ -99,7 +95,7 @@ print()
 print("Quick Reference:")
 print("  print()          → display output")
 print("  ' or \"          → string quotes")
-print("  ''' or \"\"\"      → multiline strings")
+print('  \'\'\' or """      → multiline strings')
 print("  sep=','          → change item separator")
 print("  end=''           → change line ending")
 print("  print() returns  → None")

@@ -1,12 +1,8 @@
-# Program Code: OUT-PS-02
-# Title: Receipt Printer
-# Cognitive Skill: Problem Solving (Decomposition)
-# Topic: Output in Python
+# Receipt Printer
+# Problem: display a clean, real-looking shop receipt using print() and string methods.
+# Break it into output sections — header, items, totals, footer.
 
-# Big question: How do we display a clean, real-looking shop receipt?
-# Break it into output sections — one section at a time.
-
-# Helper to format money with 2 decimal places
+# Helper to format money with exactly 2 decimal places
 def money(n):
     n = round(n, 2)
     s = str(n)
@@ -22,7 +18,7 @@ shop_name = "Amma's Kirana Store"
 customer  = input("Customer name: ")
 phone     = input("Phone number: ")
 
-# Step 2: Items purchased
+# Step 2: Items purchased — collect until user presses Enter with no name
 print("\nEnter items (press Enter with no name to finish):")
 items = []
 while True:
@@ -35,11 +31,11 @@ while True:
 
 # Step 3: Calculate totals
 subtotal = sum(price * qty for _, price, qty in items)
-discount = subtotal * 0.05 if subtotal > 500 else 0
-gst      = (subtotal - discount) * 0.05
+discount = subtotal * 0.05 if subtotal > 500 else 0   # 5% discount over Rs.500
+gst      = (subtotal - discount) * 0.05               # 5% GST on discounted amount
 total    = subtotal - discount + gst
 
-# Step 4: Print the receipt
+# Step 4: Print the receipt — header, table, totals, footer
 width = 36
 print()
 print("=" * width)
@@ -49,9 +45,12 @@ print("-" * width)
 print("  Customer : " + customer)
 print("  Phone    : " + phone)
 print("-" * width)
+
+# Column headers — ljust/rjust aligns each column to a fixed width
 print("  " + "Item".ljust(14) + " " + "Qty".rjust(3) + " " + "Price".rjust(7) + " " + "Total".rjust(7))
 print("-" * width)
 
+# Each item row — same column widths as the header
 for name, price, qty in items:
     line_total = price * qty
     print("  " + name.ljust(14) + " " + str(qty).rjust(3) + " " + money(price).rjust(7) + " " + money(line_total).rjust(7))
