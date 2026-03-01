@@ -1,18 +1,15 @@
-# Program Code: SE-ST-02
-# Title: Naming Matters
-# Cognitive Skill: Structured Thinking
-# Topic: Sets in Python
-
+# Naming Matters
 # Good names make set code readable without comments.
-# Compare the same logic with poor vs good naming.
+# Poor names (s1, s2, s3) force you to decode the logic; good names explain themselves.
 
 # ─── VERSION A: Poor naming ─────────────────────────────────────
-print("=== Version A: Poor naming (confusing) ===")
+# These names tell you nothing — you must read every line to understand the intent
+print("Version A: Poor naming (confusing):")
 
 s1 = {"a", "b", "c", "d"}
 s2 = {"c", "d", "e", "f"}
-s3 = s1 & s2
-s4 = s1 - s2
+s3 = s1 & s2   # what does this mean?
+s4 = s1 - s2   # and this?
 
 print("s3:", s3)
 print("s4:", s4)
@@ -21,22 +18,23 @@ print("s4:", s4)
 print()
 
 # ─── VERSION B: Good naming ─────────────────────────────────────
-print("=== Version B: Good naming (self-explanatory) ===")
+# Names tell the story — you understand what the code does before reading the logic
+print("Version B: Good naming (self-explanatory):")
 
 morning_batch  = {"Aarav", "Diya", "Karthik", "Riya"}
 evening_batch  = {"Karthik", "Riya", "Ananya", "Vivek"}
 
-both_batches   = morning_batch & evening_batch   # enrolled in both
-morning_only   = morning_batch - evening_batch   # only morning students
+both_batches   = morning_batch & evening_batch   # enrolled in both — intersection
+morning_only   = morning_batch - evening_batch   # only morning students — difference
 
 print("Attend both batches :", both_batches)
 print("Morning only        :", morning_only)
-# Immediately clear what the code does!
+# Immediately clear what the code does — no comment needed!
 
 print()
 
 # ─── Naming conventions for sets ────────────────────────────────
-print("=== Naming Guidelines for Sets ===")
+print("Naming Guidelines for Sets:")
 guidelines = {
     "Use plural nouns"         : "students, colours, tags — not s or data",
     "Name describes contents"  : "submitted_ids, visited_urls",
@@ -45,28 +43,22 @@ guidelines = {
     "Operation results named"  : "common_members, only_in_a, all_users",
 }
 for rule, example in guidelines.items():
-    print(f"  {rule:<30} → {example}")
+    print("  " + rule.ljust(30) + " → " + example)
 
 print()
 
 # ─── Practice: rename these ─────────────────────────────────────
-print("=== Practice: Better names ===")
+print("Practice: Better names:")
 
-# Poor:
-x = {"red", "blue"}
-y = {"blue", "green"}
-z = x | y
-# Better:
+# Poor: x = {"red", "blue"}, y = {"blue", "green"}, z = x | y
+# Better: descriptive noun phrases that say what the set contains
 primary_colours   = {"red", "blue"}
 cool_colours      = {"blue", "green"}
 all_colours       = primary_colours | cool_colours
 print("all_colours:", all_colours)
 
-# Poor:
-a = {"Aarav", "Diya"}
-b = {"Diya", "Karthik"}
-c = a & b
-# Better:
+# Poor: a = {"Aarav", "Diya"}, b = {"Diya", "Karthik"}, c = a & b
+# Better: class context makes the intersection meaningful
 class_a_students  = {"Aarav", "Diya"}
 class_b_students  = {"Diya", "Karthik"}
 shared_students   = class_a_students & class_b_students

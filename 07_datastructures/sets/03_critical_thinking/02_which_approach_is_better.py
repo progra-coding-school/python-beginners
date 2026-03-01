@@ -1,8 +1,4 @@
-# Program Code: SE-CT-02
-# Title: Which Approach Is Better?
-# Cognitive Skill: Critical Thinking
-# Topic: Sets in Python
-
+# Which Approach Is Better?
 # Two approaches — same problem, different tools.
 # Read both, decide which is better and why.
 
@@ -10,18 +6,18 @@
 # Problem 1: Find unique items in a list
 # =========================================================
 
-print("=== Problem 1: Remove duplicates ===")
+print("Problem 1: Remove duplicates:")
 
 items = ["pen", "book", "pen", "eraser", "book", "pen", "ruler"]
 
-# Approach A: Manual loop
+# Approach A: Manual loop — scans the growing list every time
 unique_a = []
 for item in items:
-    if item not in unique_a:
+    if item not in unique_a:    # this check scans the whole list on every iteration
         unique_a.append(item)
 print("Approach A:", sorted(unique_a))
 
-# Approach B: Set
+# Approach B: Set — O(1) membership check, one line
 unique_b = list(set(items))
 print("Approach B:", sorted(unique_b))
 
@@ -37,7 +33,7 @@ print()
 # Problem 2: Check if a student submitted homework
 # =========================================================
 
-print("=== Problem 2: Homework submission check ===")
+print("Problem 2: Homework submission check:")
 
 # 500 students — checking if each name is in the submission list
 submitted_list = ["Aarav", "Diya", "Karthik", "Riya", "Ananya"]
@@ -45,11 +41,11 @@ submitted_set  = {"Aarav", "Diya", "Karthik", "Riya", "Ananya"}
 
 student = "Karthik"
 
-# Approach A: list
+# Approach A: list — Python scans from the first item until it finds the match
 result_a = student in submitted_list   # scans left to right
 print("List check:", result_a)
 
-# Approach B: set
+# Approach B: set — Python computes the hash and jumps directly to the slot
 result_b = student in submitted_set    # direct hash lookup
 print("Set check :", result_b)
 
@@ -64,19 +60,19 @@ print()
 # Problem 3: Finding common items
 # =========================================================
 
-print("=== Problem 3: Common items between two groups ===")
+print("Problem 3: Common items between two groups:")
 
 group1 = ["mango", "banana", "apple", "grapes"]
 group2 = ["banana", "orange", "apple", "mango"]
 
-# Approach A: nested loop
+# Approach A: nested loop — checks every item in group1 against every item in group2
 common_a = []
 for item in group1:
     if item in group2 and item not in common_a:
         common_a.append(item)
 print("Approach A:", sorted(common_a))
 
-# Approach B: set intersection
+# Approach B: set intersection — one operator, built-in, fast
 common_b = set(group1) & set(group2)
 print("Approach B:", sorted(common_b))
 

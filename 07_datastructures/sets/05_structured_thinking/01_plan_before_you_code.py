@@ -1,10 +1,6 @@
-# Program Code: SE-ST-01
-# Title: Plan Before You Code
-# Cognitive Skill: Structured Thinking
-# Topic: Sets in Python
-
-# Task: Build a "Who is absent today?" checker.
-# Before writing code, answer the planning questions.
+# Plan Before You Code
+# Task: build a "Who is absent today?" checker using set operations.
+# Before writing code, answer the planning questions — then implement step by step.
 
 # ─── PLANNING TEMPLATE ───────────────────────────────────────────
 # Problem  : Given a class roll and today's attendees, find who is absent.
@@ -20,7 +16,7 @@
 # Edge cases: What if everyone is present? What if an unknown name appears?
 # ─────────────────────────────────────────────────────────────────
 
-print("=== Daily Attendance Checker ===")
+print("Daily Attendance Checker:")
 
 # --- Step 1: Full class ---
 full_class = {"Aarav", "Diya", "Karthik", "Riya", "Ananya", "Vivek", "Priya", "Arjun"}
@@ -29,28 +25,31 @@ full_class = {"Aarav", "Diya", "Karthik", "Riya", "Ananya", "Vivek", "Priya", "A
 present_today = {"Aarav", "Diya", "Karthik", "Ananya", "Priya"}
 
 # --- Step 3: Who is absent? ---
+# Set difference: full_class - present_today = students NOT yet present
 absent = full_class - present_today
-print(f"Present  ({len(present_today)}): {sorted(present_today)}")
-print(f"Absent   ({len(absent)})     : {sorted(absent)}")
+print("Present  (" + str(len(present_today)) + "):", sorted(present_today))
+print("Absent   (" + str(len(absent)) + ")     :", sorted(absent))
 
 # --- Step 4: Percentage ---
 percentage = (len(present_today) / len(full_class)) * 100
-print(f"Attendance: {percentage:.1f}%")
+print("Attendance:", str(round(percentage, 1)) + "%")
 
 # --- Step 5: Edge case — unknown name in swipe list ---
+# A badge swipe might include someone not on the class roll — filter them out
 print()
-print("=== Edge case: Unknown student ===")
+print("Edge case: Unknown student:")
 swipes = {"Aarav", "Diya", "Karthik", "Ananya", "Priya", "Unknown_Student"}
-valid_present = swipes & full_class           # only those in the class
-unknown       = swipes - full_class           # anyone NOT in class
-print(f"Valid attendees : {sorted(valid_present)}")
-print(f"Unknown swipes  : {unknown}")
+valid_present = swipes & full_class           # only those actually in the class
+unknown       = swipes - full_class           # anyone NOT in the class
+print("Valid attendees :", sorted(valid_present))
+print("Unknown swipes  :", unknown)
 
 # --- Edge case — everyone present ---
+# Check before printing "missing" — handle the happy path cleanly
 print()
-print("=== Edge case: Full attendance ===")
+print("Edge case: Full attendance:")
 if absent:
-    print(f"Missing: {sorted(absent)}")
+    print("Missing:", sorted(absent))
 else:
     print("Full attendance today! Everyone is present.")
 

@@ -1,56 +1,57 @@
-# Program Code: SE-FC-03
-# Title: Memory Recall Challenge
-# Cognitive Skill: Focus and Concentration
-# Topic: Sets in Python
-
-# Study the sets below for 30 seconds.
-# Then scroll down and answer questions FROM MEMORY.
-# Run to verify!
+# Memory Recall Challenge
+# Study the sets below for 30 seconds. Then scroll down and answer questions FROM MEMORY.
+# This builds concentration AND tests your understanding of set operations.
 
 # ─── Memorise these sets ─────────────────────────────────────────
 class_red   = {"Aarav", "Diya", "Karthik", "Riya", "Ananya"}
 class_blue  = {"Diya", "Vivek", "Karthik", "Priya"}
 class_green = {"Riya", "Ananya", "Priya", "Arjun"}
 
-print("=== Sets to Memorise (30 seconds) ===")
-print(f"Red   class : {sorted(class_red)}")
-print(f"Blue  class : {sorted(class_blue)}")
-print(f"Green class : {sorted(class_green)}")
+print("Sets to Memorise (study for 30 seconds):")
+print("Red   class :", sorted(class_red))
+print("Blue  class :", sorted(class_blue))
+print("Green class :", sorted(class_green))
 
 print()
-print("─" * 50)
-print("Answer questions below WITHOUT looking up ↑")
-print("─" * 50)
+print("-" * 50)
+print("Answer questions below WITHOUT looking up")
+print("-" * 50)
 print()
 
 # --- Q1: How many students in Red class? ---
-print(f"Q1: Size of Red class  = {len(class_red)}")
+print("Q1: Size of Red class  =", len(class_red))
 
 # --- Q2: Who is in both Red and Blue? ---
+# Intersection — items in BOTH sets
 red_and_blue = class_red & class_blue
-print(f"Q2: Red ∩ Blue         = {sorted(red_and_blue)}")
+print("Q2: Red & Blue         =", sorted(red_and_blue))
 
 # --- Q3: Who is in Blue but NOT in Green? ---
+# Difference — in Blue, not in Green
 blue_not_green = class_blue - class_green
-print(f"Q3: Blue − Green       = {sorted(blue_not_green)}")
+print("Q3: Blue - Green       =", sorted(blue_not_green))
 
 # --- Q4: How many unique students across all three? ---
+# Union of all three — each student counted once
 all_students = class_red | class_blue | class_green
-print(f"Q4: Total unique       = {len(all_students)}")
+print("Q4: Total unique       =", len(all_students))
 
 # --- Q5: Is Arjun in Red class? ---
-print(f"Q5: 'Arjun' in Red?   = {'Arjun' in class_red}")
+# Membership check — 'in' is the standard way to query a set
+print("Q5: 'Arjun' in Red?   =", "Arjun" in class_red)
 
 # --- Q6: Who appears in ALL three classes? ---
+# Triple intersection — must survive all three & operations
 all_three = class_red & class_blue & class_green
-print(f"Q6: In all 3 classes  = {sorted(all_three)}")
+print("Q6: In all 3 classes  =", sorted(all_three))
 
 # --- Q7: Who is ONLY in Green class? ---
+# Remove anyone who also appears in Red or Blue
 only_green = class_green - class_red - class_blue
-print(f"Q7: Only in Green     = {sorted(only_green)}")
+print("Q7: Only in Green     =", sorted(only_green))
 
 print()
-print("─" * 50)
+print("-" * 50)
 print("Score yourself:")
 print("  7/7 correct → Exceptional focus!")
 print("  5-6 correct → Great — minor lapses.")

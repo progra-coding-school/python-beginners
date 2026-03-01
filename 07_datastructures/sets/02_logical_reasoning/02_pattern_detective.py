@@ -1,13 +1,10 @@
-# Program Code: SE-LR-02
-# Title: Pattern Detective
-# Cognitive Skill: Logical Reasoning
-# Topic: Sets in Python
-
-# Spot the pattern in each block.
-# Name the pattern, then complete the missing piece.
+# Pattern Detective
+# Spot the pattern in each block. Name it, then complete the missing piece.
+# Recognising patterns lets you reuse proven solutions instead of reinventing them.
 
 # --- Pattern 1: Deduplication ---
-print("=== Pattern 1: Deduplication ===")
+# list → set → list is the standard way to remove all duplicates from a list
+print("Pattern 1: Deduplication:")
 raw = ["cricket", "football", "cricket", "hockey", "football", "cricket"]
 unique = list(set(raw))
 print("Pattern: list → set → list removes all duplicates")
@@ -16,22 +13,24 @@ print("Result:", sorted(unique))
 print()
 
 # --- Pattern 2: Membership gate ---
-print("=== Pattern 2: Membership gate ===")
+# Store allowed values in a set; 'in' check is near-instant for any collection size
+print("Pattern 2: Membership gate:")
 allowed = {"admin", "teacher", "librarian"}
 users   = ["student", "teacher", "admin", "guest", "librarian"]
 
 for user in users:
     if user in allowed:
-        print(f"  {user:<12} → Access GRANTED")
+        print("  " + user.ljust(12) + " → Access GRANTED")
     else:
-        print(f"  {user:<12} → Access DENIED")
+        print("  " + user.ljust(12) + " → Access DENIED")
 
 print("Pattern: set is used as a fast lookup table for allowed values")
 
 print()
 
 # --- Pattern 3: Growing a set across loops ---
-print("=== Pattern 3: Accumulating unique values ===")
+# Start with an empty set; .add() inside a loop accumulates unique values
+print("Pattern 3: Accumulating unique values:")
 seen_cities = set()
 bookings    = [
     ("Aarav",   "Chennai"),
@@ -42,22 +41,23 @@ bookings    = [
 ]
 
 for name, city in bookings:
-    seen_cities.add(city)
+    seen_cities.add(city)    # duplicates are silently ignored
 
 print("Cities covered:", sorted(seen_cities))
-print(f"Total bookings: {len(bookings)} | Unique cities: {len(seen_cities)}")
+print("Total bookings:", len(bookings), "| Unique cities:", len(seen_cities))
 print("Pattern: .add() to a set collects unique values across loops")
 
 print()
 
 # --- Pattern 4: Comparing two groups ---
-print("=== Pattern 4: Who is new / who left ===")
+# Snapshot comparison — set difference tracks what changed between two states
+print("Pattern 4: Who is new / who left:")
 last_week = {"Aarav", "Diya", "Karthik", "Riya"}
 this_week = {"Diya", "Karthik", "Ananya", "Vivek"}
 
-new_members  = this_week - last_week
-left_members = last_week - this_week
-still_here   = last_week & this_week
+new_members  = this_week - last_week   # in this week but NOT last week
+left_members = last_week - this_week   # in last week but NOT this week
+still_here   = last_week & this_week   # in both
 
 print("New members   :", sorted(new_members))
 print("Left members  :", sorted(left_members))

@@ -1,12 +1,9 @@
-# Program Code: SE-UN-03
-# Title: Sets vs Lists — When to Use Which
-# Cognitive Skill: Understanding
-# Topic: Sets in Python
+# Sets vs Lists — When to Use Which
+# Lists: ordered, allow duplicates, index access. Sets: unique, fast lookup, set math.
+# Choosing the right one prevents bugs and makes code faster.
 
-# The right tool for the right job.
-# Choosing between a list and a set changes how your program behaves.
-
-print("=== Feature Comparison ===")
+# --- Feature comparison table ---
+print("Feature Comparison:")
 features = {
     "Ordered (keeps position)": ("YES", "NO"),
     "Allows duplicates"       : ("YES", "NO"),
@@ -16,15 +13,16 @@ features = {
     "Mutable"                 : ("YES", "YES"),
 }
 
-print(f"  {'Feature':<35} {'LIST':>6}  {'SET':>6}")
-print(f"  {'─'*35} {'─'*6}  {'─'*6}")
+# ljust pads text to a fixed width (left-aligned); rjust pads right-aligned
+print("  " + "Feature".ljust(35) + "LIST".rjust(6) + "  " + "SET".rjust(6))
+print("  " + "-" * 35 + " " + "-" * 6 + "  " + "-" * 6)
 for feature, (lst, st) in features.items():
-    print(f"  {feature:<35} {lst:>6}  {st:>6}")
+    print("  " + feature.ljust(35) + lst.rjust(6) + "  " + st.rjust(6))
 
 print()
 
 # --- Use a LIST when... ---
-print("=== Use a LIST when ===")
+print("Use a LIST when:")
 # 1. Order matters (first item is different from last)
 queue = ["Aarav", "Diya", "Karthik"]    # Aarav is first in line
 print("Queue (order matters):", queue)
@@ -39,28 +37,30 @@ print("Third score:", scores[2])        # positional access needed
 print()
 
 # --- Use a SET when... ---
-print("=== Use a SET when ===")
-# 1. You want unique items only
+print("Use a SET when:")
+# 1. You want unique items only — set rejects duplicates automatically
 attendance = set()
-swipes = ["Aarav", "Diya", "Aarav", "Karthik", "Diya"]  # badge swipes
+swipes = ["Aarav", "Diya", "Aarav", "Karthik", "Diya"]  # badge swipes (duplicates ok to receive)
 for name in swipes:
     attendance.add(name)
 print("Unique attendees:", attendance)
 
-# 2. You need fast membership checks
+# 2. You need fast membership checks — 'in' is instant on a set
 allowed_users = {"admin", "teacher", "principal"}
 login = "teacher"
 if login in allowed_users:              # near-instant, even with millions of users
-    print(f"'{login}' is allowed.")
+    print("'" + login + "' is allowed.")
 
-# 3. You need set math
+# 3. You need set math — union, intersection, difference work directly
 class_a = {"Aarav", "Diya", "Riya"}
 class_b = {"Diya", "Karthik", "Riya"}
 common  = class_a & class_b
 print("Students in both classes:", common)
 
 print()
-print("=== Quick Decision Guide ===")
+
+# --- Quick Decision Guide ---
+print("Quick Decision Guide:")
 print("  Need order or index?        → LIST")
 print("  Need duplicates?            → LIST")
 print("  Need unique items only?     → SET")

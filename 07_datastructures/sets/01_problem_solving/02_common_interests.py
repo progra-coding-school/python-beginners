@@ -1,12 +1,6 @@
-# Program Code: SE-PS-02
-# Title: Common and Unique Interests
-# Cognitive Skill: Problem Solving
-# Topic: Sets in Python
-
-# Problem:
-# Two students fill in their hobby lists.
-# Find: what they have in common, what is unique to each,
-# and suggest a club they could both join.
+# Common and Unique Interests
+# Problem: two students list their hobbies.
+# Use set operations to find what they share, what each has alone, and which clubs suit both.
 
 # --- Data ---
 aarav_hobbies  = {"cricket", "coding", "reading", "chess", "music"}
@@ -17,8 +11,9 @@ print("Diya's hobbies :", diya_hobbies)
 print()
 
 # --- Step 1: Common hobbies ---
+# Intersection (&) finds items that appear in BOTH sets
 common = aarav_hobbies & diya_hobbies
-print("=== What they share ===")
+print("What they share:")
 if common:
     print("Common hobbies:", common)
     print("They can bond over:", sorted(common))
@@ -28,25 +23,29 @@ else:
 print()
 
 # --- Step 2: Unique to each ---
+# Difference (-) finds items in the first set that are NOT in the second
 only_aarav = aarav_hobbies - diya_hobbies
 only_diya  = diya_hobbies  - aarav_hobbies
 
-print("=== Unique hobbies ===")
+print("Unique hobbies:")
 print("Only Aarav :", only_aarav)
 print("Only Diya  :", only_diya)
 
 print()
 
 # --- Step 3: All hobbies combined ---
+# Union (|) merges both sets, keeping each item only once
 all_hobbies = aarav_hobbies | diya_hobbies
-print("=== All unique hobbies together ===")
+print("All unique hobbies together:")
 print("All hobbies:", sorted(all_hobbies))
-print(f"({len(aarav_hobbies)} + {len(diya_hobbies)} hobbies → {len(all_hobbies)} unique)")
+print("(" + str(len(aarav_hobbies)) + " + " + str(len(diya_hobbies)) + " hobbies → " + str(len(all_hobbies)) + " unique)")
 
 print()
 
 # --- Step 4: Club suggestion ---
-print("=== Club Suggestion ===")
+# Check if any common hobby overlaps with a club's activity set
+# common & activities → True if at least one hobby matches
+print("Club Suggestion:")
 clubs = {
     "Music Club"    : {"music", "singing", "instruments"},
     "Tech Club"     : {"coding", "robotics", "chess"},
@@ -58,7 +57,7 @@ clubs = {
 print("Clubs both Aarav and Diya would enjoy:")
 for club, activities in clubs.items():
     if common & activities:     # any common hobby matches this club's activities
-        print(f"  → {club}")
+        print("  →", club)
 
 # Think:
 # 1. What if a third friend Karthik also has hobbies? How would you find hobbies all THREE share?

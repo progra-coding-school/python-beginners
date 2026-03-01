@@ -1,7 +1,6 @@
-# Program Code: SE-KN-03
-# Title: Add and Remove Items
-# Cognitive Skill: Knowledge
-# Topic: Sets in Python
+# Add and Remove Items in a Set
+# Six methods for modifying a set: add, update, remove, discard, pop, clear.
+# Key rule: discard() is safe (silent if missing); remove() raises KeyError.
 
 hobbies = {"reading", "cricket", "drawing"}
 print("Original:", hobbies)
@@ -9,12 +8,12 @@ print()
 
 # --- ADD items ---
 
-# .add() — adds ONE item (ignored if already exists)
+# .add() — adds ONE item; if already present, it is silently ignored (no duplicate, no error)
 hobbies.add("coding")
 hobbies.add("cricket")     # already there — no duplicate, no error
 print("After add('coding')  :", hobbies)
 
-# .update() — adds MULTIPLE items from a list or another set
+# .update() — adds MULTIPLE items at once from a list, tuple, or another set
 hobbies.update(["swimming", "chess"])
 print("After update(...)    :", hobbies)
 
@@ -22,7 +21,7 @@ print()
 
 # --- REMOVE items ---
 
-# .remove() — removes the item; raises KeyError if NOT found
+# .remove() — removes the item; raises KeyError if NOT found (risky if item might be missing)
 hobbies.remove("drawing")
 print("After remove('drawing'):", hobbies)
 
@@ -33,7 +32,8 @@ except KeyError as e:
 
 print()
 
-# .discard() — removes if present; SILENTLY ignores if NOT found (safe!)
+# .discard() — removes if present; SILENTLY ignores if NOT found (safe choice!)
+# Use discard() when you are not sure if the item exists
 hobbies.discard("chess")
 print("After discard('chess') :", hobbies)
 
@@ -42,14 +42,14 @@ print("After discard('yoga')  :", hobbies)
 
 print()
 
-# .pop() — removes and returns a RANDOM item (unpredictable!)
+# .pop() — removes and returns a RANDOM item (sets are unordered, so you can't predict which)
 removed = hobbies.pop()
 print("pop() removed:", removed)
 print("After pop()  :", hobbies)
 
 print()
 
-# .clear() — removes ALL items
+# .clear() — removes ALL items, leaving an empty set
 temp = {"a", "b", "c"}
 temp.clear()
 print("After clear():", temp)   # set()
@@ -57,7 +57,7 @@ print("After clear():", temp)   # set()
 print()
 
 # --- Summary ---
-print("=== Add/Remove Summary ===")
+print("Add/Remove Summary:")
 print("  .add(item)       → add one item (safe if already exists)")
 print("  .update(items)   → add multiple items")
 print("  .remove(item)    → remove; KeyError if missing")
