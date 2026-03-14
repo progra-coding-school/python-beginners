@@ -1,5 +1,8 @@
 import random
 
+user_score = 0
+computer_score = 0
+
 def greet_user():
     print("Welcome to the Rock, Paper, Scissors Game")
 
@@ -18,7 +21,7 @@ def get_computer_choice():
 def check_winner(computer_choice, user_choice):
 
     if computer_choice == user_choice:
-        return "Tie"
+        return "tie"
 
     elif computer_choice == "rock" and user_choice == "paper":
         return "user"
@@ -41,6 +44,18 @@ def check_winner(computer_choice, user_choice):
     else:
         return "Invalid input"
 
+def update_score(winner, user_score, computer_score):
+    if winner == "user":
+        user_score = user_score + 1
+
+    elif winner == "computer":
+        computer_score = computer_score + 1
+
+    print("Current Score -> User:", user_score, "| Computer:", computer_score)
+
+    return user_score, computer_score
+
+
 def play_game():
     greet_user()
     while True:
@@ -54,15 +69,46 @@ def play_game():
         computer_choice = get_computer_choice()
         print("computer choice is :", computer_choice)
         winner = check_winner(computer_choice, user_choice)
+        user_score, computer_score = update_score(winner, user_score, computer_score)
         print("The winner is :", winner)
 
+def decide_final_winner(user_score, computer_score):
+
+    print("\nFinal Score")
+    print("User:", user_score)
+    print("Computer:", computer_score)
+
+    if user_score > computer_score:
+        print("Final Winner is USER")
+
+    elif computer_score > user_score:
+        print("Final Winner is COMPUTER")
+
+    else:
+        print("The game is a TIE")
 
 
-play_game()
+def thank_you():
+    print("Thanks for playing and  hope you enjoyed")
 
+greet_user()
+while True:
+    game_continue=input("Do you want to continue: yes or no:")
+    if game_continue=="no":
+        decide_final_winner(user_score, computer_score)
+        break
+    user_choice=get_user_choice()
+    print("User choice :",user_choice)
+    computer_choice=get_computer_choice()
+    print("Computer choice :", computer_choice)
+    winner=check_winner(computer_choice,user_choice)
+    if(winner=='tie'):
+        print("Its a tie")
+    else:
+        print(winner,"own this round :)")
+    user_score, computer_score = update_score(winner, user_score, computer_score)
 
-
-
+thank_you()
 
 
 
