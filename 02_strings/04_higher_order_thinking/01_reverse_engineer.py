@@ -3,33 +3,23 @@
 # Cognitive Skill: Higher Order Thinking (Reverse engineering)
 # Topic: Strings in Python
 
-# ============================================================
 # PROBLEM STATEMENT:
 # You are given the FINAL OUTPUT of a string program.
 # Your job is to figure out WHAT CODE produced it.
 # This trains your mind to think from result → code!
-# ============================================================
 
-print("=" * 55)
-print("  REVERSE ENGINEER — WHAT CODE MADE THIS OUTPUT?")
-print("=" * 55)
-
-print("""
-Rules:
-  You see the OUTPUT.
-  You must WRITE or DESCRIBE the code that produced it.
-  Then press ENTER to see the actual code used!
-""")
+print("REVERSE ENGINEER — WHAT CODE MADE THIS OUTPUT?")
+print()
+print("Rules:")
+print("  You see the OUTPUT.")
+print("  You must WRITE or DESCRIBE the code that produced it.")
+print("  Then press ENTER to see the actual code used!")
 
 score = 0
 total = 4
 
-# -------------------------------------------------------
 # CHALLENGE 1
-# -------------------------------------------------------
-print("=" * 40)
-print("CHALLENGE 1:")
-print("-" * 40)
+print("\nCHALLENGE 1:")
 print("OUTPUT was:")
 print()
 
@@ -50,12 +40,8 @@ guess = input("Did you figure it out? (y/n): ")
 if guess.lower() == "y":
     score += 1
 
-# -------------------------------------------------------
 # CHALLENGE 2
-# -------------------------------------------------------
-print("\n" + "=" * 40)
-print("CHALLENGE 2:")
-print("-" * 40)
+print("\nCHALLENGE 2:")
 print("OUTPUT was:")
 print()
 result2 = "I love Python and Python is great!".replace("Python", "Cricket")
@@ -73,12 +59,8 @@ guess = input("Did you figure it out? (y/n): ")
 if guess.lower() == "y":
     score += 1
 
-# -------------------------------------------------------
 # CHALLENGE 3
-# -------------------------------------------------------
-print("\n" + "=" * 40)
-print("CHALLENGE 3:")
-print("-" * 40)
+print("\nCHALLENGE 3:")
 print("OUTPUT was:")
 print()
 original = "NOHTYP"
@@ -97,12 +79,8 @@ guess = input("Did you figure it out? (y/n): ")
 if guess.lower() == "y":
     score += 1
 
-# -------------------------------------------------------
 # CHALLENGE 4
-# -------------------------------------------------------
-print("\n" + "=" * 40)
-print("CHALLENGE 4 (HARD!):")
-print("-" * 40)
+print("\nCHALLENGE 4 (HARD!):")
 print("OUTPUT was:")
 print()
 raw     = "  hello world  "
@@ -125,22 +103,17 @@ guess = input("Did you figure it out? (y/n): ")
 if guess.lower() == "y":
     score += 1
 
-# -------------------------------------------------------
 # FINAL SCORE
-# -------------------------------------------------------
-print("\n" + "=" * 55)
-print("  REVERSE ENGINEER SCORE :", score, "/", total)
+print()
+print("REVERSE ENGINEER SCORE :", score, "/", total)
 if score == total:
-    print("  🏆 Master Reverse Engineer — Brilliant!")
+    print("Master Reverse Engineer — Brilliant!")
 elif score >= 2:
-    print("  ✅ Good reverse thinking! Keep practising method chains.")
+    print("Good reverse thinking! Keep practising method chains.")
 else:
-    print("  💡 Reverse engineering is hard — keep experimenting!")
-print("=" * 55)
+    print("Reverse engineering is hard — keep experimenting!")
 
-# ============================================================
 # REFLECTION:
 # 1. What is method chaining? Can you create your own chain?
 # 2. How did you figure out Challenge 4?
 # 3. Write an output for a friend and challenge them!
-# ============================================================

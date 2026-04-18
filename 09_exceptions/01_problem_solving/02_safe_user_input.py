@@ -17,10 +17,10 @@ def get_integer(prompt, min_val=None, max_val=None):
         try:
             value = int(input(prompt))
             if min_val is not None and value < min_val:
-                print(f"  Too small! Must be at least {min_val}.")
+                print("  Too small! Must be at least", min_val)
                 continue
             if max_val is not None and value > max_val:
-                print(f"  Too large! Must be at most {max_val}.")
+                print("  Too large! Must be at most", max_val)
                 continue
             return value
         except ValueError:
@@ -47,10 +47,10 @@ def get_choice(prompt, choices):
         answer = input(prompt).strip().lower()
         if answer in choices_lower:
             return answer
-        print(f"  Invalid choice. Choose from: {choices}")
+        print("  Invalid choice. Choose from:", choices)
 
 # --- Simulation (no live input needed to run this file) ---
-print("=== Input Validator Demonstration ===")
+print("--- Input Validator Demonstration ---")
 print()
 
 print("--- Simulating: integer between 1 and 10 ---")
@@ -60,10 +60,10 @@ for val in test_inputs:
         n = int(val)
         if n < 1 or n > 10:
             raise ValueError("Out of range")
-        print(f"  '{val}' → accepted: {n}")
+        print("  '" + val + "' → accepted:", n)
         break
     except ValueError as e:
-        print(f"  '{val}' → rejected: {e}")
+        print("  '" + val + "' → rejected:", e)
 
 print()
 
@@ -73,23 +73,23 @@ for val in ["hello", "-3.5", "0", "4.75"]:
         n = float(val)
         if n <= 0:
             raise ValueError("Must be positive")
-        print(f"  '{val}' → accepted: {n}")
+        print("  '" + val + "' → accepted:", n)
         break
     except ValueError as e:
-        print(f"  '{val}' → rejected: {e}")
+        print("  '" + val + "' → rejected:", e)
 
 print()
 
 print("--- Simulating: yes/no choice ---")
 for val in ["maybe", "YES", "no"]:
     if val.lower() in ["yes", "no"]:
-        print(f"  '{val}' → accepted: {val.lower()}")
+        print("  '" + val + "' → accepted:", val.lower())
         break
     else:
-        print(f"  '{val}' → rejected: not yes or no")
+        print("  '" + val + "' → rejected: not yes or no")
 
 print()
-print("=== To use live validators, call: ===")
+print("--- To use live validators, call: ---")
 print("  age = get_integer('Enter age: ', min_val=5, max_val=18)")
 print("  price = get_positive_float('Enter price: Rs.')")
 print("  choice = get_choice('Yes or No? ', ['yes', 'no'])")

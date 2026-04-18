@@ -3,23 +3,15 @@
 # Cognitive Skill: Understanding (Deepening the concept)
 # Topic: Strings in Python
 
-# ============================================================
 # PROBLEM STATEMENT:
 # Aarav made a spelling mistake: he typed "Pythen" instead of "Python".
 # He thinks he can change just the 4th letter like this:
 #     word[4] = "o"
 # But Python says NO! Let's understand WHY — and how to fix it correctly.
-# ============================================================
 
-print("=" * 55)
-print("   STRINGS ARE IMMUTABLE — A FIXED LOCKER!")
-print("=" * 55)
-
-# -------------------------------------------------------
 # WHAT IS IMMUTABILITY?
 # Once a string is created, you CANNOT change individual characters.
 # The string is "locked" — like a name badge that's already printed.
-# -------------------------------------------------------
 
 print("""
 ANALOGY:
@@ -30,9 +22,7 @@ If you need a correction — you print a BRAND NEW badge!
 Python strings work the same way.
 """)
 
-# -------------------------------------------------------
 # DEMONSTRATION: Trying to change a character → ERROR
-# -------------------------------------------------------
 print("--- What happens if we try to change a character? ---")
 
 word = "Pythen"
@@ -44,12 +34,10 @@ print()
 try:
     word[4] = "o"           # This will cause a TypeError!
 except TypeError as e:
-    print("❌ ERROR:", e)
-    print("   Python does NOT allow changing individual characters!")
+    print("ERROR:", e)
+    print("Python does NOT allow changing individual characters!")
 
-# -------------------------------------------------------
 # THE RIGHT WAY: Create a NEW string
-# -------------------------------------------------------
 print("\n--- The Right Way: Build a New String ---")
 
 # Method 1: Concatenation (join parts)
@@ -60,9 +48,7 @@ print("Method 1 (slicing + concat) : '" + correct_word + "'")
 correct_word2 = word.replace("e", "o")
 print("Method 2 (replace)          : '" + correct_word2 + "'")
 
-# -------------------------------------------------------
 # KEY CONCEPT: Pointing to a new string
-# -------------------------------------------------------
 print("\n--- Strings Can Be Replaced! ---")
 
 greeting = "Hello"
@@ -81,9 +67,7 @@ Old string 'Hello' → still exists in memory (Python handles it)
 New string 'HELLO' → greeting now points here
 """)
 
-# -------------------------------------------------------
 # REAL WORLD EXAMPLE: Fixing a student's name
-# -------------------------------------------------------
 print("--- Real Use: Fixing a Typed Name ---")
 
 typed_name = "aARAV"          # Badly formatted input
@@ -98,18 +82,14 @@ It created a NEW string 'Aarav'.
 We stored that new string in fixed_name.
 """)
 
-print("=" * 55)
-print("  KEY IDEAS:")
-print("  • Strings CANNOT be changed character by character")
-print("  • Any method (upper, replace, etc.) returns a NEW string")
-print("  • You can point to the new string")
-print("  • This behaviour is called IMMUTABILITY")
-print("=" * 55)
+print("KEY IDEAS:")
+print("  Strings CANNOT be changed character by character")
+print("  Any method (upper, replace, etc.) returns a NEW string")
+print("  You can point to the new string")
+print("  This behaviour is called IMMUTABILITY")
 
-# ============================================================
 # REFLECTION:
 # 1. What is "immutable"? Give a real-life example.
 # 2. If you do "Aarav".upper(), what does the original look like?
 # 3. How would you fix "Pythn" to "Python" using slicing?
 # 4. Does replace() change the original string or return a new one?
-# ============================================================

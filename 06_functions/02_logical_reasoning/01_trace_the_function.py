@@ -15,7 +15,7 @@ def double(n):
 print("Round 1: double(7)")
 answer = input("What does it return? ")
 actual = double(7)
-print(f"Answer: {actual}")
+print("Answer:", actual)
 if answer.strip() == str(actual):
     score += 1
     print("Correct!")
@@ -33,7 +33,7 @@ print("  y = x * 2 = ?")
 print("  returns y")
 answer = input("What does mystery(3, 4) return? ")
 actual = mystery(3, 4)
-print(f"Answer: {actual}  (x=7, y=14)")
+print("Answer:", actual, " (x=7, y=14)")
 if answer.strip() == str(actual):
     score += 1
     print("Correct!")
@@ -47,7 +47,7 @@ def greet(name):
 print("Round 3: greet('Aarav')")
 answer = input("What does it return? ")
 actual = greet("Aarav")
-print(f"Answer: {actual}")
+print("Answer:", actual)
 if answer.strip() == actual:
     score += 1
     print("Correct!")
@@ -60,7 +60,7 @@ def is_teen(age):
 print("Round 4: is_teen(15)")
 answer = input("What does it return? (True/False) ")
 actual = is_teen(15)
-print(f"Answer: {actual}  (15>=13 and 15<=19 → True and True → True)")
+print("Answer:", actual, " (15>=13 and 15<=19 → True and True → True)")
 if answer.strip().lower() == str(actual).lower():
     score += 1
     print("Correct!")
@@ -75,7 +75,7 @@ def process(n):
 print("Round 5: process(9)")
 answer = input("What does it return? ")
 actual = process(9)
-print(f"Answer: {actual}  (9 % 2 = 1, not 0, so → 'odd')")
+print("Answer:", actual, " (9 % 2 = 1, not 0, so → 'odd')")
 if answer.strip() == actual:
     score += 1
     print("Correct!")
@@ -98,10 +98,10 @@ print("  Step 1: total = 100 + 200 + 50 = ?")
 print("  Step 2: add_tax(total) = total + total*0.10 = ?")
 answer = input("What does final_price([100, 200, 50]) return? ")
 actual = final_price(prices)
-print(f"Answer: {actual}")
+print("Answer:", actual)
 if answer.strip() in [str(actual), str(int(actual))]:
     score += 1
     print("Correct!")
 print()
 
-print(f"Tracing Score: {score} / 6")
+print("Tracing Score:", score, "/ 6")

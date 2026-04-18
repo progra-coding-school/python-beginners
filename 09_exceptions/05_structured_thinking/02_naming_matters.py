@@ -7,7 +7,7 @@
 # A bad message just says "error" and leaves the user confused.
 
 # ─── VERSION A: Poor exception messages ─────────────────────────
-print("=== Version A: Poor messages (confusing) ===")
+print("--- Version A: Poor messages (confusing) ---")
 
 def register_a(name, age):
     try:
@@ -23,19 +23,19 @@ register_a("Diya", "abc")
 print()
 
 # ─── VERSION B: Good exception messages ─────────────────────────
-print("=== Version B: Good messages (clear and helpful) ===")
+print("--- Version B: Good messages (clear and helpful) ---")
 
 def register_b(name, age_str):
     try:
         age = int(age_str)
     except ValueError:
-        print(f"Registration failed: age '{age_str}' is not a valid number.")
+        print("Registration failed: age '" + str(age_str) + "' is not a valid number.")
         return
     if age < 5 or age > 18:
-        print(f"Registration failed: age {age} is out of range. "
-              f"Students must be between 5 and 18 years old.")
+        print("Registration failed: age " + str(age) + " is out of range. "
+              "Students must be between 5 and 18 years old.")
         return
-    print(f"Registered: {name}, Age {age}")
+    print("Registered:", name + ", Age", age)
 
 register_b("Aarav", "25")
 register_b("Diya",  "abc")
@@ -44,7 +44,7 @@ register_b("Riya",  "12")
 print()
 
 # ─── Message quality guidelines ─────────────────────────────────
-print("=== Exception Message Guidelines ===")
+print("--- Exception Message Guidelines ---")
 examples = [
     ("Poor",  "Error"),
     ("Poor",  "Invalid input"),
@@ -55,21 +55,21 @@ examples = [
 ]
 for quality, msg in examples:
     marker = "✓" if quality == "Good" else "✗"
-    print(f"  {marker} [{quality:4}] {msg}")
+    print("  " + marker + " [" + quality.ljust(4) + "] " + msg)
 
 print()
 
 # ─── Practice: improve these messages ───────────────────────────
-print("=== Practice: Write better messages ===")
+print("--- Practice: Write better messages ---")
 
 # Poor: raise ValueError("Bad")
 # Better:
 try:
     score = -5
     if score < 0:
-        raise ValueError(f"Score {score} is invalid — scores cannot be negative.")
+        raise ValueError("Score " + str(score) + " is invalid — scores cannot be negative.")
 except ValueError as e:
-    print(f"  Improved: {e}")
+    print("  Improved:", e)
 
 # Poor: raise KeyError("not found")
 # Better:
@@ -77,9 +77,9 @@ try:
     subject = "Drawing"
     valid   = {"Maths", "Science", "English"}
     if subject not in valid:
-        raise KeyError(f"Subject '{subject}' not found. Valid subjects: {sorted(valid)}")
+        raise KeyError("Subject '" + subject + "' not found. Valid subjects: " + str(sorted(valid)))
 except KeyError as e:
-    print(f"  Improved: {e}")
+    print("  Improved:", e)
 
 # Think:
 # 1. What three things should a good exception message always include?

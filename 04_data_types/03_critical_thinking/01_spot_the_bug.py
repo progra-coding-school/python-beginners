@@ -58,7 +58,7 @@ print("int(7.9) = 7, NOT 8.")
 print("Fix: use round(7.9) = 8 if rounding is needed.")
 score += 1
 
-print(f"\nBugs found: {score} / 5")
+print("\nBugs found:", score, "/ 5")
 
 # Think:
 # 1. Which bug was hardest to spot? Why?

@@ -7,7 +7,7 @@
 # continue → SKIP this iteration, go to next
 
 # --- break: stop the loop early ---
-print("=== break ===")
+print("--- break ---")
 for i in range(1, 11):
     if i == 6:
         print("Found 6! Stopping.")
@@ -18,7 +18,7 @@ for i in range(1, 11):
 print()
 
 # --- continue: skip one iteration ---
-print("=== continue ===")
+print("--- continue ---")
 for i in range(1, 11):
     if i % 2 == 0:
         continue    # skip even numbers
@@ -28,7 +28,7 @@ for i in range(1, 11):
 print()
 
 # --- break in a while loop ---
-print("=== break in while ===")
+print("--- break in while ---")
 number = 1
 while number <= 100:
     if number > 5:
@@ -39,28 +39,28 @@ while number <= 100:
 print()
 
 # --- Real-life: Search a list ---
-print("=== Search with break ===")
+print("--- Search with break ---")
 shopping_list = ["rice", "dal", "sugar", "oil", "salt"]
 search_item = input("Search for item: ")
 
 for item in shopping_list:
     if item == search_item:
-        print(f"'{search_item}' found in the list!")
+        print("'" + search_item + "' found in the list!")
         break
 else:
     # This else runs if the loop finished WITHOUT a break
-    print(f"'{search_item}' is NOT in the list.")
+    print("'" + search_item + "' is NOT in the list.")
 
 print()
 
 # --- Real-life: Skip invalid data ---
-print("=== Skip invalid with continue ===")
+print("--- Skip invalid with continue ---")
 scores = [85, -1, 72, 999, 65, -5, 90]
 for score in scores:
     if score < 0 or score > 100:
-        print(f"  Skipping invalid score: {score}")
+        print("  Skipping invalid score:", score)
         continue
-    print(f"  Valid score: {score}")
+    print("  Valid score:", score)
 
 # Think:
 # 1. What is the difference between break and continue?

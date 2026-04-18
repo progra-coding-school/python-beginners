@@ -3,22 +3,14 @@
 # Cognitive Skill: Structured Thinking (Data organisation)
 # Topic: Strings in Python
 
-# ============================================================
 # PROBLEM STATEMENT:
 # Progra school has data about students, teachers, and events.
 # The data is a MESS — everything is mixed up.
 # Aarav must ORGANISE all the string data using prefixes
 # and smart naming so the program is easy to read and update.
-# ============================================================
 
-print("=" * 55)
-print("  ORGANISE THE DATA — STRUCTURED STRING DATA!")
-print("=" * 55)
-
-# -------------------------------------------------------
-# ❌ MESSY VERSION — all data mixed together
-# -------------------------------------------------------
-print("\n--- ❌ MESSY VERSION ---")
+# MESSY VERSION — all data mixed together
+print("--- MESSY VERSION ---")
 
 # Nobody knows what these belong to!
 name1    = "Aarav Sharma"
@@ -34,10 +26,9 @@ print("  " + name1 + ", " + name2 + ", " + name3)
 print("  " + subject1 + ", " + subject2 + ", " + city + ", " + date1 + ", " + date2)
 print("  ← Hard to tell: which name is a student? Which is an event?")
 
-# -------------------------------------------------------
-# ✅ ORGANISED VERSION — prefix-based grouping
-# -------------------------------------------------------
-print("\n--- ✅ ORGANISED VERSION (Prefix-based naming) ---\n")
+# ORGANISED VERSION — prefix-based grouping
+print("\n--- ORGANISED VERSION (Prefix-based naming) ---")
+print()
 
 # GROUP 1: Student data (prefix: student_)
 student_name    = "Aarav Sharma"
@@ -57,12 +48,9 @@ event_date      = "21-02-2026"
 event_venue     = "School Auditorium, Chennai"
 event_theme     = "Technology and Innovation"
 
-# -------------------------------------------------------
 # Display each group neatly
-# -------------------------------------------------------
-print("=" * 50)
-print("  STUDENT PROFILE")
-print("-" * 50)
+print("STUDENT PROFILE")
+print("-" * 30)
 print("  Name    : " + student_name)
 print("  Grade   : " + student_grade)
 print("  Batch   : " + student_batch)
@@ -70,26 +58,21 @@ print("  City    : " + student_city)
 print("  ID      : " + student_id)
 
 print()
-print("=" * 50)
-print("  TEACHER PROFILE")
-print("-" * 50)
+print("TEACHER PROFILE")
+print("-" * 30)
 print("  Name    : " + teacher_name)
 print("  Subject : " + teacher_subject)
 print("  Room    : " + teacher_room)
 
 print()
-print("=" * 50)
-print("  UPCOMING EVENT")
-print("-" * 50)
+print("UPCOMING EVENT")
+print("-" * 30)
 print("  Event   : " + event_name)
 print("  Date    : " + event_date)
 print("  Venue   : " + event_venue)
 print("  Theme   : " + event_theme)
-print("=" * 50)
 
-# -------------------------------------------------------
 # USING STRING OPERATIONS to derive more info
-# -------------------------------------------------------
 print("\n--- Auto-Generated Information ---")
 
 # Derive initials from student name
@@ -103,20 +86,19 @@ print("  Event Year        : " + event_year)
 
 # Build a formatted announcement
 announcement = (
-    "📢 " + event_name + " on " + event_date + " at " + event_venue + ". "
+    event_name + " on " + event_date + " at " + event_venue + ". "
     + "Theme: " + event_theme + ". "
     + "Hosted by Progra Kids Coding School."
 )
-print("\n  ANNOUNCEMENT:\n  " + announcement)
+print()
+print("  ANNOUNCEMENT:")
+print("  " + announcement)
 
-print("\n" + "=" * 55)
-print("  KEY IDEA: Group related data with consistent prefixes.")
-print("  student_*, teacher_*, event_* → easy to find and update!")
-print("=" * 55)
+print()
+print("KEY IDEA: Group related data with consistent prefixes.")
+print("student_*, teacher_*, event_* → easy to find and update!")
 
-# ============================================================
 # REFLECTION:
 # 1. How do prefixes help organise string data?
 # 2. What would you name data for an attendance system?
 # 3. How did we derive student_initials from student_name?
-# ============================================================

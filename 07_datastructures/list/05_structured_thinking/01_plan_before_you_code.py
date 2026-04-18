@@ -49,7 +49,7 @@ print()
 # Step 4: Print ranked table
 print("Step 4 — Ranked Table:")
 print("  Rank  Name        Marks")
-print("  " + "-" * 28)
+print("  ----------------------------")
 for rank in range(len(sorted_names)):
     label = " <-- Topper!" if rank == 0 else ""
     print("  " + str(rank + 1).ljust(6) + sorted_names[rank].ljust(12) + str(sorted_marks[rank]) + label)

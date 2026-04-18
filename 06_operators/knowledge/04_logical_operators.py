@@ -9,7 +9,7 @@
 # --- and ---
 # Both conditions must be True → result is True
 # If any one is False → result is False
-print("=== and operator ===")
+print("--- and operator ---")
 print(True and True)    # True  → both True
 print(True and False)   # False → one is False
 print(False and True)   # False → one is False
@@ -18,7 +18,7 @@ print(False and False)  # False → both False
 # --- or ---
 # At least one condition must be True → result is True
 # Both must be False → result is False
-print("\n=== or operator ===")
+print("--- or operator ---")
 print(True or True)     # True  → both True
 print(True or False)    # True  → one is True
 print(False or True)    # True  → one is True
@@ -26,7 +26,7 @@ print(False or False)   # False → both False
 
 # --- not ---
 # Flips the result: True becomes False, False becomes True
-print("\n=== not operator ===")
+print("--- not operator ---")
 print(not True)    # False
 print(not False)   # True
 

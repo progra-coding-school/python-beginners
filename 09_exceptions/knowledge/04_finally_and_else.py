@@ -8,7 +8,7 @@
 #   finally → runs ALWAYS, whether or not an exception occurred
 
 # --- else: code for the "success" path ---
-print("=== else — runs only on success ===")
+print("--- else — runs only on success ---")
 
 def divide(a, b):
     try:
@@ -16,7 +16,7 @@ def divide(a, b):
     except ZeroDivisionError:
         print("  Cannot divide by zero!")
     else:
-        print(f"  Success! {a} / {b} = {result:.2f}")
+        print("  Success!", a, "/", b, "=", round(result, 2))
 
 divide(10, 2)   # else runs
 divide(10, 0)   # except runs, else is SKIPPED
@@ -24,14 +24,14 @@ divide(10, 0)   # except runs, else is SKIPPED
 print()
 
 # --- finally: cleanup code that always runs ---
-print("=== finally — always runs ===")
+print("--- finally — always runs ---")
 
 def read_score(value):
     try:
         score = int(value)
-        print(f"  Score parsed: {score}")
+        print("  Score parsed:", score)
     except ValueError:
-        print(f"  '{value}' is not a valid score.")
+        print("  '" + str(value) + "' is not a valid score.")
     finally:
         print("  [finally] Done processing this value.\n")
 
@@ -40,7 +40,7 @@ read_score("abc")
 read_score("0")
 
 # --- Real-world analogy ---
-print("=== Real-world analogy ===")
+print("--- Real-world analogy ---")
 print("try    → Open a shop")
 print("except → Handle problems (power cut, no stock)")
 print("else   → Serve happy customers (only if no problems)")
@@ -49,18 +49,18 @@ print("finally→ Lock up the shop at the end (happens no matter what)")
 print()
 
 # --- All four together ---
-print("=== All four blocks together ===")
+print("--- All four blocks together ---")
 
 def safe_convert(text):
-    print(f"Processing '{text}':")
+    print("Processing '" + str(text) + "':")
     try:
         number = int(text)
     except ValueError as e:
-        print(f"  except: {e}")
+        print("  except:", e)
     else:
-        print(f"  else: converted successfully → {number}")
+        print("  else: converted successfully →", number)
     finally:
-        print(f"  finally: always runs")
+        print("  finally: always runs")
     print()
 
 safe_convert("42")

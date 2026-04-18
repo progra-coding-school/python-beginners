@@ -8,7 +8,7 @@
 
 score = 0
 
-print("=== Reverse Engineer ===")
+print("--- Reverse Engineer ---")
 print("Given the inputs and output — what expression produced it?")
 print()
 
@@ -78,4 +78,4 @@ else:
     print("Answer: age >= 18 and has_license  →  False and False → False")
 print()
 
-print(f"Score: {score} / 5")
+print("Score:", score, "/ 5")

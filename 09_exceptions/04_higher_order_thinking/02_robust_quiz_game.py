@@ -31,14 +31,14 @@ def get_answer(prompt, num_options, simulated_input=None):
     """Return a valid 1-based option number."""
     if simulated_input is not None:
         raw = simulated_input
-        print(f"{prompt}{raw}")
+        print(prompt + str(raw))
     else:
         raw = input(prompt)
 
     try:
         choice = int(raw)
         if not (1 <= choice <= num_options):
-            raise ValueError(f"Must be between 1 and {num_options}")
+            raise ValueError("Must be between 1 and " + str(num_options))
         return choice
     except ValueError as e:
         return None, str(e)     # signal invalid input
@@ -49,12 +49,12 @@ def run_quiz(simulated_answers=None):
     total  = len(questions)
     sim_iter = iter(simulated_answers) if simulated_answers else None
 
-    print("=== Progra Quiz Game ===\n")
+    print("--- Progra Quiz Game ---\n")
 
     for i, q in enumerate(questions, 1):
-        print(f"Q{i}: {q['question']}")
+        print("Q" + str(i) + ": " + q["question"])
         for j, opt in enumerate(q["options"], 1):
-            print(f"     {j}. {opt}")
+            print("     " + str(j) + ". " + opt)
 
         # Keep asking until a valid answer is given
         attempts = 0
@@ -64,7 +64,7 @@ def run_quiz(simulated_answers=None):
 
             if isinstance(result, tuple):
                 _, err = result
-                print(f"  Invalid input: {err}. Try again.")
+                print("  Invalid input: " + err + ". Try again.")
                 attempts += 1
                 if attempts >= 3:
                     print("  Too many invalid attempts. Skipping question.")
@@ -75,11 +75,11 @@ def run_quiz(simulated_answers=None):
                     score += 1
                 else:
                     correct_opt = q["options"][q["answer"] - 1]
-                    print(f"  Wrong. Correct answer: {q['answer']}. {correct_opt}\n")
+                    print("  Wrong. Correct answer: " + str(q["answer"]) + ". " + correct_opt + "\n")
                 break
 
-    print("=== Results ===")
-    print(f"Score: {score}/{total}")
+    print("--- Results ---")
+    print("Score:", str(score) + "/" + str(total))
     if score == total:
         print("Perfect score! Outstanding!")
     elif score >= total // 2:

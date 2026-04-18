@@ -6,11 +6,9 @@
 # Two approaches solve the same problem.
 # Read both, decide which is better and WHY.
 
-# =========================================================
 # Problem 1: Parse an integer safely
-# =========================================================
 
-print("=== Problem 1: Parse integer safely ===")
+print("--- Problem 1: Parse integer safely ---")
 
 # Approach A: check first (LBYL — Look Before You Leap)
 def parse_lbyl(text):
@@ -26,9 +24,9 @@ def parse_eafp(text):
         return None
 
 tests = ["42", "-5", "3.14", "hello", "0", "99abc"]
-print(f"  {'Input':<10} {'LBYL':>8} {'EAFP':>8}")
+print("  " + "Input".ljust(10) + "LBYL".rjust(8) + "EAFP".rjust(8))
 for t in tests:
-    print(f"  {t:<10} {str(parse_lbyl(t)):>8} {str(parse_eafp(t)):>8}")
+    print("  " + t.ljust(10) + str(parse_lbyl(t)).rjust(8) + str(parse_eafp(t)).rjust(8))
 
 print()
 print("Verdict: Approach B (EAFP) is more Pythonic.")
@@ -37,11 +35,9 @@ print("  EAFP lets Python define what 'valid' means.")
 
 print()
 
-# =========================================================
 # Problem 2: Access a dictionary key safely
-# =========================================================
 
-print("=== Problem 2: Safe dict access ===")
+print("--- Problem 2: Safe dict access ---")
 student = {"name": "Aarav", "grade": 7}
 
 # Approach A: if check
@@ -66,11 +62,9 @@ print("  Use try/except when multiple things inside could fail.")
 
 print()
 
-# =========================================================
 # Problem 3: Validate user score (0–100)
-# =========================================================
 
-print("=== Problem 3: Validate score ===")
+print("--- Problem 3: Validate score ---")
 
 # Approach A: if/else only
 def validate_if(score):
@@ -89,11 +83,11 @@ def validate_raise(score):
     return score
 
 for val in [85, -5, 110, "A+"]:
-    print(f"  if/else: {validate_if(val)}")
+    print("  if/else:", validate_if(val))
     try:
-        print(f"  raise  : {validate_raise(val)}")
+        print("  raise  :", validate_raise(val))
     except (ValueError, TypeError) as e:
-        print(f"  raise  : {type(e).__name__}: {e}")
+        print("  raise  :", type(e).__name__ + ":", e)
     print()
 
 print("Verdict: raising exceptions is better for library/function code.")

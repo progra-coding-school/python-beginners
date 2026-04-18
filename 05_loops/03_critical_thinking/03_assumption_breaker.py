@@ -5,7 +5,7 @@
 
 # Common wrong assumptions about loops — let's break them!
 
-print("=== Assumption Breaker — Loops ===")
+print("--- Assumption Breaker — Loops ---")
 print()
 
 # --- Assumption 1 ---
@@ -19,7 +19,7 @@ print()
 print("Assumption 2: 'The loop variable keeps its value after the loop ends'")
 for i in range(5):
     pass    # do nothing, just loop
-print(f"After the loop, i = {i}")
+print("After the loop, i =", i)
 print("Surprise! i = 4 — Python keeps the LAST value of the loop variable.")
 print("But don't rely on this — it's unclear and confusing to read.")
 print()
@@ -30,7 +30,7 @@ print("Looping:")
 for i in range(1, 6):
     if i == 3:
         break
-    print(f"  i = {i}")
+    print("  i =", i)
 print("After break, code continues HERE — break only exits the LOOP, not the program.")
 print()
 
@@ -39,7 +39,7 @@ print("Assumption 4: 'continue skips the rest of the program'")
 for i in range(1, 6):
     if i == 3:
         continue
-    print(f"  i = {i}")
+    print("  i =", i)
 print("continue only skips the REST of the current ITERATION — loop keeps going.")
 print()
 

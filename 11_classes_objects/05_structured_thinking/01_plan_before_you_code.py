@@ -5,7 +5,7 @@
 
 # Task: Design a Canteen class before writing any code.
 
-# ─── PLANNING TEMPLATE ───────────────────────────────────────────
+# --- PLANNING TEMPLATE ---
 # Problem  : A school canteen needs to manage its menu and process orders.
 # Class    : Canteen
 #
@@ -25,7 +25,6 @@
 #   - Order item not on menu
 #   - Order quantity exceeds stock
 #   - Restock negative quantity
-# ─────────────────────────────────────────────────────────────────
 
 class Canteen:
     def __init__(self, name):
@@ -35,45 +34,45 @@ class Canteen:
 
     def add_item(self, item, price, stock):
         self.menu[item] = {"price": price, "stock": stock}
-        print(f"  Added '{item}' — Rs.{price}, {stock} in stock.")
+        print("  Added '" + item + "' — Rs." + str(price) + ",", stock, "in stock.")
 
     def display_menu(self):
-        print(f"\n  === {self.name} Menu ===")
-        print(f"  {'Item':<15} {'Price':>6} {'Stock':>6}")
-        print(f"  {'─'*15} {'─'*6} {'─'*6}")
+        print("\n  --- " + self.name + " Menu ---")
+        print("  Item            Price  Stock")
+        print("  " + "-" * 28)
         for item, info in self.menu.items():
-            print(f"  {item:<15} Rs.{info['price']:>3} {info['stock']:>6}")
+            print("  " + item.ljust(15), "Rs." + str(info['price']).rjust(3), str(info['stock']).rjust(6))
 
     def order(self, item, qty):
         if item not in self.menu:
-            print(f"  '{item}' is not on the menu.")
+            print("  '" + item + "' is not on the menu.")
             return 0
         info = self.menu[item]
         if qty > info["stock"]:
-            print(f"  Only {info['stock']} '{item}' left. Cannot fulfill {qty}.")
+            print("  Only", info['stock'], "'" + item + "' left. Cannot fulfill", qty)
             return 0
         cost = info["price"] * qty
         info["stock"] -= qty
         self.total_sales += cost
-        print(f"  Order: {qty}x {item} = Rs.{cost}")
+        print("  Order:", str(qty) + "x", item, "= Rs." + str(cost))
         return cost
 
     def restock(self, item, qty):
         if item not in self.menu:
-            print(f"  '{item}' not found.")
+            print("  '" + item + "' not found.")
             return
         if qty <= 0:
             print("  Restock quantity must be positive.")
             return
         self.menu[item]["stock"] += qty
-        print(f"  Restocked '{item}' by {qty}.")
+        print("  Restocked '" + item + "' by", qty)
 
     def report(self):
-        print(f"\n  === Sales Report — {self.name} ===")
-        print(f"  Total Sales: Rs.{self.total_sales}")
+        print("\n  --- Sales Report —", self.name, "---")
+        print("  Total Sales: Rs." + str(self.total_sales))
         low = [i for i, d in self.menu.items() if d["stock"] < 5]
         if low:
-            print(f"  Low stock alert: {low}")
+            print("  Low stock alert:", low)
 
 # --- Demo ---
 canteen = Canteen("Progra School Canteen")

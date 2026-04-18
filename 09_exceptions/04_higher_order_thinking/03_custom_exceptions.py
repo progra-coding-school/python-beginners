@@ -16,19 +16,19 @@ class InvalidScoreError(ProgratError):
     """Raised when a score is outside the valid 0–100 range."""
     def __init__(self, score):
         self.score = score
-        super().__init__(f"Score {score} is invalid. Must be 0–100.")
+        super().__init__("Score " + str(score) + " is invalid. Must be 0–100.")
 
 class StudentNotFoundError(ProgratError):
     """Raised when a student ID does not exist in the database."""
     def __init__(self, student_id):
         self.student_id = student_id
-        super().__init__(f"Student ID {student_id} not found.")
+        super().__init__("Student ID " + str(student_id) + " not found.")
 
 class DuplicateStudentError(ProgratError):
     """Raised when trying to add a student that already exists."""
     def __init__(self, name):
         self.name = name
-        super().__init__(f"Student '{name}' already exists.")
+        super().__init__("Student '" + str(name) + "' already exists.")
 
 # --- Step 2: Mini student database using custom exceptions ---
 
@@ -62,26 +62,26 @@ class StudentDatabase:
         return sum(scores) / len(scores)
 
     def report(self):
-        print(f"  {'ID':>4}  {'Name':<12} {'Scores':<20} {'Avg':>5}")
+        print("  " + "ID".rjust(4) + "  " + "Name".ljust(12) + "Scores".ljust(20) + "Avg".rjust(5))
         for sid, data in self._records.items():
             scores = data["scores"]
-            avg    = sum(scores)/len(scores) if scores else 0
-            print(f"  {sid:>4}  {data['name']:<12} {str(scores):<20} {avg:>5.1f}")
+            avg    = sum(scores) / len(scores) if scores else 0
+            print("  " + str(sid).rjust(4) + "  " + data["name"].ljust(12) + str(scores).ljust(20) + str(round(avg, 1)).rjust(5))
 
 # --- Step 3: Demo ---
-print("=== Custom Exception Demo ===\n")
+print("--- Custom Exception Demo ---\n")
 db = StudentDatabase()
 
 # Add students
 for name in ["Aarav", "Diya", "Karthik"]:
     sid = db.add_student(name)
-    print(f"Added {name} with ID {sid}")
+    print("Added", name, "with ID", sid)
 
 # Duplicate
 try:
     db.add_student("Aarav")
 except DuplicateStudentError as e:
-    print(f"DuplicateStudentError: {e}")
+    print("DuplicateStudentError:", e)
 
 print()
 
@@ -90,15 +90,15 @@ operations = [(101, 85), (101, 92), (102, 78), (103, 110), (999, 80)]
 for sid, score in operations:
     try:
         db.add_score(sid, score)
-        print(f"Added score {score} for ID {sid}")
+        print("Added score", score, "for ID", sid)
     except InvalidScoreError as e:
-        print(f"InvalidScoreError: {e}")
+        print("InvalidScoreError:", e)
     except StudentNotFoundError as e:
-        print(f"StudentNotFoundError: {e}")
+        print("StudentNotFoundError:", e)
 
 print()
 
-print("=== Report ===")
+print("--- Report ---")
 db.report()
 
 # Think:

@@ -6,9 +6,7 @@
 # Design challenge: Build a calculator that handles ALL operator types.
 # The user picks what they want to calculate — you handle it!
 
-print("╔══════════════════════════════╗")
-print("║   Progra Smart Calculator   ║")
-print("╚══════════════════════════════╝")
+print("--- Progra Smart Calculator ---")
 print()
 print("What do you want to calculate?")
 print("1. Arithmetic (+ - * / // % **)")
@@ -27,28 +25,28 @@ if choice == "1":
     b = float(input("Enter second number: "))
 
     if op == "+":
-        print(f"{a} + {b} = {a + b}")
+        print(str(a) + " + " + str(b) + " = " + str(a + b))
     elif op == "-":
-        print(f"{a} - {b} = {a - b}")
+        print(str(a) + " - " + str(b) + " = " + str(a - b))
     elif op == "*":
-        print(f"{a} * {b} = {a * b}")
+        print(str(a) + " * " + str(b) + " = " + str(a * b))
     elif op == "/":
         if b != 0:
-            print(f"{a} / {b} = {a / b}")
+            print(str(a) + " / " + str(b) + " = " + str(a / b))
         else:
             print("Error: Cannot divide by zero!")
     elif op == "//":
         if b != 0:
-            print(f"{a} // {b} = {a // b}")
+            print(str(a) + " // " + str(b) + " = " + str(a // b))
         else:
             print("Error: Cannot divide by zero!")
     elif op == "%":
         if b != 0:
-            print(f"{a} % {b} = {a % b}")
+            print(str(a) + " % " + str(b) + " = " + str(a % b))
         else:
             print("Error: Cannot modulo by zero!")
     elif op == "**":
-        print(f"{a} ** {b} = {a ** b}")
+        print(str(a) + " ** " + str(b) + " = " + str(a ** b))
     else:
         print("Unknown operator!")
 
@@ -74,7 +72,7 @@ elif choice == "2":
     else:
         result = "Unknown operator"
 
-    print(f"{a} {op} {b} → {result}")
+    print(str(a) + " " + op + " " + str(b) + " -> " + str(result))
 
 # --- Option 3: Logic ---
 elif choice == "3":
@@ -85,11 +83,11 @@ elif choice == "3":
         c2 = input("Condition 2 (True/False): ").strip().lower() == "true"
 
     if op == "and":
-        print(f"{c1} and {c2} → {c1 and c2}")
+        print(str(c1) + " and " + str(c2) + " -> " + str(c1 and c2))
     elif op == "or":
-        print(f"{c1} or {c2} → {c1 or c2}")
+        print(str(c1) + " or " + str(c2) + " -> " + str(c1 or c2))
     elif op == "not":
-        print(f"not {c1} → {not c1}")
+        print("not " + str(c1) + " -> " + str(not c1))
     else:
         print("Unknown operator")
 
@@ -99,7 +97,7 @@ elif choice == "4":
     expr = input("> ")
     try:
         result = eval(expr)
-        print(f"Result: {result}")
+        print("Result:", result)
         print("(Python applied BODMAS automatically!)")
     except:
         print("Invalid expression. Try again.")

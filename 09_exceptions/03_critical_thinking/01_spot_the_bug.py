@@ -6,7 +6,7 @@
 # Each block has ONE bug. Find it, explain WHY it is wrong, then fix it.
 
 # --- Bug 1: Catching the wrong exception type ---
-print("=== Bug 1 ===")
+print("--- Bug 1 ---")
 # Intended: catch a ValueError when parsing fails
 try:
     value = int("hello")
@@ -22,7 +22,7 @@ except ValueError:
 print()
 
 # --- Bug 2: Bare except hides the real problem ---
-print("=== Bug 2 ===")
+print("--- Bug 2 ---")
 data = {"name": "Aarav"}
 try:
     print(data["age"])
@@ -33,12 +33,12 @@ except:                    # Bug! Too broad — hides what actually went wrong
 try:
     print(data["age"])
 except KeyError as e:
-    print(f"Fixed: KeyError — key {e} not found")
+    print("Fixed: KeyError — key", e, "not found")
 
 print()
 
 # --- Bug 3: except before the error it handles ---
-print("=== Bug 3 ===")
+print("--- Bug 3 ---")
 # Intended: specific then general
 try:
     result = 1 / 0
@@ -58,14 +58,14 @@ except Exception:
 print()
 
 # --- Bug 4: Using variable defined only inside try ---
-print("=== Bug 4 ===")
+print("--- Bug 4 ---")
 try:
     score = int("85")
 except ValueError:
     print("Bad input")
 
 # Bug! score might not be defined if exception was raised
-# print(f"Score: {score}")   # NameError if "85" was "abc"
+# print("Score:", score)   # NameError if "85" was "abc"
 
 # Fix: initialise before try
 score = None
@@ -74,12 +74,12 @@ try:
 except ValueError:
     print("Bad input")
 if score is not None:
-    print(f"Fixed — score: {score}")
+    print("Fixed — score:", score)
 
 print()
 
 # --- Bug 5: Swallowing exceptions silently ---
-print("=== Bug 5 ===")
+print("--- Bug 5 ---")
 def load_data(raw):
     try:
         return int(raw)
@@ -94,7 +94,7 @@ def load_data_fixed(raw):
     try:
         return int(raw)
     except ValueError as e:
-        print(f"  Warning: could not parse '{raw}': {e}")
+        print("  Warning: could not parse '" + str(raw) + "':", e)
         return None
 
 result = load_data_fixed("oops")

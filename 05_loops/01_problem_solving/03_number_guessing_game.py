@@ -15,8 +15,8 @@ def play_game():
     attempts = 0
     guessed = False
 
-    print(f"\nI'm thinking of a number between 1 and 100.")
-    print(f"You have {max_attempts} attempts. Good luck!")
+    print("\nI'm thinking of a number between 1 and 100.")
+    print("You have", max_attempts, "attempts. Good luck!")
     print()
 
     # Step 2: Main guess loop (while — unknown number of guesses)
@@ -25,7 +25,7 @@ def play_game():
         remaining = max_attempts - attempts
 
         try:
-            guess = int(input(f"Attempt {attempts}/{max_attempts} — Your guess: "))
+            guess = int(input("Attempt " + str(attempts) + "/" + str(max_attempts) + " — Your guess: "))
         except ValueError:
             print("Please enter a valid number!")
             attempts -= 1
@@ -37,26 +37,26 @@ def play_game():
             break
         elif guess < secret:
             if secret - guess <= 10:
-                print(f"  Too low — but you're VERY CLOSE! ({remaining} left)")
+                print("  Too low — but you're VERY CLOSE! (" + str(remaining) + " left)")
             else:
-                print(f"  Too low! ({remaining} attempt(s) left)")
+                print("  Too low! (" + str(remaining) + " attempt(s) left)")
         else:
             if guess - secret <= 10:
-                print(f"  Too high — but you're VERY CLOSE! ({remaining} left)")
+                print("  Too high — but you're VERY CLOSE! (" + str(remaining) + " left)")
             else:
-                print(f"  Too high! ({remaining} attempt(s) left)")
+                print("  Too high! (" + str(remaining) + " attempt(s) left)")
 
     # Step 4: End of game message
     print()
     if guessed:
         if attempts == 1:
-            print(f"AMAZING! You got it on the FIRST try! The number was {secret}.")
+            print("AMAZING! You got it on the FIRST try! The number was", secret)
         elif attempts <= 3:
-            print(f"Excellent! You guessed it in {attempts} attempts!")
+            print("Excellent! You guessed it in", attempts, "attempts!")
         else:
-            print(f"Well done! You got it in {attempts} attempts.")
+            print("Well done! You got it in", attempts, "attempts.")
     else:
-        print(f"Out of attempts! The secret number was {secret}.")
+        print("Out of attempts! The secret number was", secret)
 
     return guessed, attempts
 
@@ -77,10 +77,10 @@ while True:
 
 # Step 6: Final stats
 print()
-print("=== Your Stats ===")
-print(f"Games played: {total_games}")
-print(f"Games won:    {total_wins}")
-print(f"Win rate:     {total_wins/total_games*100:.0f}%")
+print("--- Your Stats ---")
+print("Games played:", total_games)
+print("Games won:   ", total_wins)
+print("Win rate:    ", str(round(total_wins/total_games*100)) + "%")
 print("Thanks for playing!")
 
 # Think:

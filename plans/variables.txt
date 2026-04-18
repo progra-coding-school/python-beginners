@@ -1,0 +1,6 @@
+from tkinter import Variable
+
+1.What is a Variable
+2.Use Variable
+3.Create Variable
+4.Update Variable

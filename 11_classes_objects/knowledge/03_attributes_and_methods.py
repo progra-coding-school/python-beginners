@@ -16,7 +16,7 @@ class Student:
 
     # Method — action the object can perform
     def introduce(self):
-        print(f"Hi! I am {self.name}, age {self.age}, studying in Grade {self.grade}.")
+        print("Hi! I am " + self.name + ", age", self.age, ", studying in Grade", self.grade)
 
     def add_mark(self, subject, score):
         self.marks[subject] = score
@@ -27,13 +27,13 @@ class Student:
         return sum(self.marks.values()) / len(self.marks)
 
     def report(self):
-        print(f"--- {self.name}'s Report ---")
+        print("--- " + self.name + "'s Report ---")
         for subject, score in self.marks.items():
-            print(f"  {subject:<12}: {score}")
-        print(f"  Average     : {self.average():.1f}")
+            print(" ", subject, ":", score)
+        print("  Average     :", round(self.average(), 1))
 
 # --- Using attributes and methods ---
-print("=== Attributes ===")
+print("--- Attributes ---")
 s = Student("Aarav", 13, 7)
 print("Name :", s.name)
 print("Age  :", s.age)
@@ -41,7 +41,7 @@ print("Grade:", s.grade)
 
 print()
 
-print("=== Methods ===")
+print("--- Methods ---")
 s.introduce()
 
 print()
@@ -54,17 +54,17 @@ s.report()
 print()
 
 # --- Multiple objects, same methods ---
-print("=== Multiple objects ===")
+print("--- Multiple objects ---")
 diya = Student("Diya", 12, 6)
 diya.add_mark("Maths", 95)
 diya.add_mark("Science", 88)
 diya.introduce()
-print(f"  Diya's average: {diya.average():.1f}")
+print("  Diya's average:", round(diya.average(), 1))
 
 print()
 
 # --- Class attribute (shared by ALL objects) ---
-print("=== Class attribute (shared) ===")
+print("--- Class attribute (shared) ---")
 class School:
     school_name = "Progra School"   # class attribute — same for all
 
@@ -74,8 +74,8 @@ class School:
 t1 = School("Mrs. Radha")
 t2 = School("Mr. Kumar")
 
-print(f"t1: {School.school_name} — {t1.teacher}")
-print(f"t2: {School.school_name} — {t2.teacher}")
+print("t1:", School.school_name, "—", t1.teacher)
+print("t2:", School.school_name, "—", t2.teacher)
 
 # Think:
 # 1. What is the difference between an attribute and a method?

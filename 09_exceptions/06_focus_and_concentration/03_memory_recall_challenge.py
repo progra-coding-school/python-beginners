@@ -18,11 +18,11 @@ exception_table = [
     ("RecursionError",    "Stack overflow from recursion", "f() calls f()"),
 ]
 
-print("=== Exception Reference Table (study for 30 seconds) ===")
-print(f"  {'Exception':<22} {'Cause':<35} {'Example'}")
-print(f"  {'─'*22} {'─'*35} {'─'*20}")
+print("--- Exception Reference Table (study for 30 seconds) ---")
+print("  " + "Exception".ljust(22) + "Cause".ljust(35) + "Example")
+print("  " + "─" * 22 + " " + "─" * 35 + " " + "─" * 20)
 for name, cause, example in exception_table:
-    print(f"  {name:<22} {cause:<35} {example}")
+    print("  " + name.ljust(22) + cause.ljust(35) + example)
 
 print()
 print("─" * 70)
@@ -34,44 +34,44 @@ print()
 try:
     int("abc")
 except Exception as e:
-    print(f"Q1: int('abc')     → {type(e).__name__}")
+    print("Q1: int('abc')     →", type(e).__name__)
 
 # --- Q2: What exception does lst[99] raise? ---
 try:
     [1, 2][99]
 except Exception as e:
-    print(f"Q2: [1,2][99]      → {type(e).__name__}")
+    print("Q2: [1,2][99]      →", type(e).__name__)
 
 # --- Q3: What exception does 'a' + 1 raise? ---
 try:
     "a" + 1
 except Exception as e:
-    print(f"Q3: 'a' + 1        → {type(e).__name__}")
+    print("Q3: 'a' + 1        →", type(e).__name__)
 
 # --- Q4: What exception does d['missing'] raise? ---
 try:
     {"a": 1}["b"]
 except Exception as e:
-    print(f"Q4: d['missing']   → {type(e).__name__}")
+    print("Q4: d['missing']   →", type(e).__name__)
 
 # --- Q5: What exception does 10 / 0 raise? ---
 try:
     10 / 0
 except Exception as e:
-    print(f"Q5: 10 / 0         → {type(e).__name__}")
+    print("Q5: 10 / 0         →", type(e).__name__)
 
 # --- Q6: What exception does 42.append(1) raise? ---
 try:
     (42).bit_length()   # exists
     (42).append(1)      # doesn't exist
 except Exception as e:
-    print(f"Q6: 42.append(1)   → {type(e).__name__}")
+    print("Q6: 42.append(1)   →", type(e).__name__)
 
 # --- Q7: What exception does print(undefined) raise? ---
 try:
     exec("print(undefined_xyz)")
 except Exception as e:
-    print(f"Q7: print(undefined) → {type(e).__name__}")
+    print("Q7: print(undefined) →", type(e).__name__)
 
 print()
 print("─" * 70)

@@ -19,7 +19,7 @@ student1 = Student()
 student2 = Student()
 student3 = Student()
 
-print("=== Creating Objects ===")
+print("--- Creating Objects ---")
 print("student1:", student1)
 print("student2:", student2)
 print("Are they the same object?", student1 is student2)   # False — different objects
@@ -27,20 +27,20 @@ print("Are they the same object?", student1 is student2)   # False — different
 print()
 
 # --- Giving objects their own data (attributes) ---
-print("=== Adding data to objects ===")
+print("--- Adding data to objects ---")
 student1.name  = "Aarav"
 student1.grade = 7
 
 student2.name  = "Diya"
 student2.grade = 6
 
-print(f"Student 1: {student1.name}, Grade {student1.grade}")
-print(f"Student 2: {student2.name}, Grade {student2.grade}")
+print("Student 1:", student1.name + ", Grade", student1.grade)
+print("Student 2:", student2.name + ", Grade", student2.grade)
 
 print()
 
 # --- More real-life analogies ---
-print("=== More analogies ===")
+print("--- More analogies ---")
 print("Class 'Dog'    → objects: Tommy, Bruno, Max (all dogs, each different)")
 print("Class 'Phone'  → objects: iPhone, Samsung, Nokia (all phones)")
 print("Class 'Book'   → objects: each book in a library")
@@ -51,7 +51,7 @@ print("Each OBJECT holds the actual values for ONE specific dog.")
 print()
 
 # --- Checking types ---
-print("=== type() and isinstance() ===")
+print("--- type() and isinstance() ---")
 print("type(student1)  :", type(student1))
 print("Is Student?     :", isinstance(student1, Student))
 

@@ -1,7 +1,5 @@
-# ===============================
 # File Name: exponentiation_operator.py
 # Operator: ** (Exponentiation)
-# ===============================
 
 # ** raises a number to the power of another
 

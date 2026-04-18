@@ -6,7 +6,7 @@
 # For each block, trace in your head WHICH object's data is used.
 # Label each step: which object, which attribute, which method?
 
-print("=== Flow Tracing Exercises ===\n")
+print("--- Flow Tracing Exercises ---\n")
 
 # --- Exercise 1: Two objects, one class ---
 print("Exercise 1: Trace each print — which object's name?")
@@ -14,7 +14,7 @@ class Cat:
     def __init__(self, name):
         self.name = name
     def speak(self):
-        print(f"  {self.name}: Meow")
+        print(" ", self.name + ": Meow")
 
 c1 = Cat("Whiskers")
 c2 = Cat("Mittens")
@@ -37,15 +37,15 @@ class Score:
         self.points = 0
 
 score = Score(10)
-print(f"  After init    : {score.points}")    # 10
+print("  After init    :", score.points)    # 10
 score.add(5)
-print(f"  After add(5)  : {score.points}")    # 15
+print("  After add(5)  :", score.points)    # 15
 score.add(20)
-print(f"  After add(20) : {score.points}")    # 35
+print("  After add(20) :", score.points)    # 35
 score.reset()
-print(f"  After reset() : {score.points}")    # 0
+print("  After reset() :", score.points)    # 0
 score.add(8)
-print(f"  After add(8)  : {score.points}")    # 8
+print("  After add(8)  :", score.points)    # 8
 
 print()
 
@@ -59,7 +59,7 @@ class Book:
         self.borrower = member_name
     def show(self):
         who = self.borrower if self.borrower else "nobody"
-        print(f"  '{self.title}' borrowed by: {who}")
+        print("  '" + self.title + "' borrowed by:", who)
 
 b1 = Book("Python Basics")
 b2 = Book("Cricket Code")
@@ -83,13 +83,13 @@ class Lamp:
 
 l1 = Lamp("Bedroom")
 l2 = Lamp("Kitchen")
-print(f"  l1.power: {l1.power}")      # LED
-print(f"  l2.power: {l2.power}")      # LED
+print("  l1.power:", l1.power)      # LED
+print("  l2.power:", l2.power)      # LED
 Lamp.power = "CFL"
-print(f"  l1.power: {l1.power}")      # CFL — class changed
+print("  l1.power:", l1.power)      # CFL — class changed
 l2.power = "Incandescent"             # instance attribute on l2
-print(f"  l2.power: {l2.power}")      # Incandescent — instance overrides
-print(f"  Lamp.power: {Lamp.power}")  # CFL — class unchanged
+print("  l2.power:", l2.power)      # Incandescent — instance overrides
+print("  Lamp.power:", Lamp.power)  # CFL — class unchanged
 
 # Think:
 # 1. In Exercise 4, after l2.power = "Incandescent", what does Lamp.power still say?

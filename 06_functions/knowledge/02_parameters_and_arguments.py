@@ -26,7 +26,7 @@ print()
 
 # --- Two parameters ---
 def show_student(name, grade):
-    print(f"Name: {name}, Grade: {grade}")
+    print("Name: " + name + ", Grade: " + str(grade))
 
 show_student("Aarav", 7)
 show_student("Diya", 6)
@@ -35,7 +35,7 @@ print()
 
 # --- Three parameters ---
 def introduce(name, age, city):
-    print(f"Hi! I am {name}, {age} years old, from {city}.")
+    print("Hi! I am " + name + ", " + str(age) + " years old, from " + city + ".")
 
 introduce("Riya", 12, "Chennai")
 introduce("Aman", 13, "Mumbai")
@@ -44,7 +44,7 @@ print()
 
 # --- Default parameter (optional argument) ---
 def greet(name, greeting="Hello"):
-    print(f"{greeting}, {name}!")
+    print(greeting + ", " + name + "!")
 
 greet("Aarav")              # Uses default greeting
 greet("Diya", "Namaste")    # Overrides default

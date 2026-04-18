@@ -19,10 +19,10 @@ def clear():
 def show_and_hide(items, seconds):
     print()
     print("  MEMORISE THIS LIST:")
-    print("  " + "-" * 30)
+    print("  ------------------------------")
     for idx, item in enumerate(items):
         print("  " + str(idx + 1) + ". " + item)
-    print("  " + "-" * 30)
+    print("  ------------------------------")
     print("  You have", seconds, "seconds...")
     print()
     time.sleep(seconds)   # pause so the student has time to read

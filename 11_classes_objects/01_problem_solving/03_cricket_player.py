@@ -21,8 +21,8 @@ class CricketPlayer:
         self.runs.append(runs_scored)
         self.wickets.append(wickets_taken)
         self.catches         += catches_taken
-        print(f"  {self.name}: Match {self.matches} — "
-              f"{runs_scored} runs, {wickets_taken} wkts, {catches_taken} catches")
+        print("  " + self.name + ": Match", self.matches, "—",
+              runs_scored, "runs,", wickets_taken, "wkts,", catches_taken, "catches")
 
     def batting_average(self):
         if not self.runs:
@@ -42,20 +42,22 @@ class CricketPlayer:
         return sum(self.wickets)
 
     def report(self):
-        print(f"\n  {'─'*35}")
-        print(f"  Player  : {self.name}  ({self.role})")
-        print(f"  Matches : {self.matches}")
-        print(f"  Runs    : {self.runs}  → Total: {sum(self.runs)}")
-        print(f"  Bat Avg : {self.batting_average():.1f}")
-        print(f"  Hi Score: {self.highest_score()}")
-        print(f"  Wickets : {self.wickets}  → Total: {self.total_wickets()}")
+        print()
+        print("  " + "-" * 35)
+        print("  Player  :", self.name, " (" + self.role + ")")
+        print("  Matches :", self.matches)
+        print("  Runs    :", self.runs, " → Total:", sum(self.runs))
+        print("  Bat Avg :", round(self.batting_average(), 1))
+        print("  Hi Score:", self.highest_score())
+        print("  Wickets :", self.wickets, " → Total:", self.total_wickets())
         if self.bowling_average():
-            print(f"  Wkt/Match: {self.bowling_average():.1f}")
-        print(f"  Catches : {self.catches}")
-        print(f"  {'─'*35}")
+            print("  Wkt/Match:", round(self.bowling_average(), 1))
+        print("  Catches :", self.catches)
+        print("  " + "-" * 35)
 
 # --- Demo ---
-print("=== Cricket Team Stats ===\n")
+print("--- Cricket Team Stats ---")
+print()
 
 aarav   = CricketPlayer("Aarav",   "batsman")
 karthik = CricketPlayer("Karthik", "bowler")
@@ -83,7 +85,7 @@ for player in [aarav, karthik, diya]:
 # Best batsman
 team = [aarav, karthik, diya]
 best = max(team, key=lambda p: p.batting_average())
-print(f"\nBest batsman: {best.name} (avg {best.batting_average():.1f})")
+print("\nBest batsman:", best.name, "(avg", str(round(best.batting_average(), 1)) + ")")
 
 # Think:
 # 1. How would you add a method that returns all matches where the player scored 50+?

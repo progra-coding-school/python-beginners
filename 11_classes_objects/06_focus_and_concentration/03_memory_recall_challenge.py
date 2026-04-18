@@ -7,7 +7,7 @@
 # Then scroll down and answer the questions FROM MEMORY.
 # Run to verify!
 
-# ─── Memorise this class ─────────────────────────────────────────
+# --- Memorise this class ---
 class Player:
     team = "Progra XI"      # class attribute
 
@@ -25,13 +25,14 @@ class Player:
         self.wickets += wickets
 
     def stats(self):
-        print(f"  {self.jersey:>2}. {self.name:<12} [{self.role:<10}]"
-              f"  Runs: {self.runs:>4}  Wkts: {self.wickets}")
+        print(" ", str(self.jersey).rjust(2) + ".", self.name.ljust(12),
+              "[" + self.role.ljust(10) + "]",
+              " Runs:", str(self.runs).rjust(4), " Wkts:", self.wickets)
 
     def __str__(self):
-        return f"Player({self.name}, #{self.jersey})"
+        return "Player(" + self.name + ", #" + str(self.jersey) + ")"
 
-# ─── Objects created ─────────────────────────────────────────────
+# --- Objects created ---
 p1 = Player("Aarav",   "Batsman",  7)
 p2 = Player("Karthik", "Bowler",  11)
 p3 = Player("Diya",    "All-rounder", 3)
@@ -43,40 +44,40 @@ p3.bat(38)
 p3.bowl(2)
 p2.bat(5)
 
-print("=== Player Objects (study for 45 seconds) ===")
+print("--- Player Objects (study for 45 seconds) ---")
 for p in [p1, p2, p3]:
     p.stats()
-print(f"Team: {Player.team}")
+print("Team:", Player.team)
 
 print()
-print("─" * 55)
+print("-" * 55)
 print("Answer from memory — then verify below!")
-print("─" * 55)
+print("-" * 55)
 print()
 
 # --- Q1: What is the class attribute shared by all players? ---
-print(f"Q1: Class attribute 'team' = '{Player.team}'")
+print("Q1: Class attribute 'team' = '" + Player.team + "'")
 
 # --- Q2: What is Aarav's jersey number? ---
-print(f"Q2: Aarav's jersey = {p1.jersey}")
+print("Q2: Aarav's jersey =", p1.jersey)
 
 # --- Q3: How many total runs did p1 score? ---
-print(f"Q3: p1 total runs = {p1.runs}")
+print("Q3: p1 total runs =", p1.runs)
 
 # --- Q4: What is Karthik's role? ---
-print(f"Q4: Karthik's role = '{p2.role}'")
+print("Q4: Karthik's role = '" + p2.role + "'")
 
 # --- Q5: How many wickets did Diya take? ---
-print(f"Q5: Diya's wickets = {p3.wickets}")
+print("Q5: Diya's wickets =", p3.wickets)
 
 # --- Q6: What does str(p2) return? ---
-print(f"Q6: str(p2) = '{str(p2)}'")
+print("Q6: str(p2) = '" + str(p2) + "'")
 
 # --- Q7: After p2.bat(5), what is p2.runs? ---
-print(f"Q7: p2.runs = {p2.runs}")
+print("Q7: p2.runs =", p2.runs)
 
 print()
-print("─" * 55)
+print("-" * 55)
 print("Score yourself:")
 print("  7/7 → Exceptional focus and memory!")
 print("  5-6 → Great — review missed details.")

@@ -1,7 +1,5 @@
-# ===============================
 # File Name: floor_division_operator.py
 # Operator: // (Floor Division)
-# ===============================
 
 # // divides and removes the decimal part
 

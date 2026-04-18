@@ -33,7 +33,7 @@ print("""
 answer = input("Your answer: ")
 actual = 0
 for n in [3, 7, 2, 8]: actual += n
-print(f"Answer: {actual}  (3+7=10, +2=12, +8=20)")
+print("Answer:", actual, " (3+7=10, +2=12, +8=20)")
 if answer.strip() == str(actual):
     score += 1
     print("Correct!")
@@ -88,4 +88,4 @@ if answer.strip().replace(" ", "") == ",".join(result):
     print("Correct!")
 print()
 
-print(f"Tracing Score: {score} / 5")
+print("Tracing Score:", score, "/ 5")

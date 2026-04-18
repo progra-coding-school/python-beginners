@@ -7,7 +7,7 @@
 # Name the pattern, then complete the missing piece.
 
 # --- Pattern 1: Accumulator object ---
-print("=== Pattern 1: Accumulator ===")
+print("--- Pattern 1: Accumulator ---")
 class RunCounter:
     def __init__(self):
         self.total = 0
@@ -24,15 +24,15 @@ rc = RunCounter()
 for runs in [45, 62, 18, 90, 33]:
     rc.add(runs)
 
-print(f"  Total runs: {rc.total}")
-print(f"  Matches   : {rc.count}")
-print(f"  Average   : {rc.average():.1f}")
+print("  Total runs:", rc.total)
+print("  Matches   :", rc.count)
+print("  Average   :", round(rc.average(), 1))
 print("Pattern: object accumulates data over time via repeated method calls")
 
 print()
 
 # --- Pattern 2: Factory — class creates a collection of objects ---
-print("=== Pattern 2: Creating many objects in a loop ===")
+print("--- Pattern 2: Creating many objects in a loop ---")
 class Lamp:
     def __init__(self, room, brightness):
         self.room       = room
@@ -49,13 +49,13 @@ for lamp in lamps:
     lamp.toggle()   # turn all on
 
 for lamp in lamps:
-    print(f"  {lamp.room:<15} brightness={lamp.brightness}  on={lamp.on}")
+    print("  " + lamp.room.ljust(15), "brightness=" + str(lamp.brightness), " on=" + str(lamp.on))
 print("Pattern: list comprehension creates many objects from the same class")
 
 print()
 
 # --- Pattern 3: Object as a data container with methods ---
-print("=== Pattern 3: Data container + behaviour ===")
+print("--- Pattern 3: Data container + behaviour ---")
 class Rectangle:
     def __init__(self, width, height):
         self.width  = width
@@ -72,25 +72,25 @@ class Rectangle:
 
 shapes = [Rectangle(4, 6), Rectangle(5, 5), Rectangle(3, 8)]
 for r in shapes:
-    print(f"  {r.width}x{r.height}  area={r.area()}  square={r.is_square()}")
+    print("  " + str(r.width) + "x" + str(r.height), " area=" + str(r.area()), " square=" + str(r.is_square()))
 print("Pattern: class bundles related data + computations on that data")
 
 print()
 
 # --- Pattern 4: __str__ for readable output ---
-print("=== Pattern 4: __str__ for readable printing ===")
+print("--- Pattern 4: __str__ for readable printing ---")
 class Student:
     def __init__(self, name, grade):
         self.name  = name
         self.grade = grade
 
     def __str__(self):
-        return f"Student({self.name}, Grade {self.grade})"
+        return "Student(" + self.name + ", Grade " + str(self.grade) + ")"
 
 s = Student("Aarav", 7)
 print(s)            # calls __str__ automatically
 print(str(s))       # same thing explicitly
-print(f"Info: {s}") # also works in f-strings
+print("Info:", s)   # also works with print comma
 print("Pattern: define __str__ so print(object) gives meaningful output")
 
 # Think:

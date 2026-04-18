@@ -6,14 +6,14 @@
 # Nested loops are perfect for printing 2D patterns.
 # Outer loop = rows, Inner loop = columns.
 
-print("=== Pattern 1: Right Triangle of Stars ===")
+print("--- Pattern 1: Right Triangle of Stars ---")
 rows = int(input("How many rows? "))
 for i in range(1, rows + 1):
     print("*" * i)
 
 print()
 
-print("=== Pattern 2: Number Triangle ===")
+print("--- Pattern 2: Number Triangle ---")
 for i in range(1, rows + 1):
     for j in range(1, i + 1):
         print(j, end=" ")
@@ -21,19 +21,19 @@ for i in range(1, rows + 1):
 
 print()
 
-print("=== Pattern 3: Inverted Triangle ===")
+print("--- Pattern 3: Inverted Triangle ---")
 for i in range(rows, 0, -1):
     print("* " * i)
 
 print()
 
-print("=== Pattern 4: Square of Stars ===")
+print("--- Pattern 4: Square of Stars ---")
 for i in range(rows):
     print("* " * rows)
 
 print()
 
-print("=== Pattern 5: Hollow Square ===")
+print("--- Pattern 5: Hollow Square ---")
 for i in range(rows):
     if i == 0 or i == rows - 1:
         print("* " * rows)
@@ -42,7 +42,7 @@ for i in range(rows):
 
 print()
 
-print("=== Pattern 6: Pyramid ===")
+print("--- Pattern 6: Pyramid ---")
 for i in range(1, rows + 1):
     spaces = " " * (rows - i)
     stars  = "* " * i
@@ -50,7 +50,7 @@ for i in range(1, rows + 1):
 
 print()
 
-print("=== Pattern 7: Multiplication Table Grid ===")
+print("--- Pattern 7: Multiplication Table Grid ---")
 size = min(rows, 10)
 print("   ", end="")
 for col in range(1, size + 1):

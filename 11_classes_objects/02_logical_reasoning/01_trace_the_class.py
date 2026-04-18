@@ -8,10 +8,10 @@
 # Trace: which object's data is being used at each step?
 
 # --- Trace 1: __init__ runs at creation ---
-print("=== Trace 1 ===")
+print("--- Trace 1 ---")
 class Box:
     def __init__(self, label):
-        print(f"  Box '{label}' created")
+        print("  Box '" + label + "' created")
         self.label = label
 
 b1 = Box("A")
@@ -22,7 +22,7 @@ b2 = Box("B")
 print()
 
 # --- Trace 2: each object has independent attributes ---
-print("=== Trace 2 ===")
+print("--- Trace 2 ---")
 class Jar:
     def __init__(self, contents, amount):
         self.contents = contents
@@ -39,7 +39,7 @@ print(j2.amount)
 print()
 
 # --- Trace 3: method modifies self ---
-print("=== Trace 3 ===")
+print("--- Trace 3 ---")
 class Score:
     def __init__(self):
         self.points = 0
@@ -48,7 +48,7 @@ class Score:
         self.points += n
 
     def show(self):
-        print(f"  Points: {self.points}")
+        print("  Points:", self.points)
 
 s = Score()
 s.add(10)
@@ -62,7 +62,7 @@ s.show()
 print()
 
 # --- Trace 4: class vs instance attribute ---
-print("=== Trace 4 ===")
+print("--- Trace 4 ---")
 class Animal:
     category = "Living thing"
 
@@ -81,7 +81,7 @@ print(a2.category)     # changed for all
 print()
 
 # --- Trace 5 (tricky!) ---
-print("=== Trace 5 ===")
+print("--- Trace 5 ---")
 class Tank:
     def __init__(self, capacity):
         self.capacity = capacity

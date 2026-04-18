@@ -7,16 +7,16 @@
 # Python checks them TOP to BOTTOM and runs the FIRST match.
 
 # --- Multiple except blocks ---
-print("=== Multiple except blocks ===")
+print("--- Multiple except blocks ---")
 
 def safe_divide(a, b):
     try:
         result = a / b
-        print(f"  {a} / {b} = {result:.2f}")
+        print(" ", a, "/", b, "=", round(result, 2))
     except ZeroDivisionError:
-        print(f"  Cannot divide {a} by zero!")
+        print("  Cannot divide", a, "by zero!")
     except TypeError:
-        print(f"  Both values must be numbers, not strings!")
+        print("  Both values must be numbers, not strings!")
 
 safe_divide(10, 2)
 safe_divide(10, 0)
@@ -25,14 +25,14 @@ safe_divide(10, "x")
 print()
 
 # --- Catching multiple exceptions in ONE line with a tuple ---
-print("=== Catching multiple types at once ===")
+print("--- Catching multiple types at once ---")
 
 def parse_and_divide(a_str, b_str):
     try:
         result = int(a_str) / int(b_str)
-        print(f"  Result: {result}")
+        print("  Result:", result)
     except (ValueError, ZeroDivisionError) as e:
-        print(f"  Error: {e}")
+        print("  Error:", e)
 
 parse_and_divide("10", "2")     # OK
 parse_and_divide("10", "0")     # ZeroDivisionError
@@ -41,7 +41,7 @@ parse_and_divide("10", "abc")   # ValueError
 print()
 
 # --- Order matters: specific before general ---
-print("=== Order matters — specific FIRST ===")
+print("--- Order matters — specific FIRST ---")
 
 try:
     x = int("hello")
@@ -53,18 +53,18 @@ except Exception:
 print()
 
 # --- General Exception as fallback ---
-print("=== Specific + general fallback ===")
+print("--- Specific + general fallback ---")
 
 data = [10, "twenty", 0, 5]
 for item in data:
     try:
-        print(f"  100 / {item} = {100 / item:.1f}")
+        print("  100 /", item, "=", round(100 / item, 1))
     except ZeroDivisionError:
-        print(f"  Skipping {item} — division by zero")
+        print("  Skipping", item, "— division by zero")
     except TypeError:
-        print(f"  Skipping '{item}' — not a number")
+        print("  Skipping '" + str(item) + "' — not a number")
     except Exception as e:
-        print(f"  Unexpected error with {item}: {e}")
+        print("  Unexpected error with", item, ":", e)
 
 # Think:
 # 1. What happens if you put the general `except Exception` BEFORE the specific ones?

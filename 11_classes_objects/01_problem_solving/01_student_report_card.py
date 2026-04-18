@@ -18,7 +18,7 @@ class Student:
 
     def add_mark(self, subject, score):
         if not (0 <= score <= 100):
-            print(f"  Invalid score {score} for {subject}. Must be 0–100.")
+            print("  Invalid score", score, "for", subject + ". Must be 0-100.")
             return
         self.marks[subject] = score
 
@@ -44,22 +44,21 @@ class Student:
         return max(self.marks, key=self.marks.get)
 
     def report(self):
-        print(f"\n{'═'*40}")
-        print(f"  Progra School — Report Card")
-        print(f"  Name    : {self.name}")
-        print(f"  Grade   : {self.grade}   Roll No: {self.roll_no}")
-        print(f"{'─'*40}")
-        print(f"  {'Subject':<14} {'Score':>5}  {'Status'}")
-        print(f"  {'─'*14} {'─'*5}  {'─'*6}")
+        print()
+        print("  Progra School — Report Card")
+        print("  Name    :", self.name)
+        print("  Grade   :", self.grade, "  Roll No:", self.roll_no)
+        print("  " + "-" * 38)
+        print("  Subject        Score  Status")
+        print("  " + "-" * 38)
         for subject, score in self.marks.items():
             status = "PASS" if score >= self.PASS_MARK else "FAIL"
-            print(f"  {subject:<14} {score:>5}  {status}")
-        print(f"{'─'*40}")
-        print(f"  Average  : {self.average():.1f}  ({self.letter_grade()})")
-        print(f"  Best     : {self.best_subject()}")
+            print("  " + subject.ljust(14), str(score).rjust(5), " ", status)
+        print("  " + "-" * 38)
+        print("  Average  :", str(round(self.average(), 1)) + " (" + self.letter_grade() + ")")
+        print("  Best     :", self.best_subject())
         result = "PROMOTED" if self.passed_all() else "NEEDS IMPROVEMENT"
-        print(f"  Result   : {result}")
-        print(f"{'═'*40}")
+        print("  Result   :", result)
 
 # --- Demo ---
 aarav = Student("Aarav", 7, 101)

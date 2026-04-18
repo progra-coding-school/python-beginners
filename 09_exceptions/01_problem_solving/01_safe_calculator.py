@@ -15,7 +15,7 @@ def calculate(a_str, operator, b_str):
         a = float(a_str)
         b = float(b_str)
     except ValueError:
-        return f"Error: '{a_str}' or '{b_str}' is not a valid number."
+        return "Error: '" + str(a_str) + "' or '" + str(b_str) + "' is not a valid number."
 
     # Step 1b: perform operation
     try:
@@ -28,17 +28,17 @@ def calculate(a_str, operator, b_str):
         elif operator == "/":
             result = a / b
         else:
-            return f"Error: Unknown operator '{operator}'. Use +, -, *, /"
+            return "Error: Unknown operator '" + str(operator) + "'. Use +, -, *, /"
     except ZeroDivisionError:
         return "Error: Cannot divide by zero."
 
     # Step 1c: clean output (remove .0 for whole numbers)
     if result == int(result):
-        return f"Result: {int(result)}"
-    return f"Result: {result:.4f}"
+        return "Result: " + str(int(result))
+    return "Result: " + str(round(result, 4))
 
 # --- Step 2: Demo with various inputs ---
-print("=== Safe Calculator ===")
+print("--- Safe Calculator ---")
 print()
 
 test_cases = [
@@ -56,11 +56,11 @@ test_cases = [
 
 for a, op, b in test_cases:
     output = calculate(a, op, b)
-    print(f"  {a} {op} {b}  →  {output}")
+    print("  " + a + " " + op + " " + b + "  →  " + output)
 
 # --- Step 3: What a CRASH would look like without handling ---
 print()
-print("=== What crashes look like (without try/except) ===")
+print("--- What crashes look like (without try/except) ---")
 print("  int('abc')   → ValueError: invalid literal for int()")
 print("  10 / 0       → ZeroDivisionError: division by zero")
 print("  'abc' + 10   → TypeError: can only concatenate str (not int) to str")

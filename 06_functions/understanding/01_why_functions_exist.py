@@ -6,7 +6,7 @@
 # Without functions: code is repeated, hard to fix, hard to read.
 # With functions: write once, use anywhere — clean and powerful.
 
-print("=== WITHOUT Functions — Repeated Code ===")
+print("--- WITHOUT Functions — Repeated Code ---")
 # Calculate grade for 3 students — writing same logic 3 times!
 marks1 = 85
 if marks1 >= 90:
@@ -17,7 +17,7 @@ elif marks1 >= 35:
     grade1 = "B"
 else:
     grade1 = "FAIL"
-print(f"Aarav: {marks1} → {grade1}")
+print("Aarav:", marks1, "→", grade1)
 
 marks2 = 62
 if marks2 >= 90:
@@ -28,7 +28,7 @@ elif marks2 >= 35:
     grade2 = "B"
 else:
     grade2 = "FAIL"
-print(f"Diya:  {marks2} → {grade2}")
+print("Diya: ", marks2, "→", grade2)
 
 marks3 = 28
 if marks3 >= 90:
@@ -39,13 +39,13 @@ elif marks3 >= 35:
     grade3 = "B"
 else:
     grade3 = "FAIL"
-print(f"Riya:  {marks3} → {grade3}")
+print("Riya: ", marks3, "→", grade3)
 
 print()
 print("Problem: If the grade boundary changes, we must fix it in 3 places!")
 print()
 
-print("=== WITH Functions — Write Once, Use Anywhere ===")
+print("--- WITH Functions — Write Once, Use Anywhere ---")
 
 def get_grade(marks):
     if marks >= 90:
@@ -57,16 +57,16 @@ def get_grade(marks):
     else:
         return "FAIL"
 
-print(f"Aarav: 85 → {get_grade(85)}")
-print(f"Diya:  62 → {get_grade(62)}")
-print(f"Riya:  28 → {get_grade(28)}")
+print("Aarav: 85 →", get_grade(85))
+print("Diya:  62 →", get_grade(62))
+print("Riya:  28 →", get_grade(28))
 
 print()
 print("Benefit: If the boundary changes → fix in ONE place. Done!")
 print()
 
 # --- 3 Reasons Functions Exist ---
-print("=== Why Functions? ===")
+print("--- Why Functions? ---")
 print("1. REUSE: Write once, call as many times as needed")
 print("2. READABILITY: Code reads like sentences — get_grade(85)")
 print("3. EASY TO FIX: Change logic in ONE place, affects all calls")

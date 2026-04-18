@@ -28,7 +28,7 @@ class Student:
         return (self.present / self.total_days) * 100
 
     def __str__(self):
-        return f"{self.name} (Roll {self.roll_no})"
+        return self.name + " (Roll " + str(self.roll_no) + ")"
 
 
 class Teacher:
@@ -37,7 +37,7 @@ class Teacher:
         self.subject = subject
 
     def __str__(self):
-        return f"Teacher {self.name} [{self.subject}]"
+        return "Teacher " + self.name + " [" + self.subject + "]"
 
 
 class Classroom:
@@ -49,7 +49,7 @@ class Classroom:
 
     def enrol(self, student):
         self.students.append(student)
-        print(f"  Enrolled: {student}")
+        print("  Enrolled:", student)
 
     def take_attendance(self, present_names):
         for s in self.students:
@@ -69,27 +69,26 @@ class Classroom:
         return max(self.students, key=lambda s: s.average())
 
     def report(self):
-        print(f"\n{'═'*50}")
-        print(f"  Grade {self.grade} — Section {self.section}")
-        print(f"  {self.teacher}")
-        print(f"  Students: {len(self.students)}")
-        print(f"{'─'*50}")
-        print(f"  {'Name':<14} {'Avg':>5} {'Attend':>8} {'Grade'}")
-        print(f"  {'─'*14} {'─'*5} {'─'*8} {'─'*5}")
+        print()
+        print("  Grade", self.grade, "— Section", self.section)
+        print(" ", self.teacher)
+        print("  Students:", len(self.students))
+        print("  " + "-" * 48)
+        print("  Name           Avg   Attend  Grade")
+        print("  " + "-" * 48)
         for s in sorted(self.students, key=lambda x: x.average(), reverse=True):
             grade = "A+" if s.average()>=90 else "A" if s.average()>=80 else "B" if s.average()>=70 else "C"
-            attend = f"{s.attendance_pct():.0f}%"
-            print(f"  {s.name:<14} {s.average():>5.1f} {attend:>8} {grade}")
+            attend = str(round(s.attendance_pct())) + "%"
+            print("  " + s.name.ljust(14), str(round(s.average(), 1)).rjust(5), attend.rjust(8), grade)
         t = self.topper()
-        print(f"{'─'*50}")
-        print(f"  Topper: {t.name} ({t.average():.1f})")
-        print(f"{'═'*50}")
+        print("  " + "-" * 48)
+        print("  Topper:", t.name, "(" + str(round(t.average(), 1)) + ")")
 
 # --- Demo ---
 teacher = Teacher("Mrs. Radha", "Maths")
 classroom = Classroom(7, "A", teacher)
 
-print("=== Enrolling Students ===")
+print("--- Enrolling Students ---")
 students = [
     Student("Aarav",   101),
     Student("Diya",    102),
@@ -100,12 +99,12 @@ students = [
 for s in students:
     classroom.enrol(s)
 
-print("\n=== Taking Attendance (3 days) ===")
+print("\n--- Taking Attendance (3 days) ---")
 classroom.take_attendance(["Aarav", "Diya", "Karthik", "Riya", "Ananya"])
 classroom.take_attendance(["Aarav", "Diya", "Karthik"])
 classroom.take_attendance(["Aarav", "Riya", "Ananya"])
 
-print("\n=== Adding Marks ===")
+print("\n--- Adding Marks ---")
 classroom.add_marks("Maths",   {"Aarav":85, "Diya":92, "Karthik":78, "Riya":88, "Ananya":95})
 classroom.add_marks("Science", {"Aarav":90, "Diya":85, "Karthik":82, "Riya":76, "Ananya":91})
 classroom.add_marks("English", {"Aarav":74, "Diya":88, "Karthik":70, "Riya":92, "Ananya":80})

@@ -26,7 +26,7 @@ def deposit(balance, amount):
     if amount <= 0:
         return balance, "Invalid amount. Enter a positive value."
     new_balance = balance + amount
-    return new_balance, f"Rs.{amount} deposited successfully."
+    return new_balance, "Rs." + str(amount) + " deposited successfully."
 
 # --- FUNCTION 4: Withdraw money ---
 def withdraw(balance, amount):
@@ -37,7 +37,7 @@ def withdraw(balance, amount):
     if amount % 100 != 0:
         return balance, "Amount must be a multiple of Rs.100."
     new_balance = balance - amount
-    return new_balance, f"Rs.{amount} withdrawn successfully."
+    return new_balance, "Rs." + str(amount) + " withdrawn successfully."
 
 # --- FUNCTION 5: Display menu ---
 def show_menu():
@@ -49,30 +49,30 @@ def show_menu():
 
 # --- FUNCTION 6: Print receipt ---
 def print_receipt(name, action, amount, balance):
-    print(f"\n--- Receipt ---")
-    print(f"Account: {name}")
-    print(f"Action:  {action}")
+    print("\n--- Receipt ---")
+    print("Account:", name)
+    print("Action: ", action)
     if amount > 0:
-        print(f"Amount:  Rs.{amount}")
-    print(f"Balance: Rs.{balance}")
+        print("Amount:  Rs." + str(amount))
+    print("Balance: Rs." + str(balance))
     print("---------------")
 
 # --- MAIN ATM PROGRAM ---
-print(f"Welcome to Progra ATM")
+print("Welcome to Progra ATM")
 name = account["name"]
 entered = input("Enter your 4-digit PIN: ")
 
 if not verify_pin(account["pin"], entered):
     print("Wrong PIN. Access denied.")
 else:
-    print(f"Welcome, {name}!")
+    print("Welcome,", name + "!")
     while True:
         show_menu()
         choice = input("Choose (1-4): ")
 
         if choice == "1":
             bal = check_balance(account["balance"])
-            print(f"Your balance: Rs.{bal}")
+            print("Your balance: Rs." + str(bal))
             print_receipt(name, "Balance Check", 0, bal)
 
         elif choice == "2":
@@ -88,7 +88,7 @@ else:
             print_receipt(name, "Withdrawal", amt, account["balance"])
 
         elif choice == "4":
-            print(f"Thank you, {name}. Goodbye!")
+            print("Thank you, " + name + ". Goodbye!")
             break
         else:
             print("Invalid choice. Try again.")

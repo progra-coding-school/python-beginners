@@ -29,9 +29,9 @@ else:
     category = "Obese"
 
 # Step 5: Display
-print(f"\nName: {name}")
-print(f"BMI: {bmi_rounded}")
-print(f"Category: {category}")
+print("\nName:", name)
+print("BMI:", bmi_rounded)
+print("Category:", category)
 
 # Think:
 # 1. Why is float better than int for weight and height?

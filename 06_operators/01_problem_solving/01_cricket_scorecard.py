@@ -6,7 +6,7 @@
 # Big question: How do we calculate a batsman's full scorecard?
 # Break it into smaller calculations — one operator at a time.
 
-print("=== Cricket Scorecard Calculator ===")
+print("--- Cricket Scorecard Calculator ---")
 print()
 
 # Step 1: Get inputs
@@ -35,13 +35,13 @@ is_half_century = total_runs >= 50 and total_runs < 100
 is_century = total_runs >= 100
 
 # Step 6: Display scorecard
-print(f"\n--- Scorecard: {player_name} ---")
-print(f"Fours: {fours}  →  Runs: {runs_from_fours}")
-print(f"Sixes: {sixes}  →  Runs: {runs_from_sixes}")
-print(f"Singles: {singles}")
-print(f"Total Runs: {total_runs}")
-print(f"Balls Faced: {balls_faced}")
-print(f"Strike Rate: {round(strike_rate, 2)}")
+print("--- Scorecard:", player_name, "---")
+print("Fours:", fours, " →  Runs:", runs_from_fours)
+print("Sixes:", sixes, " →  Runs:", runs_from_sixes)
+print("Singles:", singles)
+print("Total Runs:", total_runs)
+print("Balls Faced:", balls_faced)
+print("Strike Rate:", round(strike_rate, 2))
 
 if is_century:
     print("Achievement: CENTURY! Outstanding!")

@@ -14,15 +14,15 @@ start = 1
 end = 12
 
 # Step 3: Loop and calculate each row
-print(f"\n=== Times Table of {number} ===")
+print("\n--- Times Table of", number, "---")
 for i in range(start, end + 1):
     result = number * i
-    print(f"  {number} × {i:2} = {result}")
+    print(" ", number, "×", i, "=", result)
 
 print()
 
 # Step 4: Extended — generate MULTIPLE tables
-print("=== Mini Multiplication Table ===")
+print("--- Mini Multiplication Table ---")
 print("    ", end="")
 for col in range(1, 6):
     print(f"{col:4}", end="")
@@ -30,7 +30,7 @@ print()
 print("    " + "----" * 5)
 
 for row in range(1, 6):
-    print(f" {row:2} |", end="")
+    print(f"{row:3} |", end="")
     for col in range(1, 6):
         print(f"{row * col:4}", end="")
     print()
@@ -38,7 +38,7 @@ for row in range(1, 6):
 print()
 
 # Step 5: Find multiples within a range
-print(f"Multiples of {number} up to 100:")
+print("Multiples of", number, "up to 100:")
 multiples = []
 for i in range(1, 101):
     if i % number == 0:

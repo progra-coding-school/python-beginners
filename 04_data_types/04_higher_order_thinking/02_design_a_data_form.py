@@ -18,7 +18,7 @@
 # 6. Has paid fees → bool
 # 7. Favourite subject → str
 
-print("=== Student Registration Form ===\n")
+print("--- Student Registration Form ---\n")
 
 full_name = input("Full name: ")
 roll_number = int(input("Roll number: "))
@@ -30,13 +30,13 @@ fees_paid = fees_paid_str.lower() == "yes"
 favourite_subject = input("Favourite subject: ")
 
 print("\n--- Registration Summary ---")
-print(f"Name: {full_name}")
-print(f"Roll No: {roll_number}")
-print(f"Age: {age}")
-print(f"GPA: {gpa}")
-print(f"School: {school}")
-print(f"Fees Paid: {fees_paid}")
-print(f"Favourite Subject: {favourite_subject}")
+print("Name:", full_name)
+print("Roll No:", roll_number)
+print("Age:", age)
+print("GPA:", gpa)
+print("School:", school)
+print("Fees Paid:", fees_paid)
+print("Favourite Subject:", favourite_subject)
 
 # Think:
 # 1. Why did we convert fees_paid_str to bool instead of keeping it as "yes"/"no"?

@@ -72,7 +72,7 @@ def get_grade(marks):          # calculates and returns a grade
 
 def show_grade(name, marks):   # displays the result
     grade = get_grade(marks)
-    print(f"{name}: {marks} marks → Grade {grade}")
+    print(name + ": " + str(marks) + " marks → Grade " + grade)
 
 show_grade("Aarav", 88)
 show_grade("Diya", 65)
@@ -80,7 +80,7 @@ show_grade("Diya", 65)
 print()
 
 # --- Golden Rules for Function Names ---
-print("=== Function Naming Rules ===")
+print("--- Function Naming Rules ---")
 print("1. Use verbs: calculate_, get_, find_, show_, check_, apply_")
 print("2. Be specific: 'get_average_marks' not 'get_stuff'")
 print("3. Boolean functions: start with is_, has_, can_")

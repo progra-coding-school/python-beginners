@@ -3,22 +3,14 @@
 # Cognitive Skill: Understanding (Deepening the concept)
 # Topic: Strings in Python
 
-# ============================================================
 # PROBLEM STATEMENT:
 # Progra's quiz app needs to check if the student's answer
 # matches the correct answer. But there's a twist:
 # "Python" and "python" look similar — but ARE they equal?
 # Let's understand how Python COMPARES strings!
-# ============================================================
 
-print("=" * 55)
-print("   STRING COMPARISON — ARE THEY REALLY EQUAL?")
-print("=" * 55)
-
-# -------------------------------------------------------
 # PART 1: Equality Check (== and !=)
-# -------------------------------------------------------
-print("\n--- Part 1: Equal (==) and Not Equal (!=) ---")
+print("--- Part 1: Equal (==) and Not Equal (!=) ---")
 
 correct_answer  = "Python"
 student_answer1 = "Python"
@@ -30,11 +22,10 @@ print("Student answer 1 : '" + student_answer1 + "'  → Match?", student_answer
 print("Student answer 2 : '" + student_answer2 + "'  → Match?", student_answer2 == correct_answer)
 print("Student answer 3 : '" + student_answer3 + "'  → Match?", student_answer3 == correct_answer)
 
-print("\n⚠️  Python is CASE-SENSITIVE! 'Python' ≠ 'python' ≠ 'PYTHON'")
+print()
+print("Python is CASE-SENSITIVE! 'Python' and 'python' and 'PYTHON' are all different.")
 
-# -------------------------------------------------------
 # FIX: Case-Insensitive Comparison
-# -------------------------------------------------------
 print("\n--- Case-Insensitive Comparison (use .lower()) ---")
 
 correct = "Python"
@@ -42,13 +33,11 @@ typed   = "PYTHON"
 
 # Compare after converting both to lowercase
 if typed.lower() == correct.lower():
-    print("'" + typed + "' matches '" + correct + "' (ignoring case) ✅")
+    print("'" + typed + "' matches '" + correct + "' (ignoring case)")
 else:
-    print("'" + typed + "' does NOT match '" + correct + "' ❌")
+    print("'" + typed + "' does NOT match '" + correct + "'")
 
-# -------------------------------------------------------
 # PART 2: Membership Check (in / not in)
-# -------------------------------------------------------
 print("\n--- Part 2: Membership Check (in / not in) ---")
 
 team    = "Aarav, Diya, Mani, Priya"
@@ -61,10 +50,8 @@ print("Is '" + search1 + "' in the team?  →", search1 in team)
 print("Is '" + search2 + "' in the team?  →", search2 in team)
 print("Is '" + search2 + "' NOT in team?  →", search2 not in team)
 
-# -------------------------------------------------------
 # PART 3: Alphabetical Comparison (< > <= >=)
 # Python compares strings alphabetically (like a dictionary)
-# -------------------------------------------------------
 print("\n--- Part 3: Alphabetical Order (< and >) ---")
 
 name1 = "Aarav"
@@ -81,11 +68,8 @@ print("\nOriginal order :", names)
 names.sort()
 print("Sorted order   :", names)
 
-# -------------------------------------------------------
 # REAL USE: Quiz Answer Checker
-# -------------------------------------------------------
 print("\n--- Real Use: Quiz Answer Checker ---")
-print("-" * 40)
 
 questions = [
     ("What is the capital of India?", "New Delhi"),
@@ -98,25 +82,22 @@ for question, correct in questions:
     user_answer = input("Your answer: ")
 
     if user_answer.strip().lower() == correct.lower():
-        print("✅ Correct!")
+        print("Correct!")
         score += 1
     else:
-        print("❌ Wrong! Correct answer:", correct)
+        print("Wrong! Correct answer:", correct)
 
 print("\nYour Score:", score, "/", len(questions))
 
-print("\n" + "=" * 55)
-print("  KEY IDEAS:")
-print("  • == checks exact match (case-sensitive)")
-print("  • Use .lower() on both sides for case-insensitive check")
-print("  • 'in' checks if text exists inside a string")
-print("  • < > compare strings alphabetically")
-print("=" * 55)
+print()
+print("KEY IDEAS:")
+print("  == checks exact match (case-sensitive)")
+print("  Use .lower() on both sides for case-insensitive check")
+print("  'in' checks if text exists inside a string")
+print("  < > compare strings alphabetically")
 
-# ============================================================
 # REFLECTION:
 # 1. Is "Aarav" == "aarav" True or False? How do you fix it?
 # 2. What does 'Mani' > 'Diya' return and why?
 # 3. How do you check if "cricket" is mentioned in a sentence?
 # 4. What does .strip() do before comparing? Why is it useful?
-# ============================================================

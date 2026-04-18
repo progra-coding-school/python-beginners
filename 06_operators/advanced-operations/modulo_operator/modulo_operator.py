@@ -1,7 +1,5 @@
-# ===============================
 # File Name: modulo_operator.py
 # Operator: % (Modulo)
-# ===============================
 
 # Modulo (%) returns the remainder after division
 

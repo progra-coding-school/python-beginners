@@ -7,7 +7,7 @@
 # Analyze which is better and WHY.
 
 # --- Scenario 1: Sharing chocolates ---
-print("=== Scenario 1: Sharing 25 chocolates among 4 friends ===")
+print("--- Scenario 1: Sharing 25 chocolates among 4 friends ---")
 chocolates = 25
 friends = 4
 
@@ -18,13 +18,13 @@ print("Approach A (/):", approach_a)    # 6.25
 # Approach B: Floor division + modulo
 each_gets = chocolates // friends
 leftover = chocolates % friends
-print(f"Approach B (// and %): {each_gets} each, {leftover} leftover")
+print("Approach B (// and %):", each_gets, "each,", leftover, "leftover")
 
 print("Better approach: B — you can't give 0.25 of a chocolate!")
 print()
 
 # --- Scenario 2: Checking if a number is even ---
-print("=== Scenario 2: Is 47 even or odd? ===")
+print("--- Scenario 2: Is 47 even or odd? ---")
 number = 47
 
 # Approach A: Using modulo
@@ -39,7 +39,7 @@ print("Better approach: A — shorter, clearer, industry standard")
 print()
 
 # --- Scenario 3: Finding last digit ---
-print("=== Scenario 3: Last digit of 4827 ===")
+print("--- Scenario 3: Last digit of 4827 ---")
 n = 4827
 
 # Approach A: Convert to string and index
@@ -54,7 +54,7 @@ print("Better approach: B for numbers — faster and avoids type conversion")
 print()
 
 # --- Scenario 4: Calculating percentage ---
-print("=== Scenario 4: Marks percentage ===")
+print("--- Scenario 4: Marks percentage ---")
 marks = 378
 total = 500
 

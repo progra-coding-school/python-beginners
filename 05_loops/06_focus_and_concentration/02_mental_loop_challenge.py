@@ -9,7 +9,7 @@
 score = 0
 total = 8
 
-print("=== Mental Loop Challenge ===")
+print("--- Mental Loop Challenge ---")
 print("Solve each one in your head. Track every iteration!")
 print()
 
@@ -57,22 +57,22 @@ questions = [
 ]
 
 for i, (code, answer, explanation) in enumerate(questions, 1):
-    print(f"Q{i}:")
+    print("Q" + str(i) + ":")
     for line in code.split('\n'):
-        print(f"  {line}")
+        print("  " + line)
     user_ans = input("Answer: ").strip()
     try:
         correct = str(user_ans) == str(answer)
     except:
         correct = False
     if correct:
-        print(f"  Correct! {explanation}")
+        print("  Correct! " + explanation)
         score += 1
     else:
-        print(f"  Answer: {answer} — {explanation}")
+        print("  Answer: " + str(answer) + " — " + explanation)
     print()
 
-print(f"Mental Loop Score: {score} / {total}")
+print("Mental Loop Score:", score, "/", total)
 if score == total:
     print("Perfect! You can trace loops in your sleep!")
 elif score >= 6:

@@ -9,7 +9,7 @@
 score = 0
 total = 10
 
-print("=== Mental Math Challenge ===")
+print("--- Mental Math Challenge ---")
 print("Solve each expression in your head. Apply BODMAS!")
 print()
 
@@ -27,19 +27,19 @@ questions = [
 ]
 
 for i, (expr, answer) in enumerate(questions, 1):
-    user_ans = input(f"Q{i}: {expr} = ")
+    user_ans = input("Q" + str(i) + ": " + expr + " = ")
     try:
         if float(user_ans.strip()) == answer:
-            print(f"  Correct! {expr} = {answer}")
+            print("  Correct!", expr, "=", answer)
             score += 1
         else:
-            print(f"  Wrong! {expr} = {answer}")
+            print("  Wrong!", expr, "=", answer)
     except:
-        print(f"  Invalid input. {expr} = {answer}")
+        print("  Invalid input.", expr, "=", answer)
     print()
 
 # Final score
-print(f"Mental Math Score: {score} / {total}")
+print("Mental Math Score:", score, "/", total)
 if score == total:
     print("Perfect! Your mental operator skills are sharp!")
 elif score >= 7:

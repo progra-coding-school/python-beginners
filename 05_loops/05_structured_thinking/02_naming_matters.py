@@ -28,7 +28,7 @@ for i in range(1, 6):
 # GOOD — 'month_number' is clear
 for month_number in range(1, 6):
     monthly_saving = month_number * 120
-    print(f"Month {month_number}: Rs.{monthly_saving} saved")
+    print("Month " + str(month_number) + ": Rs." + str(monthly_saving) + " saved")
 
 print()
 
@@ -37,7 +37,7 @@ print()
 # BAD — i and j give no context
 for i in range(1, 4):
     for j in range(1, 4):
-        print(f"({i},{j})", end=" ")
+        print("(" + str(i) + "," + str(j) + ")", end=" ")
     print()
 
 print()
@@ -45,7 +45,7 @@ print()
 # GOOD — row and column describe what's happening
 for row in range(1, 4):
     for column in range(1, 4):
-        print(f"({row},{column})", end=" ")
+        print("(" + str(row) + "," + str(column) + ")", end=" ")
     print()
 
 print()
@@ -65,12 +65,12 @@ total_marks = 0
 for mark in marks:
     total_marks += mark
 average_marks = total_marks / len(marks)
-print(f"Total: {total_marks}, Average: {average_marks:.1f}")
+print("Total:", total_marks, ", Average:", round(average_marks, 1))
 
 print()
 
 # --- Golden Rules ---
-print("=== Loop Naming Rules ===")
+print("--- Loop Naming Rules ---")
 print("1. Loop variable = singular of the list name")
 print("   for student in students:")
 print("   for mark in marks:")

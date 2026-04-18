@@ -7,7 +7,7 @@
 # Find every difference — some are bugs, some are style choices.
 
 # ─── Pair 1 ─────────────────────────────────────────────────────
-print("=== Pair 1 ===")
+print("--- Pair 1 ---")
 
 # Version A — catches the right exception
 try:
@@ -28,7 +28,7 @@ except ValueError as e:
 print()
 
 # ─── Pair 2 ─────────────────────────────────────────────────────
-print("=== Pair 2 ===")
+print("--- Pair 2 ---")
 
 # Version A — finally runs
 try:
@@ -50,7 +50,7 @@ print("B: after block")
 print()
 
 # ─── Pair 3 ─────────────────────────────────────────────────────
-print("=== Pair 3 ===")
+print("--- Pair 3 ---")
 
 data = {"name": "Aarav"}
 
@@ -68,7 +68,7 @@ except KeyError:
 print()
 
 # ─── Pair 4 ─────────────────────────────────────────────────────
-print("=== Pair 4 ===")
+print("--- Pair 4 ---")
 
 # Version A — specific exception
 try:
@@ -87,7 +87,7 @@ except:
 print()
 
 # ─── Pair 5 ─────────────────────────────────────────────────────
-print("=== Pair 5 ===")
+print("--- Pair 5 ---")
 
 # Version A — else block
 try:

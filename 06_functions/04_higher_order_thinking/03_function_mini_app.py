@@ -42,13 +42,13 @@ def get_player_name():
     return input("Enter your name: ")
 
 def show_welcome(name):
-    print(f"\nWelcome, {name}! Let's test your Python Functions knowledge.")
-    print(f"You'll get {len(QUESTIONS)} questions. Answer A, B, C, or D.\n")
+    print("\nWelcome, " + name + "! Let's test your Python Functions knowledge.")
+    print("You'll get " + str(len(QUESTIONS)) + " questions. Answer A, B, C, or D.\n")
 
 def ask_question(q_num, question_data):
-    print(f"Q{q_num}: {question_data['question']}")
+    print("Q" + str(q_num) + ": " + question_data['question'])
     for option in question_data["options"]:
-        print(f"  {option}")
+        print(" ", option)
     answer = input("Your answer (A/B/C/D): ").strip().upper()
     return answer
 
@@ -71,11 +71,10 @@ def get_performance_label(percentage):
 def show_final_result(name, score, total):
     percentage = calculate_percentage(score, total)
     label = get_performance_label(percentage)
-    print("\n" + "=" * 40)
-    print(f"  Quiz Complete — {name}")
-    print(f"  Score: {score} / {total}")
-    print(f"  Percentage: {percentage:.0f}%")
-    print(f"  {label}")
+    print("  Quiz Complete —", name)
+    print("  Score:", score, "/", total)
+    print("  Percentage: " + str(round(percentage)) + "%")
+    print(" ", label)
     print("=" * 40)
 
 def run_quiz():
@@ -92,7 +91,7 @@ def run_quiz():
             print("  Correct!\n")
             score += 1
         else:
-            print(f"  Wrong! Correct answer: {q['answer']}\n")
+            print("  Wrong! Correct answer:", q['answer'], "\n")
 
     show_final_result(name, score, len(questions))
 

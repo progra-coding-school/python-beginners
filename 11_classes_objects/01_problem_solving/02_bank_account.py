@@ -15,7 +15,7 @@ class BankAccount:
         self.account_no = account_no
         self._balance   = opening_balance
         self._history   = []
-        self._log(f"Account opened with Rs.{opening_balance}")
+        self._log("Account opened with Rs." + str(opening_balance))
 
     def _log(self, message):
         """Internal method — record a transaction."""
@@ -23,45 +23,46 @@ class BankAccount:
 
     def deposit(self, amount):
         if amount <= 0:
-            print(f"  [{self.owner}] Deposit must be positive.")
+            print("  [" + self.owner + "] Deposit must be positive.")
             return False
         self._balance += amount
-        self._log(f"Deposited   +Rs.{amount:>7}  | Balance: Rs.{self._balance}")
+        self._log("Deposited   +Rs." + str(amount) + "  | Balance: Rs." + str(self._balance))
         return True
 
     def withdraw(self, amount):
         if amount <= 0:
-            print(f"  [{self.owner}] Amount must be positive.")
+            print("  [" + self.owner + "] Amount must be positive.")
             return False
         if amount > self._balance:
-            print(f"  [{self.owner}] Insufficient funds (Rs.{self._balance} available).")
+            print("  [" + self.owner + "] Insufficient funds (Rs." + str(self._balance) + " available).")
             return False
         self._balance -= amount
-        self._log(f"Withdrew    -Rs.{amount:>7}  | Balance: Rs.{self._balance}")
+        self._log("Withdrew    -Rs." + str(amount) + "  | Balance: Rs." + str(self._balance))
         return True
 
     def transfer(self, amount, target_account):
-        print(f"  Transferring Rs.{amount} from {self.owner} → {target_account.owner}")
+        print("  Transferring Rs." + str(amount) + " from " + self.owner + " to " + target_account.owner)
         if self.withdraw(amount):
             target_account.deposit(amount)
-            self._log(f"Transferred to {target_account.owner}")
-            target_account._log(f"Received from {self.owner}")
+            self._log("Transferred to " + target_account.owner)
+            target_account._log("Received from " + self.owner)
 
     def add_interest(self):
         interest = round(self._balance * self.INTEREST_RATE, 2)
         self._balance += interest
-        self._log(f"Interest    +Rs.{interest:>7}  | Balance: Rs.{self._balance}")
-        print(f"  [{self.owner}] Interest added: Rs.{interest}")
+        self._log("Interest    +Rs." + str(interest) + "  | Balance: Rs." + str(self._balance))
+        print("  [" + self.owner + "] Interest added: Rs." + str(interest))
 
     @property
     def balance(self):
         return self._balance
 
     def statement(self):
-        print(f"\n  === Account Statement: {self.owner} (A/C {self.account_no}) ===")
+        print("\n  --- Account Statement:", self.owner, "(A/C", self.account_no + ") ---")
         for entry in self._history:
-            print(f"    {entry}")
-        print(f"  Current Balance: Rs.{self._balance}\n")
+            print("   ", entry)
+        print("  Current Balance: Rs." + str(self._balance))
+        print()
 
 # --- Demo ---
 aarav_acc = BankAccount("Aarav",   "ACC001", 1000)

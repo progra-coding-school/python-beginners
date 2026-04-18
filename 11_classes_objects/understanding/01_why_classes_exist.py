@@ -7,7 +7,7 @@
 # WITH classes: data and behaviour for ONE thing stay together.
 
 # --- Problem: track 3 students WITHOUT a class ---
-print("=== WITHOUT classes — scattered data ===")
+print("--- WITHOUT classes — scattered data ---")
 
 # We need 3 separate dicts + separate functions
 student1 = {"name": "Aarav",   "marks": [85, 90, 78]}
@@ -18,7 +18,7 @@ def average(student):
     return sum(student["marks"]) / len(student["marks"])
 
 def introduce(student):
-    print(f"I am {student['name']}, avg: {average(student):.1f}")
+    print("I am " + student['name'] + ", avg:", round(average(student), 1))
 
 introduce(student1)
 introduce(student2)
@@ -34,7 +34,7 @@ print("  4. Does NOT scale to 100 students.")
 print()
 
 # --- Same program WITH a class ---
-print("=== WITH classes — organised and scalable ===")
+print("--- WITH classes — organised and scalable ---")
 
 class Student:
     def __init__(self, name, marks):
@@ -45,7 +45,7 @@ class Student:
         return sum(self.marks) / len(self.marks)
 
     def introduce(self):
-        print(f"I am {self.name}, avg: {self.average():.1f}")
+        print("I am " + self.name + ", avg:", round(self.average(), 1))
 
 students = [
     Student("Aarav",   [85, 90, 78]),
@@ -64,7 +64,7 @@ print("  3. Adding 100 more students = just Student(...) 100 times.")
 print("  4. Add a new field in __init__ once — all objects get it.")
 
 print()
-print("=== 3 Reasons Classes Exist ===")
+print("--- 3 Reasons Classes Exist ---")
 print("1. ORGANISATION — group related data and behaviour together")
 print("2. REUSABILITY  — create many objects from one blueprint")
 print("3. CLARITY      — code reads like real-world concepts")

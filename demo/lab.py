@@ -1,5 +1,5 @@
 print("Hello World")
-print("Zaara")
-
-print("My name is Zaara")
-print("I love Studies")
+print(5+10)
+print(5*10)
+print(10/2)
+print(10-3)

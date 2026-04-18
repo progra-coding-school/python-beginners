@@ -6,7 +6,7 @@
 # Big question: Process an entire class's marks — total, average, highest, lowest, pass/fail.
 # Break it into smaller loop tasks — one job per loop.
 
-print("=== Student Marks Processor ===")
+print("--- Student Marks Processor ---")
 
 # Step 1: Collect marks
 num_students = int(input("How many students? "))
@@ -14,8 +14,8 @@ names = []
 marks = []
 
 for i in range(num_students):
-    name = input(f"  Student {i+1} name: ")
-    mark = int(input(f"  {name}'s marks (out of 100): "))
+    name = input("  Student " + str(i+1) + " name: ")
+    mark = int(input("  " + name + "'s marks (out of 100): "))
     names.append(name)
     marks.append(mark)
 
@@ -58,7 +58,7 @@ def get_grade(m):
     elif m >= 35: return "C"
     else: return "FAIL"
 
-print("=== Individual Results ===")
+print("--- Individual Results ---")
 for i in range(num_students):
     grade = get_grade(marks[i])
     status = "PASS" if marks[i] >= 35 else "FAIL"
@@ -66,14 +66,14 @@ for i in range(num_students):
 
 # Step 6: Class summary
 print()
-print("=== Class Summary ===")
-print(f"  Total students : {num_students}")
-print(f"  Class total    : {total}")
-print(f"  Class average  : {average:.1f}")
-print(f"  Highest mark   : {highest} ({topper})")
-print(f"  Lowest mark    : {lowest} ({weakest})")
-print(f"  Passed         : {pass_count}")
-print(f"  Failed         : {fail_count}")
+print("--- Class Summary ---")
+print("  Total students :", num_students)
+print("  Class total    :", total)
+print("  Class average  :", round(average, 1))
+print("  Highest mark   : " + str(highest) + " (" + topper + ")")
+print("  Lowest mark    : " + str(lowest) + " (" + weakest + ")")
+print("  Passed         :", pass_count)
+print("  Failed         :", fail_count)
 
 # Think:
 # 1. How would you find the second highest mark?

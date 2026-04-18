@@ -6,7 +6,7 @@
 # Same problem — two loop approaches. Analyze which is better and WHY.
 
 # --- Scenario 1: Print 1 to 10 ---
-print("=== Scenario 1: Print numbers 1 to 10 ===")
+print("--- Scenario 1: Print numbers 1 to 10 ---")
 
 print("Approach A (for):")
 for i in range(1, 11):
@@ -24,14 +24,14 @@ print("Better: A — for loop is cleaner, no risk of off-by-one in condition.")
 print()
 
 # --- Scenario 2: Keep asking until valid input ---
-print("=== Scenario 2: Keep asking until valid age entered ===")
+print("--- Scenario 2: Keep asking until valid age entered ---")
 
 # Approach A (for — awkward, requires break)
 print("Approach A (for — not ideal):")
 for _ in range(100):     # fake "big" range
     age = int(input("  Enter age (1-120): "))
     if 1 <= age <= 120:
-        print(f"  Valid age: {age}")
+        print("  Valid age:", age)
         break
 
 # Approach B (while — natural fit)
@@ -39,7 +39,7 @@ print("Approach B (while — natural fit):")
 while True:
     age = int(input("  Enter age (1-120): "))
     if 1 <= age <= 120:
-        print(f"  Valid age: {age}")
+        print("  Valid age:", age)
         break
     print("  Invalid! Try again.")
 
@@ -47,7 +47,7 @@ print("Better: B — while True + break is the natural pattern for input validat
 print()
 
 # --- Scenario 3: Sum of a list ---
-print("=== Scenario 3: Sum a list of numbers ===")
+print("--- Scenario 3: Sum a list of numbers ---")
 
 numbers = [10, 20, 30, 40, 50]
 
@@ -69,7 +69,7 @@ print("Better: A — for loop is cleaner when iterating over a known list.")
 print()
 
 # --- Decision Guide ---
-print("=== Which to choose? ===")
+print("--- Which to choose? ---")
 print("for   → known count, known sequence, iterating a list")
 print("while → unknown count, wait for condition, user input loops")
 print("for + break → search and stop early")

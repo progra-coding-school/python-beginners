@@ -6,7 +6,7 @@
 # Each block has ONE bug. Find it, explain WHY it is wrong, then fix it.
 
 # --- Bug 1: Missing self parameter ---
-print("=== Bug 1 ===")
+print("--- Bug 1 ---")
 class Greeter:
     def greet():        # Bug! Missing 'self'
         print("Hello!")
@@ -21,7 +21,7 @@ g.greet()
 print("Fixed: added 'self' as first parameter\n")
 
 # --- Bug 2: Forgetting self. when setting attributes ---
-print("=== Bug 2 ===")
+print("--- Bug 2 ---")
 class Point:
     def __init__(self, x, y):
         x = x           # Bug! This creates a LOCAL variable, not self.x
@@ -34,10 +34,10 @@ class PointFixed:
         self.y = y
 
 p = PointFixed(3, 4)
-print(f"Fixed: x={p.x}, y={p.y}\n")
+print("Fixed: x=" + str(p.x) + ", y=" + str(p.y) + "\n")
 
 # --- Bug 3: Mutable class attribute shared by all objects ---
-print("=== Bug 3 ===")
+print("--- Bug 3 ---")
 class Student:
     marks = []          # Bug! Shared list — ALL students share this!
 
@@ -69,7 +69,7 @@ print("s3 marks:", s3.marks)
 print("s4 marks:", s4.marks, "← now empty as expected\n")
 
 # --- Bug 4: Calling a method without () ---
-print("=== Bug 4 ===")
+print("--- Bug 4 ---")
 class Circle:
     def __init__(self, r):
         self.r = r
@@ -83,13 +83,13 @@ print(c.area())         # Fix: add ()
 print("Fixed: must call method with ()\n")
 
 # --- Bug 5: Using class name instead of self inside a method ---
-print("=== Bug 5 ===")
+print("--- Bug 5 ---")
 class Dog:
     def __init__(self, name):
         self.name = name
 
     def speak(self):
-        print(f"{Dog.name} says Woof!")   # Bug! Dog.name is not defined on the class
+        print(Dog.name, "says Woof!")   # Bug! Dog.name is not defined on the class
 
 # Fix:
 class DogFixed:
@@ -97,7 +97,7 @@ class DogFixed:
         self.name = name
 
     def speak(self):
-        print(f"{self.name} says Woof!")   # use self.name
+        print(self.name, "says Woof!")   # use self.name
 
 d = DogFixed("Tommy")
 d.speak()

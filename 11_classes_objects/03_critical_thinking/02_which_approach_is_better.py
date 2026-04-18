@@ -6,11 +6,9 @@
 # Two approaches solve the same problem.
 # Read both, decide which is better and WHY.
 
-# =========================================================
 # Problem 1: Track 3 students' marks
-# =========================================================
 
-print("=== Problem 1: Student marks ===")
+print("--- Problem 1: Student marks ---")
 
 # Approach A: parallel lists
 names  = ["Aarav", "Diya", "Karthik"]
@@ -20,7 +18,7 @@ cities = ["Chennai", "Madurai", "Trichy"]
 # To print Diya's average:
 i = names.index("Diya")
 avg_a = sum(marks[i]) / len(marks[i])
-print(f"A — Diya's avg: {avg_a}")
+print("A — Diya's avg:", avg_a)
 
 # Approach B: class
 class Student:
@@ -38,7 +36,7 @@ class Student:
 diya = Student("Diya", "Madurai")
 diya.add(92)
 diya.add(88)
-print(f"B — Diya's avg: {diya.average()}")
+print("B — Diya's avg:", diya.average())
 
 print()
 print("Verdict: B is better.")
@@ -47,11 +45,9 @@ print("  B: all data about Diya lives on her object — impossible to desync.")
 
 print()
 
-# =========================================================
 # Problem 2: Calculate a rectangle's area and perimeter
-# =========================================================
 
-print("=== Problem 2: Rectangle calculations ===")
+print("--- Problem 2: Rectangle calculations ---")
 
 # Approach A: standalone functions
 def area_fn(w, h):       return w * h
@@ -59,7 +55,7 @@ def perim_fn(w, h):      return 2 * (w + h)
 def is_square_fn(w, h):  return w == h
 
 w, h = 5, 5
-print(f"A — area={area_fn(w,h)}, perim={perim_fn(w,h)}, square={is_square_fn(w,h)}")
+print("A — area=" + str(area_fn(w,h)) + ", perim=" + str(perim_fn(w,h)) + ", square=" + str(is_square_fn(w,h)))
 
 # Approach B: class
 class Rectangle:
@@ -71,7 +67,7 @@ class Rectangle:
     def is_square(self): return self.w == self.h
 
 r = Rectangle(5, 5)
-print(f"B — area={r.area()}, perim={r.perimeter()}, square={r.is_square()}")
+print("B — area=" + str(r.area()) + ", perim=" + str(r.perimeter()) + ", square=" + str(r.is_square()))
 
 print()
 print("Verdict: depends on scale.")
@@ -81,11 +77,9 @@ print("  Classes shine when you need MULTIPLE instances with shared behaviour.")
 
 print()
 
-# =========================================================
 # Problem 3: ATM — track balance
-# =========================================================
 
-print("=== Problem 3: ATM balance ===")
+print("--- Problem 3: ATM balance ---")
 
 # Approach A: global variables + functions
 balance = 1000
@@ -101,7 +95,7 @@ def withdraw_a(amount):
 
 deposit_a(200)
 withdraw_a(500)
-print(f"A — balance: {balance}")
+print("A — balance:", balance)
 print("A problem: global variable — any function can corrupt it accidentally.")
 
 # Approach B: class encapsulates the balance
@@ -120,7 +114,7 @@ class ATM:
 atm = ATM(1000)
 atm.deposit(200)
 atm.withdraw(500)
-print(f"B — balance: {atm.balance}")
+print("B — balance:", atm.balance)
 print("B advantage: balance is protected — only accessible through defined methods.")
 
 # Think:

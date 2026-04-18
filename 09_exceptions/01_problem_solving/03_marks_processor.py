@@ -45,7 +45,7 @@ for entry in raw_entries:
 
         # Step 4: range check
         if not (0 <= score <= 100):
-            raise ValueError(f"Score {score} is out of range (0–100)")
+            raise ValueError("Score " + str(score) + " is out of range (0–100)")
 
         # Step 5: all good!
         valid_records[name] = score
@@ -54,28 +54,28 @@ for entry in raw_entries:
         skipped_records.append((entry, str(e)))
 
 # --- Display results ---
-print("=== Valid Records ===")
-print(f"  {'Name':<12} {'Score':>5}")
-print(f"  {'─'*12} {'─'*5}")
+print("--- Valid Records ---")
+print("  " + "Name".ljust(12) + "Score".rjust(5))
+print("  " + "─" * 12 + " " + "─" * 5)
 for name, score in valid_records.items():
     grade = "A+" if score >= 90 else "A" if score >= 80 else "B" if score >= 70 else "C"
-    print(f"  {name:<12} {score:>5}  ({grade})")
+    print("  " + name.ljust(12) + str(score).rjust(5) + "  (" + grade + ")")
 
 print()
 
-print("=== Skipped Entries ===")
+print("--- Skipped Entries ---")
 for entry, reason in skipped_records:
-    print(f"  '{entry}' → {reason}")
+    print("  '" + entry + "' →", reason)
 
 print()
 
-print("=== Summary ===")
+print("--- Summary ---")
 if valid_records:
     scores = list(valid_records.values())
-    print(f"  Processed : {len(valid_records)} valid records")
-    print(f"  Skipped   : {len(skipped_records)} invalid records")
-    print(f"  Average   : {sum(scores)/len(scores):.1f}")
-    print(f"  Top scorer: {max(valid_records, key=valid_records.get)} ({max(scores)})")
+    print("  Processed :", len(valid_records), "valid records")
+    print("  Skipped   :", len(skipped_records), "invalid records")
+    print("  Average   :", round(sum(scores) / len(scores), 1))
+    print("  Top scorer:", max(valid_records, key=valid_records.get), "(" + str(max(scores)) + ")")
 
 # Think:
 # 1. Why did we use float() first and then round(), instead of int() directly?

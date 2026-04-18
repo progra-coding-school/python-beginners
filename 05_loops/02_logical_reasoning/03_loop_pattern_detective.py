@@ -8,7 +8,7 @@
 
 score = 0
 
-print("=== Loop Pattern Detective ===")
+print("--- Loop Pattern Detective ---")
 print("Given the output — identify the loop that produced it.")
 print()
 
@@ -83,4 +83,4 @@ print("Clue 4:", list(range(1, 10, 2)))
 print("Clue 5:", list(range(5, 101, 5)))
 print()
 
-print(f"Detective Score: {score} / 5")
+print("Detective Score:", score, "/ 5")

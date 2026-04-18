@@ -89,7 +89,6 @@ else:
 print()
 
 # --- Summary ---
-print("═" * 40)
 print("Memory Recall Score:", score, "/ 8")
 print()
 print("Quick Reference:")
@@ -101,4 +100,3 @@ print("  end=''           → change line ending")
 print("  print() returns  → None")
 print("  '5' + '5'        → '55'  (text join)")
 print("  5 + 5            → 10   (arithmetic)")
-print("═" * 40)

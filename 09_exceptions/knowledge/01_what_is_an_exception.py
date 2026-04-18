@@ -8,7 +8,7 @@
 
 # --- Common exceptions you will see ---
 
-print("=== 1. ZeroDivisionError ===")
+print("--- 1. ZeroDivisionError ---")
 try:
     result = 10 / 0
 except ZeroDivisionError as e:
@@ -16,7 +16,7 @@ except ZeroDivisionError as e:
 
 print()
 
-print("=== 2. TypeError ===")
+print("--- 2. TypeError ---")
 try:
     result = "age" + 13     # can't add string and int
 except TypeError as e:
@@ -24,7 +24,7 @@ except TypeError as e:
 
 print()
 
-print("=== 3. ValueError ===")
+print("--- 3. ValueError ---")
 try:
     num = int("hello")      # "hello" can't become an integer
 except ValueError as e:
@@ -32,7 +32,7 @@ except ValueError as e:
 
 print()
 
-print("=== 4. NameError ===")
+print("--- 4. NameError ---")
 try:
     print(unknown_variable)  # variable doesn't exist
 except NameError as e:
@@ -40,7 +40,7 @@ except NameError as e:
 
 print()
 
-print("=== 5. IndexError ===")
+print("--- 5. IndexError ---")
 try:
     fruits = ["mango", "banana"]
     print(fruits[10])       # index 10 doesn't exist
@@ -49,7 +49,7 @@ except IndexError as e:
 
 print()
 
-print("=== 6. KeyError ===")
+print("--- 6. KeyError ---")
 try:
     info = {"name": "Aarav"}
     print(info["age"])      # key 'age' doesn't exist
@@ -59,11 +59,11 @@ except KeyError as e:
 print()
 
 # --- What happens WITHOUT exception handling ---
-print("=== WITHOUT handling — program crashes ===")
+print("--- WITHOUT handling — program crashes ---")
 print("If you remove the try/except above, Python prints a Traceback")
 print("and STOPS the program immediately at the error line.")
 print()
-print("=== WITH handling — program continues ===")
+print("--- WITH handling — program continues ---")
 print("try/except catches the error gracefully and lets the program keep running.")
 
 # Think:

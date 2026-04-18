@@ -7,7 +7,7 @@
 
 score = 0
 
-print("=== Operator Detective ===")
+print("--- Operator Detective ---")
 print("Find the missing operator: +, -, *, /, //, %, **")
 print()
 
@@ -76,4 +76,4 @@ else:
     print("Answer: - (subtraction). 100 - 37 = 63")
 print()
 
-print(f"Detective Score: {score} / 5")
+print("Detective Score:", score, "/ 5")

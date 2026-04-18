@@ -4,7 +4,7 @@
 # Topic: Exceptions in Python
 
 # --- What happens when an exception is raised ---
-print("=== Execution stops at the error line ===")
+print("--- Execution stops at the error line ---")
 
 def step_a():
     print("  step_a: start")
@@ -17,12 +17,12 @@ try:
     step_a()
     print("After call — also NEVER reached")
 except ZeroDivisionError as e:
-    print(f"Caught in caller: {e}")
+    print("Caught in caller:", e)
 
 print()
 
 # --- Exceptions bubble up the call stack ---
-print("=== Exception bubbles up if not caught ===")
+print("--- Exception bubbles up if not caught ---")
 
 def inner():
     return int("bad")       # ValueError raised here
@@ -34,14 +34,14 @@ def outer():
     try:
         return middle()     # caught HERE, two levels up
     except ValueError as e:
-        print(f"  outer() caught it: {e}")
+        print("  outer() caught it:", e)
 
 outer()
 
 print()
 
 # --- The exception hierarchy ---
-print("=== Exception hierarchy (simplified) ===")
+print("--- Exception hierarchy (simplified) ---")
 print("  BaseException")
 print("  └── Exception          ← most exceptions inherit from here")
 print("      ├── ValueError     ← bad value (e.g. int('abc'))")
@@ -56,7 +56,7 @@ print("      └── RuntimeError   ← general runtime error")
 print()
 
 # --- Catching a parent catches all children ---
-print("=== Catching a parent exception type ===")
+print("--- Catching a parent exception type ---")
 errors = [
     lambda: 1 / 0,
     lambda: int("abc"),
@@ -67,7 +67,7 @@ for fn in errors:
     try:
         fn()
     except Exception as e:       # catches all of the above
-        print(f"  {type(e).__name__}: {e}")
+        print(" ", type(e).__name__ + ":", e)
 
 print()
 print("Exception is the parent of most errors —")

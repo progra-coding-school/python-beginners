@@ -7,7 +7,7 @@
 # Then run to verify.
 
 # --- Challenge 1 ---
-print("=== Challenge 1 ===")
+print("--- Challenge 1 ---")
 try:
     print(10 / 2)
     print(10 / 0)
@@ -20,7 +20,7 @@ except ZeroDivisionError:
 print()
 
 # --- Challenge 2 ---
-print("=== Challenge 2 ===")
+print("--- Challenge 2 ---")
 x = "hello"
 try:
     print(x.upper())
@@ -35,7 +35,7 @@ except AttributeError:
 print()
 
 # --- Challenge 3 ---
-print("=== Challenge 3 ===")
+print("--- Challenge 3 ---")
 try:
     result = int("5") + int("3")
 except ValueError:
@@ -50,7 +50,7 @@ finally:
 print()
 
 # --- Challenge 4 ---
-print("=== Challenge 4 ===")
+print("--- Challenge 4 ---")
 items = [1, 2, 3]
 try:
     for i in range(5):
@@ -63,7 +63,7 @@ except IndexError:
 print()
 
 # --- Challenge 5 (tricky!) ---
-print("=== Challenge 5 ===")
+print("--- Challenge 5 ---")
 def f():
     try:
         return "try"
@@ -79,7 +79,7 @@ print("result:", result)
 print()
 
 # --- Challenge 6 ---
-print("=== Challenge 6 ===")
+print("--- Challenge 6 ---")
 for val in ["10", "x", "5", "y", "2"]:
     try:
         print(int(val) * 2, end="  ")

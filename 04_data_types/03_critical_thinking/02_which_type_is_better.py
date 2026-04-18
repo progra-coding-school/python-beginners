@@ -4,7 +4,7 @@
 # Topic: Data Types in Python
 
 # For each scenario, compare two approaches and decide which is better.
-print("=== Which Type Is Better? ===\n")
+print("--- Which Type Is Better? ---\n")
 
 # Scenario 1: Phone number
 print("--- Scenario 1: Storing a Phone Number ---")

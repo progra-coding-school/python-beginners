@@ -37,9 +37,9 @@ original_price = 1200
 discount_percent = 15
 discount_amount = original_price * discount_percent / 100
 final_price = original_price - discount_amount
-print(f"Original: Rs.{original_price}")
-print(f"Discount ({discount_percent}%): Rs.{discount_amount}")
-print(f"Final price: Rs.{final_price}")
+print("Original: Rs." + str(original_price))
+print("Discount (" + str(discount_percent) + "%): Rs." + str(discount_amount))
+print("Final price: Rs." + str(final_price))
 print()
 
 # --- Example 3: Eligibility check ---
@@ -60,7 +60,7 @@ if maths_marks >= 75 and english_marks >= 75 and attendance_ok:
 print()
 
 # --- Golden Rules ---
-print("=== Naming Rules for Operator Expressions ===")
+print("--- Naming Rules for Operator Expressions ---")
 print("1. Use full words: 'discount_amount' not 'd'")
 print("2. Break long formulas: store intermediate results in named variables")
 print("3. Boolean variables: use is_, has_, can_ prefix")
@@ -75,7 +75,7 @@ deduction = salary * 0.12    # what is 0.12?
 # GOOD: named constant
 PF_RATE = 0.12
 pf_deduction = salary * PF_RATE
-print(f"PF deduction at {int(PF_RATE*100)}%: Rs.{pf_deduction}")
+print("PF deduction at " + str(int(PF_RATE*100)) + "%: Rs." + str(pf_deduction))
 
 # Think:
 # 1. Rename these variables clearly: a=10, b=3, c=a*b, d=c+7

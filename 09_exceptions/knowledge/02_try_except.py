@@ -10,7 +10,7 @@
 #       <what to do if it fails>
 
 # --- Basic try/except ---
-print("=== Basic try/except ===")
+print("--- Basic try/except ---")
 
 try:
     score = int("ninety")   # this will fail
@@ -23,7 +23,7 @@ print("Program continues after the except block.")
 print()
 
 # --- Catching the error message with 'as' ---
-print("=== Catching the error message ===")
+print("--- Catching the error message ---")
 try:
     result = 100 / 0
 except ZeroDivisionError as e:
@@ -33,20 +33,20 @@ except ZeroDivisionError as e:
 print()
 
 # --- try/except keeps the program alive ---
-print("=== Keeping program alive ===")
+print("--- Keeping program alive ---")
 numbers = [10, 0, 5, 0, 2]
 
 for divisor in numbers:
     try:
         result = 100 / divisor
-        print(f"  100 / {divisor} = {result:.1f}")
+        print("  100 /", divisor, "=", round(result, 1))
     except ZeroDivisionError:
-        print(f"  100 / {divisor} = Cannot divide by zero!")
+        print("  100 /", divisor, "= Cannot divide by zero!")
 
 print()
 
 # --- Bare except (catches ALL exceptions — use carefully) ---
-print("=== Bare except — catches everything ===")
+print("--- Bare except — catches everything ---")
 try:
     data = {"name": "Aarav"}
     print(data["age"])      # KeyError

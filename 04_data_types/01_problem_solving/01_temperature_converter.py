@@ -13,7 +13,7 @@ celsius = float(input("Enter temperature in Celsius: "))
 fahrenheit = (celsius * 9 / 5) + 32
 
 # Step 3: Display result
-print(f"{celsius}°C = {fahrenheit}°F")
+print(str(celsius) + "°C = " + str(fahrenheit) + "°F")
 
 # Step 4: Describe the weather
 if celsius < 10:

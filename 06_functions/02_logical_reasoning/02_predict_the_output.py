@@ -23,7 +23,7 @@ def describe(n):
         label = "even"
     else:
         label = "odd"
-    return f"{n} is {label}"
+    return str(n) + " is " + label
 
 print("Study the 4 functions above, then answer:")
 print()
@@ -32,7 +32,7 @@ print()
 print("Q1: print(square(4))")
 answer = input("Your answer: ")
 actual = square(4)
-print(f"Output: {actual}")
+print("Output:", actual)
 if answer.strip() == str(actual):
     score += 1
     print("Correct!")
@@ -42,7 +42,7 @@ print()
 print("Q2: print(cube(3))")
 answer = input("Your answer: ")
 actual = cube(3)
-print(f"Output: {actual}")
+print("Output:", actual)
 if answer.strip() == str(actual):
     score += 1
     print("Correct!")
@@ -52,7 +52,7 @@ print()
 print("Q3: print(square(3) + cube(2))")
 answer = input("Your answer: ")
 actual = square(3) + cube(2)
-print(f"Output: {actual}  (square(3)=9, cube(2)=8, 9+8=17)")
+print("Output:", actual, " (square(3)=9, cube(2)=8, 9+8=17)")
 if answer.strip() == str(actual):
     score += 1
     print("Correct!")
@@ -62,7 +62,7 @@ print()
 print("Q4: print(is_even(7))")
 answer = input("Your answer (True/False): ")
 actual = is_even(7)
-print(f"Output: {actual}")
+print("Output:", actual)
 if answer.strip().lower() == str(actual).lower():
     score += 1
     print("Correct!")
@@ -72,7 +72,7 @@ print()
 print("Q5: print(describe(10))")
 answer = input("Your answer: ")
 actual = describe(10)
-print(f"Output: {actual}")
+print("Output:", actual)
 if answer.strip() == actual:
     score += 1
     print("Correct!")
@@ -87,10 +87,10 @@ print("""
 print("Hint: is_even(4) returns True. True is treated as 1 in Python.")
 answer = input("Your answer: ")
 actual = square(is_even(4))  # square(True) = square(1) = 1
-print(f"Output: {actual}  (is_even(4)=True=1, square(1)=1)")
+print("Output:", actual, " (is_even(4)=True=1, square(1)=1)")
 if answer.strip() == str(actual):
     score += 1
     print("Correct!")
 print()
 
-print(f"Score: {score} / 6")
+print("Score:", score, "/ 6")

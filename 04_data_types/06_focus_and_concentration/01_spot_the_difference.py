@@ -64,4 +64,4 @@ print("bool(True) = True but 'True' is just text — a non-empty string.")
 print("They behave differently in strict comparisons: True == 'True' is False!")
 score += 1
 
-print(f"\nScore: {score} / 7")
+print("\nScore:", score, "/ 7")

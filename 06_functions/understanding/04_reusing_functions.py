@@ -15,10 +15,10 @@ bedroom_area = calculate_area(12, 10)
 hall_area = calculate_area(20, 15)
 kitchen_area = calculate_area(8, 6)
 
-print(f"Bedroom: {bedroom_area} sq.ft")
-print(f"Hall:    {hall_area} sq.ft")
-print(f"Kitchen: {kitchen_area} sq.ft")
-print(f"Total house area: {bedroom_area + hall_area + kitchen_area} sq.ft")
+print("Bedroom:", bedroom_area, "sq.ft")
+print("Hall:   ", hall_area, "sq.ft")
+print("Kitchen:", kitchen_area, "sq.ft")
+print("Total house area:", bedroom_area + hall_area + kitchen_area, "sq.ft")
 
 print()
 
@@ -29,7 +29,7 @@ def calculate_perimeter(length, width):
 def room_summary(name, length, width):
     area = calculate_area(length, width)
     perimeter = calculate_perimeter(length, width)
-    print(f"{name}: Area={area} sq.ft, Perimeter={perimeter} ft")
+    print(name + ": Area=" + str(area) + " sq.ft, Perimeter=" + str(perimeter) + " ft")
 
 room_summary("Bedroom", 12, 10)
 room_summary("Hall", 20, 15)
@@ -54,10 +54,10 @@ def print_report(name, maths, science, english):
     total = get_total(maths, science, english)
     average = get_average(total)
     grade = get_grade(average)
-    print(f"{name:10} | Total: {total} | Avg: {average:.1f} | Grade: {grade}")
+    print(name + " | Total: " + str(total) + " | Avg: " + str(round(average, 1)) + " | Grade: " + grade)
 
-print("=== Report Card ===")
-print(f"{'Name':10} | Total | Avg   | Grade")
+print("--- Report Card ---")
+print("Name       | Total | Avg   | Grade")
 print("-" * 40)
 print_report("Aarav",  88, 92, 85)
 print_report("Diya",   70, 65, 78)

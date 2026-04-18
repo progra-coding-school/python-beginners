@@ -5,7 +5,7 @@
 
 score = 0
 
-print("=== Type Math Challenge ===")
+print("--- Type Math Challenge ---")
 print("Calculate the result AND the type without running code!\n")
 
 # Challenge 1
@@ -66,4 +66,4 @@ elif val_guess == "9" or type_guess.lower() == "int":
     print("Half right.")
     score += 1
 
-print(f"\nScore: {score} / 8")
+print("\nScore:", score, "/ 8")

@@ -6,7 +6,7 @@
 # Big question: Is a student eligible to sit for the final exam?
 # Break it into conditions — check one at a time.
 
-print("=== Exam Eligibility Checker ===")
+print("--- Exam Eligibility Checker ---")
 print()
 
 # Step 1: Get student details
@@ -43,12 +43,12 @@ if marks_needed < 0:
     marks_needed = 0
 
 # Step 8: Display result
-print(f"\n--- Eligibility Report: {student_name} ---")
-print(f"Maths: {maths}  Science: {science}  English: {english}")
-print(f"Total: {total}/300  Average: {round(average, 1)}")
-print(f"All subjects passed (>=35): {all_subjects_passed}")
-print(f"Attendance (>=75%): {attendance_ok}")
-print(f"Fee paid: {fee_cleared}")
+print("--- Eligibility Report:", student_name, "---")
+print("Maths:", maths, " Science:", science, " English:", english)
+print("Total:", str(total) + "/300  Average:", round(average, 1))
+print("All subjects passed (>=35):", all_subjects_passed)
+print("Attendance (>=75%):", attendance_ok)
+print("Fee paid:", fee_cleared)
 print()
 
 if is_eligible:
@@ -56,7 +56,7 @@ if is_eligible:
     if total >= 240:
         print("On track for DISTINCTION!")
     else:
-        print(f"Need {marks_needed} more marks for distinction.")
+        print("Need", marks_needed, "more marks for distinction.")
 else:
     print("STATUS: NOT ELIGIBLE")
     if not all_subjects_passed:

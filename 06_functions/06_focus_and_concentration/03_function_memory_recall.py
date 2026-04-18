@@ -8,7 +8,7 @@
 
 score = 0
 
-print("=== Function Memory Recall ===")
+print("--- Function Memory Recall ---")
 print("Answer from memory. No looking back!")
 print()
 
@@ -94,7 +94,7 @@ print()
 
 # Final summary
 print("═" * 40)
-print(f"Memory Recall Score: {score} / 8")
+print("Memory Recall Score:", score, "/ 8")
 print()
 print("Quick Reference:")
 print("  def       → create a function")

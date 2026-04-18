@@ -10,7 +10,7 @@ student_marks = [88, 95, 76, 91, 83]
 
 # Display all students and their marks using the shared index
 print("Student           Marks")
-print("-" * 25)
+print("-------------------------")
 for i in range(len(student_names)):
     print("  " + student_names[i].ljust(14) + str(student_marks[i]))
 print()
@@ -44,7 +44,7 @@ paired = list(zip(student_marks, student_names))
 paired.sort(reverse=True)                        # highest mark first
 
 print("Rank  Name          Marks")
-print("-" * 30)
+print("------------------------------")
 for rank, (marks, name) in enumerate(paired, start=1):
     label = " (Topper)" if rank == 1 else ""
     print("  " + str(rank) + "     " + name.ljust(12) + str(marks) + label)

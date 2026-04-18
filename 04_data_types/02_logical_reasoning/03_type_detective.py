@@ -63,4 +63,4 @@ print("Possible: '3.9', '3.1', '3.5' — any string of a decimal between 3 and 4
 print("float('3.9') = 3.9, then int(3.9) = 3 (truncates).")
 score += 1
 
-print(f"\nScore: {score} / 5")
+print("\nScore:", score, "/ 5")

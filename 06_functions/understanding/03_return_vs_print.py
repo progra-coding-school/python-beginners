@@ -6,7 +6,7 @@
 # This is one of the most common confusions for beginners.
 # return and print look similar but are VERY different!
 
-print("=== print inside a function ===")
+print("--- print inside a function ---")
 
 def greet_print(name):
     print("Hello,", name)    # shows on screen BUT gives nothing back
@@ -15,7 +15,7 @@ result = greet_print("Aarav")
 print("greet_print returned:", result)    # None — nothing came back!
 
 print()
-print("=== return from a function ===")
+print("--- return from a function ---")
 
 def greet_return(name):
     return "Hello, " + name   # gives the value BACK, but doesn't display it
@@ -26,7 +26,7 @@ print("greet_return returned:", result)    # Hello, Aarav — got it back!
 print()
 
 # --- Why does this matter? ---
-print("=== Why return matters ===")
+print("--- Why return matters ---")
 
 # With print-only: you CANNOT use the result in calculations
 def add_print(a, b):
@@ -61,7 +61,7 @@ def get_grade(average):
 maths, science, english = 82, 75, 90
 avg = calculate_average(maths, science, english)
 grade = get_grade(avg)
-print(f"Average: {avg:.1f}  Grade: {grade}")
+print("Average:", round(avg, 1), " Grade:", grade)
 
 # This chain is IMPOSSIBLE if functions only used print and not return.
 

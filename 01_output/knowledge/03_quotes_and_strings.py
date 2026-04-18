@@ -41,9 +41,7 @@ print()
 
 # --- String repetition ---
 # * on a string repeats it that many times (same as numbers!)
-print("-" * 25)
 print("Progra" * 3)
-print("-" * 25)
 
 print()
 

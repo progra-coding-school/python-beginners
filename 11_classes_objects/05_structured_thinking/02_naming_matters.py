@@ -6,8 +6,8 @@
 # Good naming makes class code readable and self-documenting.
 # Python naming conventions everyone follows:
 
-# ─── VERSION A: Poor naming ─────────────────────────────────────
-print("=== Version A: Poor naming ===")
+# --- Version A: Poor naming ---
+print("--- Version A: Poor naming ---")
 
 class s:
     def __init__(self, n, a, g):
@@ -16,14 +16,14 @@ class s:
         self.g = g
 
     def d(self):
-        print(f"{self.n} - {self.a} - {self.g}")
+        print(self.n, "-", self.a, "-", self.g)
 
 x = s("Aarav", 13, 7)
 x.d()
 print("What does 's', 'n', 'a', 'g', 'd' mean? Impossible to know without reading deeply.\n")
 
-# ─── VERSION B: Good naming ─────────────────────────────────────
-print("=== Version B: Good naming ===")
+# --- Version B: Good naming ---
+print("--- Version B: Good naming ---")
 
 class Student:
     def __init__(self, name, age, grade):
@@ -32,14 +32,14 @@ class Student:
         self.grade = grade
 
     def display(self):
-        print(f"{self.name} — Age {self.age}, Grade {self.grade}")
+        print(self.name, "— Age", self.age, ", Grade", self.grade)
 
 s = Student("Aarav", 13, 7)
 s.display()
 print("Immediately clear what every name means.\n")
 
-# ─── Python naming rules for classes ────────────────────────────
-print("=== Python Naming Conventions ===")
+# --- Python naming rules for classes ---
+print("--- Python Naming Conventions ---")
 conventions = [
     ("Class names",       "PascalCase",       "Student, BankAccount, CricketPlayer"),
     ("Method names",      "snake_case",        "add_mark(), get_balance(), display()"),
@@ -47,29 +47,29 @@ conventions = [
     ("Private (internal)","_leading_underscore","self._balance, self._history"),
     ("Constants",         "UPPER_SNAKE_CASE",  "PASS_MARK = 50, MAX_SCORE = 100"),
 ]
-print(f"  {'Type':<22} {'Convention':<22} {'Example'}")
-print(f"  {'─'*22} {'─'*22} {'─'*30}")
+print("  Type                   Convention             Example")
+print("  " + "-" * 70)
 for name, convention, example in conventions:
-    print(f"  {name:<22} {convention:<22} {example}")
+    print("  " + name.ljust(22), convention.ljust(22), example)
 
 print()
 
-# ─── Method naming: verbs for actions ───────────────────────────
-print("=== Methods should be VERBS (actions) ===")
+# --- Method naming: verbs for actions ---
+print("--- Methods should be VERBS (actions) ---")
 print("  Good: deposit(), withdraw(), get_balance(), add_student(), display()")
 print("  Bad : balance(), student(), report_card()")
 
 print()
 
-# ─── Attribute naming: nouns for data ───────────────────────────
-print("=== Attributes should be NOUNS (data) ===")
+# --- Attribute naming: nouns for data ---
+print("--- Attributes should be NOUNS (data) ---")
 print("  Good: self.balance, self.student_count, self.is_open")
 print("  Bad : self.doing_balance, self.counting_students")
 
 print()
 
-# ─── Practice ───────────────────────────────────────────────────
-print("=== Practice: What would you rename? ===")
+# --- Practice ---
+print("--- Practice: What would you rename? ---")
 bad_names = [
     ("class", "acct",      "→ BankAccount"),
     ("method","do_thing",  "→ withdraw() or deposit()"),
@@ -78,7 +78,7 @@ bad_names = [
     ("class", "mgr",       "→ LibraryManager"),
 ]
 for kind, bad, good in bad_names:
-    print(f"  [{kind}] '{bad}' {good}")
+    print("  [" + kind + "] '" + bad + "' " + good)
 
 # Think:
 # 1. Why do class names use PascalCase while method names use snake_case?

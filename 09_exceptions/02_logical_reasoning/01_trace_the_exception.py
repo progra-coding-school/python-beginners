@@ -8,7 +8,7 @@
 # Trace the flow: which lines run, which are skipped?
 
 # --- Trace 1 ---
-print("=== Trace 1 ===")
+print("--- Trace 1 ---")
 try:
     print("A")
     x = 1 / 0          # exception here
@@ -22,7 +22,7 @@ print("D")
 print()
 
 # --- Trace 2 ---
-print("=== Trace 2 ===")
+print("--- Trace 2 ---")
 try:
     print("A")
     x = int("42")       # no exception
@@ -39,7 +39,7 @@ finally:
 print()
 
 # --- Trace 3 ---
-print("=== Trace 3 ===")
+print("--- Trace 3 ---")
 try:
     print("A")
     x = int("bad")      # ValueError raised
@@ -56,7 +56,7 @@ finally:
 print()
 
 # --- Trace 4 ---
-print("=== Trace 4 ===")
+print("--- Trace 4 ---")
 def risky():
     print("  risky: start")
     raise ValueError("oops")
@@ -66,19 +66,19 @@ try:
     risky()
     print("after risky()")   # never reached
 except ValueError as e:
-    print(f"caught: {e}")
+    print("caught:", e)
 # Predict: ?
 # Actual: "risky: start"  then  "caught: oops"
 
 print()
 
 # --- Trace 5 (tricky!) ---
-print("=== Trace 5 ===")
+print("--- Trace 5 ---")
 for i in [2, 0, 4]:
     try:
-        print(f"  10 / {i} = {10 / i:.1f}")
+        print("  10 /", i, "=", round(10 / i, 1))
     except ZeroDivisionError:
-        print(f"  Skip {i}")
+        print("  Skip", i)
 print("  Done")
 # Predict each iteration: ?
 # Actual: 10/2=5.0 | Skip 0 | 10/4=2.5 | Done

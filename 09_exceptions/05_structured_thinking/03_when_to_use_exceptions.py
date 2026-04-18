@@ -7,14 +7,14 @@
 #   if/else  → for EXPECTED conditions in normal program flow
 #   try/except → for UNEXPECTED situations or external failures
 
-print("=== Decision Guide: if/else vs try/except ===\n")
+print("--- Decision Guide: if/else vs try/except ---\n")
 
 # --- Scenario 1: Check if a list is empty ---
 print("Scenario 1: Is the list empty?")
 print("→ EXPECTED condition — use if/else")
 scores = []
 if scores:
-    print(f"  Average: {sum(scores)/len(scores):.1f}")
+    print("  Average:", round(sum(scores) / len(scores), 1))
 else:
     print("  No scores yet.")
 print()
@@ -25,9 +25,9 @@ print("→ UNEXPECTED failure — user might type anything, use try/except")
 for raw in ["13", "thirteen", "13.5"]:
     try:
         age = int(raw)
-        print(f"  '{raw}' → age = {age}")
+        print("  '" + raw + "' → age =", age)
     except ValueError:
-        print(f"  '{raw}' → not a valid age")
+        print("  '" + raw + "' → not a valid age")
 print()
 
 # --- Scenario 3: Check if student passed ---
@@ -58,13 +58,13 @@ print("→ EXPECTED condition — use 'in' operator (not try/except)")
 enrolled = ["Aarav", "Diya", "Karthik"]
 name = "Riya"
 if name in enrolled:
-    print(f"  {name} is enrolled.")
+    print(" ", name, "is enrolled.")
 else:
-    print(f"  {name} is not enrolled.")
+    print(" ", name, "is not enrolled.")
 print()
 
 # --- Quick Reference ---
-print("=== Quick Reference ===")
+print("--- Quick Reference ---")
 cases = [
     ("List/dict membership check",      "if 'key' in d"),
     ("Empty collection",                "if not lst"),
@@ -75,7 +75,7 @@ cases = [
     ("Division where 0 is possible",    "try/except ZeroDivisionError"),
 ]
 for situation, approach in cases:
-    print(f"  {situation:<40} → {approach}")
+    print("  " + situation.ljust(40) + " → " + approach)
 
 # Think:
 # 1. What is the key difference between "expected" and "unexpected" errors?

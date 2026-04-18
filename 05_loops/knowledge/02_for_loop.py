@@ -41,7 +41,7 @@ print()
 # --- Loop with index using enumerate ---
 subjects = ["Maths", "Science", "English"]
 for index, subject in enumerate(subjects, 1):
-    print(f"{index}. {subject}")
+    print(str(index) + ". " + subject)
 
 print()
 
@@ -49,9 +49,9 @@ print()
 marks = [85, 72, 90, 65, 88]
 for mark in marks:
     if mark >= 80:
-        print(f"{mark} → Distinction")
+        print(str(mark) + " → Distinction")
     else:
-        print(f"{mark} → Pass")
+        print(str(mark) + " → Pass")
 
 # Think:
 # 1. What does range(1, 10, 3) produce? Write it out before running.

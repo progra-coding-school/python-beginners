@@ -8,7 +8,7 @@
 
 score = 0
 
-print("=== Precedence Puzzle ===")
+print("--- Precedence Puzzle ---")
 print("Solve step by step. BODMAS applies!")
 print()
 
@@ -72,4 +72,4 @@ print("2 ** 3 * 2 =", 2 ** 3 * 2)
 print("20 - 10 / 2 + 3 =", 20 - 10 / 2 + 3)
 print("(5 + 3) ** 2 // 4 =", (5 + 3) ** 2 // 4)
 
-print(f"\nScore: {score} / 5")
+print("Score:", score, "/ 5")

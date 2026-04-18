@@ -7,7 +7,7 @@
 # inside ONE class — so the object manages itself.
 
 # --- Without encapsulation: data is exposed and fragile ---
-print("=== WITHOUT encapsulation ===")
+print("--- WITHOUT encapsulation ---")
 
 # Bare dictionary — anyone can change anything, even nonsensically
 account = {"owner": "Aarav", "balance": 500}
@@ -19,7 +19,7 @@ print("Corrupted balance:", account["balance"])
 print()
 
 # --- With encapsulation: the class controls access ---
-print("=== WITH encapsulation ===")
+print("--- WITH encapsulation ---")
 
 class BankAccount:
     def __init__(self, owner, opening_balance=0):
@@ -31,17 +31,17 @@ class BankAccount:
             print("  Deposit must be positive.")
             return
         self._balance += amount
-        print(f"  Deposited Rs.{amount}. Balance: Rs.{self._balance}")
+        print("  Deposited Rs." + str(amount) + ". Balance: Rs." + str(self._balance))
 
     def withdraw(self, amount):
         if amount <= 0:
             print("  Withdrawal must be positive.")
             return
         if amount > self._balance:
-            print(f"  Insufficient funds. Balance: Rs.{self._balance}")
+            print("  Insufficient funds. Balance: Rs." + str(self._balance))
             return
         self._balance -= amount
-        print(f"  Withdrew Rs.{amount}. Balance: Rs.{self._balance}")
+        print("  Withdrew Rs." + str(amount) + ". Balance: Rs." + str(self._balance))
 
     def get_balance(self):
         return self._balance    # read-only access to balance
@@ -50,12 +50,12 @@ acc = BankAccount("Aarav", 500)
 acc.deposit(200)
 acc.withdraw(100)
 acc.withdraw(1000)     # rejected by the class
-print(f"  Final balance: Rs.{acc.get_balance()}")
+print("  Final balance: Rs." + str(acc.get_balance()))
 
 print()
 
 # --- What encapsulation protects ---
-print("=== What encapsulation gives you ===")
+print("--- What encapsulation gives you ---")
 print("  1. VALIDATION — the class checks data before accepting it")
 print("  2. CONSISTENCY — balance can only change through deposit/withdraw")
 print("  3. CLARITY — each method has one clear purpose")
@@ -64,7 +64,7 @@ print("  4. SAFETY — internal data can't be corrupted from outside")
 print()
 
 # --- Real-life analogy ---
-print("=== Real-life analogy ===")
+print("--- Real-life analogy ---")
 print("An ATM machine ENCAPSULATES your bank account.")
 print("  You can only: deposit, withdraw, check balance.")
 print("  You CANNOT: directly open the machine and change the number.")

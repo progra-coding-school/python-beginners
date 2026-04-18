@@ -24,7 +24,7 @@ print("Height in metres:", round(height / 100, 2))
 price = float(input("Enter item price: "))
 quantity = int(input("Enter quantity: "))
 total = price * quantity
-print(f"Total: Rs.{total:.2f}")
+print("Total: Rs." + str(round(total, 2)))
 
 # But for things like names, keep them as strings
 name = input("Enter your name: ")

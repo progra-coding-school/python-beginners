@@ -19,23 +19,23 @@ class Book:
 
     def issue(self, member):
         if not self.is_available():
-            print(f"  '{self.title}' is not available right now.")
+            print("  '" + self.title + "' is not available right now.")
             return False
         self.issued_to.append(member)
-        print(f"  '{self.title}' issued to {member}.")
+        print("  '" + self.title + "' issued to", member + ".")
         return True
 
     def return_book(self, member):
         if member in self.issued_to:
             self.issued_to.remove(member)
-            print(f"  {member} returned '{self.title}'.")
+            print(" ", member, "returned '" + self.title + "'.")
             return True
-        print(f"  {member} has no record of borrowing '{self.title}'.")
+        print(" ", member, "has no record of borrowing '" + self.title + "'.")
         return False
 
     def __str__(self):
         available = self.copies - len(self.issued_to)
-        return f"'{self.title}' by {self.author} [{available}/{self.copies} available]"
+        return "'" + self.title + "' by " + self.author + " [" + str(available) + "/" + str(self.copies) + " available]"
 
 
 class Library:
@@ -46,10 +46,10 @@ class Library:
     def add_book(self, title, author, copies=1):
         if title in self.books:
             self.books[title].copies += copies
-            print(f"  Added {copies} more copies of '{title}'.")
+            print("  Added", copies, "more copies of '" + title + "'.")
         else:
             self.books[title] = Book(title, author, copies)
-            print(f"  New book added: {title}")
+            print("  New book added:", title)
 
     def search(self, keyword):
         keyword = keyword.lower()
@@ -59,24 +59,24 @@ class Library:
 
     def issue(self, title, member):
         if title not in self.books:
-            print(f"  '{title}' not found in library.")
+            print("  '" + title + "' not found in library.")
             return
         self.books[title].issue(member)
 
     def return_book(self, title, member):
         if title not in self.books:
-            print(f"  '{title}' not found in library.")
+            print("  '" + title + "' not found in library.")
             return
         self.books[title].return_book(member)
 
     def report(self):
-        print(f"\n=== {self.name} — Book Report ===")
-        print(f"  Total books: {len(self.books)}")
+        print("\n--- " + self.name + " — Book Report ---")
+        print("  Total books:", len(self.books))
         print()
         for book in self.books.values():
-            print(f"  {book}")
+            print(" ", book)
             if book.issued_to:
-                print(f"    Issued to: {', '.join(book.issued_to)}")
+                print("    Issued to:", ", ".join(book.issued_to))
 
 # --- Demo ---
 lib = Library("Progra School Library")
@@ -99,7 +99,7 @@ lib.issue("Python Basics", "Ananya")    # now available again
 print()
 print("Search 'python':")
 for b in lib.search("python"):
-    print(f"  Found: {b}")
+    print("  Found:", b)
 
 lib.report()
 

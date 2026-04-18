@@ -4,7 +4,7 @@
 # Topic: Data Types in Python
 
 # Study these values, then answer from memory.
-print("=== STUDY PHASE ===")
+print("--- STUDY PHASE ---")
 print("Remember these variables — you'll be tested!\n")
 
 print("student = 'Meera'         (str)")
@@ -20,7 +20,7 @@ input("\nCover the above and press Enter when ready...")
 
 score = 0
 
-print("\n=== TEST PHASE ===\n")
+print("\n--- TEST PHASE ---\n")
 
 guess = input("What was 'gpa'? ")
 if guess == "9.3":
@@ -64,4 +64,4 @@ if guess.lower() == "false":
 else:
     print("Answer: False")
 
-print(f"\nScore: {score} / 6")
+print("\nScore:", score, "/ 6")

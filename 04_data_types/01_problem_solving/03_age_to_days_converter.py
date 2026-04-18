@@ -23,11 +23,11 @@ hours = total_days * 24
 minutes = hours * 60
 
 # Step 4: Display results
-print(f"\n{name} has lived approximately:")
-print(f"  {total_days} days")
-print(f"  {weeks} weeks")
-print(f"  {hours} hours")
-print(f"  {minutes} minutes")
+print("\n" + name + " has lived approximately:")
+print(" ", total_days, "days")
+print(" ", weeks, "weeks")
+print(" ", hours, "hours")
+print(" ", minutes, "minutes")
 
 # Think:
 # 1. Why are years, months, days all int and not float?

@@ -65,4 +65,4 @@ if guess == "AaravAarav":
 else:
     print("'Aarav' * 2 = 'AaravAarav'. Strings can be repeated with *.")
 
-print(f"\nScore: {score} / 5")
+print("\nScore:", score, "/ 5")

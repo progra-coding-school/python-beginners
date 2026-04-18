@@ -12,7 +12,7 @@
 #   Bruno is a Poodle.
 #   Tommy says: Woof!
 
-print("=== Challenge 1 ===")
+print("--- Challenge 1 ---")
 print("Target output:")
 print("  Tommy is a Labrador.")
 print("  Bruno is a Poodle.")
@@ -25,10 +25,10 @@ class Dog:
         self.breed = breed
 
     def describe(self):
-        print(f"  {self.name} is a {self.breed}.")
+        print(" ", self.name, "is a", self.breed + ".")
 
     def bark(self):
-        print(f"  {self.name} says: Woof!")
+        print(" ", self.name, "says: Woof!")
 
 d1 = Dog("Tommy", "Labrador")
 d2 = Dog("Bruno", "Poodle")
@@ -44,7 +44,7 @@ print()
 #   Lamp is ON
 #   Lamp is OFF
 
-print("=== Challenge 2 ===")
+print("--- Challenge 2 ---")
 print("Target: toggle lamp ON/OFF")
 print()
 
@@ -56,7 +56,8 @@ class Lamp:
         self.on = not self.on
 
     def status(self):
-        print(f"  Lamp is {'ON' if self.on else 'OFF'}")
+        state = "ON" if self.on else "OFF"
+        print("  Lamp is", state)
 
 l = Lamp()
 l.status()
@@ -75,24 +76,24 @@ print()
 #   Not enough money!
 #   Final: Rs.400
 
-print("=== Challenge 3 ===")
+print("--- Challenge 3 ---")
 print("Target: wallet spending")
 print()
 
 class Wallet:
     def __init__(self, balance):
         self.balance = balance
-        print(f"  Wallet: Rs.{self.balance}")
+        print("  Wallet: Rs." + str(self.balance))
 
     def spend(self, amount):
         if amount > self.balance:
             print("  Not enough money!")
             return
         self.balance -= amount
-        print(f"  After buy: Rs.{self.balance}")
+        print("  After buy: Rs." + str(self.balance))
 
     def show(self):
-        print(f"  Final: Rs.{self.balance}")
+        print("  Final: Rs." + str(self.balance))
 
 w = Wallet(1000)
 w.spend(300)

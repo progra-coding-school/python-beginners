@@ -36,7 +36,7 @@
 
 # ---- CODE FOLLOWS THE PLAN ----
 
-print("=== Employee Salary Calculator ===")
+print("--- Employee Salary Calculator ---")
 employee_name = input("Employee name: ")
 basic_salary = float(input("Basic salary (Rs): "))
 years_of_service = int(input("Years of service: "))
@@ -67,14 +67,14 @@ else:
     bonus_note = ""
 
 # Output
-print(f"\n--- Salary Slip: {employee_name} ---")
-print(f"Basic Salary:     Rs. {basic_salary:.2f}")
-print(f"HRA (20%):        Rs. {hra:.2f}")
-print(f"DA (10%):         Rs. {da:.2f}")
-print(f"Gross Salary:     Rs. {gross_salary:.2f}")
-print(f"PF (12%):       - Rs. {pf_deduction:.2f}")
-print(f"Tax (5%):       - Rs. {tax:.2f}")
-print(f"Net Salary:       Rs. {net_salary:.2f} {bonus_note}")
+print("--- Salary Slip:", employee_name, "---")
+print("Basic Salary:     Rs.", round(basic_salary, 2))
+print("HRA (20%):        Rs.", round(hra, 2))
+print("DA (10%):         Rs.", round(da, 2))
+print("Gross Salary:     Rs.", round(gross_salary, 2))
+print("PF (12%):       - Rs.", round(pf_deduction, 2))
+print("Tax (5%):       - Rs.", round(tax, 2))
+print("Net Salary:       Rs.", round(net_salary, 2), bonus_note)
 
 # Think:
 # 1. What two more deductions could a real salary slip have?

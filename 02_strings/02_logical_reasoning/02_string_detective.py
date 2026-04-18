@@ -3,28 +3,20 @@
 # Cognitive Skill: Logical Reasoning (Pattern recognition)
 # Topic: Strings in Python
 
-# ============================================================
 # PROBLEM STATEMENT:
 # Diya has hidden secret messages inside strings.
 # Use your string skills to decode the patterns and
 # figure out what the output will be — without running the code first!
-# ============================================================
 
 import time
 
-print("=" * 55)
-print("    STRING DETECTIVE — DECODE THE PATTERN!")
-print("=" * 55)
+print("STRING DETECTIVE — DECODE THE PATTERN!")
 
 score = 0
 total = 5
 
-# -------------------------------------------------------
 # CLUE 1: Length and Indexing
-# -------------------------------------------------------
-print("\n" + "=" * 40)
-print("🔍 CLUE 1: What is the output?")
-print("-" * 40)
+print("\nCLUE 1: What is the output?")
 print("""
 print(len("PROGRA"))
 print("PROGRA"[-1])
@@ -37,12 +29,8 @@ if guess.lower() == "y":
     score += 1
 time.sleep(1)
 
-# -------------------------------------------------------
 # CLUE 2: Chain of Methods
-# -------------------------------------------------------
-print("\n" + "=" * 40)
-print("🔍 CLUE 2: What is the final output?")
-print("-" * 40)
+print("\nCLUE 2: What is the final output?")
 print("""
 print("  hello world  ".strip().title())
 """)
@@ -54,12 +42,8 @@ if guess.lower() == "y":
     score += 1
 time.sleep(1)
 
-# -------------------------------------------------------
 # CLUE 3: Counting
-# -------------------------------------------------------
-print("\n" + "=" * 40)
-print("🔍 CLUE 3: How many 'a's in the sentence?")
-print("-" * 40)
+print("\nCLUE 3: How many 'a's in the sentence?")
 print("""
 print("Aarav and Amma ate amazing aloo.".count("a"))
 """)
@@ -72,12 +56,8 @@ if guess.lower() == "y":
     score += 1
 time.sleep(1)
 
-# -------------------------------------------------------
 # CLUE 4: Membership
-# -------------------------------------------------------
-print("\n" + "=" * 40)
-print("🔍 CLUE 4: True or False?")
-print("-" * 40)
+print("\nCLUE 4: True or False?")
 print("""
 print("diya" in "Aarav, Diya, Mani, Priya")
 print("Mani" in "Aarav, Diya, Mani, Priya")
@@ -91,12 +71,8 @@ if guess.lower() == "y":
     score += 1
 time.sleep(1)
 
-# -------------------------------------------------------
 # CLUE 5: Slice Pattern
-# -------------------------------------------------------
-print("\n" + "=" * 40)
-print("🔍 CLUE 5 (CHALLENGE): Decode the slice!")
-print("-" * 40)
+print("\nCLUE 5 (CHALLENGE): Decode the slice!")
 print("""
 print("STR-2026-AARAV"[4:8])
 print("STR-2026-AARAV"[-5:])
@@ -109,22 +85,17 @@ guess = input("Both correct? (y/n): ")
 if guess.lower() == "y":
     score += 1
 
-# -------------------------------------------------------
 # FINAL SCORE
-# -------------------------------------------------------
-print("\n" + "=" * 55)
-print("  DETECTIVE SCORE :", score, "/", total)
+print()
+print("DETECTIVE SCORE :", score, "/", total)
 if score == total:
-    print("  🏆 MASTER DETECTIVE — Outstanding!")
+    print("MASTER DETECTIVE — Outstanding!")
 elif score >= 3:
-    print("  ✅ Good detective skills! Keep sharpening.")
+    print("Good detective skills! Keep sharpening.")
 else:
-    print("  🔍 Keep investigating — you'll crack it!")
-print("=" * 55)
+    print("Keep investigating — you'll crack it!")
 
-# ============================================================
 # REFLECTION:
 # 1. Why did 'diya' (lowercase) return False in Clue 4?
 # 2. What pattern did you use to solve the slice in Clue 5?
 # 3. Create your own string detective clue for a classmate!
-# ============================================================

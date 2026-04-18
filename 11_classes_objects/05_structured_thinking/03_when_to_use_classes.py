@@ -7,20 +7,22 @@
 # Rule of thumb: use a class when you need MULTIPLE instances
 # of something that has BOTH data AND behaviour.
 
-print("=== Decision Guide: Function vs Dict vs Class ===\n")
+print("--- Decision Guide: Function vs Dict vs Class ---\n")
 
 # --- Scenario 1: Calculate area of one rectangle ---
 print("Scenario 1: Calculate area of ONE rectangle")
 print("→ A simple FUNCTION is enough — no need for a class")
 def rect_area(w, h):
     return w * h
-print(f"  area(4, 6) = {rect_area(4, 6)}\n")
+print("  area(4, 6) =", rect_area(4, 6))
+print()
 
 # --- Scenario 2: Store one student's profile (read-only) ---
 print("Scenario 2: Store one student's profile, no behaviour needed")
 print("→ A DICT is fine — just data, no methods")
 student = {"name": "Aarav", "grade": 7, "city": "Chennai"}
-print(f"  {student}\n")
+print(" ", student)
+print()
 
 # --- Scenario 3: Manage many bank accounts with deposit/withdraw ---
 print("Scenario 3: Manage multiple bank accounts with transactions")
@@ -32,13 +34,14 @@ class BankAccount:
     def deposit(self, amount):
         self.balance += amount
     def __str__(self):
-        return f"{self.owner}: Rs.{self.balance}"
+        return self.owner + ": Rs." + str(self.balance)
 
 a1 = BankAccount("Aarav", 1000)
 a2 = BankAccount("Diya",   500)
 a1.deposit(200)
-print(f"  {a1}")
-print(f"  {a2}\n")
+print(" ", a1)
+print(" ", a2)
+print()
 
 # --- Scenario 4: Track a cricket scoreboard during a live match ---
 print("Scenario 4: Live cricket scoreboard — state changes over time")
@@ -56,7 +59,7 @@ class Scoreboard:
         self.wickets += 1
 
     def __str__(self):
-        return f"{self.team}: {self.runs}/{self.wickets}"
+        return self.team + ": " + str(self.runs) + "/" + str(self.wickets)
 
 board = Scoreboard("India")
 board.add_runs(45)
@@ -64,10 +67,11 @@ board.add_runs(62)
 board.wicket_fell()
 board.add_runs(18)
 board.wicket_fell()
-print(f"  Score: {board}\n")
+print("  Score:", board)
+print()
 
 # --- Quick Reference ---
-print("=== Quick Reference ===")
+print("--- Quick Reference ---")
 print("  One-off calculation          → FUNCTION")
 print("  Store simple data (one item) → DICT or named tuple")
 print("  Multiple things with behaviour → CLASS")

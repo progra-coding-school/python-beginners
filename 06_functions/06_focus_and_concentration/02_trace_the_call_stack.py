@@ -25,7 +25,7 @@ def process(x):
     return c
 
 # --- Trace challenges ---
-print("=== Trace the Call Stack ===")
+print("--- Trace the Call Stack ---")
 print("Track each variable's value through every function call.")
 print()
 
@@ -35,7 +35,7 @@ print("  Step 2: b = add_ten(a) = ?")
 print("  Step 3: c = square(b) = ?")
 answer = input("Final result: ")
 actual = process(3)
-print(f"Answer: double(3)=6, add_ten(6)=16, square(16)={actual}")
+print("Answer: double(3)=6, add_ten(6)=16, square(16)=" + str(actual))
 if answer.strip() == str(actual):
     score += 1
     print("Correct!")
@@ -44,7 +44,7 @@ print()
 print("Challenge 2: process(5)")
 answer = input("Final result (trace all 3 steps): ")
 actual = process(5)
-print(f"Answer: double(5)=10, add_ten(10)=20, square(20)={actual}")
+print("Answer: double(5)=10, add_ten(10)=20, square(20)=" + str(actual))
 if answer.strip() == str(actual):
     score += 1
     print("Correct!")
@@ -70,7 +70,7 @@ answer = input("Final result: ")
 actual = get_net(10000)
 bonus = get_bonus(10000)
 tax = get_tax(10000 + bonus)
-print(f"Answer: bonus={bonus}, tax={tax}, net={actual}")
+print("Answer: bonus=" + str(bonus) + ", tax=" + str(tax) + ", net=" + str(actual))
 if answer.strip() in [str(actual), str(int(actual))]:
     score += 1
     print("Correct!")
@@ -87,12 +87,12 @@ print("Challenge 4: pipeline(2)")
 print("  step1(2) → step2(result) → step3(result)")
 answer = input("Final result: ")
 actual = pipeline(2)
-print(f"Answer: step1(2)={step1(2)}, step2(7)={step2(7)}, step3(21)={step3(21)}")
-print(f"         pipeline(2) = {actual}")
+print("Answer: step1(2)=" + str(step1(2)) + ", step2(7)=" + str(step2(7)) + ", step3(21)=" + str(step3(21)))
+print("         pipeline(2) =", actual)
 if answer.strip() == str(actual):
     score += 1
     print("Correct!")
 print()
 
-print(f"Call Stack Score: {score} / 4")
+print("Call Stack Score:", score, "/ 4")
 print("Tip: Work from the INSIDE OUT when functions are nested.")

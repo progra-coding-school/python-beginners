@@ -6,7 +6,7 @@
 # Each snippet below has a bug related to functions.
 # Find it, explain why it's wrong, and fix it.
 
-print("=== Bug 1 ===")
+print("--- Bug 1 ---")
 print("""
   def greet(name):
       print("Hello,", name)
@@ -18,7 +18,7 @@ print("Bug: greet() is called WITHOUT an argument, but the function needs 'name'
 print("Fix: greet('Aarav')  ← provide the argument")
 print()
 
-print("=== Bug 2 ===")
+print("--- Bug 2 ---")
 print("""
   def add(a, b):
       result = a + b
@@ -34,7 +34,7 @@ print("     So 'total' = None, and None * 2 causes a TypeError!")
 print("Fix: Replace print(result) with return result")
 print()
 
-print("=== Bug 3 ===")
+print("--- Bug 3 ---")
 print("""
   def calculate_area(length, width):
       area = length * width
@@ -48,7 +48,7 @@ print("     result = None, so prints 'Area: None'")
 print("Fix: Add 'return area' at the end of the function")
 print()
 
-print("=== Bug 4 ===")
+print("--- Bug 4 ---")
 print("""
   result = multiply(4, 5)
   print(result)
@@ -62,7 +62,7 @@ print("     Python reads top-to-bottom, so it doesn't know multiply yet!")
 print("Fix: Always DEFINE functions BEFORE calling them.")
 print()
 
-print("=== Bug 5 ===")
+print("--- Bug 5 ---")
 print("""
   def get_grade(marks):
       if marks >= 80:

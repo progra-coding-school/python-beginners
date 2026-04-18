@@ -52,4 +52,4 @@ print("Possible: '7.9', '7.1', '7.0', '7.5' — any string of a decimal between 
 print("float('7.9') = 7.9, then int(7.9) = 7")
 score += 1
 
-print(f"\nScore: {score} / 4")
+print("\nScore:", score, "/ 4")

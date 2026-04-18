@@ -51,26 +51,26 @@ def is_book_available(book_title, library):
 
 def borrow_book(book_title, student_name, library):
     if book_title not in library:
-        return f"'{book_title}' is not in our library."
+        return "'" + book_title + "' is not in our library."
     if not is_book_available(book_title, library):
-        return f"'{book_title}' is currently borrowed by someone else."
+        return "'" + book_title + "' is currently borrowed by someone else."
     library[book_title] = False
-    return f"'{book_title}' borrowed successfully by {student_name}!"
+    return "'" + book_title + "' borrowed successfully by " + student_name + "!"
 
 def return_book(book_title, library):
     if book_title not in library:
-        return f"'{book_title}' is not our library's book."
+        return "'" + book_title + "' is not our library's book."
     if library[book_title]:
-        return f"'{book_title}' was not borrowed. No action needed."
+        return "'" + book_title + "' was not borrowed. No action needed."
     library[book_title] = True
-    return f"'{book_title}' returned. Thank you!"
+    return "'" + book_title + "' returned. Thank you!"
 
 def show_available_books(library):
-    print("\n=== Available Books ===")
+    print("\n--- Available Books ---")
     found = False
     for title, available in library.items():
         if available:
-            print(f"  ✓ {title}")
+            print("  ✓ " + title)
             found = True
     if not found:
         print("  No books available right now.")
@@ -80,7 +80,7 @@ def get_total_books(library):
 
 # --- Run the system ---
 show_available_books(library)
-print(f"Total available: {get_total_books(library)} books\n")
+print("Total available:", get_total_books(library), "books\n")
 
 print(borrow_book("Python for Kids", "Aarav", library))
 print(borrow_book("Science Explorer", "Diya", library))

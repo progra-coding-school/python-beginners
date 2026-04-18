@@ -6,7 +6,7 @@
 # Good programs organize variables by type and purpose.
 # This makes the code readable and reduces type errors.
 
-print("=== Cricket Match Summary ===\n")
+print("--- Cricket Match Summary ---\n")
 
 # --- Player Info (str) ---
 player_name = "Virat"
@@ -29,13 +29,13 @@ is_century = runs >= 100
 is_half_century = runs >= 50
 is_man_of_match = runs > 75 and strike_rate > 130
 
-print(f"Player: {player_name} ({team} vs {opponent})")
-print(f"Runs: {runs} off {balls_faced} balls")
-print(f"Boundaries: {fours} fours, {sixes} sixes ({runs_from_boundaries} runs from boundaries)")
-print(f"Other runs: {other_runs}")
-print(f"Strike rate: {strike_rate}")
-print(f"Half century: {is_half_century}  |  Century: {is_century}")
-print(f"Man of the Match: {is_man_of_match}")
+print("Player: " + player_name + " (" + team + " vs " + opponent + ")")
+print("Runs:", runs, "off", balls_faced, "balls")
+print("Boundaries:", fours, "fours,", sixes, "sixes (" + str(runs_from_boundaries) + " runs from boundaries)")
+print("Other runs:", other_runs)
+print("Strike rate:", strike_rate)
+print("Half century:", is_half_century, " |  Century:", is_century)
+print("Man of the Match:", is_man_of_match)
 
 # Think:
 # 1. Which variables are float? Why?

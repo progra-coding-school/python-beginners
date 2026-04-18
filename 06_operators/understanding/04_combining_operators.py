@@ -6,7 +6,7 @@
 # Real programs combine arithmetic, comparison, and logical operators.
 # Let's see how they work together.
 
-print("=== Combining Operators ===")
+print("--- Combining Operators ---")
 
 # Step 1: Arithmetic gives a number
 total_marks = 85 + 90 + 78       # 253 — arithmetic
@@ -41,10 +41,10 @@ is_child = age < 12        # False
 # Logical: combine for final decision
 can_watch_pg13 = age >= 13 or is_accompanied  # False or True → True
 
-print(f"{name}'s age: {age}")
-print(f"Is adult: {is_adult}")
-print(f"Years to adult: {years_to_adult}")
-print(f"Can watch PG-13 movie: {can_watch_pg13}")
+print(name + "'s age:", age)
+print("Is adult:", is_adult)
+print("Years to adult:", years_to_adult)
+print("Can watch PG-13 movie:", can_watch_pg13)
 
 print()
 
@@ -61,9 +61,9 @@ is_multiple_of_100 = withdrawal % 100 == 0
 can_withdraw = is_valid_amount and is_multiple_of_100
 
 if can_withdraw:
-    print(f"Dispensing Rs.{withdrawal}. Remaining balance: Rs.{remaining}")
+    print("Dispensing Rs." + str(withdrawal) + ". Remaining balance: Rs." + str(remaining))
 else:
-    print("Invalid amount. Must be > 0, ≤ balance, and a multiple of 100.")
+    print("Invalid amount. Must be > 0, <= balance, and a multiple of 100.")
 
 # Think:
 # 1. What type does (85 + 90) >= 160 return? Trace it step by step.

@@ -8,7 +8,7 @@
 
 score = 0
 
-print("=== Spot the Difference — Functions ===")
+print("--- Spot the Difference — Functions ---")
 print()
 
 # --- Round 1 ---
@@ -45,8 +45,8 @@ def multiply_a(n):
     n = n * 2  # changes local n but returns nothing
 def multiply_b(n):
     return n * 2
-print(f"Answer: A returns {multiply_a(5)} (None — no return!)")
-print(f"         B returns {multiply_b(5)}")
+print("Answer: A returns", multiply_a(5), "(None — no return!)")
+print("         B returns", multiply_b(5))
 score += 1
 print()
 
@@ -91,10 +91,10 @@ print("  Code B: def calc(n): return n * (2 + 1)")
 answer = input("calc(5) — what does each return? ")
 def calc_a(n): return n * 2 + 1
 def calc_b(n): return n * (2 + 1)
-print(f"Answer: A = {calc_a(5)} (5*2=10, then +1=11)")
-print(f"         B = {calc_b(5)} (2+1=3, then 5*3=15)")
+print("Answer: A =", calc_a(5), "(5*2=10, then +1=11)")
+print("         B =", calc_b(5), "(2+1=3, then 5*3=15)")
 print("         Operator precedence changes everything!")
 score += 1
 print()
 
-print(f"Score: {score} / 6")
+print("Score:", score, "/ 6")

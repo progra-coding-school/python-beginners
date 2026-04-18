@@ -67,4 +67,4 @@ if guess == "9":
 else:
     print("int(9.9) = 9, NOT 10. int() truncates (chops off) the decimal.")
 
-print(f"\nScore: {score} / 5")
+print("\nScore:", score, "/ 5")

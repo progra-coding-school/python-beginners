@@ -12,9 +12,9 @@
 
 # --- Tracing a function call step by step ---
 def add(a, b):
-    print(f"  [Inside add] a={a}, b={b}")
+    print("  [Inside add] a=" + str(a) + ", b=" + str(b))
     result = a + b
-    print(f"  [Inside add] result={result}")
+    print("  [Inside add] result=" + str(result))
     return result
 
 print("Before calling add()")
@@ -38,7 +38,7 @@ print()
 # --- Each function call is independent ---
 def show_double(number):
     doubled = number * 2
-    print(f"  Double of {number} = {doubled}")
+    print("  Double of " + str(number) + " = " + str(doubled))
 
 show_double(3)    # doubled = 6 here
 show_double(7)    # doubled = 14 here (separate, independent call)
@@ -59,7 +59,7 @@ def final_bill(price, quantity):
     return total + tax
 
 bill = final_bill(120, 3)
-print(f"Final bill for 3 items at Rs.120: Rs.{bill}")
+print("Final bill for 3 items at Rs.120: Rs." + str(bill))
 
 # Think:
 # 1. If you define a variable 'x = 5' inside a function, can you use x outside it?

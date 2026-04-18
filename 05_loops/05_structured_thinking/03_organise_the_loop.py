@@ -27,7 +27,7 @@ centuries      = 0
 ducks          = 0    # scored 0
 
 # --- GROUP 2: The Loop (process each batsman) ---
-print("=== Batting Scorecard ===")
+print("--- Batting Scorecard ---")
 print(f"  {'Batsman':12} {'Runs':6} {'Balls':6} {'SR':8} {'Status'}")
 print("  " + "-" * 50)
 
@@ -63,14 +63,14 @@ for name, runs, balls in innings:
 team_strike_rate = (total_runs / total_balls) * 100 if total_balls > 0 else 0
 
 print("  " + "-" * 50)
-print(f"\n=== Team Summary ===")
-print(f"  Total runs      : {total_runs}")
-print(f"  Total balls     : {total_balls}")
-print(f"  Team strike rate: {team_strike_rate:.1f}")
-print(f"  Top scorer      : {top_scorer} ({highest_score} runs)")
-print(f"  Centuries       : {centuries}")
-print(f"  Half-centuries  : {half_centuries}")
-print(f"  Ducks           : {ducks}")
+print("\n--- Team Summary ---")
+print("  Total runs      :", total_runs)
+print("  Total balls     :", total_balls)
+print("  Team strike rate:", round(team_strike_rate, 1))
+print("  Top scorer      : " + top_scorer + " (" + str(highest_score) + " runs)")
+print("  Centuries       :", centuries)
+print("  Half-centuries  :", half_centuries)
+print("  Ducks           :", ducks)
 
 # Think:
 # 1. Where would you add code to find the LOWEST scorer?

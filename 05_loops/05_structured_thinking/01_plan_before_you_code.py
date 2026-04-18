@@ -33,7 +33,7 @@ borrowers = [
 FINE_PER_DAY   = 2      # Rs.2 per overdue day
 HEAVY_FINE_LIMIT = 50   # Flag if fine exceeds Rs.50
 
-print("=== Library Fine Report ===")
+print("--- Library Fine Report ---")
 print(f"  {'Name':12} {'Book':22} {'Days':5} {'Fine':8} {'Status'}")
 print("  " + "-" * 60)
 
@@ -55,11 +55,11 @@ for name, book, days in borrowers:
     print(f"  {name:12} {book:22} {days:5}   Rs.{fine:4}  {status}")
 
 print("  " + "-" * 60)
-print(f"  Total fines collected: Rs.{total_fines}")
-print(f"  Heavy fine cases:      {heavy_fine_count}")
+print("  Total fines collected: Rs." + str(total_fines))
+print("  Heavy fine cases:     ", heavy_fine_count)
 
 if heavy_fine_count > 0:
-    print(f"\n  ⚠ {heavy_fine_count} student(s) have heavy fines. Please follow up.")
+    print("\n  " + str(heavy_fine_count) + " student(s) have heavy fines. Please follow up.")
 
 # Think:
 # 1. How would you modify this to sort by highest fine first?

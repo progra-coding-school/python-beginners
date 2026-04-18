@@ -7,13 +7,13 @@
 # Then run to verify.
 
 # --- Challenge 1 ---
-print("=== Challenge 1 ===")
+print("--- Challenge 1 ---")
 class Dog:
     def __init__(self, name):
         self.name = name
 
     def speak(self):
-        print(f"{self.name} says Woof!")
+        print(self.name, "says Woof!")
 
 d1 = Dog("Tommy")
 d2 = Dog("Bruno")
@@ -27,7 +27,7 @@ d1.speak()
 print()
 
 # --- Challenge 2 ---
-print("=== Challenge 2 ===")
+print("--- Challenge 2 ---")
 class Wallet:
     def __init__(self, amount):
         self.amount = amount
@@ -46,7 +46,7 @@ print(w.amount)
 print()
 
 # --- Challenge 3 ---
-print("=== Challenge 3 ===")
+print("--- Challenge 3 ---")
 class Counter:
     total = 0   # class attribute
 
@@ -63,7 +63,7 @@ print(Counter.total)
 print()
 
 # --- Challenge 4 ---
-print("=== Challenge 4 ===")
+print("--- Challenge 4 ---")
 class Box:
     def __init__(self, items):
         self.items = items
@@ -82,7 +82,7 @@ print(b2.items)
 print()
 
 # --- Challenge 5 (tricky!) ---
-print("=== Challenge 5 ===")
+print("--- Challenge 5 ---")
 class Car:
     wheels = 4   # class attribute
 
@@ -98,7 +98,7 @@ print(Car.wheels)        # 4 — class unchanged
 print()
 
 # --- Challenge 6 ---
-print("=== Challenge 6 ===")
+print("--- Challenge 6 ---")
 class Lamp:
     def __init__(self):
         self.on = False

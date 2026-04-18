@@ -3,35 +3,25 @@
 # Cognitive Skill: Logical Reasoning (Reverse reasoning)
 # Topic: Strings in Python
 
-# ============================================================
 # PROBLEM STATEMENT:
 # Aarav gives you the OUTPUT and asks: "What was the INPUT?"
 # You need to work BACKWARDS to figure out the original string.
 # This is called REVERSE REASONING — a key thinking skill!
-# ============================================================
 
 import time
 
-print("=" * 55)
-print("    REVERSE CHALLENGE — WORK BACKWARDS!")
-print("=" * 55)
-
-print("""
-In each round, you'll see:
-  - The OPERATION applied to a string
-  - The OUTPUT (result)
-  - You must figure out the ORIGINAL string!
-""")
+print("REVERSE CHALLENGE — WORK BACKWARDS!")
+print()
+print("In each round, you'll see:")
+print("  - The OPERATION applied to a string")
+print("  - The OUTPUT (result)")
+print("  - You must figure out the ORIGINAL string!")
 
 score = 0
 total = 4
 
-# -------------------------------------------------------
 # ROUND 1: Reversing upper()
-# -------------------------------------------------------
-print("=" * 40)
-print("ROUND 1:")
-print("-" * 40)
+print("\nROUND 1:")
 print("""
 An unknown string had .upper() applied to it.
 The result is: 'CHENNAI'
@@ -49,12 +39,8 @@ if guess.lower() == "y":
     score += 1
 time.sleep(1)
 
-# -------------------------------------------------------
 # ROUND 2: Reversing strip()
-# -------------------------------------------------------
-print("\n" + "=" * 40)
-print("ROUND 2:")
-print("-" * 40)
+print("\nROUND 2:")
 print("""
 An unknown string had .strip() applied to it.
 The result is: 'Aarav'
@@ -71,12 +57,8 @@ if guess.lower() == "y":
     score += 1
 time.sleep(1)
 
-# -------------------------------------------------------
 # ROUND 3: Reversing replace()
-# -------------------------------------------------------
-print("\n" + "=" * 40)
-print("ROUND 3:")
-print("-" * 40)
+print("\nROUND 3:")
 print("""
 result = original.replace("Cricket", "Python")
 result = "I love Python and Python is fun!"
@@ -92,12 +74,8 @@ if guess.lower() == "y":
     score += 1
 time.sleep(1)
 
-# -------------------------------------------------------
 # ROUND 4: Reversing a slice
-# -------------------------------------------------------
-print("\n" + "=" * 40)
-print("ROUND 4 (TRICKY!):")
-print("-" * 40)
+print("\nROUND 4 (TRICKY!):")
 print("""
 result = original[2:5]
 result = 'YTH'
@@ -113,28 +91,23 @@ print("\nAnswer: 'PYTHON' works! Let's verify:")
 check = "PYTHON"
 print("  'PYTHON'[2:5] = '" + check[2:5] + "'")
 print("  Hmm! That's 'THO', not 'YTH'.")
-print("  Let's try: 'XXYTH'[2:5] = '" + "XXYTH"[2:5] + "'  ✅")
+print("  Let's try: 'XXYTH'[2:5] = '" + "XXYTH"[2:5] + "'")
 print("  Answer: any string where positions 2, 3, 4 are Y, T, H")
 guess = input("Did you reason it correctly? (y/n): ")
 if guess.lower() == "y":
     score += 1
 
-# -------------------------------------------------------
 # FINAL SCORE
-# -------------------------------------------------------
-print("\n" + "=" * 55)
-print("  REVERSE CHALLENGE SCORE :", score, "/", total)
+print()
+print("REVERSE CHALLENGE SCORE :", score, "/", total)
 if score == total:
-    print("  🏆 Excellent reverse thinking skills!")
+    print("Excellent reverse thinking skills!")
 elif score >= 2:
-    print("  ✅ Good work! Reverse thinking is tough — keep going!")
+    print("Good work! Reverse thinking is tough — keep going!")
 else:
-    print("  💪 This takes practice — reverse thinking is a power skill!")
-print("=" * 55)
+    print("This takes practice — reverse thinking is a power skill!")
 
-# ============================================================
 # REFLECTION:
 # 1. Why can multiple original strings produce the same upper() output?
 # 2. What would you get if you reversed [::-1] on 'NOHTYP'?
 # 3. Create your own reverse challenge for a classmate!
-# ============================================================

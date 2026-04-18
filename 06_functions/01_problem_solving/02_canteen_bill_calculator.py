@@ -17,10 +17,10 @@ MENU = {
 }
 
 def show_menu():
-    print("\n=== Canteen Menu ===")
+    print("\n--- Canteen Menu ---")
     for item, price in MENU.items():
-        print(f"  {item.capitalize():10} Rs.{price}")
-    print("=" * 20)
+        print("  " + item.capitalize() + "  Rs." + str(price))
+    print("-" * 20)
 
 def get_item_price(item_name):
     item_name = item_name.lower()
@@ -53,19 +53,18 @@ def print_bill(customer_name, items_ordered):
     gst = calculate_gst(after_discount)
     total = after_discount + gst
 
-    print("\n" + "=" * 35)
-    print(f"    PROGRA CANTEEN BILL")
-    print(f"    Customer: {customer_name}")
+    print("    PROGRA CANTEEN BILL")
+    print("    Customer:", customer_name)
     print("=" * 35)
     for item, qty in items_ordered:
         price = get_item_price(item)
-        print(f"  {item.capitalize():10} x{qty}  Rs.{price * qty}")
+        print("  " + item.capitalize() + " x" + str(qty) + "  Rs." + str(price * qty))
     print("-" * 35)
-    print(f"  Subtotal:          Rs.{subtotal:.2f}")
+    print("  Subtotal:          Rs." + str(round(subtotal, 2)))
     if discount > 0:
-        print(f"  Discount (10%):  - Rs.{discount:.2f}")
-    print(f"  GST (5%):        + Rs.{gst:.2f}")
-    print(f"  TOTAL:             Rs.{total:.2f}")
+        print("  Discount (10%):  - Rs." + str(round(discount, 2)))
+    print("  GST (5%):        + Rs." + str(round(gst, 2)))
+    print("  TOTAL:             Rs." + str(round(total, 2)))
     print("=" * 35)
 
 # --- Run the canteen app ---
@@ -80,7 +79,7 @@ while True:
     if get_item_price(item) == 0:
         print("Item not found in menu.")
         continue
-    qty = int(input(f"How many {item}s? "))
+    qty = int(input("How many " + item + "s? "))
     order.append((item, qty))
 
 print_bill(name, order)

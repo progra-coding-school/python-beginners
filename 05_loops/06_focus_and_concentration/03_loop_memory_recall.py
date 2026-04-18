@@ -8,7 +8,7 @@
 
 score = 0
 
-print("=== Loop Memory Recall ===")
+print("--- Loop Memory Recall ---")
 print("No notes. Answer from memory!")
 print()
 
@@ -94,8 +94,8 @@ else:
 print()
 
 # --- Summary ---
-print("═" * 40)
-print(f"Memory Recall Score: {score} / 8")
+print("-" * 40)
+print("Memory Recall Score:", score, "/ 8")
 print()
 print("Quick Reference:")
 print("  for     → known count / sequence")
@@ -105,4 +105,4 @@ print("  continue → skip this iteration")
 print("  range(s,e,step) → generates a sequence of numbers")
 print("  accumulator → starts at 0, builds total inside loop")
 print("  nested loops → outer × inner = total inner iterations")
-print("═" * 40)
+print("-" * 40)

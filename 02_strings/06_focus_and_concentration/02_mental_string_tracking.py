@@ -3,31 +3,21 @@
 # Cognitive Skill: Focus and Concentration (Mental tracking)
 # Topic: Strings in Python
 
-# ============================================================
 # PROBLEM STATEMENT:
 # A string goes through MULTIPLE changes one step at a time.
 # Can you TRACK the value of the string mentally after each step?
 # Don't run the code until you've predicted every output!
-# ============================================================
 
 import time
 
-print("=" * 55)
-print("  MENTAL STRING TRACKING — FOLLOW EVERY STEP!")
-print("=" * 55)
+print("MENTAL STRING TRACKING — FOLLOW EVERY STEP!")
+print()
+print("You'll see a series of string operations applied step by step.")
+print("PREDICT the value of the string after each step.")
+print("Then reveal the answer.")
 
-print("""
-You'll see a series of string operations applied step by step.
-PREDICT the value of the string after each step.
-Then reveal the answer.
-""")
-
-# -------------------------------------------------------
 # CHALLENGE 1: Chain of transformations
-# -------------------------------------------------------
-print("=" * 40)
-print("CHALLENGE 1: Follow the string through 4 steps")
-print("-" * 40)
+print("\nCHALLENGE 1: Follow the string through 4 steps")
 
 text = "  hello world  "
 print('  Start: "' + text + '"')
@@ -56,17 +46,14 @@ input("  What is the string now? Press ENTER to reveal: ")
 text = text + "!"
 print('  → "' + text + '"')
 
-print('\n  FINAL VALUE: "' + text + '"')
+print()
+print('  FINAL VALUE: "' + text + '"')
 print()
 guess = input("Did you track all 4 steps correctly? (y/n): ")
 step1_score = 1 if guess.lower() == "y" else 0
 
-# -------------------------------------------------------
 # CHALLENGE 2: Slicing and indexing
-# -------------------------------------------------------
-print("\n" + "=" * 40)
-print("CHALLENGE 2: Slicing operations")
-print("-" * 40)
+print("\nCHALLENGE 2: Slicing operations")
 
 word = "CRICKET"
 print('  word = "' + word + '"')
@@ -91,12 +78,8 @@ for op, result, hint in operations:
     time.sleep(0.5)
     print()
 
-# -------------------------------------------------------
 # CHALLENGE 3: Method chain — predict the FINAL output only
-# -------------------------------------------------------
-print("=" * 40)
 print("CHALLENGE 3: FULL METHOD CHAIN (hardest!)")
-print("-" * 40)
 raw = "  progra kids  "
 print('  Start: "' + raw + '"')
 print()
@@ -108,24 +91,19 @@ print('  → "' + result + '"')
 correct = input("  Correct? (y/n): ")
 step3_score = 1 if correct.lower() == "y" else 0
 
-# -------------------------------------------------------
 # FINAL SCORE
-# -------------------------------------------------------
 total_score = step1_score + (1 if score2 >= 4 else 0) + step3_score
-print("\n" + "=" * 55)
-print("  MENTAL TRACKING SCORE :", total_score, "/ 3")
-print("  (Slicing sub-score    :", score2, "/", len(operations), ")")
+print()
+print("MENTAL TRACKING SCORE :", total_score, "/ 3")
+print("(Slicing sub-score    :", score2, "/", len(operations), ")")
 if total_score == 3:
-    print("  🏆 Mental tracking master — incredible focus!")
+    print("Mental tracking master — incredible focus!")
 elif total_score >= 2:
-    print("  ✅ Strong mental tracking! Keep sharpening.")
+    print("Strong mental tracking! Keep sharpening.")
 else:
-    print("  🧠 Keep practising — mental tracking is a powerful skill!")
-print("=" * 55)
+    print("Keep practising — mental tracking is a powerful skill!")
 
-# ============================================================
 # REFLECTION:
 # 1. Which step was hardest to track mentally? Why?
 # 2. How does practising mental tracking help your coding?
 # 3. Try creating your own 4-step transformation challenge!
-# ============================================================

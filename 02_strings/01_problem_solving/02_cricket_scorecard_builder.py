@@ -3,23 +3,17 @@
 # Cognitive Skill: Problem Solving (Decomposition)
 # Topic: Strings in Python
 
-# ============================================================
 # PROBLEM STATEMENT:
 # Aarav's school cricket match just ended.
 # The scorer has all the data as raw text:
 #   Player names in mixed case, scores as numbers.
 # He needs to build a neat, formatted scorecard using strings!
-# ============================================================
+
 # DECOMPOSE THE PROBLEM:
 # Step 1: Collect team and player data
 # Step 2: Format each player's name properly
 # Step 3: Build the scorecard display using string operations
 # Step 4: Show total and result
-# ============================================================
-
-print("=" * 50)
-print("    PROGRA KIDS CRICKET — MATCH SCORECARD")
-print("=" * 50)
 
 # STEP 1: Match Details
 team_name   = "progra pythons"
@@ -31,7 +25,7 @@ match_date  = "21-02-2026"
 team_display     = team_name.title()
 opponent_display = opponent.title()
 
-print("\n  Match : " + team_display + "  vs  " + opponent_display)
+print("  Match : " + team_display + "  vs  " + opponent_display)
 print("  Venue : " + match_venue)
 print("  Date  : " + match_date)
 print()
@@ -67,7 +61,7 @@ opponent_score = 108
 print()
 if total_runs > opponent_score:
     margin = total_runs - opponent_score
-    result = team_display + " WON by " + str(margin) + " runs! 🏆"
+    result = team_display + " WON by " + str(margin) + " runs!"
 elif total_runs < opponent_score:
     margin = opponent_score - total_runs
     result = opponent_display + " won by " + str(margin) + " runs."
@@ -76,12 +70,10 @@ else:
 
 print("  Opponent Score :", opponent_score)
 print("  Our Score      :", total_runs)
-print("\n  RESULT :", result)
-print("\n" + "=" * 50)
+print()
+print("  RESULT :", result)
 
-# ============================================================
 # REFLECTION:
 # 1. What does .title() do to "aarav sharma"?
 # 2. How would you add the player's position (Captain, WK)?
 # 3. Can you modify this to take player names as input?
-# ============================================================

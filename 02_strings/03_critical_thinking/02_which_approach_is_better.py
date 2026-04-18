@@ -3,22 +3,15 @@
 # Cognitive Skill: Critical Thinking (Evaluating approaches)
 # Topic: Strings in Python
 
-# ============================================================
 # PROBLEM STATEMENT:
 # Two students, Aarav and Diya, solved the same problems
 # using different approaches. Which solution is CLEANER,
 # SHORTER, and EASIER to understand?
 # Evaluate both and explain your reasoning!
-# ============================================================
 
-print("=" * 55)
-print("  WHICH APPROACH IS BETTER? — THINK AND EVALUATE!")
-print("=" * 55)
+print("WHICH APPROACH IS BETTER? — THINK AND EVALUATE!")
 
-# -------------------------------------------------------
 # PROBLEM 1: Check if "cricket" is in a sentence
-# -------------------------------------------------------
-print("=" * 55)
 print("\n--- PROBLEM 1: Check if Word Exists ---")
 print("Task: Check if 'cricket' is mentioned in the sentence")
 print()
@@ -42,15 +35,12 @@ print("""
   Both give the SAME result!
   → Diya's 'in' keyword is MORE READABLE (reads like English!)
   → Aarav's find() works but is more complex for a simple check.
-  ✅ WINNER: 'in' keyword (for simple membership checks)
-  📝 NOTE: Use find() when you also need the POSITION.
+  WINNER: 'in' keyword (for simple membership checks)
+  NOTE: Use find() when you also need the POSITION.
 """)
 
-# -------------------------------------------------------
 # PROBLEM 2: Convert user input safely
-# -------------------------------------------------------
-print("=" * 55)
-print("\n--- PROBLEM 2: Clean and Compare User Input ---")
+print("--- PROBLEM 2: Clean and Compare User Input ---")
 print("Task: Check if user typed the correct answer 'Python'")
 print()
 
@@ -71,18 +61,14 @@ input("  Which is better? Think first... press ENTER: ")
 print("""
   → Aarav's approach MISSES the answer — too strict!
   → Diya's approach is ROBUST — handles spaces and case.
-  ✅ WINNER: Diya's approach (defensive coding)
-  📝 RULE: Always strip and lower-case before comparing user input.
+  WINNER: Diya's approach (defensive coding)
+  RULE: Always strip and lower-case before comparing user input.
 """)
 
-print("=" * 55)
-print("  KEY LESSONS:")
+print("KEY LESSONS:")
 print("  1. 'in' > find() for simple membership checks")
 print("  2. Always .strip().lower() before comparing user input")
-print("=" * 55)
 
-# ============================================================
 # REFLECTION:
 # 1. When would you prefer find() over 'in'?
 # 2. What other ways can user input be "messy" to handle?
-# ============================================================

@@ -6,7 +6,7 @@
 # We often make wrong assumptions about how functions behave.
 # Let's test and break those assumptions!
 
-print("=== Assumption Breaker — Functions ===")
+print("--- Assumption Breaker — Functions ---")
 print()
 
 # --- Assumption 1 ---
@@ -16,8 +16,8 @@ def silent_add(a, b):
 
 result = silent_add(5, 3)
 # Nothing is printed from the function call!
-print(f"  silent_add(5, 3) ran, but nothing printed from inside it.")
-print(f"  The returned value is: {result}")
+print("  silent_add(5, 3) ran, but nothing printed from inside it.")
+print("  The returned value is:", result)
 print("  WRONG! A function with only 'return' prints NOTHING.")
 print()
 
@@ -31,8 +31,8 @@ def with_return(n):
 
 val_p = with_print(5)     # displays 10 on screen
 val_r = with_return(5)    # doesn't display, but gives 10 back
-print(f"  with_print stored: {val_p}")     # None
-print(f"  with_return stored: {val_r}")    # 10
+print("  with_print stored:", val_p)     # None
+print("  with_return stored:", val_r)    # 10
 print("  WRONG! Only 'return' lets you USE the result later.")
 print()
 
@@ -59,14 +59,14 @@ def get_stats(numbers):
     return total, average, minimum, maximum    # returns 4 values!
 
 t, a, lo, hi = get_stats([80, 45, 92, 67, 55])
-print(f"  Total={t}, Average={a:.1f}, Min={lo}, Max={hi}")
+print("  Total=" + str(t) + ", Average=" + str(round(a, 1)) + ", Min=" + str(lo) + ", Max=" + str(hi))
 print("  WRONG! A function can return multiple values (as a tuple).")
 print()
 
 # --- Assumption 5 ---
 print("Assumption 5: 'You must store a return value in a variable'")
 def greet(name):
-    return f"Hello, {name}!"
+    return "Hello, " + name + "!"
 
 # You can use the return value directly — no storage needed!
 print(greet("Aarav"))          # directly print

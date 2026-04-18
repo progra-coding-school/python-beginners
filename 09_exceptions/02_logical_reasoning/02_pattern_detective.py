@@ -7,7 +7,7 @@
 # Name it, then complete the missing piece.
 
 # --- Pattern 1: Input loop until valid ---
-print("=== Pattern 1: Retry until valid ===")
+print("--- Pattern 1: Retry until valid ---")
 # Simulated inputs
 simulated = iter(["abc", "-5", "7"])
 
@@ -20,15 +20,15 @@ while value is None:
             raise ValueError("Must be positive")
         value = n
     except ValueError as e:
-        print(f"  '{raw}' rejected: {e} — try again")
+        print("  '" + raw + "' rejected:", e, "— try again")
 
-print(f"  Accepted: {value}")
+print("  Accepted:", value)
 print("Pattern: while loop + try/except = keep asking until input is valid")
 
 print()
 
 # --- Pattern 2: Collect valid, skip invalid ---
-print("=== Pattern 2: Filter bad data ===")
+print("--- Pattern 2: Filter bad data ---")
 raw_scores = ["85", "abc", "92", "-1", "78", "200", "60"]
 valid_scores = []
 
@@ -41,13 +41,13 @@ for s in raw_scores:
     except ValueError:
         pass    # silently skip bad entries
 
-print(f"  Valid scores: {valid_scores}")
+print("  Valid scores:", valid_scores)
 print("Pattern: try/except inside a loop skips bad items and collects good ones")
 
 print()
 
 # --- Pattern 3: Default value on failure ---
-print("=== Pattern 3: Return a safe default ===")
+print("--- Pattern 3: Return a safe default ---")
 def safe_int(text, default=0):
     try:
         return int(text)
@@ -56,13 +56,13 @@ def safe_int(text, default=0):
 
 tests = ["42", "abc", "", "7", "??"]
 for t in tests:
-    print(f"  safe_int('{t}') = {safe_int(t, default=-1)}")
+    print("  safe_int('" + t + "') =", safe_int(t, default=-1))
 print("Pattern: try/except returns a fallback when parsing fails")
 
 print()
 
 # --- Pattern 4: Translate exceptions for the caller ---
-print("=== Pattern 4: Wrap and re-raise ===")
+print("--- Pattern 4: Wrap and re-raise ---")
 class DataError(Exception):
     pass
 
@@ -70,14 +70,14 @@ def load_score(raw):
     try:
         return int(raw)
     except ValueError:
-        raise DataError(f"Invalid score data: '{raw}'")   # translate error type
+        raise DataError("Invalid score data: '" + str(raw) + "'")   # translate error type
 
 for val in ["88", "oops"]:
     try:
         score = load_score(val)
-        print(f"  Loaded: {score}")
+        print("  Loaded:", score)
     except DataError as e:
-        print(f"  DataError: {e}")
+        print("  DataError:", e)
 print("Pattern: catch low-level error, raise high-level custom exception")
 
 # Think:

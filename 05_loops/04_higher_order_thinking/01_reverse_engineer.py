@@ -8,7 +8,7 @@
 
 score = 0
 
-print("=== Reverse Engineer the Loop ===")
+print("--- Reverse Engineer the Loop ---")
 print()
 
 # --- Challenge 1 ---
@@ -91,4 +91,4 @@ if "for" in answer and ("pass" in answer.lower() or "35" in answer):
     score += 1
 print()
 
-print(f"Score: {score} / 5")
+print("Score:", score, "/ 5")

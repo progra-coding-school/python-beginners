@@ -6,15 +6,15 @@
 # Two versions of similar class code are shown.
 # Find every difference — some are bugs, some are style choices.
 
-# ─── Pair 1 ─────────────────────────────────────────────────────
-print("=== Pair 1 ===")
+# --- Pair 1 ---
+print("--- Pair 1 ---")
 
 # Version A — correct __init__
 class DogA:
     def __init__(self, name):
         self.name = name
     def speak(self):
-        print(f"  A: {self.name} says Woof!")
+        print("  A:", self.name, "says Woof!")
 
 # Version B — missing self. on attribute
 class DogB:
@@ -22,9 +22,9 @@ class DogB:
         name = name          # Bug! Local variable, not stored on object
     def speak(self):
         try:
-            print(f"  B: {self.name} says Woof!")
+            print("  B:", self.name, "says Woof!")
         except AttributeError as e:
-            print(f"  B: AttributeError — {e}")
+            print("  B: AttributeError —", e)
 
 DogA("Tommy").speak()
 DogB("Tommy").speak()
@@ -32,8 +32,8 @@ DogB("Tommy").speak()
 
 print()
 
-# ─── Pair 2 ─────────────────────────────────────────────────────
-print("=== Pair 2 ===")
+# --- Pair 2 ---
+print("--- Pair 2 ---")
 
 # Version A — instance list (correct)
 class TeamA:
@@ -50,17 +50,17 @@ class TeamB:
 
 t1 = TeamA(); t2 = TeamA()
 t1.add("Aarav"); t2.add("Diya")
-print(f"  A: t1={t1.members}, t2={t2.members}")   # independent
+print("  A: t1=" + str(t1.members) + ", t2=" + str(t2.members))   # independent
 
 b1 = TeamB(); b2 = TeamB()
 b1.add("Aarav"); b2.add("Diya")
-print(f"  B: b1={b1.members}, b2={b2.members}")   # both share same list!
+print("  B: b1=" + str(b1.members) + ", b2=" + str(b2.members))   # both share same list!
 # Difference: A initialises list in __init__ (per object). B uses class attribute (shared).
 
 print()
 
-# ─── Pair 3 ─────────────────────────────────────────────────────
-print("=== Pair 3 ===")
+# --- Pair 3 ---
+print("--- Pair 3 ---")
 
 class Counter:
     def __init__(self):
@@ -82,15 +82,15 @@ print("  B:", c.value)        # <bound method ...>
 
 print()
 
-# ─── Pair 4 ─────────────────────────────────────────────────────
-print("=== Pair 4 ===")
+# --- Pair 4 ---
+print("--- Pair 4 ---")
 
 # Version A — with __str__
 class PointA:
     def __init__(self, x, y):
         self.x = x; self.y = y
     def __str__(self):
-        return f"({self.x}, {self.y})"
+        return "(" + str(self.x) + ", " + str(self.y) + ")"
 
 # Version B — without __str__
 class PointB:

@@ -7,7 +7,7 @@
 # Understanding this prevents bugs!
 
 # --- ARITHMETIC → gives int or float ---
-print("=== Arithmetic Result Types ===")
+print("--- Arithmetic Result Types ---")
 a = 10
 b = 3
 
@@ -28,7 +28,7 @@ print(10 // 2, type(10 // 2)) # 5   → int
 print()
 
 # --- COMPARISON → always gives bool (True/False) ---
-print("=== Comparison Result Types ===")
+print("--- Comparison Result Types ---")
 x = 7
 print(x == 7, type(x == 7))   # True → bool
 print(x > 10, type(x > 10))   # False → bool
@@ -37,7 +37,7 @@ print(x != 5, type(x != 5))   # True → bool
 print()
 
 # --- LOGICAL → always gives bool ---
-print("=== Logical Result Types ===")
+print("--- Logical Result Types ---")
 print(True and False, type(True and False))  # False → bool
 print(True or False, type(True or False))    # True → bool
 print(not True, type(not True))              # False → bool

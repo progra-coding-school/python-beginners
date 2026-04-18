@@ -8,7 +8,7 @@
 
 score = 0
 
-print("=== Reverse Engineer ===")
+print("--- Reverse Engineer ---")
 print("Given the call and output — write what the function body must be.")
 print()
 
@@ -22,7 +22,7 @@ print("Answer: return 'Hello, ' + name + '! Welcome to Progra.'")
 print("  OR:   return f'Hello, {name}! Welcome to Progra.'")
 # Verify:
 def make_greeting(name):
-    return f"Hello, {name}! Welcome to Progra."
+    return "Hello, " + name + "! Welcome to Progra."
 print("  Verified:", make_greeting("Aarav"))
 print()
 
@@ -62,7 +62,7 @@ answer = input("What must the function do? ")
 def describe_number(n):
     even_odd = "even" if n % 2 == 0 else "odd"
     div3 = "divisible by 3" if n % 3 == 0 else "not divisible by 3"
-    return f"{n} is {even_odd} and {div3}"
+    return str(n) + " is " + even_odd + " and " + div3
 print("  Verified:", describe_number(9))
 print("  Verified:", describe_number(12))
 print()

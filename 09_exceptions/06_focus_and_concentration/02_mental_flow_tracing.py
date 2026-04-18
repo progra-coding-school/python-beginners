@@ -7,7 +7,7 @@
 # Mark each line as: RUN / SKIP / MAYBE.
 # Then run to verify.
 
-print("=== Flow Tracing Exercises ===\n")
+print("--- Flow Tracing Exercises ---\n")
 
 # --- Exercise 1 ---
 print("Exercise 1: which lines print?")
@@ -87,7 +87,7 @@ try:
         print("  inner except TypeError")   # RUN or SKIP?
     print("  after inner try")              # RUN or SKIP?
 except ValueError as e:
-    print(f"  outer except: {e}")
+    print("  outer except:", e)
 # Answer: inner TypeError is skipped; ValueError bubbles to outer → "outer except: inner error"
 
 # Think:

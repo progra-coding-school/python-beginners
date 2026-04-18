@@ -17,7 +17,7 @@ print()
 # --- Countdown ---
 rocket = 5
 while rocket > 0:
-    print(f"T-minus {rocket}...")
+    print("T-minus " + str(rocket) + "...")
     rocket -= 1
 print("Blast off!")
 
@@ -48,7 +48,7 @@ while attempts < max_attempts:
         break
     remaining = max_attempts - attempts
     if remaining > 0:
-        print(f"Wrong password. {remaining} attempt(s) left.")
+        print("Wrong password. " + str(remaining) + " attempt(s) left.")
 else:
     print("Too many wrong attempts. Locked out!")
 

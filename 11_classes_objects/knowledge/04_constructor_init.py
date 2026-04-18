@@ -8,7 +8,7 @@
 # Its job: set up all the starting data for the object.
 
 # --- Anatomy of __init__ ---
-print("=== Anatomy of __init__ ===")
+print("--- Anatomy of __init__ ---")
 
 class BankAccount:
     def __init__(self, owner, balance=0):
@@ -18,24 +18,24 @@ class BankAccount:
         self.owner   = owner
         self.balance = balance
         self.transactions = []     # always starts empty
-        print(f"  Account created for {self.owner} with Rs.{self.balance}")
+        print("  Account created for", self.owner, "with Rs." + str(self.balance))
 
     def deposit(self, amount):
         self.balance += amount
-        self.transactions.append(f"Deposit: +Rs.{amount}")
+        self.transactions.append("Deposit: +Rs." + str(amount))
 
     def withdraw(self, amount):
         if amount > self.balance:
-            print(f"  Insufficient balance! (Have Rs.{self.balance})")
+            print("  Insufficient balance! (Have Rs." + str(self.balance) + ")")
             return
         self.balance -= amount
-        self.transactions.append(f"Withdraw: -Rs.{amount}")
+        self.transactions.append("Withdraw: -Rs." + str(amount))
 
     def statement(self):
-        print(f"\n  === {self.owner}'s Account ===")
+        print("\n  --- " + self.owner + "'s Account ---")
         for t in self.transactions:
-            print(f"    {t}")
-        print(f"  Balance: Rs.{self.balance}")
+            print("   ", t)
+        print("  Balance: Rs." + str(self.balance))
 
 # --- Creating accounts ---
 print()
@@ -58,11 +58,11 @@ acc2.statement()
 print()
 
 # --- __init__ runs for EVERY new object ---
-print("=== Every object gets its own __init__ run ===")
+print("--- Every object gets its own __init__ run ---")
 class Counter:
     def __init__(self, start=0):
         self.count = start
-        print(f"  Counter started at {self.count}")
+        print("  Counter started at", self.count)
 
     def increment(self):
         self.count += 1
@@ -71,8 +71,8 @@ c1 = Counter()
 c2 = Counter(10)
 c1.increment()
 c1.increment()
-print(f"  c1 count: {c1.count}")
-print(f"  c2 count: {c2.count}")   # independent
+print("  c1 count:", c1.count)
+print("  c2 count:", c2.count)   # independent
 
 # Think:
 # 1. Why does each account have its own separate `transactions` list?

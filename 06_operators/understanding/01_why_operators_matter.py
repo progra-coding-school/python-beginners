@@ -53,8 +53,9 @@ print("Eligible for exam:", eligible_for_exam)
 students = 43
 teams = 5
 remainder = students % teams
-print(f"\n{students} students in {teams} teams:")
-print(f"  {students // teams} per team, {remainder} students left out")
+print()
+print(str(students) + " students in " + str(teams) + " teams:")
+print(" ", students // teams, "per team,", remainder, "students left out")
 
 # Think:
 # 1. What would a shopping app be like without operators?

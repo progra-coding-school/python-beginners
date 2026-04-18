@@ -35,29 +35,29 @@ def generate_result(m, s, e):
     return total, average, grade, status
 
 # --- Trace the chain ---
-print("=== Tracing Function Call Chain ===")
+print("--- Tracing Function Call Chain ---")
 print()
 print("Call: generate_result(72, 85, 63)")
 print()
 print("Step 1: get_total(72, 85, 63)")
 t = get_total(72, 85, 63)
-print(f"         returns: {t}")
+print("         returns:", t)
 print()
-print(f"Step 2: get_average({t})")
+print("Step 2: get_average(" + str(t) + ")")
 a = get_average(t)
-print(f"         returns: {a:.2f}")
+print("         returns:", round(a, 2))
 print()
-print(f"Step 3: get_grade({a:.2f})")
+print("Step 3: get_grade(" + str(round(a, 2)) + ")")
 g = get_grade(a)
-print(f"         returns: '{g}'")
+print("         returns: '" + g + "'")
 print()
-print(f"Step 4: get_status('{g}')")
+print("Step 4: get_status('" + g + "')")
 s = get_status(g)
-print(f"         returns: '{s}'")
+print("         returns: '" + s + "'")
 print()
 
 # Quiz: Predict before Python confirms
-print("=== Now YOU trace it ===")
+print("--- Now YOU trace it ---")
 print()
 
 score = 0
@@ -69,11 +69,11 @@ answer3 = input("Step 3 — get_grade(average) = ? (A/B/C/F) ")
 answer4 = input("Step 4 — get_status(grade) = ? (PASS/FAIL) ")
 
 total, average, grade, status = generate_result(30, 25, 40)
-print(f"\nAnswers: total={total}, average={average:.1f}, grade={grade}, status={status}")
+print("\nAnswers: total=" + str(total) + ", average=" + str(round(average, 1)) + ", grade=" + grade + ", status=" + status)
 
 if answer1.strip() == str(total): score += 1
 if answer2.strip() == str(round(average, 1)): score += 1
 if answer3.strip().upper() == grade: score += 1
 if answer4.strip().upper() == status: score += 1
 
-print(f"Score: {score} / 4")
+print("Score:", score, "/ 4")

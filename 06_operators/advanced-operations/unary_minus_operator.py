@@ -1,7 +1,5 @@
-# ===============================
 # File Name: unary_minus_operator.py
 # Operator: -x (Unary Minus)
-# ===============================
 
 # Unary minus changes the sign of a number
 

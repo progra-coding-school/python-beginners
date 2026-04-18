@@ -44,11 +44,11 @@ elif percentage >= 50:
 else:
     grade = "D"
 
-print(f"\n--- Report Card ---")
-print(f"Name: {student_name}  |  Class: {class_name}  |  School: {school}")
-print(f"Tamil: {tamil}  English: {english}  Maths: {maths}  Science: {science}  Social: {social}")
-print(f"Total: {total_marks}/500  |  Average: {average:.1f}  |  Percentage: {percentage:.1f}%")
-print(f"Grade: {grade}  |  Result: {result_text}")
+print("\n--- Report Card ---")
+print("Name:", student_name, " |  Class:", class_name, " |  School:", school)
+print("Tamil:", tamil, " English:", english, " Maths:", maths, " Science:", science, " Social:", social)
+print("Total: " + str(total_marks) + "/500  |  Average: " + str(round(average, 1)) + "  |  Percentage: " + str(round(percentage, 1)) + "%")
+print("Grade:", grade, " |  Result:", result_text)
 
 # Think:
 # 1. Did planning the categories first make coding easier?

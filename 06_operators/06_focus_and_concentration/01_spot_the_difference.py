@@ -8,7 +8,7 @@
 
 score = 0
 
-print("=== Spot the Difference ===")
+print("--- Spot the Difference ---")
 print("Look carefully — what is different between Code A and Code B?")
 print()
 
@@ -37,8 +37,8 @@ print("Round 3:")
 print("  Code A: 2 ** 3 + 1")
 print("  Code B: 2 ** (3 + 1)")
 answer = input("What does each produce? ")
-print(f"Answer: Code A = {2 ** 3 + 1} (exponent first: 8+1=9)")
-print(f"         Code B = {2 ** (3 + 1)} (brackets first: 2^4=16)")
+print("Answer: Code A =", 2 ** 3 + 1, "(exponent first: 8+1=9)")
+print("         Code B =", 2 ** (3 + 1), "(brackets first: 2^4=16)")
 score += 1
 print()
 
@@ -49,8 +49,8 @@ print("  Code B: age > 10 or age < 20")
 print("  (age = 25)")
 answer = input("What does each return? ")
 age = 25
-print(f"Answer: Code A = {age > 10 and age < 20} (25 < 20 is False, so AND fails)")
-print(f"         Code B = {age > 10 or age < 20} (25 > 10 is True, so OR passes)")
+print("Answer: Code A =", age > 10 and age < 20, "(25 < 20 is False, so AND fails)")
+print("         Code B =", age > 10 or age < 20, "(25 > 10 is True, so OR passes)")
 score += 1
 print()
 
@@ -59,8 +59,8 @@ print("Round 5:")
 print("  Code A: 7 % 3")
 print("  Code B: 7 // 3")
 answer = input("What does each return? ")
-print(f"Answer: Code A = {7 % 3} (remainder of 7÷3 = 1)")
-print(f"         Code B = {7 // 3} (whole-number part of 7÷3 = 2)")
+print("Answer: Code A =", 7 % 3, "(remainder of 7/3 = 1)")
+print("         Code B =", 7 // 3, "(whole-number part of 7/3 = 2)")
 print("  % gives the LEFTOVER. // gives how many WHOLE TIMES it fits.")
 score += 1
 print()
@@ -70,11 +70,11 @@ print("Round 6:")
 print("  Code A: not True and False")
 print("  Code B: not (True and False)")
 answer = input("What does each return? ")
-print(f"Answer: Code A = {not True and False} (not True = False, then False and False = False)")
-print(f"         Code B = {not (True and False)} (True and False = False, then not False = True)")
+print("Answer: Code A =", not True and False, "(not True = False, then False and False = False)")
+print("         Code B =", not (True and False), "(True and False = False, then not False = True)")
 print("  The brackets change EVERYTHING — precedence matters!")
 score += 1
 print()
 
-print(f"Score: {score} / 6")
+print("Score:", score, "/ 6")
 print("Great focus work! Operators differ by just one character — always read carefully.")

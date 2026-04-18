@@ -8,7 +8,7 @@
 
 score = 0
 
-print("=== Count the Iterations ===")
+print("--- Count the Iterations ---")
 print("How many times does the loop body run?")
 print()
 
@@ -71,6 +71,6 @@ print("Answer: 4  (i=0,1,2,3 → prints 4 times, then i=4 breaks)")
 if answer.strip() == "4": score += 1
 print()
 
-print(f"Score: {score} / 7")
+print("Score:", score, "/ 7")
 print()
 print("Quick formula: range(start, stop, step) → (stop - start) / step iterations")

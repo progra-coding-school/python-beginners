@@ -8,7 +8,7 @@
 
 score = 0
 
-print("=== Operator Memory Recall ===")
+print("--- Operator Memory Recall ---")
 print("Answer from memory — no peeking at notes!")
 print()
 
@@ -97,11 +97,11 @@ else:
 print()
 
 # Final summary
-print("═" * 40)
-print(f"Memory Recall Score: {score} / 8")
+print("-" * 40)
+print("Memory Recall Score:", score, "/ 8")
 print()
 print("Quick Reference:")
-print("  ** → power      // → floor div   % → remainder")
-print("  == → equal      != → not equal")
-print("  and → both True  or → one True   not → flip it")
-print("═" * 40)
+print("  ** -> power      // -> floor div   % -> remainder")
+print("  == -> equal      != -> not equal")
+print("  and -> both True  or -> one True   not -> flip it")
+print("-" * 40)

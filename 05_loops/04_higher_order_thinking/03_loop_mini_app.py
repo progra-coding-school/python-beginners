@@ -18,10 +18,10 @@ days_completed = 0
 def take_attendance():
     global days_completed
     days_completed += 1
-    print(f"\n--- Day {days_completed} Attendance ---")
+    print("\n--- Day " + str(days_completed) + " Attendance ---")
     for student in students:
         while True:
-            status = input(f"  {student} (P/A): ").upper()
+            status = input("  " + student + " (P/A): ").upper()
             if status in ["P", "A"]:
                 break
             print("  Please enter P (Present) or A (Absent)")
@@ -34,7 +34,7 @@ def show_today():
     if days_completed == 0:
         print("No attendance taken yet.")
         return
-    print(f"\n--- Attendance for Day {days_completed} ---")
+    print("\n--- Attendance for Day " + str(days_completed) + " ---")
     for student in students:
         status = attendance[student][-1]
         label = "Present" if status == "P" else "Absent"
@@ -44,7 +44,7 @@ def show_summary():
     if days_completed == 0:
         print("No attendance taken yet.")
         return
-    print(f"\n--- Attendance Summary ({days_completed} days) ---")
+    print("\n--- Attendance Summary (" + str(days_completed) + " days) ---")
     print(f"  {'Name':12} {'Present':8} {'Absent':8} {'%':6}")
     print("  " + "-" * 38)
     for student in students:
@@ -60,17 +60,17 @@ def find_absentees():
     if days_completed == 0:
         print("No attendance taken yet.")
         return
-    print(f"\n--- Absentees on Day {days_completed} ---")
+    print("\n--- Absentees on Day " + str(days_completed) + " ---")
     found = False
     for student in students:
         if attendance[student][-1] == "A":
-            print(f"  {student} was absent.")
+            print("  " + student + " was absent.")
             found = True
     if not found:
         print("  Full attendance today!")
 
 def show_menu():
-    print("\n=== Menu ===")
+    print("\n--- Menu ---")
     print("1. Take today's attendance")
     print("2. Show today's attendance")
     print("3. Summary report")

@@ -6,7 +6,7 @@
 # CLASS  = the blueprint / template (defined once)
 # OBJECT = a specific instance created from the blueprint (can make many)
 
-print("=== The Blueprint Analogy ===")
+print("--- The Blueprint Analogy ---")
 print("  Class  → ID card DESIGN (one design, used for everyone)")
 print("  Object → each student's ACTUAL printed ID card")
 print()
@@ -22,10 +22,10 @@ class IDCard:
         self.grade   = grade
 
     def display(self):
-        print(f"  [{IDCard.school}]  {self.name}  |  Roll: {self.roll_no}  |  Grade {self.grade}")
+        print(" [" + IDCard.school + "] ", self.name, " | Roll:", self.roll_no, " | Grade", self.grade)
 
 # --- Many objects from the same blueprint ---
-print("=== Printing ID Cards (creating objects) ===")
+print("--- Printing ID Cards (creating objects) ---")
 card1 = IDCard("Aarav",   101, 7)
 card2 = IDCard("Diya",    102, 6)
 card3 = IDCard("Karthik", 103, 8)
@@ -37,15 +37,15 @@ card3.display()
 print()
 
 # --- Class vs instance: what's shared vs unique ---
-print("=== What is shared vs unique ===")
-print(f"School name (class attr)  : {IDCard.school}")       # same for all
-print(f"card1 name (instance attr): {card1.name}")           # unique to card1
-print(f"card2 name (instance attr): {card2.name}")           # unique to card2
+print("--- What is shared vs unique ---")
+print("School name (class attr)  :", IDCard.school)       # same for all
+print("card1 name (instance attr):", card1.name)           # unique to card1
+print("card2 name (instance attr):", card2.name)           # unique to card2
 
 print()
 
 # --- Changing a class attribute affects ALL objects ---
-print("=== Class attribute change affects all ===")
+print("--- Class attribute change affects all ---")
 IDCard.school = "Progra Thinkers Lab"
 card1.display()
 card2.display()
@@ -54,7 +54,7 @@ card3.display()
 print()
 
 # --- Changing an instance attribute affects ONLY that object ---
-print("=== Instance attribute change affects only one ===")
+print("--- Instance attribute change affects only one ---")
 card1.grade = 8     # Aarav promoted
 card1.display()
 card2.display()     # Diya unchanged

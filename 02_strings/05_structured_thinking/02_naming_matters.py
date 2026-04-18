@@ -3,21 +3,13 @@
 # Cognitive Skill: Structured Thinking (Naming conventions)
 # Topic: Strings in Python
 
-# ============================================================
 # PROBLEM STATEMENT:
 # Aarav and Mani both wrote programs to display student info.
 # Aarav used proper names. Mani used short, confusing names.
 # Let's compare — and see WHY naming matters!
-# ============================================================
 
-print("=" * 55)
-print("  NAMING MATTERS — CLEAR CODE vs CONFUSING CODE!")
-print("=" * 55)
-
-# -------------------------------------------------------
 # MANI'S CODE — Hard to read, short names
-# -------------------------------------------------------
-print("\n--- MANI'S CODE (Confusing) ---")
+print("--- MANI'S CODE (Confusing) ---")
 
 n  = "aarav sharma"
 s  = "progra python beginners"
@@ -30,16 +22,14 @@ sn = s.strip().title()
 print("  " + fn + " | " + sn + " | " + b.title() + " | " + c.title() + " | " + g.title())
 
 print("""
-  ❌ Problems with Mani's code:
+  Problems with Mani's code:
      - What is 'n'? 's'? 'b'? 'c'? 'g'?
      - What do 'fn' and 'sn' mean?
      - You have to GUESS what each name holds
      - Hard to read and fix later
 """)
 
-# -------------------------------------------------------
 # AARAV'S CODE — Proper names, clear purpose
-# -------------------------------------------------------
 print("--- AARAV'S CODE (Clear and Readable) ---")
 
 student_name  = "aarav sharma"
@@ -54,19 +44,15 @@ formatted_course = course_name.strip().title()
 print("  " + formatted_name + " | " + formatted_course + " | " + batch_time.title() + " | " + student_city.title() + " | " + student_grade.title())
 
 print("""
-  ✅ Benefits of Aarav's code:
+  Benefits of Aarav's code:
      - Each name tells you exactly what it stores
      - Anyone can read it — even someone new to the project
      - Easy to find and fix bugs
      - Professional code style
 """)
 
-# -------------------------------------------------------
 # NAMING RULES FOR STRING DATA
-# -------------------------------------------------------
-print("=" * 55)
-print("  STRING NAMING RULES:")
-print("=" * 55)
+print("STRING NAMING RULES:")
 print()
 
 # Comparing BAD vs GOOD names
@@ -92,9 +78,7 @@ print("  2. Be descriptive   → welcome_message (not wm or x)")
 print("  3. Match the purpose → cleaned_name, raw_name (show the state)")
 print("  4. No single letters → except i, j in loops (convention)")
 
-# -------------------------------------------------------
 # INTERACTIVE: How good is YOUR naming?
-# -------------------------------------------------------
 print("\n--- YOUR TURN: Name These! ---")
 print()
 print("What would YOU name the data that stores:")
@@ -108,16 +92,12 @@ prompts = [
 
 for prompt in prompts:
     user_var = input("  → " + prompt + ": ").strip()
-    print("     You said: '" + user_var + "'  ✅\n")
+    print("     You said: '" + user_var + "'\n")
 
-print("=" * 55)
-print("  Good naming = self-documenting code!")
-print("  The best code reads almost like English sentences.")
-print("=" * 55)
+print("Good naming = self-documenting code!")
+print("The best code reads almost like English sentences.")
 
-# ============================================================
 # REFLECTION:
 # 1. Why does naming matter if the program runs either way?
 # 2. What naming convention does Python recommend? (snake_case)
 # 3. Can you rename all of Mani's names in your notebook?
-# ============================================================

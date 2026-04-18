@@ -44,24 +44,24 @@ def print_batting_card(name, fours, sixes, singles, balls_faced):
     strike_rate = calculate_strike_rate(runs, balls_faced)
     label = get_batting_label(runs)
 
-    print(f"\n--- Batting: {name} ---")
-    print(f"  4s: {fours}  6s: {sixes}  Singles: {singles}")
-    print(f"  Total Runs:   {runs}")
-    print(f"  Balls Faced:  {balls_faced}")
-    print(f"  Strike Rate:  {strike_rate}")
-    print(f"  Achievement:  {label}")
+    print("\n--- Batting:", name, "---")
+    print("  4s:", fours, " 6s:", sixes, " Singles:", singles)
+    print("  Total Runs:  ", runs)
+    print("  Balls Faced: ", balls_faced)
+    print("  Strike Rate: ", strike_rate)
+    print("  Achievement: ", label)
 
 def print_bowling_card(name, wickets, runs_given, overs_bowled):
     economy = calculate_bowling_economy(runs_given, overs_bowled)
     rating = get_bowling_rating(economy)
 
-    print(f"\n--- Bowling: {name} ---")
-    print(f"  Wickets: {wickets}  Runs Given: {runs_given}  Overs: {overs_bowled}")
-    print(f"  Economy:  {economy}")
-    print(f"  Rating:   {rating}")
+    print("\n--- Bowling:", name, "---")
+    print("  Wickets:", wickets, " Runs Given:", runs_given, " Overs:", overs_bowled)
+    print("  Economy: ", economy)
+    print("  Rating:  ", rating)
 
 # --- Input and display ---
-print("=== Cricket Stats Calculator ===")
+print("--- Cricket Stats Calculator ---")
 print()
 
 print("BATTING STATS")

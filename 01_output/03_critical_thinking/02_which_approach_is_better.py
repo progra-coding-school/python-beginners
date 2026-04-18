@@ -6,9 +6,7 @@ name  = "Aarav"
 age   = 13
 score = 87.5
 
-# =========================================================
 # Scenario 1: Displaying student info
-# =========================================================
 print("Scenario 1: Displaying student info:")
 
 # Approach A: Concatenation with + — full control over every character and space
@@ -21,9 +19,7 @@ print("Both work! A gives you full control over spacing.")
 print("Comma (,) is quicker but always adds a space after each item.")
 print()
 
-# =========================================================
 # Scenario 2: Displaying a table row
-# =========================================================
 print("Scenario 2: Displaying a table row:")
 
 subject = "Maths"
@@ -39,9 +35,7 @@ print("  " + subject.ljust(15) + str(marks).rjust(5) + "     " + grade.rjust(5))
 print("Best: B — .ljust() and .rjust() align columns neatly for any content length.")
 print()
 
-# =========================================================
 # Scenario 3: Multiline output
-# =========================================================
 print("Scenario 3: Printing a poem:")
 
 # Approach A: Multiple print() — clearest for beginners; easy to read and edit
@@ -67,9 +61,7 @@ print("A is clearest for beginners.")
 print("C is cleanest for long text.")
 print()
 
-# =========================================================
 # Decision Guide
-# =========================================================
 print("When to use which?")
 print("Comma (,)    → quick mixing of values, adds space automatically")
 print("Plus (+)     → joining strings, needs str() for numbers")

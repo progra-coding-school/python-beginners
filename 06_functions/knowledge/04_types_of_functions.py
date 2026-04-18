@@ -5,7 +5,7 @@
 
 # Functions come in 4 patterns based on parameters and return values.
 
-print("=== Type 1: No parameters, No return ===")
+print("--- Type 1: No parameters, No return ---")
 # Just does a task — like an announcement
 def show_welcome():
     print("Welcome to Progra Coding School!")
@@ -14,11 +14,11 @@ def show_welcome():
 show_welcome()
 print()
 
-print("=== Type 2: With parameters, No return ===")
+print("--- Type 2: With parameters, No return ---")
 # Takes input, does something, but gives nothing back
 def show_report(name, marks):
-    print(f"Student: {name}")
-    print(f"Marks:   {marks}/100")
+    print("Student:", name)
+    print("Marks:  ", str(marks) + "/100")
     if marks >= 35:
         print("Result:  PASS")
     else:
@@ -27,7 +27,7 @@ def show_report(name, marks):
 show_report("Aarav", 85)
 print()
 
-print("=== Type 3: No parameters, With return ===")
+print("--- Type 3: No parameters, With return ---")
 # Generates and returns something without needing input
 def get_school_name():
     return "Progra Kids Coding School"
@@ -36,7 +36,7 @@ school = get_school_name()
 print("School:", school)
 print()
 
-print("=== Type 4: With parameters, With return ===")
+print("--- Type 4: With parameters, With return ---")
 # The most useful pattern — takes input, gives back a calculated result
 def calculate_grade(marks):
     if marks >= 90:

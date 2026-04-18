@@ -8,7 +8,7 @@
 
 # --- ARITHMETIC OPERATORS ---
 # Used for math calculations
-print("=== Arithmetic Operators ===")
+print("--- Arithmetic Operators ---")
 print(10 + 3)    # Addition → 13
 print(10 - 3)    # Subtraction → 7
 print(10 * 3)    # Multiplication → 30
@@ -19,7 +19,7 @@ print(10 ** 3)   # Exponentiation → 1000 (10³)
 
 # --- COMPARISON OPERATORS ---
 # Used to compare two values → always gives True or False
-print("\n=== Comparison Operators ===")
+print("--- Comparison Operators ---")
 print(10 == 10)  # Equal → True
 print(10 != 5)   # Not equal → True
 print(10 > 5)    # Greater than → True
@@ -29,7 +29,7 @@ print(10 <= 5)   # Less or equal → False
 
 # --- LOGICAL OPERATORS ---
 # Used to combine conditions → gives True or False
-print("\n=== Logical Operators ===")
+print("--- Logical Operators ---")
 print(True and True)   # Both must be True → True
 print(True and False)  # One is False → False
 print(True or False)   # At least one True → True

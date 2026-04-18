@@ -23,11 +23,11 @@ def process_student_BAD(name, m, s, e):
     else:
         result = "FAIL"
     # prints the report
-    print(f"Student: {name}")
-    print(f"Total: {total}, Average: {avg:.1f}")
-    print(f"Grade: {grade}, Result: {result}")
+    print("Student:", name)
+    print("Total: " + str(total) + ", Average: " + str(round(avg, 1)))
+    print("Grade: " + grade + ", Result: " + result)
 
-print("=== BAD approach (one giant function) ===")
+print("--- BAD approach (one giant function) ---")
 process_student_BAD("Aarav", 85, 72, 90)
 print("Problem: Can't reuse just the grade logic, can't test pieces separately.")
 print()
@@ -53,16 +53,16 @@ def show_report(name, m, s, e):
     grade   = get_grade(average)
     result  = "PASS" if has_passed(m, s, e) else "FAIL"
 
-    print(f"Student: {name}")
-    print(f"Total: {total}, Average: {average:.1f}")
-    print(f"Grade: {grade}, Result: {result}")
+    print("Student:", name)
+    print("Total: " + str(total) + ", Average: " + str(round(average, 1)))
+    print("Grade: " + grade + ", Result: " + result)
 
-print("=== GOOD approach (one job per function) ===")
+print("--- GOOD approach (one job per function) ---")
 show_report("Aarav", 85, 72, 90)
 print()
 
 # Benefits of the One Job Rule:
-print("=== Why One Job? ===")
+print("--- Why One Job? ---")
 print("1. REUSE: Use get_grade() for ANY student without the whole report")
 print("2. TEST: Test each function separately to find bugs easily")
 print("3. READ: Code reads like English — each function name tells a story")
@@ -74,7 +74,7 @@ marks_list = [92, 45, 73, 28, 88]
 print("Grades for different mark values:")
 for m in marks_list:
     avg = calc_average(m, 1)   # treat single mark as average
-    print(f"  {m} → {get_grade(avg)}")
+    print(" ", m, "→", get_grade(avg))
 
 # Think:
 # 1. Look at process_student_BAD — how many 'jobs' does it do?

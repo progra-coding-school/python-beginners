@@ -12,11 +12,11 @@
 #   Cannot divide by zero
 #   10 / 5 = 2.0
 
-print("=== Challenge 1 ===")
+print("--- Challenge 1 ---")
 print("Target output above ↑")
 for b in [2, 0, 5]:
     try:
-        print(f"  10 / {b} = {10/b:.1f}")
+        print("  10 /", b, "=", round(10 / b, 1))
     except ZeroDivisionError:
         print("  Cannot divide by zero")
 
@@ -29,14 +29,14 @@ print()
 #   '0' → 0
 #   '3.5' → invalid
 
-print("=== Challenge 2 ===")
+print("--- Challenge 2 ---")
 print("Target: parse ints, label others 'invalid'")
 inputs = ["85", "abc", "0", "3.5"]
 for s in inputs:
     try:
-        print(f"  '{s}' → {int(s)}")
+        print("  '" + s + "' →", int(s))
     except ValueError:
-        print(f"  '{s}' → invalid")
+        print("  '" + s + "' → invalid")
 
 print()
 
@@ -45,7 +45,7 @@ print()
 #   Sum of valid numbers: 18
 #   Skipped 2 invalid entries
 
-print("=== Challenge 3 ===")
+print("--- Challenge 3 ---")
 print("Target: sum valid numbers, count skipped")
 data = ["5", "abc", "8", "?", "5"]
 total   = 0
@@ -55,8 +55,8 @@ for item in data:
         total += int(item)
     except ValueError:
         skipped += 1
-print(f"  Sum of valid numbers: {total}")
-print(f"  Skipped {skipped} invalid entries")
+print("  Sum of valid numbers:", total)
+print("  Skipped", skipped, "invalid entries")
 
 print()
 
@@ -66,14 +66,14 @@ print()
 #   Riya's marks: Not found
 #   try/except done
 
-print("=== Challenge 4 ===")
+print("--- Challenge 4 ---")
 print("Target: safe dict lookup with finally")
 marks = {"Aarav": 85, "Diya": 92}
 for name in ["Aarav", "Riya"]:
     try:
-        print(f"  {name}'s marks: {marks[name]}")
+        print("  " + name + "'s marks:", marks[name])
     except KeyError:
-        print(f"  {name}'s marks: Not found")
+        print("  " + name + "'s marks: Not found")
     finally:
         print("  try/except done")
     print()

@@ -4,7 +4,7 @@
 # Topic: Data Types in Python
 
 # Good variable names should hint at their type.
-print("=== Good Naming Practices by Type ===\n")
+print("--- Good Naming Practices by Type ---\n")
 
 # INTEGERS — names suggest counting or whole quantities
 student_count = 35
@@ -28,20 +28,20 @@ can_vote = False
 is_above_average = True
 
 print("Count variables (int):")
-print(f"  student_count = {student_count}")
-print(f"  total_runs = {total_runs}")
+print("  student_count =", student_count)
+print("  total_runs =", total_runs)
 
 print("\nMeasurement variables (float):")
-print(f"  average_temperature = {average_temperature}")
-print(f"  price_per_kg = {price_per_kg}")
+print("  average_temperature =", average_temperature)
+print("  price_per_kg =", price_per_kg)
 
 print("\nText variables (str):")
-print(f"  student_name = {student_name}")
-print(f"  city_name = {city_name}")
+print("  student_name =", student_name)
+print("  city_name =", city_name)
 
 print("\nYes/No variables (bool):")
-print(f"  is_registered = {is_registered}")
-print(f"  has_paid = {has_paid}")
+print("  is_registered =", is_registered)
+print("  has_paid =", has_paid)
 
 # BAD names — avoid these!
 # x = 13             # What is x?

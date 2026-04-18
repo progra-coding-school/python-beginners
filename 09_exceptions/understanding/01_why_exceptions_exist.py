@@ -7,7 +7,7 @@
 # WITH exceptions: you write the happy path, catch errors separately.
 
 # --- Problem: Safe division without exceptions ---
-print("=== WITHOUT exceptions — checking everything manually ===")
+print("--- WITHOUT exceptions — checking everything manually ---")
 
 def divide_manual(a, b):
     if not isinstance(a, (int, float)):
@@ -28,7 +28,7 @@ print("For complex programs this becomes impossible to do completely.")
 print()
 
 # --- Same logic WITH exceptions ---
-print("=== WITH exceptions — clean and complete ===")
+print("--- WITH exceptions — clean and complete ---")
 
 def divide_exceptions(a, b):
     try:
@@ -48,7 +48,7 @@ print("Python tells you WHAT went wrong, not just 'something failed'.")
 print()
 
 # --- Exceptions separate normal flow from error flow ---
-print("=== Separation of concerns ===")
+print("--- Separation of concerns ---")
 print("Normal logic  → inside try")
 print("Error handling → inside except")
 print("Cleanup        → inside finally")
@@ -60,7 +60,7 @@ print("and error handling as a clearly labelled afterthought.")
 print()
 
 # --- Real-world: ATM machine ---
-print("=== Real-world: ATM withdrawal ===")
+print("--- Real-world: ATM withdrawal ---")
 balance = 500
 
 def withdraw(amount):
@@ -68,9 +68,9 @@ def withdraw(amount):
         amount = int(amount)
         if amount > balance:
             raise ValueError("Insufficient balance")
-        print(f"  Dispensing Rs.{amount}. Remaining: Rs.{balance - amount}")
+        print("  Dispensing Rs." + str(amount) + ". Remaining: Rs." + str(balance - amount))
     except ValueError as e:
-        print(f"  Transaction failed: {e}")
+        print("  Transaction failed:", e)
     except TypeError:
         print("  Please enter a valid number.")
 

@@ -9,7 +9,7 @@
 score = 0
 
 # --- Bug 1 ---
-print("=== Bug 1 ===")
+print("--- Bug 1 ---")
 print("""
   # Check if a student passed (marks >= 35)
   marks = 72
@@ -23,7 +23,7 @@ print("Correct: if marks >= 35:")
 print()
 
 # --- Bug 2 ---
-print("=== Bug 2 ===")
+print("--- Bug 2 ---")
 print("""
   # Split Rs.100 equally among 3 friends
   money = 100
@@ -40,7 +40,7 @@ print("Bonus: 100 % 3 = 1 (Rs.1 is leftover — who keeps it?)")
 print()
 
 # --- Bug 3 ---
-print("=== Bug 3 ===")
+print("--- Bug 3 ---")
 print("""
   # Check if number is even
   number = 8
@@ -54,7 +54,7 @@ print("Fix: if number % 2 == 0:")
 print()
 
 # --- Bug 4 ---
-print("=== Bug 4 ===")
+print("--- Bug 4 ---")
 print("""
   # Calculate total cost with 10% discount
   price = 200
@@ -70,5 +70,5 @@ print("  But some write: price * (10/100) — same result here, but risky with i
 print("Best practice: discount = price * 0.1  OR  (price * 10) // 100")
 print()
 
-print(f"Critical Thinking complete!")
+print("Critical Thinking complete!")
 print("Remember: = assigns, == compares. / gives float, // gives int.")

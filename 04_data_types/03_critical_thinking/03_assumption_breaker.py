@@ -4,7 +4,7 @@
 # Topic: Data Types in Python
 
 # Challenge common assumptions about data types.
-print("=== Assumption Breaker ===\n")
+print("--- Assumption Breaker ---\n")
 
 # Assumption 1: "If it looks like a number, it IS a number"
 print("--- Assumption 1 ---")

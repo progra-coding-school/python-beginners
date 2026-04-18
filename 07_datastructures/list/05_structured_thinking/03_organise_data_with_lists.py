@@ -17,7 +17,7 @@ teams    = ["Red",  "Blue", "Red", "Green", "Blue",  "Green"]
 # students[0]="Riya" → teams[0]="Red" → Riya is in Red team
 
 print("Student        Team")
-print("-" * 25)
+print("-------------------------")
 for i in range(len(students)):
     print("  " + students[i].ljust(14) + teams[i])
 print()
