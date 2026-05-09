@@ -1,5 +1,0 @@
-print("Hello World")
-print(5+10)
-print(5*10)
-print(10/2)
-print(10-3)

@@ -1,7 +1,5 @@
-print("Hello World")
-
+# Computer Displays or shows
 # print() means tell the computer to show something in teh screen
 
-print("My name is Daniel")
-# print("I love games")
-# print("Python is awesome!")
+print("Hello Madhav")
+
