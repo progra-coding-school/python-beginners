@@ -1,5 +1,8 @@
-my_name=input("Please enter your name:")
-print("My name is",my_name)
+myname="Daniel"
+print("My name is",myname)
 
-my_age=input("Please enter your age:")
-print("My age is :",my_age)
+myage=44
+print("My age is",myage)
+
+mygrade=11
+print("My grade is",mygrade)

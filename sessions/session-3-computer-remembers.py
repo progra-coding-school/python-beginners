@@ -10,7 +10,7 @@ print("My name is", myname)
 myage = 10
 print("My age is", myage)
 
-mygrade = "5"
+mygrade = 5
 print("My grade is", mygrade)
 
 myschool = "ABC School"

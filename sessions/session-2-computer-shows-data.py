@@ -1,5 +1,5 @@
-print("My name is Aanya")
-print("My age is 8")
+print("My name is Daniel")
+print("My age is 44")
 print("My grade is 3")
 print("My school name is Sunshine School")
 print("My friends names are Riya, Arjun, Kavin")

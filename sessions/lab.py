@@ -1,9 +1,7 @@
-name = "Katherine"
-print ("my name is", name)
-
-myage=10
-print("My age is",myage)
-
-
-myname="janyuktha"
-print("my name is",myname)
+"variables"
+name="Daniel"
+print("My name is",name)
+age=44
+print("My age is ",age)
+grade=6
+print("My grade is ",grade)
