@@ -6,3 +6,6 @@ print(type(avg))
 
 name:int="Daniel"
 print(type(name))
+
+is_raining:bool=True
+print(type(is_raining))
