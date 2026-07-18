@@ -1,10 +1,10 @@
 age:int=10
 print(type(age))
 
-avg:int=10.56
+avg:float=10.56
 print(type(avg))
 
-name:int="Daniel"
+name:str="Daniel"
 print(type(name))
 
 is_raining:bool=True

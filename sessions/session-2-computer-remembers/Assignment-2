@@ -1,0 +1,33 @@
+📅 06-Jun-2026
+
+📘 Assignment – 2
+
+🎯 Objective:
+Write a Python program to display 10 lines about your favourite leader using variables.
+
+📝 Instructions:
+
+1. Choose your favourite leader.
+2. Create variables to store information about the leader.
+3. Use `print()` statements to display the information.
+4. Display at least 10 lines.
+
+📌 Example Output:
+
+Name: Dr. A.P.J. Abdul Kalam
+Born: 15 October 1931
+Country: India
+Profession: Scientist
+Known As: Missile Man of India
+Award: Bharat Ratna
+Dream: Developed India
+Quality: Hardworking
+Inspiration: Millions of Students
+Favourite Quote: Dream, Dream, Dream
+
+💾 Submission:
+• Save the file as `assignment2-yourname.py`
+• Example: `assignment2-rahul.py`
+• Run the program and verify the output.
+
+✅ This assignment will help you practice *variables* and *print()* statements in Python.

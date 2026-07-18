@@ -16,7 +16,7 @@ print("Type:", type(colours))
 print()
 
 # --- Tuple with different data types ---
-student = ("Aarav", 13, 7, True)     # name, age, grade, active
+student = ("Aarav", 13, 7.0, True)     # name, age, grade, active
 print("Student:", student)
 
 print()

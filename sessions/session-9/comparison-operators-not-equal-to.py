@@ -1,0 +1,6 @@
+print(10!=5)
+print(10!=10)
+print('a'!='a')
+print('a'!='b')
+print("daniel"!="daniel")
+print("e"!="E")

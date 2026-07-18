@@ -1,0 +1,37 @@
+📘 Assignment: Shopping Bill Calculator
+
+🎯 Objective:
+Write a Python program to calculate the total bill for 3 products.
+
+📝 Instructions:
+
+1. Ask the user to enter the name, price, and quantity of Product 1.
+2. Ask the user to enter the name, price, and quantity of Product 2.
+3. Ask the user to enter the name, price, and quantity of Product 3.
+4. Calculate the total cost of each product using:
+   Total Cost = Price × Quantity
+5. Calculate the Grand Total by adding the total costs of all 3 products.
+6. Display a neat shopping bill showing:
+
+   * Product Name
+   * Total Cost of each product
+   * Grand Total
+
+💡 Example Products:
+
+ Notebook
+ Pen
+ Pencil
+
+💾 Submission:
+• Save the file as `shopping-bill-calculator-yourname.py`
+• Example: `shopping-bill-calculator-rahul.py`
+• Run the program and verify the output.
+
+✅ This assignment will help you practice:
+
+* Variables
+* `input()`
+* Typecasting (`int` and `float`)
+* Arithmetic Operations (`+` and `*`)
+* `print()` Statements
