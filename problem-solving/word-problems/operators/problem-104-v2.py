@@ -6,9 +6,6 @@ and its cargo weighs 900 kg. Check if the bridge can
 '''
 
 
-
-
-
 bridge_limit = 2500
 truck_weight = 1800
 cargo_weight = 900

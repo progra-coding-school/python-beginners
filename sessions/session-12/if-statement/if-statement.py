@@ -1,9 +1,12 @@
 
-day="monday"
+day="friday"
 if day=="saturday":
-    print("Inside if statement")
     print("Today we will be having coding class")
-    print("I will be enjoying the coding class")
 
-print("Outside if statement")
+
+
+# age=17
+# if age!=18:
+#     print("You are eligible to vote")
+
 
