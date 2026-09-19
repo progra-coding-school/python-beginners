@@ -1,5 +1,5 @@
 fruits = {"mango", "banana", "apple", "banana", "mango"}
-print("Fruits set:", fruits)
+print(fruits)
 
 #Get the number of items
 print(len(fruits))
@@ -13,7 +13,5 @@ fruits.remove("guava")
 print("Fruits set:", fruits)
 
 #remove
-fruits.discard("apple")
-print("Fruits set:", fruits)
-fruits.remove("guava")
+fruits.discard("grapes")
 print("Fruits set:", fruits)
