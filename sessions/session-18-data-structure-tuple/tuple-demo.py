@@ -1,12 +1,9 @@
+#Tuples
+
 games=("cricket","football","hockey","volleyball","Kabadi")
 
-#Slicing
-print(games[1:3])
-print(games[1:4])
-print(games[1:5])
-
 #Display
-#print(games)
+print(games)
 
 #Access
 print(games[1])
@@ -30,5 +27,10 @@ print(student)
 #
 #No Update as it immutable
 #games[0]="Chess"
+
+#Slicing
+print(games[1:3])
+print(games[1:4])
+print(games[1:5])
 
 
