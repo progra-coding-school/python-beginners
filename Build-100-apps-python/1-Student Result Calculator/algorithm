@@ -1,0 +1,24 @@
+Students Result Calculator
+
+Step 1: Get the name of the student
+Step 2: Get the maths mark
+Step 3: Get the science mark
+Step 4: Get the english mark
+Step 5: Get the total mark (Using addition operator)
+Step 6: Get the average (total/3)
+Step 7: Check if any of the subject is below 35 marks then its fail and grade "F"
+Step 8: Check if average >=90 means A+
+Step 9: Check if average >=80 means A
+Step 10: Check if average >=70 means B
+Step 11: Check if average >=60 means C
+Step 12: Check if average <=50 means D
+Step 13: Display the name,total, average, grade, Pass/Fail
+
+Ashrith: Completed
+Saashwin:Completed
+Viyan:Completed
+Janyukta:Inprogress
+Effren:Inprogress
+Frankin:Inprogress
+
+

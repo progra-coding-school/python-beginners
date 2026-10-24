@@ -3,7 +3,7 @@
 
 
 # Explanation
-myname = "Arun"
+myname = "Daniel"
 print("My name is", myname)
 
 # Assignment
@@ -16,7 +16,7 @@ print("My grade is", mygrade)
 myschool = "ABC School"
 print("My school name is", myschool)
 
-myfriends = "Ravi, Kiran"
+myfriends = "Ravi, Kiran, Haniel"
 print("My friends names are", myfriends)
 
 myfavouritefood = "Pizza"

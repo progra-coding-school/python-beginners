@@ -1,0 +1,24 @@
+## 🧮 Algorithm: Student Grade Calculator
+
+1. **Start**
+2. Create a function `calculate_total()` to calculate the total of 3 subject marks.
+3. Create a function `calculate_average()` to calculate the average marks.
+4. Create a function `grade_finder()` to control the program.
+5. Inside `grade_finder()`, get the marks for **Subject 1** and convert them to an integer.
+6. Get the marks for **Subject 2** and convert them to an integer.
+7. Get the marks for **Subject 3** and convert them to an integer.
+8. Call `calculate_total()` with the three marks.
+9. Call `calculate_average()` using the total marks.
+10. Use `if-elif-else` to find the grade:
+
+* If average is **greater than or equal to 90** → Grade **A**
+* Else if average is **greater than or equal to 75** → Grade **B**
+* Else if average is **greater than or equal to 60** → Grade **C**
+* Else if average is **greater than or equal to 40** → Grade **D**
+* Else → Grade **F**
+
+11. Display the **total marks**.
+12. Display the **average marks**.
+13. Display the **grade**.
+14. Call the `grade_finder()` function.
+15. **Stop**.

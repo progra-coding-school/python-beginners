@@ -130,20 +130,20 @@ let tripleShots = 0, freezeActive = false, megaBlast = 0;
 // Upgrades structure (saved)
 let upgrades = {
   speed: { level:1, max:5, costs:[100,150,250,400,600], values:[1,1.15,1.3,1.45,1.65] },
-  damage:{ level:1, max:5, costs:[120,170,260,420,650], values:[12,15,18,22,28] },
-  firerate:{ level:1, max:5, costs:[80,130,200,320,500], values:[0.22,0.18,0.14,0.10,0.07] },
-  health:{ level:1, max:5, costs:[100,150,250,380,600], values:[100,130,160,200,250] },
-  shield:{ level:1, max:5, costs:[90,140,200,300,450], values:[50,70,90,120,150] },
-  fuel:{ level:1, max:5, costs:[60,110,180,260,400], values:[1,0.9,0.78,0.65,0.55] }
+  damage:{ level:1, max:50000, costs:[120,170,260,420,650], values:[12,15,18,22,28] },
+  firerate:{ level:1, max:50000, costs:[80,130,200,320,500], values:[0.22,0.18,0.14,0.10,0.07] },
+  health:{ level:1, max:50000, costs:[100,150,250,380,600], values:[100,130,160,200,250] },
+  shield:{ level:1, max:50000, costs:[90,140,200,300,450], values:[50,70,90,120,150] },
+  fuel:{ level:1, max:50000, costs:[60,110,180,260,400], values:[1,0.9,0.78,0.65,0.55] }
 };
 
 // Shop definitions
 let shopItems = [
-  { name: "Fuel Cell", cost: 30, category:"Resources", description: "Refuels +20" },
-  { name: "Shield Core", cost: 60, category:"Upgrades", description: "Permanent +20 shield" },
-  { name: "Triple Shot Module", cost: 120, category:"Weapons", description: "Unlock triple-shot" },
-  { name: "Mega Blast", cost: 200, category:"Weapons", description: "Unlock mega-blast" },
-  { name: "Hull Upgrade", cost: 80, category:"Upgrades", description: "+25 Max HP" }
+  { name: "Fuel Cell", cost: 3, category:"Resources", description: "Refuels +20" },
+  { name: "Shield Core", cost: 6, category:"Upgrades", description: "Permanent +20 shield" },
+  { name: "Triple Shot Module", cost: 12, category:"Weapons", description: "Unlock triple-shot" },
+  { name: "Mega Blast", cost: 20, category:"Weapons", description: "Unlock mega-blast" },
+  { name: "Hull Upgrade", cost: 8, category:"Upgrades", description: "+25 Max HP" }
 ];
 
 // Black market and rare shop
@@ -160,7 +160,7 @@ let rareShop = {
   items:[
     {name:"Quantum Reactor", cost:900, category:"Upgrades", desc:"Massive power boost"},
     {name:"Dark Matter Shells", cost:700, category:"Weapons", desc:"Bullet damage x3"},
-    {name:"Warp Lens", cost:1000, category:"Upgrades", desc:"Faster map travel"}
+    {name:"Warp Lens", cost:1000 category:"Upgrades", desc:"Faster map travel"}
   ],
   active:[]
 };

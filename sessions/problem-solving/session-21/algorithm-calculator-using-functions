@@ -1,0 +1,20 @@
+## 🧮 Algorithm: Calculator Using Python Functions
+
+1. Start
+2. Create a function `add()` to add two numbers.
+3. Create a function `subtract()` to subtract two numbers.
+4. Create a function `multiply()` to multiply two numbers.
+5. Create a function `divide()` to divide two numbers.
+6. Create the `calculator()` function.
+7. Get the **first number** from the user and convert it to an integer.
+8. Get the **second number** from the user and convert it to an integer.
+9. Ask the user to enter the **operation** they want to perform.
+10. Check the operation using `if-elif-else`.
+11. If the operation is `+`, call the `add()` function.
+12. If the operation is `-`, call the `subtract()` function.
+13. If the operation is `*`, call the `multiply()` function.
+14. If the operation is `/`, call the `divide()` function.
+15. Display the result returned by the function.
+16. If the user enters an invalid operation, display **"Invalid Operation"**.
+17. Call the `main()` function.
+18. **Stop**.

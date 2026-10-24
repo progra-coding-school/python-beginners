@@ -1,0 +1,31 @@
+
+ Algorithm: Personal Expense Tracker Using Functions
+
+Step 1: Define a function to get the user's name and budget.
+
+Step 2: Call the function and get the user's name and budget.
+
+Step 3: Define a function to get an expense category and amount.
+
+Step 4: Call the expense function to get the first expense category and amount.
+
+Step 5: Call the expense function to get the second expense category and amount.
+
+Step 6: Call the expense function to get the third expense category and amount.
+
+Step 7: Define a function to calculate the total expenses (Using addition operator).
+
+Step 8: Call the calculation function and get the total expenses.
+
+Step 9: Define a function to display the expense report.
+
+Step 10: Calculate the remaining budget (budget − total expenses).
+
+Step 11: Check if total expenses are greater than the budget. If yes, display "Budget Exceeded".
+
+Step 12: Otherwise, display "Within Budget".
+
+Step 13: Display the user's name, budget, all three expense categories and amounts, total expenses, remaining budget, and budget status.
+
+Step 14: Call the report function to display the final expense report.
+
