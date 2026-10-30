@@ -6,7 +6,6 @@ def get_student_details():
     maths = int(input("Enter Maths marks: "))
     science = int(input("Enter Science marks: "))
     english = int(input("Enter English marks: "))
-
     return name, maths, science, english
 
 

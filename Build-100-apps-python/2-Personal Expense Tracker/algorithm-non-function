@@ -1,0 +1,33 @@
+### Algorithm: Personal Expense Tracker (Without Functions)
+
+Step 1: Get the user's name.
+
+Step 2: Get the total budget.
+
+Step 3: Get the first expense category.
+
+Step 4: Get the first expense amount.
+
+Step 5: Get the second expense category.
+
+Step 6: Get the second expense amount.
+
+Step 7: Get the third expense category.
+
+Step 8: Get the third expense amount.
+
+Step 9: Calculate the total expenses (Using addition operator).
+
+Step 10: Calculate the remaining budget (budget − total expenses).
+
+Step 11: Display the user's name.
+
+Step 12: Display all three expense categories and their amounts.
+
+Step 13: Display the total expenses.
+
+Step 14: Display the remaining budget.
+
+Step 15: Check if total expenses are greater than the budget. If yes, display "Budget Exceeded".
+
+Step 16: Otherwise, display "Within Budget".

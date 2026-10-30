@@ -1,0 +1,44 @@
+Student Result Calculator – Using Functions
+
+Step 1: create a function `get_student_details()` – Get the name of the student and the
+marks in Maths, Science, and English.
+
+Step 2: create a function `calculate_total()` – Calculate the total marks using the
+addition operator.
+
+Step 3: create a function `calculate_percentage()` – Calculate the percentage using the
+formula (total / 300) × 100.
+
+Step 4: `calculate_grade()` – Check if any subject mark is below 35.
+ If yes, assign grade "F" and result "Fail".
+
+Step 5: `calculate_grade()` – If the student passes all subjects,
+ check if the percentage is greater than or equal to 90 and assign grade "A+".
+
+Step 6: `calculate_grade()` – Check if the percentage is greater than
+ or equal to 80 and assign grade "A".
+
+Step 7: `calculate_grade()` – Check if the percentage is greater than
+ or equal to 70 and assign grade "B".
+
+Step 8: `calculate_grade()` – Check if the percentage is greater than or equal to 60 and assign grade "C".
+
+Step 9: `calculate_grade()` – If the percentage is below 60 and the student passes all subjects, assign grade "D".
+
+Step 10: `display_report()` – Display the student's name, total marks, percentage, grade, and Pass/Fail result.
+
+Step 11: `main()` – Call all the above functions in the correct order and store their returned values.
+
+Step 12: `main()` – Call the `main()` function to execute the program.
+
+Ashrith: Completed
+Saashwin:Completed
+Viyan:Completed
+
+Janyukta:Inprogress
+Effren:Inprogress
+Frankin:Inprogress
+Arjun:On Leave
+Adyan: On Leave
+Adwin: On Leave
+

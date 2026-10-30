@@ -1,39 +1,34 @@
+name = input("Enter your name: ")
+budget = float(input("Enter your budget: ₹"))
 
-# Student Result Calculator
+# Get the first expense
+category1 = input("Enter first expense category: ")
+amount1 = float(input("Enter first expense amount: ₹"))
 
-student_name = input("Enter student name: ")
+# Get the second expense
+category2 = input("Enter second expense category: ")
+amount2 = float(input("Enter second expense amount: ₹"))
 
-maths = int(input("Enter Maths marks: "))
-science = int(input("Enter Science marks: "))
-english = int(input("Enter English marks: "))
+# Get the third expense
+category3 = input("Enter third expense category: ")
+amount3 = float(input("Enter third expense amount: ₹"))
 
-# Calculate total and percentage
-total = maths + science + english
-percentage = (total / 300) * 100
+# Calculate total expenses
+total_expenses = amount1 + amount2 + amount3
 
-# Check pass/fail and grade
-if maths < 35 or science < 35 or english < 35:
-    grade = "F"
-    result = "Fail"
-
-else:
-    result = "Pass"
-
-    if percentage >= 90:
-        grade = "A+"
-    elif percentage >= 80:
-        grade = "A"
-    elif percentage >= 70:
-        grade = "B"
-    elif percentage >= 60:
-        grade = "C"
-    else:
-        grade = "D"
+# Calculate remaining budget
+remaining_budget = budget - total_expenses
 
 # Display the report
-print("\n--- STUDENT RESULT REPORT ---")
-print("Student:", student_name)
-print("Total:", total, "/ 300")
-print("Percentage:", round(percentage, 2), "%")
-print("Grade:", grade)
-print("Result:", result)
+print("\n--- Expense Report ---")
+print("Name:", name)
+print("Expense 1:", category1, "- ₹", amount1)
+print("Expense 2:", category2, "- ₹", amount2)
+print("Expense 3:", category3, "- ₹", amount3)
+print("Total Expenses: ₹", total_expenses)
+print("Remaining Budget: ₹", remaining_budget)
+
+if total_expenses > budget:
+    print("Status: Budget Exceeded")
+else:
+    print("Status: Within Budget")

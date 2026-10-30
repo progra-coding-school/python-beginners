@@ -1,3 +1,10 @@
-# Assignment – 1
-# Objective
-# Write a Python program to display 10 lines about your favourite leader
+print("My favourite sport is Cricket.")
+print("Cricket is a very popular sport.")
+print("It is played between two teams.")
+print("Each team has eleven players.")
+print("I enjoy batting and bowling.")
+print("My favourite cricketer is Virat Kohli.")
+print("I like watching cricket matches.")
+print("I play cricket with my friends.")
+print("Cricket teaches me teamwork.")
+print("I love playing cricket.")

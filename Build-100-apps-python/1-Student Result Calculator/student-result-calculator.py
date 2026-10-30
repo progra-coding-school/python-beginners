@@ -34,6 +34,5 @@ else:
 print("\n--- STUDENT RESULT REPORT ---")
 print("Student:", student_name)
 print("Total:", total, "/ 300")
-print("Percentage:", round(percentage, 2), "%")
 print("Grade:", grade)
 print("Result:", result)
